@@ -11,7 +11,7 @@
 
 			<thead>
 				<tr>
-					<th width="3%" align="left"> </th>
+					<th width="3%" align="left"><input type="checkbox" name="checkall" class="J_checkall"/></th>
 					<th width="40%" align="left">缓存目录</th>
 					<th width="20%" align="left">描述</th> 
 					<th width="37%" align="left">说明</th> 

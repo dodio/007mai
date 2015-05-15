@@ -1,0 +1,40 @@
+.img_4column{
+  width: 100%;
+}
+
+.img_4column li{
+  box-sizing:border-box;
+  width: 25%;
+  padding-right: 10px;
+  padding-right:0\9;
+  float: left;
+  height: 200px;
+}
+.img_4column li:last-child{
+  padding-right: 0;
+}
+.img_4column li img{
+  width: 100%;
+  height: 100%;
+}
+
+.logowall{
+  width: 100%;
+  background: #fff;
+    -webkit-box-shadow: 0 2px 2px rgba(0,0,0,.15);
+  -moz-box-shadow: 0 2px 2px rgba(0,0,0,.15);
+  box-shadow: 0 2px 2px rgba(0,0,0,.15)
+}
+.logowall .logo {
+    float: left;
+    *display: inline;
+    width: 60px;
+    height: 30px;
+    font: 0/0 a;
+    padding: 7px 9px
+}
+
+.logowall .logo img{
+  width: 100%;
+  height: 100%;
+}

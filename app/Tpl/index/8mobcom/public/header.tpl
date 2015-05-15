@@ -81,7 +81,8 @@
 
 
         <div class="state-show fr">
-          <a href="{:U('gift/index')}" target="_blank" class="normal-a">积分商城</a> <a href="javascript:;" class="normal-a dosign signin_a sign_btn" id="signIn_btn"><em class="icon-normal icon-sign"></em><em class="text">签到领积分</em></a>
+          <a href="javascript:;" class="normal-a dosign signin_a sign_btn" id="signIn_btn"><em class="icon-normal icon-sign"></em><em class="text">签到领积分</em></a>
+          <a href="{:U('gift/index')}" target="_blank" class="normal-a">积分商城</a> 
             <div style="display: none;" class="normal-side-box" id="top-side-box">
                 <div class="box-tips">
                     <p class="text">每天最多可赚：<b>100</b> 积分<br></p>

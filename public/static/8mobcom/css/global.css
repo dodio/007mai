@@ -339,9 +339,9 @@ transform:rotate(180deg);-webkit-transform:rotate(180deg); -o-transform:rotate(1
 .header .mainNav .nav .navigation li.current a:hover{ text-decoration:none;}
 .header .mainNav .nav .navigation li a:hover{ background:#00cf96; text-decoration:none;}
 /*.header .state-show{ line-height:40px; position:relative; z-index:100;background-color: #232433;}*/
-.header .state-show{ line-height:40px; position:relative; z-index:100;background-color: #232433; height: 65px; padding-top: 20px;}
+.header .state-show{ line-height:40px; position:relative; z-index:100;background-color: #232433;width: 393px; height: 65px; padding-top: 20px;}
 
-.header .state-show .normal-a{ font-size:14px; color:#fff;height:40px;float:left; display:inline; padding:0 15px;}
+.header .state-show .normal-a{ font-size:14px; color:#fff;height:40px;float:right; display:inline; padding:0 15px;}
 .header .state-show .normal-a:hover{ background:#00cf96; text-decoration:none;}
 .header .state-show .normal-a:hover .icon-sign{ background-position:-19px 0;}
 .header .state-show .normal-side-box{ top:60px; right:0;width: 206px;}

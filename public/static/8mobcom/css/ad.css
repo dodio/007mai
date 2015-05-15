@@ -5,10 +5,17 @@
 .img_4column li{
   box-sizing:border-box;
   width: 25%;
-  padding-right: 10px;
-  padding-right:0\9;
   float: left;
-  height: 200px;
+  height: 150px;
+  -webkit-transition: all 300ms;
+  -moz-transition: all 300ms;
+  -ms-transition: all 300ms;
+  -o-transition: all 300ms;
+  transition: all 300ms;
+}
+.img_4column li:hover{
+  opacity: 0.8;
+  filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=80)\9;
 }
 .img_4column li:last-child{
   padding-right: 0;

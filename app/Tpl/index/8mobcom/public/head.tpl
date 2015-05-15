@@ -5,7 +5,9 @@
 <meta name="renderer" content="webkit">
 <meta name="MSSmartTagsPreventParsing" content="True" />
 <meta http-equiv="MSThemeCompatible" content="Yes" />
+<script type="text/javascript" src="__STATIC__/8mobcom/js/funs.js"></script>
 <script type="text/javascript">
+  uaredirect("m.007mai.com");
 	SITEURL="{:C('ftx_site_url')}";
 	CURURL="{:C('ftx_site_url')}";
 	WEBNICK="{:C('ftx_site_name')}";

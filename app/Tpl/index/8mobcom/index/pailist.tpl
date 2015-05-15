@@ -89,29 +89,5 @@
 <a class="logo" target="_blank" href="//ju.taobao.com/tg/brand_items.htm?spm=608.2291429.102209d.31.Xughx1&amp;act_sign_id=6704819">
 <img title="讯盈数码品牌团" src="//gju4.alicdn.com/bao/uploaded/i2/10000080427263217/TB21JIXcFXXXXXfXXXXXXXXXXXX_!!0-0-juitemmedia.jpg_160x160Q90.jpg_.webp">
 </a>
-<a class="logo" target="_blank" href="//ju.taobao.com/tg/brand_items.htm?spm=608.2291429.102209d.32.Xughx1&amp;act_sign_id=6461206">
-<img title="美的家电巅峰钜惠" src="//gju1.alicdn.com/bao/uploaded/i3/10000079636790667/TB2OEj.cFXXXXcAXXXXXXXXXXXX_!!0-0-juitemmedia.jpg_160x160Q90.jpg_.webp">
-</a>
-<a class="logo" target="_blank" href="//ju.taobao.com/tg/brand_items.htm?spm=608.2291429.102209d.33.Xughx1&amp;act_sign_id=6532922">
-<img title="模杯底价2折起" src="//gju3.alicdn.com/bao/uploaded/i4/10000079785856926/TB2RxjacFXXXXXzXXXXXXXXXXXX_!!0-0-juitemmedia.jpg_160x160Q90.jpg_.webp">
-</a>
-<a class="logo" target="_blank" href="//ju.taobao.com/tg/brand_items.htm?spm=608.2291429.102209d.34.Xughx1&amp;act_sign_id=6639459">
-<img title="澳洲保健品始祖" src="//gju3.alicdn.com/bao/uploaded/i2/10000079593220691/TB2ld5LcFXXXXX0XpXXXXXXXXXX_!!0-0-juitemmedia.jpg_160x160Q90.jpg_.webp">
-</a>
-<a class="logo" target="_blank" href="//ju.taobao.com/tg/brand_items.htm?spm=608.2291429.102209d.35.Xughx1&amp;act_sign_id=6477642">
-<img title="时尚墨镜299起" src="//gju4.alicdn.com/bao/uploaded/i2/10000080772915894/TB2_N5lcFXXXXcgXXXXXXXXXXXX_!!0-0-juitemmedia.jpg_160x160Q90.jpg_.webp">
-</a>
-<a class="logo" target="_blank" href="//ju.taobao.com/tg/brand_items.htm?spm=608.2291429.102209d.36.Xughx1&amp;act_sign_id=6539896">
-<img title="拉菲5.15大促" src="//gju4.alicdn.com/bao/uploaded/i3/10000082355487841/TB2bn.ZcFXXXXc7XXXXXXXXXXXX_!!0-0-juitemmedia.jpg_160x160Q90.jpg_.webp">
-</a>
-<a class="logo" target="_blank" href="//ju.taobao.com/tg/brand_items.htm?spm=608.2291429.102209d.37.Xughx1&amp;act_sign_id=6633712">
-<img title="夏日护肤清凉一夏" src="//gju3.alicdn.com/bao/uploaded/i4/10000080544137193/TB2ja3jcFXXXXa2XXXXXXXXXXXX_!!0-0-juitemmedia.jpg_160x160Q90.jpg_.webp">
-</a>
-<a class="logo" target="_blank" href="http://ju.taobao.com/jusp/am/niweiya/tp.htm?spm=608.2291429.102209d.38.Xughx1">
-<img title="妮维雅4周年店庆" src="//gju2.alicdn.com/bao/uploaded/i1/10000078770207880/TB2CTIlcpXXXXarXXXXXXXXXXXX_!!0-0-juitemmedia.jpg_160x160Q90.jpg_.webp">
-</a>
-<a class="logo" target="_blank" href="//ju.taobao.com/tg/brand_items.htm?spm=608.2291429.102209d.39.Xughx1&amp;act_sign_id=6362291">
-<img title="虎妈猫爸童装专场" src="//gju3.alicdn.com/bao/uploaded/i3/10000079804081421/TB2pbyPcFXXXXXtXpXXXXXXXXXX_!!0-0-juitemmedia.jpg_160x160Q90.jpg_.webp">
-</a>
-                                        </div>
+</div>
 

@@ -26,7 +26,7 @@ class loadTag {
             }
             file_put_contents($path, $jm->minify($content));
         }
-        echo ( '<script type="text/javascript" src="' . __ROOT__ . $combile_name . '?THIS_IS_IT"></script>');
+        echo ( '<script type="text/javascript" src="' . __ROOT__ . $combile_name . '?v='.THIS_IS_IT.'"></script>');
     }
 
 
@@ -55,7 +55,7 @@ class loadTag {
         $combile_name = $dir."/dist_css/" . md5(implode(",", $files)) . '.css';
         $path = ROOT_PATH . $combile_name ;
         if(is_file($path)){
-            echo ( '<link rel="stylesheet" type="text/css" href="' . __ROOT__ . $combile_name . '?THIS_IS_IT" />');
+            echo ( '<link rel="stylesheet" type="text/css" href="' . __ROOT__ . $combile_name . '?v='.THIS_IS_IT.'" />');
             return;
         }
         if(!is_dir(dirname($path))){

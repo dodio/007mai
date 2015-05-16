@@ -94,9 +94,10 @@
 	<div id="foot">
 	    <div class="foot-nav">
 		<a href="{:C('ftx_site_url')}"><img src="/static/m_8mob_jp/images/icon/phone.png">电脑版</a>
-		<a href="http://www.mumujie.com/mapi/apk/mumujieV1.0.apk" class="joa_load_app"><img src="/static/m_8mob_jp/images/icon/client.png">客户端</a>
 		<a href="{:U('index/index')}" class="_border"><img src="/static/m_8mob_jp/images/icon/home.png">返回首页</a>
 	    </div>
 	    <div class="foot-copyright"></div>
 	    <h2>copyright © 2015 {:C('ftx_site_name')}</h2>
 	</div>
+
+    {:C('ftx_statistics_code')}</p>

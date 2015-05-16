@@ -121,13 +121,15 @@
 			</div>
 		</div>
 		<p class="f_miibeian {:C('ftx_site_width')}"><a href="http://www.miibeian.gov.cn/" rel="nofollow" target="_blank">{:C('ftx_site_icp')}</a> © 2010-2015 007mai.com all Rights Reserved
-		{:C('ftx_statistics_code')}</p>
+		</p>
 	</div>
 </div>
+
 <!-- /页脚 -->
 <include file="public:fix-right-layer" />
 <!--淘点金开始-->
 {:C('ftx_taojindian_html')}
+{:C('ftx_statistics_code')}
 <!--淘点金结束-->
 <script type="text/javascript">
 var FTXIAER = {

@@ -32,6 +32,7 @@ class cacheAction extends BackendAction
                 break;
             case 'js':
                 is_dir(ROOT_PATH . '/static/dist_js/') && $obj_dir->del(ROOT_PATH . '/static/dist_js/');
+                $this->_clear_dist_css($obj_dir);
                 break;
 			case 'api':
                 is_dir(RUNTIME_PATH . '/FtxiaAPI/') && $obj_dir->delDir(RUNTIME_PATH . '/FtxiaAPI/');
@@ -53,7 +54,18 @@ class cacheAction extends BackendAction
 		is_dir(RUNTIME_PATH . '/TaobaoAPI/') && $obj_dir->delDir(RUNTIME_PATH . '/TaobaoAPI/');
         is_dir(LOG_PATH) && $obj_dir->delDir(LOG_PATH);
         is_dir(ROOT_PATH . '/static/dist_js/') && $obj_dir->del(ROOT_PATH . '/static/dist_js/');
+        $this->_clear_dist_css($obj_dir);
         @unlink(RUNTIME_FILE);
         $this->ajaxReturn(1, L('clear_success'));
+    }
+
+    private function _clear_dist_css($obj_dir){
+        $css_dirs = S("combile_css_dirs");
+        if($css_dirs === false){
+            return;
+        }
+        foreach ($css_dirs as $dir) {
+            is_dir(ROOT_PATH.$dir) && $obj_dir->del(ROOT_PATH.$dir."/dist_css");
+        }
     }
 }

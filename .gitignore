@@ -1,0 +1,13 @@
+
+data/config/db.php
+data/scws/
+data/runtime/
+data/backup/
+thinkphp/
+public/static/dist_js/
+public/data/
+
+ftpsync.settings
+desktop.ini
+
+*dist*/

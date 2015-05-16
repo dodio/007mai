@@ -13,11 +13,14 @@
 	WEBNICK="{:C('ftx_site_name')}";
 	URL_COOKIE=0;
 </script>
-<link rel=stylesheet type=text/css href="__STATIC__/8mobcom/css/base.css" />
-<link rel=stylesheet type=text/css href="__STATIC__/8mobcom/css/global.css" />
-<link rel=stylesheet type=text/css href="__STATIC__/8mobcom/css/alert.css" />
-<link rel=stylesheet type=text/css href="__STATIC__/8mobcom/css/page.css" />
-<link rel=stylesheet type=text/css href="__STATIC__/8mobcom/css/ad.css" />
+<ftx:load type="css" href="
+__STATIC__/8mobcom/css/base.css,
+__STATIC__/8mobcom/css/global.css,
+__STATIC__/8mobcom/css/alert.css,
+__STATIC__/8mobcom/css/page.css,
+__STATIC__/8mobcom/css/ad.css
+"/>
+
 <script type="text/javascript" src="__STATIC__/8mobcom/js/jquery.js"></script>
 <script type="text/javascript" src="__STATIC__/8mobcom/js/jquery.cookie.js"></script>
 <script type="text/javascript" src="__STATIC__/8mobcom/js/lazyload.js"></script>

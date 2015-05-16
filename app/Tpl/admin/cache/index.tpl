@@ -51,8 +51,8 @@
 			<tr>
 				<td><label><input type="checkbox" checked value="js" name="type" class="mr5" data-uri="{:U('cache/clear', array('type'=>'js'))}"> </label></td>
 				<td><img src="/static/images/admin/folde.gif" width="16" height="14"> public/static/dist_js</td>
-				<td>JS缓存文件</td>
-				<td><span class="gray mr10">修改过JS文件需要更新才会生效</span><span id="js_ifm"></span></td>
+				<td>JS/CSS缓存文件</td>
+				<td><span class="gray mr10">修改过JS/CSS文件需要更新才会生效</span><span id="js_ifm"></span></td>
 			</tr>
 
 			<tr>

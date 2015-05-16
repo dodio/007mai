@@ -7,23 +7,22 @@
 <load href="__STATIC__/ftxia/new/css/md-public.css" />
 <load href="__STATIC__/ftxia/new/css/pg-index.css" />
 <load href="__STATIC__/ftxia/css/list.css" />
+<load href="__STATIC__/ftxia/new/css/nav-channel.css" />
 </head>
 <body>
 <include file="public:header" />
- 
 <div class="jiu-nav widescreen clear" style="z-index: 18; ">
-	<include file="public:nav-classify" />  
-    
-		<notempty name="k">
-				<ul class="nav-channel type clear">
-					<li><a class="all" style="width:auto; padding:0 12px;">您搜索的内容为：<span class="red">{$k}</span></a></li>
-					<span class="clear"></span>
-				</ul>
-				<else />
-				<ul class="nav-channel clear list-sort">
-					<li>
-						<a href="{:U('index/index')}" class="all">
-            	<i class="null"></i>全部 ({$total_item})
+	 <div class="main wide_page">
+    <notempty name="k">
+        <ul class="nav-channel type clear">
+          <li><a class="all" style="width:auto; padding:0 12px;">您搜索的内容为：<span class="red">{$k}</span></a></li>
+          <span class="clear"></span>
+        </ul>
+        <else />
+        <ul class="nav-channel clear list-sort">
+          <li>
+            <a href="{:U('index/index')}" class="all">
+              <i class="null"></i>全部 ({$total_item})
             </a>
             <notempty name="cid">
             <a href="{:U('index/cate',array('cid'=>$cid,'sort'=>'default'))}" class="ju_nav <if condition="$index_info['sort'] eq 'default'"> on </if>"><span>默认</span></a>
@@ -39,11 +38,12 @@
             <a class="right " href="{:U('before/index')}"><i class="on"></i>往期宝贝</a>
           </li>
           <li class="last">
-          	<a class="today" href="{:U('xinpin/index')}">今日新品(<font id="total_xinpin">{$today_item}</font>)</a>
-          	<a href="{:U('yugao/index')}" class="torrow"><i class="torrow"></i>明日预告</a>
+            <a class="today" href="{:U('xinpin/index')}">今日新品(<font id="total_xinpin">{$today_item}</font>)</a>
+            <a href="{:U('yugao/index')}" class="torrow"><i class="torrow"></i>明日预告</a>
           </li>
         </ul>
-        </notempty>	
+        </notempty>  
+   </div>
 </div>
 
 
@@ -51,10 +51,10 @@
 
 
 <!--List Start-->
-<div class="main w980 m0a clear">
+<div class="main m0a clear wide_page">
 	<ul class="goods-list container" id="container">
 		<volist name="items_list" id="item" key="i" mod="3">
-		<li class="item  <eq name="mod" value="2"> last</eq>">
+		<li class="item  <eq name="mod" value="3"> last</eq>">
 			<div re="11okav" class="list-good goods_box todayDb">
 				<h5 class="good-title">
 					<if condition="$item.shop_type eq 'C' "><a  target="_blank" class="icon t tao-n" title="淘宝网" style="display: none; "></a></if><if condition="$item.shop_type eq 'B' "><a  target="_blank" class="icon t tao-t" title="天猫商城" style="display: none; "></a></if>

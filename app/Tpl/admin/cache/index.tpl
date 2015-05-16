@@ -52,7 +52,7 @@
 				<td><label><input type="checkbox" checked value="js" name="type" class="mr5" data-uri="{:U('cache/clear', array('type'=>'js'))}"> </label></td>
 				<td><img src="/static/images/admin/folde.gif" width="16" height="14">public/static/dist_js
           <notempty name="combile_css_dirs">
-            <volist name="combile_css_dirs" id="dir"><br>{$dir}</volist>
+            <volist name="combile_css_dirs" id="dir"><br><img src="/static/images/admin/folde.gif" width="16" height="14">{$dir}/dist_css</volist>
           </notempty>
         </td>
 				<td>JS/CSS缓存文件</td>

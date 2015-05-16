@@ -21,12 +21,17 @@ __STATIC__/8mobcom/css/page.css,
 __STATIC__/8mobcom/css/ad.css
 "/>
 
-<script type="text/javascript" src="__STATIC__/8mobcom/js/jquery.js"></script>
-<script type="text/javascript" src="__STATIC__/8mobcom/js/jquery.cookie.js"></script>
-<script type="text/javascript" src="__STATIC__/8mobcom/js/lazyload.js"></script>
-<script type="text/javascript" src="__STATIC__/8mobcom/js/fun.js"></script>
-<script type="text/javascript" src="__STATIC__/8mobcom/js/jumpbox.js"></script>
-<script type="text/javascript" src="__STATIC__/8mobcom/js/funs.js"></script>
+
+<ftx:load type="js" href="
+__STATIC__/8mobcom/js/jquery.js,
+__STATIC__/8mobcom/js/jquery.cookie.js,
+__STATIC__/8mobcom/js/lazyload.js
+"/>
+<ftx:load type="js" href="
+__STATIC__/8mobcom/js/fun.js,
+__STATIC__/8mobcom/js/jumpbox.js,
+__STATIC__/8mobcom/js/funs.js
+"/>
 {:C('ftx_header_html')}
 <script language="javascript">window.onerror = function(){return true;}</script>
 <if condition="C('ftx_site_style') eq 'juanpi'">

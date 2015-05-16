@@ -139,4 +139,15 @@ var FTXIAER = {
 var lang = {};
 <volist name=":L('js_lang')" id="val">lang.{$key} = "{$val}";</volist>
 </script>
-<ftx:load type="js" href="__STATIC__/js/jquery/plugins/jquery.tools.min.js,__STATIC__/js/jquery/plugins/jquery.masonry.js,__STATIC__/js/jquery/plugins/formvalidator.js,__STATIC__/js/fileuploader.js,__STATIC__/js/ftxia.js,__STATIC__/js/front.js,__STATIC__/js/dialog.js,__STATIC__/js/item.js,__STATIC__/js/user.js,__STATIC__/js/comment.js,__STATIC__/8mobcom/js/comm.js" />
+<ftx:load type="js" href="
+__STATIC__/js/jquery/plugins/jquery.tools.min.js,
+__STATIC__/js/jquery/plugins/jquery.masonry.js,
+__STATIC__/js/jquery/plugins/formvalidator.js,
+__STATIC__/js/fileuploader.js,
+__STATIC__/js/ftxia.js,
+__STATIC__/js/front.js,
+__STATIC__/js/dialog.js,
+__STATIC__/js/item.js,
+__STATIC__/js/user.js,
+__STATIC__/js/comment.js,
+__STATIC__/8mobcom/js/comm.js" />

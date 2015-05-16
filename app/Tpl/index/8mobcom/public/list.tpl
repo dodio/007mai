@@ -21,7 +21,7 @@
         <a class="right " href="{:U('before/index')}"><i class="on"></i>往期宝贝</a>
       </li>
       <li class="last">
-        <a class="today" href="{:U('xinpin/index')}">今日新品(<font id="total_xinpin">{$today_item}</font>)</a>
+        <a class="today" href="{:U('xinpin/index')}">今日新品<notempty name="today_item">(<font id="total_xinpin">{$today_item}</font>)</notempty></a>
         <a href="{:U('yugao/index')}" class="torrow"><i class="torrow"></i>明日预告</a>
       </li>
     </ul>

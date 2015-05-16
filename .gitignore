@@ -1,4 +1,3 @@
-
 data/config/db.php
 data/scws/
 data/runtime/
@@ -11,3 +10,5 @@ ftpsync.settings
 desktop.ini
 
 *dist*/
+data/config/config.php
+data/config/debug.php

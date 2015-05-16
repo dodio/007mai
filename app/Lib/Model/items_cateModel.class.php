@@ -35,10 +35,11 @@ class items_cateModel extends Model
 				$spid = $spid ? $spid .= $id .'|' : $id .'|';
 				$id_arr = $this->field('id')->where(array('spid'=>array('like', $spid.'%')))->select();
 				$array = array();
-				foreach ($id_arr as $val) {
-					$array[] = $val['id'];
-				}
-
+				if(is_array($id_arr)){
+                    foreach ($id_arr as $val) {
+                        $array[] = $val['id'];
+                    }
+                }
 				S($file,$array);
 			}
 		}else{

@@ -100,4 +100,6 @@
 	    <h2>copyright © 2015 {:C('ftx_site_name')}</h2>
 	</div>
 
-    {:C('ftx_statistics_code')}</p>
+    <div style="display: none;">
+        {:C('ftx_statistics_code')}</p>
+    </div>

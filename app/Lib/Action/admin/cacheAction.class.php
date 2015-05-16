@@ -7,6 +7,7 @@ class cacheAction extends BackendAction
     }
 
     public function index() {
+        $this->assign("combile_css_dirs",S("combile_css_dirs"));
         $this->display();
     }
 

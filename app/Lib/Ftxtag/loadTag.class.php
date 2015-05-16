@@ -46,9 +46,7 @@ class loadTag {
 
         foreach ($dirs as $dir => $files) {
             $this->_css($files,$dir);
-            
         }
-
     }
 
     private function _css($files,$dir){
@@ -60,16 +58,17 @@ class loadTag {
         }
         if(!is_dir(dirname($path))){
             mkdir(dirname($path));
-            //缓存一下css编译目录，方便通过后台清理
-            $css_dirs = S("combile_css_dirs");
-            if($css_dirs === false){
-                $css_dirs = array();
-            }
-            if(!in_array($dir, $css_dirs)){
-                $css_dirs[] = $dir;
-            }
-            S("combile_css_dirs",$css_dirs);
         }
+        //缓存一下css编译目录，方便通过后台清理
+        $css_dirs = S("combile_css_dirs");
+        if($css_dirs === false){
+            $css_dirs = array();
+        }
+        if(!in_array($dir, $css_dirs)){
+            $css_dirs[] = $dir;
+        }
+        S("combile_css_dirs",$css_dirs);
+        
         $content = '';
         foreach ($files as $value) {
             $content.=file_get_contents(ROOT_PATH ."/" . $value)."\n";

@@ -2,12 +2,15 @@
 <html>
 <head>
 <include file="public:head" />
-<load href="__STATIC__/ftxia/new/css/md-pagination.css" />
-<load href="__STATIC__/ftxia/new/css/md-nav-good.css" />
-<load href="__STATIC__/ftxia/new/css/md-public.css" />
-<load href="__STATIC__/ftxia/new/css/pg-index.css" />
+
+<ftx:load type="css" href="
+__STATIC__/ftxia/new/css/md-pagination.css,
+__STATIC__/ftxia/new/css/md-nav-good.css,
+__STATIC__/ftxia/new/css/md-public.css,
+__STATIC__/ftxia/new/css/pg-index.css,
+__STATIC__/ftxia/new/css/nav-channel.css
+"/>
 <load href="__STATIC__/ftxia/css/list.css" />
-<load href="__STATIC__/ftxia/new/css/nav-channel.css" />
 </head>
 <body>
 <include file="public:header" />

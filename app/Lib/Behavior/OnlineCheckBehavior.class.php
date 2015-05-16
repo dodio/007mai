@@ -1,36 +1,36 @@
 <?php
 defined('THINK_PATH') or exit();
 /*
- * ¶¨ÒåĞĞÎª: ÔÚÏß¸üĞÂ
+ * å®šä¹‰è¡Œä¸º: åœ¨çº¿æ›´æ–°
  */
 
 class OnlineCheckBehavior extends Behavior {
 
-    //ĞĞÎª²ÎÊı
+    //è¡Œä¸ºå‚æ•°
     protected $options = array(
-        'ONLINE_CHECK' => true,			// Ä¬ÈÏ½øĞĞÔÚÏß
-        'ONLINE_CHECK_TIME' => 1440,	// Ä¬ÈÏ24Ğ¡Ê±Î´»î¶¯£¬ËµÃ÷ÒÑÏÂÏß
+        'ONLINE_CHECK' => true,			// é»˜è®¤è¿›è¡Œåœ¨çº¿
+        'ONLINE_CHECK_TIME' => 1440,	// é»˜è®¤24å°æ—¶æœªæ´»åŠ¨ï¼Œè¯´æ˜å·²ä¸‹çº¿
     );
 
     public function run(&$params) {
         if (C('ONLINE_CHECK')) {
 			if(rand(1,10) == 5){
-				// ¸üĞÂsession
+				// æ›´æ–°session
 				if ((session('?user_info')) && (time() - session('access_time') > 60)) {
 					session('access_time', time());
 				}
-				// ÔÚÏß¸üĞÂ
+				// åœ¨çº¿æ›´æ–°
 				$ip = get_client_ip();
 				$online = M('Online');
 				$map['lasttime'] = array('lt', time() - C('ONLINE_CHECK_TIME') * 60);
 				$icount = $online->where($map)->delete();
-				if (session('?user_info')) { // Èç¹ûÊÇµÇÂ¼ÓÃ»§
+				if (session('?user_info')) { // å¦‚æœæ˜¯ç™»å½•ç”¨æˆ·
 					$user_info = session('user_info');
 					$map = array();
 					$map['uid'] = $user_info['id'];
 					//$map['ip'] = $ip;
 					$ids = $online->where($map)->getField('id');
-					if (empty($ids)) { // ²»´æÔÚÔÚÏß¼ÇÂ¼£¬ÔòÇå¿Õsession
+					if (empty($ids)) { // ä¸å­˜åœ¨åœ¨çº¿è®°å½•ï¼Œåˆ™æ¸…ç©ºsession
 						session('user_info', null);
 						cookie('user_info', null);
 					} else {
@@ -40,22 +40,22 @@ class OnlineCheckBehavior extends Behavior {
 						$data['ip'] = $ip;
 						$online->where($map)->save($data);
 					}
-				} else { // ²»ÊÇµÇÂ¼ÓÃ»§  ÓÎ¿Í
+				} else { // ä¸æ˜¯ç™»å½•ç”¨æˆ·  æ¸¸å®¢
 					unset($map);
 					$map['ip'] = array('eq', $ip);
 					$ids = $online->where($map)->getField('id');
 					//dump($id);
-					if (empty($ids)) { // ²»´æÔÚÔÚÏß¼ÇÂ¼£¬ ÔòÌí¼Ó
+					if (empty($ids)) { // ä¸å­˜åœ¨åœ¨çº¿è®°å½•ï¼Œ åˆ™æ·»åŠ 
 						$data = array();
 						$data['uid'] = 0;
 						$data['account'] = 'Guest';
-						$data['username'] = 'ÓÎ¿Í';
+						$data['username'] = 'æ¸¸å®¢';
 						$data['lasttime'] = time();
 						$data['ip'] = $ip;
 						$online->add($data);
 					} else {
 						$map = array();
-						$map['id'] = array('eq', $id);
+						$map['id'] = array('eq', $ids);
 						$data['lasttime'] = time();
 						$data['ip'] = $ip;
 						$online->where($map)->save($data);

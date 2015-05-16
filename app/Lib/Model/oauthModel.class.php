@@ -30,7 +30,7 @@ class oauthModel extends Model
     /**
      * 更新则删除缓存
      */
-    protected function _before_write($data, $options) {
+    protected function _before_write($data) {
         F('oauth_list', NULL);
     }
 

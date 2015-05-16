@@ -15,17 +15,22 @@ class BackendAction extends TopAction
         if ($this->menuid) {
             $sub_menu = D('menu')->sub_menu($this->menuid, $this->big_menu);
             $selected = '';
-            foreach ($sub_menu as $key=>$val) {
-                $sub_menu[$key]['class'] = '';
-                if (MODULE_NAME == $val['module_name'] && ACTION_NAME == $val['action_name'] && strpos(__SELF__, $val['data'])) {
-                    $sub_menu[$key]['class'] = $selected = 'on';
+
+            if(is_array($sub_menu)){
+                foreach ($sub_menu as $key=>$val) {
+                    $sub_menu[$key]['class'] = '';
+                    if (MODULE_NAME == $val['module_name'] && ACTION_NAME == $val['action_name'] && strpos(__SELF__, $val['data'])) {
+                        $sub_menu[$key]['class'] = $selected = 'on';
+                    }
                 }
             }
             if (empty($selected)) {
-                foreach ($sub_menu as $key=>$val) {
-                    if (MODULE_NAME == $val['module_name'] && ACTION_NAME == $val['action_name']) {
-                        $sub_menu[$key]['class'] = 'on';
-                        break;
+                if(is_array($sub_menu)){
+                    foreach ($sub_menu as $key=>$val) {
+                        if (MODULE_NAME == $val['module_name'] && ACTION_NAME == $val['action_name']) {
+                            $sub_menu[$key]['class'] = 'on';
+                            break;
+                        }
                     }
                 }
             }

@@ -177,3 +177,6 @@ body {background:url(../images/global/background_bg.png) repeat scroll 0 0 trans
 .wc1005{ width:1005px; }
 .w1120{ width:1120px; }
 .w1100 .product ,.w1100 .container{width: 1200px;}
+.wide_page{
+  width: 1340px;
+}

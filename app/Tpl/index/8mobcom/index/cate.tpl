@@ -7,7 +7,7 @@
 <body>
 <include file="public:header" />
 <div class="jiu-nav-main">
-	<div class="jiu-nav {:C('ftx_site_width')}">
+	<div class="jiu-nav main" style="width: 1100px;">
 		<div class="nav-item fl">
 			<div class="item-list">
 				<ul>
@@ -35,31 +35,30 @@
 		</div>
 	</div>
 </div>
- 
-<notempty name="subnav"> 
-<div class="jiu-nav-main jiu-nav-main-2" id="seclevel">
-	<div class="jiu-nav {:C('ftx_site_width')}  seclevelinner">
-		<div class="nav-item  ">
-			<div class="item-list">
-				<ul>
-				<empty name="cinfo['pid']">
-					<li><a href="{:U('index/cate', array('cid'=>$cid))}"   class="active">全部</a></li>
-				<else />
-					<li><a href="{:U('index/cate', array('cid'=>$cinfo['pid']))}"   >全部</a></li>
-				</empty>
-				<volist name="subnav" id="bcate"> 
-					<li><a <if condition="$cid eq $bcate['id']">class="active"</if> href="{:U('index/cate', array('cid'=>$bcate['id']))}" title="{$bcate.name}">{$bcate.name}</a></i>
-				</volist>
-				</ul>
+<notempty name="subnav">
+	<div class="jiu-nav-main jiu-nav-main-2" id="seclevel">
+		<div class="jiu-nav {:C('ftx_site_width')}  seclevelinner">
+			<div class="nav-item  ">
+				<div class="item-list">
+					<ul>
+					<empty name="cinfo['pid']">
+						<li><a href="{:U('index/cate', array('cid'=>$cid))}"   class="active">全部</a></li>
+					<else />
+						<li><a href="{:U('index/cate', array('cid'=>$cinfo['pid']))}"   >全部</a></li>
+					</empty>
+					<volist name="subnav" id="bcate"> 
+						<li><a <if condition="$cid eq $bcate['id']">class="active"</if> href="{:U('index/cate', array('cid'=>$bcate['id']))}" title="{$bcate.name}">{$bcate.name}</a></i>
+					</volist>
+					</ul>
+				</div>
 			</div>
 		</div>
 	</div>
-</div>
 </notempty>
 
-<!--
+<link rel=stylesheet type=text/css href="__STATIC__/8mobcom/css/jiu-side-nav.css" />
 <include file="public:nav-classify" />
- -->
+ 
  
 <include file="public:list" />
  

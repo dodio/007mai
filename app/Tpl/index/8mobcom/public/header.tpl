@@ -69,7 +69,7 @@
 		<if condition="C('ftx_site_logo') neq ''">
 			<h1 class="fl"><a title="{:C('ftx_site_name')}" href="{:C('ftx_site_url')}"><img src="{:C('ftx_site_logo')}" width="238" height="50" /></a></h1>
 		<else />
-			<h1 class="fl"><a title="{:C('ftx_site_name')}" href="{:C('ftx_site_url')}"><img src="/static/8mobcom/images/logo3.png" width="238" height="50" /></a></h1>
+			<h1 class="fl"><a title="{:C('ftx_site_name')}" href="{:C('ftx_site_url')}"><img src="/static/8mobcom/images/logo.png" width="238" height="50" /></a></h1>
 		</if>
 
         </div>
@@ -117,11 +117,11 @@
             </ul>
             <div class="fr">
               <div class="search">
-                <form method="get" action="index.php" onsubmit="return search_submit();" >
+                <form method="get" action="/index.php" onsubmit="return search_submit();" >
                     <span class="search-area fl search_box">
-                      <input type="hidden" name="m" value="index" />
-                      <input type="hidden" name="a" value="so" />
-                      <input x-webkit-speech name="k" id="keywords" placeholder="请输入您要找的宝贝！" value="" class="txt text" />
+                      <input type="hidden" name="m" value="search" />
+                      <input type="hidden" name="a" value="index" />
+                      <input x-webkit-speech name="key" id="keywords" placeholder="请输入您要找的宝贝！" value="" class="txt text" />
                     </span>
                     <input type="submit" value="" class="smt fr">
                     </form>

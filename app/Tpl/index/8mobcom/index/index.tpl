@@ -34,6 +34,7 @@
   </div>
 </div>
 
+
 <div class="main w1100 group">
   {:R('advert/index', array(4), 'Widget')}
 </div>
@@ -41,7 +42,6 @@
 <div class="main w1100 group">
   <include file="pailist" />
 </div>
-
 
 <include file="public:list" />
 

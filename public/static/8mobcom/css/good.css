@@ -7,12 +7,11 @@
 .jiu-nav .n_h { float: right; color: #999; height:40px; }
 .jiu-nav .n_h a { margin-right:10px; }
 .jiu-nav .n_h span { float:left; line-height:40px; }
-.jiu-nav-main .fixed {position: fixed;top: 0;margin-top: 0;}
+.jiu-nav-main.fixed {position: fixed;top: 0;margin-top: 0;z-index: 10;}
 .item-list ul li { display: block; float: left; margin-right: 10px; display: inline; }
 .item-list ul li a,.jiu-nav .n_h a { position: relative; display: inline-block; height: 38px; line-height: 42px; color: #656565; border-bottom: #fff solid 2px; padding: 0 5px; min-width: 26px; text-align: center; }
 .item-list ul li a:hover,.jiu-nav .n_h a:hover { text-decoration: none; color: #00cf96; }
 .item-list ul li a.active,.jiu-nav .n_h a.active { color: #00cf96; font-weight: bold; border-bottom: #00cf96 solid 2px; text-decoration: none; }
-
 #seclevel .seclevelinner {border-top: 1px dotted #d4d4d4;height: auto;margin: 0 auto;overflow: hidden;}
 
 .nav-other em { display: block; position: absolute; top: 5px; left: 85px; height: 14px; padding: 0 5px; background: #00cf96; color: #FFF; font: normal 10px/14px Arial; border-radius: 5px; }
@@ -191,8 +190,6 @@ _line-height: 36px;  }
 .w980 .good-pic .go-quan { top:109px; left:95px; }
 .w980 .good-title,.w980 .title-tips,.w980 .good-price { width:290px; }
 .w980 .good-title .title { width:270px; }
-.jiu-side-nav.w980 { width: 130px;  margin-left: -635px; }
-.jiu-side-nav.w1100 { width:130px; margin-left: -695px; }
 .list-good .newicon {left: -1px;position: absolute;top: -5px;width: 55px;height: 46px;background: url("../images/xinpin.png") no-repeat 0 0;_background-image: url('../images/xinpin.png');padding-top: 3px;color: #fff;font: bold 13px/15px "宋体B8B\4F53";text-align: center;}
 
 .goods-list.w1005 li,.w1005 .list-good { width:307px; }
@@ -517,29 +514,6 @@ left:0; padding: 0 0 0 20px; display: none; z-index: 99;}
 .like-tips-img .like-con .like-t{ font-size: 22px;}
 .like-tips-img .like-con .like-no{ color: #666;}
 .like-tips-img .like-con em{ display: inline-block; vertical-align: middle;  margin: -3px 4px 0 4px;}
-
-/*右侧漂浮导航*/
-.jiu-side-nav { left: 50%; margin-left: -665px; position: absolute; text-align: left; width: 100px; z-index: 999; margin-top: 50px; }
-.jiu-side-nav.fixed { position: fixed; top: 0; margin-top: 0; }
-.jiu-side-nav .logo { width: 132px; height: 74px; margin-left: -4px; border-bottom: #b04904 solid 0px; display: none; }
-.jiu-side-nav.fixed .logo { display: block; }
-.jiu-side-nav .content { background: #fff; border: 1px solid #e2e2e2; border-left: none; border-top: none;margin-top: -5px;}
-.jiu-side-nav .hd { background: #ffebd2; width: 130px; height: 34px; color: #00cf96; line-height: 30px; text-align: center;}
-.jiu-side-nav .hd h3 { font-weight: normal; }
-.jiu-side-nav .hd a { color: #00cf96; }
-.jiu-side-nav .bd { padding: 8px 0;}
-.jiu-side-nav .bd ul { padding-left: 10px; zoom: 1; }
-.jiu-side-nav .bd ul:after { clear: both; content: ""; display: block; font-size: 0; line-height: 0; visibility: hidden; }
-.jiu-side-nav .bd li { float: left; width: 50%; line-height: 26px; }
-.jiu-side-nav .bd li a { color: #666; display: inline-block; text-decoration: none; padding: 3px 4px; line-height: 18px; border-radius: 2px; position: relative;}
-.jiu-side-nav .bd li a.on, .jiu-side-nav .bd li a.on:hover { background: #00cf96; color: #FFF; }
-.jiu-side-nav .bd li a:hover { background: #f6ebde; }
-.jiu-side-nav .bd li a.out { color: #38980d; }
-.jiu-side-nav .bd li a.out:hover { text-decoration: underline; background: none; }
-.jiu-side-nav .bd .bd-other { padding-left: 0; }
-.jiu-side-nav .bd .bd-other li { width: 100%; text-align: center; }
-.jiu-side-nav .bd .bd-web { border-top: #f6ebde solid 1px; }
-.jiu-side-nav .bottom { position: absolute; bottom: -20px; background: url(../images/good/bottom-bg.gif) repeat-x; width: 130px; height: 24px; }
 
 /*新手引导*/
 #hover_bg { position: fixed; _position: absolute; top:0; left:0; width:100%; min-width:1100px; z-index:10000; background-color:#000; filter:alpha(opacity=70); opacity:0.7; display:none; }

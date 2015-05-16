@@ -1,8 +1,6 @@
 <div class="jiu-side-nav {:C('ftx_site_width')}">
 	<if condition="C('ftx_site_navlogo') neq ''">
 		<div><a class="logo" href="{:C('ftx_site_url')}"><img src="{:C('ftx_site_navlogo')}" width="134" height="74" /></a></div>
-	<else />
-		<div><a class="logo" href="{:C('ftx_site_url')}"><img src="/static/jky/images/fl_nav_logo.jpg" width="134" height="74" /></a></div>
 	</if>
 		<div class="content">
 		<div class="hd">

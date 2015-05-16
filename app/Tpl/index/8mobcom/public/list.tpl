@@ -1,3 +1,32 @@
+
+<load href="__STATIC__/ftxia/new/css/nav-channel.css" />
+
+<div class="main widescreen mb10 w1100">
+  <ul class="nav-channel clear list-sort" style="width: 100%;">
+      <li>
+        <a href="{:U('index/index')}" class="all">
+          <i class="null"></i>全部 ({$total_item})
+        </a>
+        <notempty name="cid">
+        <a href="{:U('index/cate',array('cid'=>$cid,'sort'=>'default'))}" class="ju_nav <if condition="$index_info['sort'] eq 'default'"> on </if>"><span>默认</span></a>
+        <a href="{:U('index/cate',array('cid'=>$cid,'sort'=>'hot'))}" class="ju_nav <if condition="$index_info['sort'] eq 'hot'"> on </if>"><span>销量</span>&nbsp;<i class="sort-sign"></i></a>
+        <a href="{:U('index/cate',array('cid'=>$cid,'sort'=>'rate'))}" class="ju_nav <if condition="$index_info['sort'] eq 'rate'"> on </if>"><span>折扣</span>&nbsp;<i class="sort-sign"></i></a>
+        <a href="{:U('index/cate',array('cid'=>$cid,'sort'=>'new'))}" class="ju_nav <if condition="$index_info['sort'] eq 'new'"> on </if>"><span>最新</span>&nbsp;<i class="sort-sign"></i></a>
+        <else />
+        <a href="{:U('index/index',array('sort'=>'default'))}" class="ju_nav <if condition="$index_info['sort'] eq 'default'"> on </if>"><span>默认</span></a>
+        <a href="{:U('index/index',array('sort'=>'hot'))}" class="ju_nav <if condition="$index_info['sort'] eq 'hot'"> on </if>"><span>销量</span>&nbsp;<i class="sort-sign"></i></a>
+        <a href="{:U('index/index',array('sort'=>'rate'))}" class="ju_nav <if condition="$index_info['sort'] eq 'rate'"> on </if>"><span>折扣</span>&nbsp;<i class="sort-sign"></i></a>
+        <a href="{:U('index/index',array('sort'=>'new'))}" class="ju_nav <if condition="$index_info['sort'] eq 'new'"> on </if>"><span>最新</span>&nbsp;<i class="sort-sign"></i></a>
+        </notempty>
+        <a class="right " href="{:U('before/index')}"><i class="on"></i>往期宝贝</a>
+      </li>
+      <li class="last">
+        <a class="today" href="{:U('xinpin/index')}">今日新品(<font id="total_xinpin">{$today_item}</font>)</a>
+        <a href="{:U('yugao/index')}" class="torrow"><i class="torrow"></i>明日预告</a>
+      </li>
+    </ul>
+</div>
+
 <link rel=stylesheet type=text/css href="__STATIC__/8mobcom/css/good.css" />
 <!--List Start-->
 <div class="main {:C('ftx_site_width')} clear">

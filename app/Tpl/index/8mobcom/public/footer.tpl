@@ -54,7 +54,7 @@
 				<if condition="C('ftx_site_flogo') neq ''">
 					<h2><img src="{:C('ftx_site_flogo')}" height="38" /></h2>
 				<else />
-					<h2><img src="/static/8mobcom/images/foot_logo.jpg" height="38" /></h2>
+					<h2><img src="/static/8mobcom/images/logo.jpg" height="38" /></h2>
 				</if>
 				<div class="attentionlist">
 					<a class="sina" href="{:C('ftx_sina_url')}" target="_blank" rel="nofollow">新浪微博</a>
@@ -89,25 +89,20 @@
 					</ul>
 				</div>
 			</div>
-			<div class="fl">
-				<span class="tit">微信服务号</span>
-				<br />
-				<if condition="C('ftx_site_weixin') neq ''">
-				<img src="{:C('ftx_site_weixin')}" width="100" height="100" />
-				<else />
-				<img src="__STATIC__/8mobcom/images/foot_weixin.png" width="100" height="100" />
-				</if>
-			</div>
-			<div style="float:left;margin: 0px 0 0 44px;">
-				<span class="tit">下载客户端</span>
-				<br />
-				<if condition="C('ftx_site_weixin') neq ''">
-				<img src="{:C('ftx_site_browser')}" width="100" height="100" />
-				<else />
-				<img src="__STATIC__/8mobcom/images/foot_browser.png" width="100" height="100" />
-				</if>
-			</div>
-
+			<if condition="C('ftx_site_weixin') neq ''">
+				<div class="fl">
+					<span class="tit">微信服务号</span>
+					<br />
+					<img src="{:C('ftx_site_weixin')}" width="100" height="100" />
+				</div>
+			</if>
+			<if condition="C('ftx_site_browser') neq ''">
+				<div style="float:left;margin: 0px 0 0 44px;">
+					<span class="tit">手机版</span>
+					<br />
+					<img src="{:C('ftx_site_browser')}" width="100" height="100" />
+				</div>
+			</if>
 			  
 			<div class="links {:C('ftx_site_width')} group">
 				<span>友情链接：</span>

@@ -17,15 +17,18 @@
                     </a>
                     <div class="tab-bar tab-bar-js" style="right: 35px; display: none;">签到送积分<div class="tab-tip-arr">◆</div></div>
                 </div>
-
-                <div class="img-span">
-                    <a href="javascript:void(0);">
-                        <img src="__STATIC__/8mobcom/images/layout/qrcode.png">
-                    </a>
-                    <div class="qrcode-tab-bar tab-bar-js" style="right: 35px; display: none;">
-                        <img src="__STATIC__/8mobcom/images/layout/download_app.png">
+                
+                <if condition="C('ftx_site_browser') neq ''">
+                    <div class="img-span">
+                        <a href="javascript:void(0);">
+                            <img src="__STATIC__/8mobcom/images/layout/qrcode.png">
+                        </a>
+                        <div class="qrcode-tab-bar tab-bar-js" style="right: 35px; display: none;">
+                            <img src="{:C('ftx_site_browser')}" width="140px">
+                        </div>
                     </div>
-                </div>
+                </if>
+                
                 <div class="img-span">
                     <a href="{:C('ftx_kefu_html')}" target="_blank" rel="nofollow">
                         <img src="__STATIC__/8mobcom/images/layout/qq.png">

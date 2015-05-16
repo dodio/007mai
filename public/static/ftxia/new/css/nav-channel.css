@@ -1,0 +1,268 @@
+.nav-channel {
+  width: 978px;
+  margin: 0 auto;
+  border: 1px
+  solid #E2E2E2;
+  border-top: #FFF;
+  background: #FFF;
+  font-size: 14px
+}
+.nav-channel
+li {
+  float: left;
+  width: 310px;
+  height: 30px;
+  margin-left: 9px;
+  line-height: 30px;
+  text-align: center
+}
+.nav-channel li
+a {
+  display: block;
+  display: inline;
+  float: left;
+  _width: 92px;
+  min-width: 92px;
+  _height: 25px;
+  _padding-top: 9px;
+  background: #f9f9f9;
+  background: #FFF
+}
+.nav-channel li a:hover {
+  color: #EE6217;
+  text-decoration: none
+}
+.nav-channel li
+a.all {
+  width: 96px;
+  color: #ee6217
+}
+.nav-channel.type li
+a.all {
+  width: 140px;
+  font-size: 12px;
+  border-radius: 15px
+}
+.nav-channel
+li.notice {
+  display: none;
+  width: 336px;
+  background: #efefef;
+  font-size: 12px
+}
+.nav-channel
+li.last {
+  float: right;
+  width: 250px;
+  margin-right: 12px
+}
+.nav-channel li.last
+a {
+  position: relative;
+  width: 116px
+}
+.nav-channel li.last a
+em {
+  display: block;
+  position: absolute;
+  top: -7px;
+  left: 12px;
+  height: 14px;
+  padding: 0
+  2px;
+  background: #F20;
+  color: #FFF;
+  font: normal 10px/14px Arial;
+  border-radius: 5px
+}
+.nav-channel li.last
+a.today {
+  width: 116px;
+  _height: 25px;
+  margin-left: 19px;
+  padding-left: 5px;
+  _line-height: 20px;
+  _overflow: hidden
+}
+.nav-channel li.last
+a.torrow {
+  width: 100px;
+  margin-left: 1px;
+  padding-right: 5px
+}
+.nav-channel li.last
+a.today.active {
+  color: #EE6217
+}
+.nav-channel li.last
+a.torrow.active {
+  color: #EE6217
+}
+.nav-channel li.last a.torrow.active
+.torrow {
+  background-position: -24px -141px
+}
+.nav-channel li.last a.torrow:hover
+i {
+  background-position: -24px -141px
+}
+.nav-channel {
+  margin-top: 12px;
+  border: 0
+  solid #E2E2E2;
+  background: none
+}
+.nav-channel
+li {
+  margin-left: 0
+}
+.nav-channel li
+a {
+  border: 0
+  solid #E2E2E2
+}
+.nav-channel li
+a.all {
+  margin-right: 1px;
+  border-radius: 15px 0 0 15px
+}
+.nav-channel.type li
+a.all {
+  border-radius: 15px
+}
+.nav-channel li
+a.three {
+  border-radius: 0 15px 15px 0
+}
+.nav-channel
+li.notice {
+  display: block;
+  width: 336px;
+  margin-left: 35px;
+  border: none;
+  background: #efefef;
+  background: url(../images/jiu-spirit.png) no-repeat;
+  *background: url(../images/jiu-spirit.png) no-repeat;
+  background-position: -8px -366px;
+  color: #a3370f;
+  font-size: 12px
+}
+.nav-channel li.notice
+a {
+  display: inline-block;
+  width: 250px;
+  height: 30px;
+  margin-left: 50px;
+  border: none;
+  background: none;
+  color: #a3370f;
+  text-align: left;
+  cursor: pointer;
+  overflow: hidden
+}
+.nav-channel li.notice a:hover {
+  border: none;
+  color: #a3370f;
+  text-decoration: underline
+}
+.nav-channel
+li.last {
+  display: inline-block;
+  width: 250px;
+  margin-right: 0
+}
+.nav-channel li.last
+a.today {
+  width: 116px;
+  border-radius: 15px 0 0 15px
+}
+.nav-channel li.last
+a.torrow {
+  width: 100px;
+  border-radius: 0 15px 15px 0
+}
+.nav-channel {
+  margin-top: 12px;
+  border: 0
+  solid #E2E2E2;
+  background: none
+}
+.nav-channel
+li {
+  margin-left: 0
+}
+.nav-channel li
+a {
+  padding-left: 5px;
+  border: 1px
+  solid #E2E2E2
+}
+.nav-channel li
+a.all {
+  border-radius: 15px 0 0 15px
+}
+.nav-channel li
+a.right {
+  margin-left: -7px;
+  padding-right: 7px;
+  border-left: none;
+  border-radius: 0 15px 15px 0px
+}
+.nav-channel.type li
+a.all {
+  border-radius: 15px
+}
+.nav-channel li
+a.three {
+  border-radius: 0 15px 15px 0
+}
+.nav-channel
+li.notice {
+  display: block;
+  width: 336px;
+  margin-left: 35px;
+  background: #efefef;
+  background: url(../images/jiu-spirit.png) no-repeat;
+  _background: url(../images/jiu-spirit.gif) no-repeat;
+  background-position: -8px -366px;
+  color: #a3370f;
+  font-size: 12px
+}
+.nav-channel li.notice a:hover {
+  color: #a3370f;
+  text-decoration: underline
+}
+.nav-channel
+li.last {
+  display: inline-block;
+  width: 255px;
+  margin-right: 0
+}
+.nav-channel li.last
+a.today {
+  width: 116px;
+  padding-left: 5px;
+  border-radius: 15px 0 0 15px
+}
+.nav-channel li.last
+a.torrow {
+  width: 100px;
+  border-radius: 0 15px 15px 0;
+  padding-right: 5px
+}
+.nav-channel {
+  margin-top: 12px;
+  border: 0
+  solid #E2E2E2;
+  background: none;
+  margin-left: 0;
+}
+
+.nav-channel li {width: auto;}
+
+.nav-channel li a {_width: 32px;min-width: 32px;}
+.widescreen .nav-channel li .ju_nav {padding-left: 15px;padding-right: 15px;}
+.widescreen .nav-channel li a {border: 0px solid #E2E2E2;border-top: 1px solid #E2E2E2;border-bottom: 1px solid #E2E2E2;}
+.widescreen .nav-channel li a.on{
+    color:rgb(238, 98, 23);
+}

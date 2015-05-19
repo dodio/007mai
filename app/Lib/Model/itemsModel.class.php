@@ -51,31 +51,31 @@ class itemsModel extends Model
      */
     public function ajax_ftx_publish($item) {
         //是否存在
-        if ($this->where(array('num_iid'=>$item['num_iid']))->count()) {
-			if($item['recid']==1){
-				unset($item['recid']);
-			}else{
-				unset($item['recid']);
-				unset($item['cate_id']);
-			}
-			$item['status'] ='underway';
-			$item_id = $this->where(array('num_iid'=>$item['num_iid']))->save($item);
-			if ($item_id) {
-				return 0;
-			} else {
-				return 0;
-			}
-        }
-		unset($item['recid']);
-		$item['pass'] = 1; 
-		$item['status'] ='underway';
-        $this->create($item);
-        $item_id = $this->add();
-        if ($item_id) {
-            return 1;
-        } else {
-            return 0;
-        }
+      if ($this->where(array('num_iid'=>$item['num_iid']))->count()) {
+  			if($item['recid']==1){
+  				unset($item['recid']);
+  			}else{
+  				unset($item['recid']);
+  				unset($item['cate_id']);
+  			}
+  			$item['status'] ='underway';
+  			$item_id = $this->where(array('num_iid'=>$item['num_iid']))->save($item);
+  			if ($item_id) {
+  				return 0;
+  			} else {
+  				return 0;
+  			}
+      }
+  		unset($item['recid']);
+  		$item['pass'] = 1; 
+  		$item['status'] ='underway';
+      $this->create($item);
+      $item_id = $this->add();
+      if ($item_id) {
+          return 1;
+      } else {
+          return 0;
+      }
     }
 
 
@@ -83,36 +83,36 @@ class itemsModel extends Model
      * ajax发布商品
      */
     public function ajax_publish($item) {
-		$result['title']			= $item['title'];
-		$result['pic_url']			= $item['pic_url'];
-		$result['nick']				= $item['nick'];
-		$result['coupon_price']		= $item['coupon_price'];
-		$result['commission_rate']	= $item['commission_rate'];
-		$result['price']			= $item['price'];
-		$result['volume']			= $item['volume'];
-		$result['commission']		= $item['commission'];
-		$result['commission_num']	= $item['commission_num'];
-		$result['commission_volume']= $item['commission_volume'];
-		$result['click_url']		= $item['click_url'];
-		$result['shop_click_url']	= $item['shop_click_url'];
-        //已经存在？
-        if ($this->where(array('num_iid'=>$item['num_iid']))->count()) {
-           return 0;
-        }
-		if(!$item['coupon_rate']){
-			$item['coupon_rate']	= round(($item['coupon_price']/$item['price'])*10000, 0); 
-		}
-       
-		$item['pass'] = 1; 
-		$item['coupon_start_time']	= strtotime($item['coupon_start_time']);
-		$item['coupon_end_time']	= strtotime($item['coupon_end_time']);
-        $this->create($item);
-        $item_id = $this->add();
-        if ($item_id) {
-            return 1;
-        } else {
-            return 0;
-        }
+  		$result['title']			= $item['title'];
+  		$result['pic_url']			= $item['pic_url'];
+  		$result['nick']				= $item['nick'];
+  		$result['coupon_price']		= $item['coupon_price'];
+  		$result['commission_rate']	= $item['commission_rate'];
+  		$result['price']			= $item['price'];
+  		$result['volume']			= $item['volume'];
+  		$result['commission']		= $item['commission'];
+  		$result['commission_num']	= $item['commission_num'];
+  		$result['commission_volume']= $item['commission_volume'];
+  		$result['click_url']		= $item['click_url'];
+  		$result['shop_click_url']	= $item['shop_click_url'];
+          //已经存在？
+      if ($this->where(array('num_iid'=>$item['num_iid']))->count()) {
+         return 0;
+      }
+  		if(!$item['coupon_rate']){
+  			$item['coupon_rate']	= round(($item['coupon_price']/$item['price'])*10000, 0); 
+  		}
+         
+  		$item['pass'] = 1; 
+  		$item['coupon_start_time']	= strtotime($item['coupon_start_time']);
+  		$item['coupon_end_time']	= strtotime($item['coupon_end_time']);
+          $this->create($item);
+          $item_id = $this->add();
+          if ($item_id) {
+              return 1;
+          } else {
+              return 0;
+          }
     }
 
 	/**
@@ -185,18 +185,9 @@ class itemsModel extends Model
 
 
 	public function get_tags_by_title($title, $num=10){
-        vendor('pscws4.pscws4', '', '.class.php');
-        $pscws = new PSCWS4();
-        $pscws->set_dict(FTX_DATA_PATH . 'scws/dict.utf8.xdb');
-        $pscws->set_rule(FTX_DATA_PATH . 'scws/rules.utf8.ini');
-        $pscws->set_ignore(true);
-        $pscws->send_text($title);
-        $words = $pscws->get_tops($num);
+        $pscws = getSCWS();
+        $tags = getTags($pscws,$title,$num);
         $pscws->close();
-        $tags = array();
-        foreach ($words as $val) {
-            $tags[] = $val['word'];
-        }
         return $tags;
     }
 

@@ -300,8 +300,8 @@ class ftxrobotsAction extends BackendAction {
 		$map['end_volume']				= $date['end_volume'];				//销量上限
 		$map['start_price']				= $date['start_price'];				//价格下限
 		$map['end_price']				= $date['end_price'];				//价格上限
-		//$map['start_credit']			= $date['start_credit'];			//卖家信用下限
-		//$map['end_credit']				= $date['end_credit'];				//卖家信用上限
+		$map['start_credit']			= $date['start_credit'];			//卖家信用下限
+		$map['end_credit']				= $date['end_credit'];				//卖家信用上限
 		$map['shop_type']				= $date['shop_type'];				//是否天猫商品
 		$map['recid']					= $date['recid'];					//是否更新分类
 		$map['sort']					= $date['sort'];					//排序方法
@@ -317,6 +317,9 @@ class ftxrobotsAction extends BackendAction {
 		}else{
 			$msg = '失败！';
 		}
+    //
+    $pscws = getSCWS();
+
 		foreach ($taobaoke_item_list as $key => $val) {
 			if($map['start_volume'] <= $val['volume'] &&  $val['volume'] <= $map['end_volume'] &&  $map['start_price'] <= $val['coupon_price'] &&  $val['coupon_price'] <= $map['end_price'] && $map['start_coupon_rate'] <=  $val['coupon_rate'] && $val['coupon_rate'] <= $map['end_coupon_rate']){
 				if($map['shop_type'] == 'B'){
@@ -332,7 +335,9 @@ class ftxrobotsAction extends BackendAction {
 						$val['coupon_end_time'] = $times;
 						$val['astime'] = date("Ymd");
 						$val['recid'] = $map['recid'];
-								
+						//精简标题
+            $val["title"] = shortenStr($pscws,$val["title"]);
+
 						$res= $this->_ajax_ftx_publish_insert($val);
 						if($res>0){
 							$coll++;
@@ -352,7 +357,9 @@ class ftxrobotsAction extends BackendAction {
 					$val['coupon_end_time'] = $times;
 					$val['astime'] = date("Ymd");
 					$val['recid'] = $map['recid'];
-					$res= $this->_ajax_ftx_publish_insert($val);
+          //精简标题
+          $val["title"] = shortenStr($pscws,$val["title"]);
+          $res= $this->_ajax_ftx_publish_insert($val);
 					if($res>0){
 						$coll++;
 						$totalcoll++;
@@ -362,6 +369,9 @@ class ftxrobotsAction extends BackendAction {
 			}
 			$thiscount++;	  
 		}
+    
+    $pscws->close();
+
 		F('totalcoll',$totalcoll);
 		$result_data['p']			= $p;
 		$result_data['msg']			= $msg;

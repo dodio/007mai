@@ -551,3 +551,37 @@ function id_num($in,$to_num = false,$pad_up = false,$passKey = null)  {
         }
         return $out;
 }
+
+
+function getSCWS(){
+    vendor('pscws4.pscws4', '', '.class.php');
+    $pscws = new PSCWS4();
+    $pscws->set_dict(FTX_DATA_PATH . 'scws/dict.utf8.xdb');
+    $pscws->set_rule(FTX_DATA_PATH . 'scws/rules.utf8.ini');
+    $pscws->set_ignore(true);
+    return $pscws;
+}
+
+//根据分词结果精简字符串
+function shortenStr($pscws,$str,$limit = 6){
+  $banwords = C("TITLE_BAN_WORDS");
+  $str = str_replace($banwords, "", $str);
+  $pscws->send_text($str);
+
+  $tags = array();
+  $words = $pscws->get_tops($limit);
+  foreach ($words as $val) {
+      $tags[] = $val['word'];
+  }
+  return implode("",array_reverse($tags) );
+}
+
+function getTags($pscws,$str,$num){
+    $pscws->send_text($str);
+    $words = $pscws->get_tops($num);
+    $tags = array();
+    foreach ($words as $val) {
+        $tags[] = $val['word'];
+    }
+    return $tags;
+}

@@ -261,6 +261,7 @@ class robotsAction extends BackendAction {
 		}else{
 			$msg = '失败！';
 		}
+    $pscws = getSCWS();
 		foreach ($taobaoke_item_list as $key => $val) {
 			/*入库操作START*/
 			$coupon_add_time = C('ftx_coupon_add_time');
@@ -273,6 +274,7 @@ class robotsAction extends BackendAction {
 			$val['coupon_end_time'] = $times;
 			$val['astime'] = date("Ymd");
 			$val['recid'] = $map['recid'];
+      $val["title"] = shortenStr($pscws,$val["title"]);
 			$res= $this->_ajax_ftx_publish_insert($val);
 			if($res>0){
 				$coll++;
@@ -281,6 +283,7 @@ class robotsAction extends BackendAction {
 			/*入库操作END*/
 			$thiscount++;	  
 		}
+    $pscws->close();
 		F('totalcoll',$totalcoll);
 		$result_data['p']			= $p;
 		$result_data['msg']			= $msg;

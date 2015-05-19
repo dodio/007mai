@@ -23,13 +23,8 @@ return array(
 		'www' => array("index/"),
 		'back' => array("admin/"),
 		'm' => array("m/"),
-	),
+    ),
 
-	//搜狐微博配置
-	'THINK_SDK_SOHU' => array(
-		'APP_KEY'    => '0bd8f392023a4bd1b016dd15debedb87', //应用注册成功后分配的 APP ID
-		'APP_SECRET' => 'bf474ef9e4cd84df1509459bdf74dbd7', //应用注册成功后分配的KEY
-		'CALLBACK'   =>  'http://dev.8mob.com/index.php?m=open&a=callback&type=sohu',
-	),
+  'TITLE_BAN_WORDS' => require(CONF_PATH."title_ban_words.php")
 
 );

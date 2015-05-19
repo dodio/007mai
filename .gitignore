@@ -12,3 +12,4 @@ desktop.ini
 *dist*/
 data/config/config.php
 data/config/debug.php
+public/fenci.php

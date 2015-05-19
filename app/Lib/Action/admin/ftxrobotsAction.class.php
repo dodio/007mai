@@ -300,8 +300,8 @@ class ftxrobotsAction extends BackendAction {
 		$map['end_volume']				= $date['end_volume'];				//销量上限
 		$map['start_price']				= $date['start_price'];				//价格下限
 		$map['end_price']				= $date['end_price'];				//价格上限
-		$map['start_credit']			= $date['start_credit'];			//卖家信用下限
-		$map['end_credit']				= $date['end_credit'];				//卖家信用上限
+		// $map['start_credit']			= $date['start_credit'];			//卖家信用下限
+		// $map['end_credit']				= $date['end_credit'];				//卖家信用上限
 		$map['shop_type']				= $date['shop_type'];				//是否天猫商品
 		$map['recid']					= $date['recid'];					//是否更新分类
 		$map['sort']					= $date['sort'];					//排序方法

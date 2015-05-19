@@ -117,22 +117,10 @@ class shopAction extends FirstendAction {
 
 				$this->display('shop');
 				exit();
-
-
- 
-
 			}
 		}
  
 
-		$taodianjin = C('ftx_taojindian_html');
-		if(strpos($taodianjin,'text/javascript')){
-			$pid = get_word($taodianjin,'pid: "','"');
-		}else{
-			$pid = $taodianjin;
-		}
-		$this->assign('pid', $pid);
-		$this->assign('id', $id);
-        $this->display('index');
-    }
+		$this->redirect("/");
+  }
 }

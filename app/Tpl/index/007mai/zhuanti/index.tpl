@@ -2,7 +2,7 @@
 <html>
 <head>
 <include file="public:head" />
-<script type="text/javascript" src="__STATIC__/8mobcom/js/index.js"></script>
+<script type="text/javascript" src="__STATIC__/assets/js/index.js"></script>
 <style>
 .line {
 background: url(http://s.juancdn.com/juanpi/images/act/act-tit.png) no-repeat;

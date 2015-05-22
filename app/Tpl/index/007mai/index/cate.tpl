@@ -56,7 +56,7 @@
 	</div>
 </notempty>
 
-<link rel=stylesheet type=text/css href="__STATIC__/8mobcom/css/jiu-side-nav.css" />
+<link rel=stylesheet type=text/css href="__STATIC__/assets/css/jiu-side-nav.css" />
 <include file="public:nav-classify" />
  
  

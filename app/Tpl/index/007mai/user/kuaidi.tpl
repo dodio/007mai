@@ -2,7 +2,7 @@
 <html>
 <head>
 <include file="public:head" />
-<link rel=stylesheet type=text/css href="__STATIC__/8mobcom/css/user.css" />
+<link rel=stylesheet type=text/css href="__STATIC__/assets/css/user.css" />
 <style>
 .left .user-bind .taobao_sync { background-position:0 -448px; }
 .left .user-bind .taobao_sync_no { background-position:0 -464px; }

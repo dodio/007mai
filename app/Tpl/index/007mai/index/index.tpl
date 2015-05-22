@@ -14,11 +14,11 @@
       <div class="banner_l">
         <dl>
           <dd>
-            <a href="{:U('jiu/index')}"  target="_blank"><img src="/static/8mobcom/images/global/top_right_jiu.png">
+            <a href="{:U('jiu/index')}"  target="_blank"><img src="/static/assets/images/global/top_right_jiu.png">
             <div class="txt"><span class="title">9.9包邮</span> <span>今日上新<em>{$today_jiu_count}</em>款</span></div></a>
           </dd>
                                   <dd>
-            <a href="{:U('shijiu/index')}"  target="_blank"><img src="/static/8mobcom/images/global/top_right_shi.png">
+            <a href="{:U('shijiu/index')}"  target="_blank"><img src="/static/assets/images/global/top_right_shi.png">
             <div class="txt"><span class="title">19.9包邮</span> <span>今日上新<em>{$today_shi_count}</em>款</span></div></a>
           </dd>
         </dl>

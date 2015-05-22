@@ -1,6 +1,6 @@
 <if condition="C('ftx_kefu_open') eq '1'">
 <!-- S 客服 -->
-<script type="text/javascript" src="__STATIC__/8mobcom/js/jquery.fixed.js"></script>
+<script type="text/javascript" src="__STATIC__/assets/js/jquery.fixed.js"></script>
 <script>
 $(function(){
 	//悬浮客服

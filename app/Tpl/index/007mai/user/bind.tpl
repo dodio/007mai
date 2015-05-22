@@ -2,7 +2,7 @@
 <html>
 <head>
 <include file="public:head" />
-<link rel=stylesheet type=text/css href="__STATIC__/8mobcom/css/user.css" />
+<link rel=stylesheet type=text/css href="__STATIC__/assets/css/user.css" />
 <style type="text/css">
 .left .user-bind .taobao_sync { background-position:0 -448px; }
 .left .user-bind .taobao_sync_no { background-position:0 -464px; }
@@ -39,18 +39,18 @@
 			<table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<if condition="$val.isbind eq 1">
 				<tr>
-				<td width="20%" align="center"><img src="__STATIC__/8mobcom/images/user/api_{$val.code}.jpg" /></td>
+				<td width="20%" align="center"><img src="__STATIC__/assets/images/user/api_{$val.code}.jpg" /></td>
 				<td width="35%">{$val.name}（<font color="009900">已绑定</font>）<br /></td>
-				<td width="25%"><img src="__STATIC__/8mobcom/images/user/api_p.jpg" /></td>
-				<td><a href="{:U('oauth/index', array('type'=>'unbind', 'mod'=>$val['code']))}" onclick='return confirm("确定取消绑定?")'><img src="__STATIC__/8mobcom/images/user/api_qxbd.jpg" /></a></td>
+				<td width="25%"><img src="__STATIC__/assets/images/user/api_p.jpg" /></td>
+				<td><a href="{:U('oauth/index', array('type'=>'unbind', 'mod'=>$val['code']))}" onclick='return confirm("确定取消绑定?")'><img src="__STATIC__/assets/images/user/api_qxbd.jpg" /></a></td>
 				</tr>
 			<else/>
 
 				<tr>
-				<td width="20%" align="center"><img src="__STATIC__/8mobcom/images/user/api_{$val.code}.jpg" /></td>
+				<td width="20%" align="center"><img src="__STATIC__/assets/images/user/api_{$val.code}.jpg" /></td>
 				<td width="35%">{$val.name}（未绑定）<br /></td>
-				<td width="25%"><img src="__STATIC__/8mobcom/images/user/api_p.jpg" /></td>
-				<td><a href="{:U('oauth/index', array('type'=>'bind', 'mod'=>$val['code']))}"><img src="__STATIC__/8mobcom/images/user/api_ljbd.jpg" /></a></td>
+				<td width="25%"><img src="__STATIC__/assets/images/user/api_p.jpg" /></td>
+				<td><a href="{:U('oauth/index', array('type'=>'bind', 'mod'=>$val['code']))}"><img src="__STATIC__/assets/images/user/api_ljbd.jpg" /></a></td>
 				</tr>
 
 

@@ -24,7 +24,7 @@
     </ul>
 </div>
 
-<link rel=stylesheet type=text/css href="__STATIC__/8mobcom/css/good.css" />
+<link rel=stylesheet type=text/css href="__STATIC__/assets/css/good.css" />
 <!--List Start-->
 <div class="main {:C('ftx_site_width')} clear">
 	<include file="public:items_list" />

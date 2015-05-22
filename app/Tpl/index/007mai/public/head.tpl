@@ -5,7 +5,7 @@
 <meta name="renderer" content="webkit">
 <meta name="MSSmartTagsPreventParsing" content="True" />
 <meta http-equiv="MSThemeCompatible" content="Yes" />
-<script type="text/javascript" src="__STATIC__/8mobcom/js/uaredirect.js"></script>
+<script type="text/javascript" src="__STATIC__/assets/js/uaredirect.js"></script>
 <script type="text/javascript">
   uaredirect("http://m.007mai.com");
 	SITEURL="{:C('ftx_site_url')}";
@@ -15,23 +15,23 @@
   var _czc = _czc || [];
 </script>
 <ftx:load type="css" href="
-__STATIC__/8mobcom/css/base.css,
-__STATIC__/8mobcom/css/global.css,
-__STATIC__/8mobcom/css/alert.css,
-__STATIC__/8mobcom/css/page.css,
-__STATIC__/8mobcom/css/ad.css
+__STATIC__/assets/css/base.css,
+__STATIC__/assets/css/global.css,
+__STATIC__/assets/css/alert.css,
+__STATIC__/assets/css/page.css,
+__STATIC__/assets/css/ad.css
 "/>
 
 
 <ftx:load type="js" href="
-__STATIC__/8mobcom/js/jquery.js,
-__STATIC__/8mobcom/js/jquery.cookie.js,
-__STATIC__/8mobcom/js/lazyload.js
+__STATIC__/assets/js/jquery.js,
+__STATIC__/assets/js/jquery.cookie.js,
+__STATIC__/assets/js/lazyload.js
 "/>
 <ftx:load type="js" href="
-__STATIC__/8mobcom/js/fun.js,
-__STATIC__/8mobcom/js/jumpbox.js,
-__STATIC__/8mobcom/js/funs.js
+__STATIC__/assets/js/fun.js,
+__STATIC__/assets/js/jumpbox.js,
+__STATIC__/assets/js/funs.js
 "/>
 {:C('ftx_header_html')}
 <script language="javascript">window.onerror = function(){return true;}</script>

@@ -2,7 +2,7 @@
 <html>
 <head>
 <include file="public:head" />
-<link rel=stylesheet type=text/css href="__STATIC__/8mobcom/css/view.css" />
+<link rel=stylesheet type=text/css href="__STATIC__/assets/css/view.css" />
 <style>
 
 .tb-thumb{margin-left:10px;margin-top:20px;height: 53px;overflow: hidden;}
@@ -232,7 +232,7 @@
 		
  
 <include file="public:list" />
-<script type="text/javascript" src="__STATIC__/8mobcom/js/deal.js"></script>
+<script type="text/javascript" src="__STATIC__/assets/js/deal.js"></script>
 <script type="text/javascript">
     $(".bady-tab:eq(0) li:eq(0)").find("a").addClass("badyactive");
     $(".bady-tab:eq(0) li:eq(0)").find("div").addClass("bady-line-top");

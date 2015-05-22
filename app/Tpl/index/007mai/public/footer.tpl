@@ -152,4 +152,4 @@ __STATIC__/js/dialog.js,
 __STATIC__/js/item.js,
 __STATIC__/js/user.js,
 __STATIC__/js/comment.js,
-__STATIC__/8mobcom/js/comm.js" />
+__STATIC__/assets/js/comm.js" />

@@ -3,7 +3,7 @@
 <head>
 <include file="public:head" />
 <script type="text/javascript" src="__STATIC__/8mobcomzhe/js/index.js"></script>
-<link rel=stylesheet type=text/css href="__STATIC__/8mobcom/css/good.css" />
+<link rel=stylesheet type=text/css href="__STATIC__/assets/css/good.css" />
  
 </head>
 <body>

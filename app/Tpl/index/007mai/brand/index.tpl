@@ -2,8 +2,8 @@
 <html>
 <head>
 <include file="public:head" />
-<link rel=stylesheet type=text/css href="__STATIC__/8mobcom/css/good.css" />
-<link rel=stylesheet type=text/css href="__STATIC__/8mobcom/css/brand.css" />
+<link rel=stylesheet type=text/css href="__STATIC__/assets/css/good.css" />
+<link rel=stylesheet type=text/css href="__STATIC__/assets/css/brand.css" />
 </head>
 <body>
 <include file="public:header" />

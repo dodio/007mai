@@ -1,8 +1,8 @@
 <?php
 return array(
-    'name' => '飞天侠7.0',
-    'author' => '飞天侠',
-    'author_url' => 'http://www.ftxia.com',
+    'name' => '007买',
+    'author' => 'dodio',
+    'author_url' => 'http://www.go2solo.net',
     'version' => '7.0',
 );
 ?>

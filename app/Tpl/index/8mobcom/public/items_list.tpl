@@ -8,7 +8,7 @@
 					<div class="yhq"> </div>
 				</div>
 				<h3 class="good-title">
-					<if condition="$item.ems eq 1">[包邮]</if><a target="_blank" href="{:U('item/'.$item['num_iid'])}" class="title">{$item.title}</a>
+					<if condition="$item.ems eq 1">[包邮]</if><a target="_blank" biz-itemid="{$item['num_iid']}" isconvert=1 href="http://detail.tmall.com/item.htm?id={$item['num_iid']}" class="title">{$item.title}</a>
 					<if condition="$item.volume gt 0 "><span class="sold">已售<em>{$item.volume}</em></span><else/><span class="sold">新品上架<em></em></span></if>
 				</h3>
 				<div class="good-price">
@@ -24,9 +24,9 @@
 							</notempty>
 						</span>
 					</span>
-					<div class="btn-new   {$item.class}">
+					<div class="btn-new {$item.class}">
 						<if condition="$item.class eq 'wait'">
-							<a href="{:U('item/'.$item['num_iid'])}" target="_blank" rel="nofollow"><span>明日</span><b>10:00</b></a>
+							<a href="javascript:" target="_blank" rel="nofollow"><span>明日</span><b>10:00</b></a>
 						<elseif condition="($item.class eq 'end') OR ($item.class eq 'sellout') OR ($item.class eq 'buy')"/>
 							<if condition="$item.shop_type eq 'C' ">
 							<a biz-itemid="{$item['num_iid']}" isconvert=1 href="http://detail.tmall.com/item.htm?id={$item['num_iid']}"  target="_blank" rel="nofollow"><em class="icon_n"></em><span>淘宝</span></a>
@@ -54,7 +54,9 @@
 						<h5><em>结束时间：</em><i>{$item.coupon_end_time|date="m月d日 H时i分",###}</i></h5>
 						</notempty>
 					</if>
-					<if condition="$item.sellerId neq ''"><h6><em>卖家店铺：</em><i><a href="{:U('shop/'.$item['sellerId'])}" <if condition="$item.shop_type eq 'C'"> rel="nofollow" </if> target="_blank">{$item.nick}</a></i></h6></if> 					
+					<if condition="$item.sellerId neq ''"><h6><em>卖家店铺：</em><i><a data-type="1" biz-sellerid="{$item['sellerId']}" data-tmpl="140x190" data-tmplid="3" data-rd="2" data-style="1" data-border="1" href="javascript:">{$item.nick}</a></i></h6>
+                    </if>
+
 				</div>
 				{$item.coupon_start_time|newicon}
 				<if condition="($item.class eq 'sellout') OR ($item.class eq 'end')">

@@ -1,5 +1,5 @@
 <?php
-class shijiuAction extends FirstendAction {
+class baAction extends FirstendAction {
 	public function _initialize() {
         parent::_initialize();
         $this->_mod = D('items');
@@ -9,7 +9,7 @@ class shijiuAction extends FirstendAction {
 
 
 	public function index(){
-		$cid	=	"16";
+		$cid	=	"15";
 		$sort	=	I('sort', 'default', 'trim'); //排序
 		$status =	I('status', 'all', 'trim'); //排序
 		$order	=	'ordid asc ';
@@ -18,17 +18,17 @@ class shijiuAction extends FirstendAction {
 		$cinfo = $this->_cate_mod->where(array('id'=>$cid))->find();
 		switch ($sort) {
 			case 'new':
-                $order.= ', coupon_start_time DESC';
-                break;
+				$order.= ', coupon_start_time DESC';
+				break;
 			case 'price':
-                $order.= ', price DESC';
-                break;
+				$order.= ', price DESC';
+				break;
 			case 'hot':
-                $order.= ', volume DESC';
-                break;
+				$order.= ', volume DESC';
+				break;
 			case 'rate':
-                $order.= ', coupon_rate ASC';
-                break;
+				$order.= ', coupon_rate ASC';
+				break;
 			case 'default':
 				$order.= ', '.$cinfo['sort'];
 		}
@@ -80,7 +80,7 @@ class shijiuAction extends FirstendAction {
 		}
 		$this->assign('tag_list',$tag_list);
 		$this->assign('tag',$tag);
-
+ 
 
 		$this->assign('cid',$cid);
 		$this->assign('pager','cate');
@@ -106,12 +106,8 @@ class shijiuAction extends FirstendAction {
 		$index_info['p']=$p;
 		$start = $page_size * ($p - 1) ;
 
-		if (false === $cate_list = F('cate_list')) {
-			$cate_list = D('items_cate')->cate_cache();
-		}
-	
-		$this->assign('cate_list', $cate_list); //分类
-
+		
+ 
 		if(C('ftx_site_cache')){
 			$mdarray = $map;
 			$mdarray['sort'] = $sort;
@@ -120,7 +116,7 @@ class shijiuAction extends FirstendAction {
 			$mdarray['p'] = $p;
 			$mdarray['order'] = $order;
 			$md_id = md5(implode("-",$mdarray));
-			$file = 'shijiu_'.$md_id;
+			$file = 'ba_'.$md_id;
 			if(false === $items = S($file)){
 
 				$items_list = $this->_mod->where($map)->order($order)->limit($start . ',' . $page_size)->select();
@@ -188,8 +184,8 @@ class shijiuAction extends FirstendAction {
 		$this->assign('sellers', $sellers);
 		$this->assign('items_list', $items['item_list']);
 
-
 		$this->assign('index_info',$index_info);
+
 		if(C('ftx_site_cache')){
 			$mdarray = $map;
 			$mdarray['sort'] = $sort;
@@ -198,7 +194,7 @@ class shijiuAction extends FirstendAction {
 			$mdarray['p'] = $p;
 			$mdarray['order'] = $order;
 			$md_id = md5(implode("-",$mdarray));
-			$file = 'shijiu_count_'.$md_id;
+			$file = 'ba_count_'.$md_id;
 			if(false === $count = S($file)){
 				$count = $this->_mod->where($map)->count();
 				S($file,$count);
@@ -206,12 +202,12 @@ class shijiuAction extends FirstendAction {
 		}else{
 			$count = $this->_mod->where($map)->count();
 		}
+ 
 		$pager = $this->_pager($count, $page_size);
 		$this->assign('page', $pager->kshow());
 		$this->assign('total_item',$count);
 
- 
-        $this->assign('nav_curr', 'shijiu');
+        $this->assign('nav_curr', 'ba');
         $this->_config_seo(C('ftx_seo_config.cate'), array(
             'cate_name' => '【'.$cinfo['name'].'专区】 — ',
             'seo_title' => $cinfo['seo_title'],

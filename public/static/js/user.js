@@ -113,9 +113,9 @@
 											+'<table width="100%" cellspacing="2" cellpadding="0" border="0">'
 											+'<tbody>{TABLE}</tbody>'
 											+'</table></div>';
-						var not_sign='<p class="tips">恭喜您，成功获得<span class="num">{TODAY_DOU}</span>个金币！</p>'
-									+'<p class="tom_tips">明天再来，就可以领到 {TOMORROW_DOU} 个金币，别忘记哦~</p>';
-						var signed='<p class="tips">您今天已经签过到了，明天再来，就可以获得{TOMORROW_DOU}金币！</p>';
+						var not_sign='<p class="tips">恭喜您，成功获得<span class="num">{TODAY_DOU}</span>份情报！</p>'
+									+'<p class="tom_tips">明天再来，就可以领到 {TOMORROW_DOU} 份情报，别忘记哦~</p>';
+						var signed='<p class="tips">您今天已经签过到了，明天再来，就可以获得{TOMORROW_DOU}份情报！</p>';
 						var today_dou=result.data.point;
 						var tomorrow_dou=result.data.tmr_point;
 						if(today_dou == tomorrow_dou){
@@ -155,9 +155,9 @@
 											+'<table width="100%" cellspacing="2" cellpadding="0" border="0">'
 											+'<tbody>{TABLE}</tbody>'
 											+'</table></div>';
-						var not_sign='<p class="tips">恭喜您，成功获得<span class="num">{TODAY_DOU}</span>个金币！</p>'
-									+'<p class="tom_tips">明天再来，就可以领到 {TOMORROW_DOU} 个金币，别忘记哦~</p>';
-						var signed='<p class="tips">您今天已经签过到了，明天再来，就可以获得{TOMORROW_DOU}金币！</p>';
+						var not_sign='<p class="tips">恭喜您，成功获得<span class="num">{TODAY_DOU}</span>份情报！</p>'
+									+'<p class="tom_tips">明天再来，就可以领到 {TOMORROW_DOU} 份情报，别忘记哦~</p>';
+						var signed='<p class="tips">您今天已经签过到了，明天再来，就可以获得{TOMORROW_DOU}份情报！</p>';
 						var today_dou=result.data.point;
 						var tomorrow_dou=result.data.tmr_point;
 						if($('div.juan_btn a.signIn_btn').text().indexOf('已签到')!=-1){

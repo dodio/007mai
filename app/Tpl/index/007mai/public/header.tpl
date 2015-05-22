@@ -60,7 +60,11 @@
 <div class="header">
     <div class="area {:C('ftx_site_width')}">
         <div class="logo">
-			<h1 class="fl"><a title="{:C('ftx_site_name')}" href="{:C('ftx_site_url')}"><img src="__STATIC__/assets/images/logo.png" width="238" height="50" /></a></h1>
+		<if condition="C('ftx_site_logo') neq ''">
+			<h1 class="fl"><a title="{:C('ftx_site_name')}" href="{:C('ftx_site_url')}"><img src="{:C('ftx_site_logo')}" width="238" height="50" /></a></h1>
+		<else />
+			<h1 class="fl"><a title="{:C('ftx_site_name')}" href="{:C('ftx_site_url')}"><img src="/static/assets/images/logo.png" width="238" height="50" /></a></h1>
+		</if>
 
         </div>
         <div class="protection">

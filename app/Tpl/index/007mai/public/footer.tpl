@@ -54,7 +54,7 @@
 				<if condition="C('ftx_site_flogo') neq ''">
 					<h2><img src="{:C('ftx_site_flogo')}" height="38" /></h2>
 				<else />
-					<h2><img src="/static/8mobcom/images/logo.jpg" height="38" /></h2>
+					<h2><img src="/static/assets/images/logo.jpg" height="38" /></h2>
 				</if>
 				<div class="attentionlist">
 					<a class="sina" href="{:C('ftx_sina_url')}" target="_blank" rel="nofollow">新浪微博</a>
@@ -141,15 +141,23 @@ var FTXIAER = {
 var lang = {};
 <volist name=":L('js_lang')" id="val">lang.{$key} = "{$val}";</volist>
 </script>
+
 <ftx:load type="js" href="
 __STATIC__/js/jquery/plugins/jquery.tools.min.js,
 __STATIC__/js/jquery/plugins/jquery.masonry.js,
 __STATIC__/js/jquery/plugins/formvalidator.js,
-__STATIC__/js/fileuploader.js,
+__STATIC__/js/fileuploader.js" />
+
+<ftx:load type="js" href="
 __STATIC__/js/ftxia.js,
 __STATIC__/js/front.js,
 __STATIC__/js/dialog.js,
 __STATIC__/js/item.js,
-__STATIC__/js/user.js,
-__STATIC__/js/comment.js,
-__STATIC__/assets/js/comm.js" />
+__STATIC__/js/user.js
+" />
+<ftx:load type="js" href="
+__STATIC__/assets/js/lib/funs.js,
+__STATIC__/assets/js/common/comm.js,
+__STATIC__/assets/js/common/fun.js,
+__STATIC__/assets/js/lib/jumpbox.js
+"/>

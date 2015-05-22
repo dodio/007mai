@@ -329,6 +329,23 @@
     }
     F_jkyCeleMenuAni();
 </script>
+<script>
+  $(function(){
+    $("#J_UlThumb li").click(function(){
+        $(this).parents("ul").find("li").removeClass("tb-selected");
+        $(this).addClass('tb-selected');
+        var src=$(this).find("img").data('src');
+        $("#J_ImgBooth").attr("src",src); 
+    });
+
+    $("#J_UlThumb li").hover(function(){
+        $(this).parents("ul").find("li").removeClass("tb-selected");
+        $(this).addClass('tb-selected');
+        var src=$(this).find("img").data('src');
+        $("#J_ImgBooth").attr("src",src); 
+    });
+  });
+</script>
 <load href="__STATIC__/ftxia/js/report.js" />
 <include file="public:footer" />
 </body>

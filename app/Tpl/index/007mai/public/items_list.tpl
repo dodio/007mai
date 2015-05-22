@@ -4,7 +4,7 @@
 		<li  class="<eq name="mod" value="3"> last</eq>">
 			<div class="sid_{$item.sellerId}  list-good   {$item.class} " id="nid_{$item.num_iid}">
 				<div class="good-pic">
-					<a biz-itemid="{$item['num_iid']}" isconvert=1 href="http://detail.tmall.com/item.htm?id={$item['num_iid']}"   target="_blank"><img src='/static/8mobcom/images/blank.gif' data-original='{:attach(get_thumb($item['pic_url'], '_b'),'item')}' alt="{$item.title}" class="lazy"   /></a>
+					<a biz-itemid="{$item['num_iid']}" isconvert=1 href="http://detail.tmall.com/item.htm?id={$item['num_iid']}"   target="_blank"><img src='/static/assets/images/blank.gif' data-original='{:attach(get_thumb($item['pic_url'], '_b'),'item')}' alt="{$item.title}" class="lazy"   /></a>
 					<div class="yhq"> </div>
 				</div>
 				<h3 class="good-title">
@@ -71,7 +71,8 @@
 	</ul>
 <script>
 (function($) {
-    $("a.my-like").live('click', 
+    
+    $("a.my-like").bind('click', 
     function() {
         var pid = $(this).attr("lkid");
         if (!$.ftxia.dialog.islogin()) return;
@@ -164,8 +165,8 @@ var Mylike_add = function(event) {
     }
 
  var Pause_click = function(){
-        $("a.my-like").live('click', _.throttle( Mylike_add, 300 ) );
-        $(".list-good").live('mouseleave',function(){$('.like-ceng',$(this)).hide();});
+        $("a.my-like").bind('click', _.throttle( Mylike_add, 300 ) );
+        $(".list-good").bind('mouseleave',function(){$('.like-ceng',$(this)).hide();});
 
         //
         
@@ -233,8 +234,19 @@ var Mylike_add = function(event) {
 
     }
      
-    //加载完成后读取心
+    //加载完成后读取收藏
     $(function(){
-    	 Pause_click();
+    	 // Pause_click();
     });
+
+    $(function(){
+        var F_hidden_zhe = function(){
+            $(".goods-list li").each(function(){
+                if($(this).find('span.price-old').width() > 60){
+                    $(this).find('u').hide();
+                }
+            })
+        }
+    F_hidden_zhe();
+    })
 </script>

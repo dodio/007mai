@@ -5,7 +5,7 @@
 <meta name="renderer" content="webkit">
 <meta name="MSSmartTagsPreventParsing" content="True" />
 <meta http-equiv="MSThemeCompatible" content="Yes" />
-<script type="text/javascript" src="__STATIC__/assets/js/uaredirect.js"></script>
+<script type="text/javascript" src="__STATIC__/assets/js/common/uaredirect.js"></script>
 <script type="text/javascript">
   uaredirect("http://m.007mai.com");
 	SITEURL="{:C('ftx_site_url')}";
@@ -24,15 +24,12 @@ __STATIC__/assets/css/ad.css
 
 
 <ftx:load type="js" href="
-__STATIC__/assets/js/jquery.js,
-__STATIC__/assets/js/jquery.cookie.js,
-__STATIC__/assets/js/lazyload.js
+__STATIC__/assets/js/jquery/jquery.js,
+__STATIC__/assets/js/jquery/jquery.cookie.js,
+__STATIC__/assets/js/jquery/lazyload.js,
+__STATIC__/assets/js/lib/underscore.js
 "/>
-<ftx:load type="js" href="
-__STATIC__/assets/js/fun.js,
-__STATIC__/assets/js/jumpbox.js,
-__STATIC__/assets/js/funs.js
-"/>
+
 {:C('ftx_header_html')}
 <script language="javascript">window.onerror = function(){return true;}</script>
 

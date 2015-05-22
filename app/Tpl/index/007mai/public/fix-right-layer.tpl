@@ -3,7 +3,7 @@
 	    <div class="fix-right-body">
 	        <div class="fix-right-middle" style="overflow: visible; display: block;">
 	            <div class="img-span">
-			<a href="{:U('user/index')}" class="mark" title="会员中心">
+			<a href="{:U('user/index')}" target="_blank" class="mark" title="会员中心">
 	                    <img src="__STATIC__/assets/images/layout/my.png">
 	                </a>
                     <div class="tab-bar tab-bar-js" style="display:none;">会员中心<div class="tab-tip-arr">◆</div></div>

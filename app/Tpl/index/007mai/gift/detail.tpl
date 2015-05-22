@@ -133,7 +133,40 @@ $(".bady-tab:eq(0) li").click(function(){
 </script>
  
 
- 
+ <script>
+
+ $(function(){
+ 	//跟随滚动
+    var ele_fix = $("#lr_float");
+    var _main = $(".main");
+    if (ele_fix.length > 0) {
+        var ele_offset_top = ele_fix.offset().top;
+        $(window).scroll(function() {
+            var scro_top = $(this).scrollTop();
+            var test = ele_offset_top + scro_top;
+            var fix_foot_pos = parseInt(ele_fix.height()) + parseInt(scro_top);
+            var mainpos = parseInt(_main.offset().top) + parseInt(_main.height());
+            if (scro_top <= ele_offset_top && fix_foot_pos < mainpos) {
+                ele_fix.css({
+                    position: "static",
+                    top: "0"
+                });
+            } else if (scro_top > ele_offset_top && fix_foot_pos < mainpos) {
+                $("#lr_float").css({
+                    "position": "fixed",
+                    "top": "0"
+                });
+            } else if (scro_top > ele_offset_top && fix_foot_pos > mainpos) {
+                var posi = mainpos - fix_foot_pos;
+                ele_fix.css({
+                    position: "fixed",
+                    top: posi
+                });
+            }
+        });
+    }
+ })
+ </script>
 
 <include file="public:footer" />
 <script src="__STATIC__/jky/js/gift.js"></script>

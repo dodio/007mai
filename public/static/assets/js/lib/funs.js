@@ -85,30 +85,6 @@ function parse_str(url){
 	return param2;
 }
 
-/*var arr = [];  
-for(i in param2){  
-   arr.push( i + "=" + param2[i]); //根据需要这里可以考虑escape之类的操作  
-}  
-alert(arr.join("&")) */ 
-
-function postForm(action,input){
-	var postForm = document.createElement("form");//表单对象
-    postForm.method="post" ;
-    postForm.action = action ;
-	var k;
-    for(k in input){
-		if(input[k]!=''){
-			var htmlInput = document.createElement("input");
-			htmlInput.setAttribute("name", k) ;
-            htmlInput.setAttribute("value", input[k]);
-            postForm.appendChild(htmlInput) ;
-		}
-	}
-	document.body.appendChild(postForm) ;
-	//alert(document.body.innerHTML)
-    postForm.submit() ;
-    document.body.removeChild(postForm) ;
-}
 
 function u(mod,act,arr,wjt){
 	if(!arguments[2]){

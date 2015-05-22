@@ -3,7 +3,7 @@
 <head>
 <include file="public:head" />
 <link rel="stylesheet" href="http://static2.51fanli.net/static/taobao-common-css-v3.css">
-<link rel="stylesheet" href="http://static2.51fanli.net/taobao/css/taobao-ju.css">
+<!-- <link rel="stylesheet" href="http://static2.51fanli.net/taobao/css/taobao-ju.css"> -->
 <load href="__STATIC__/ftxia/css/tmall.css" />
 <style>
 .ju-filter {width: 980px;position: relative;margin-top: 20px;z-index:1;}

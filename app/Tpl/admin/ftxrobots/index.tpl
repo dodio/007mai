@@ -4,7 +4,7 @@
 	<div class="content_menu ib_a blue line_x">
     	<a class="add fb " href="{:U('ftxrobots/add_do')}" ><em>添加采集器</em></a>
 	<a class="add fb " href="javascript:auto_collect()" ><em>一键自动采集</em></a>
-	<a class="add fb " href="javascript:jx_collect({$ftxrobots_collect_data.rid},{$ftxrobots_collect_data.p})" ><em>继续采集</em></a>
+	<notempty name="ftxrobots_collect_data"><a class="add fb " href="javascript:jx_collect({$ftxrobots_collect_data.rid},{$ftxrobots_collect_data.p})" ><em>继续采集</em></a></notempty>
 	<a class="add fb J_showdialog" href="javascript:void(0);" data-uri="{:U('setting/index',array('type'=>'ftxrobots'))}" data-title="采集设置" data-id="add" data-width="520" data-height="80"><em>采集设置</em></a>
 	</div>
 

@@ -287,7 +287,7 @@ class ajaxAction extends FirstendAction {
 			if($result){
 				$like_data = array('likes'=>array('exp','likes-1'));
 				$this->_mod->where(array('id'=>$iid))->setField($like_data);
-				$this->ajaxReturn(1, '取消喜欢成功！');
+				$this->ajaxReturn(1, '取消收藏成功！');
 			}else{
 				$this->ajaxReturn(0, $like_mod->getError());
 			}
@@ -300,9 +300,9 @@ class ajaxAction extends FirstendAction {
 		if($lid){
 			$like_data = array('likes'=>array('exp','likes+1'));
 			$this->_mod->where(array('id'=>$iid))->setField($like_data);
-			$this->ajaxReturn(1, '登录喜欢成功！');
+			$this->ajaxReturn(1, '收藏成功！');
 		}else{
-			$this->ajaxReturn(0,'登录喜欢失败，请稍后重试！');
+			$this->ajaxReturn(0,'收藏失败，请稍后重试！');
 		}
 	}
 

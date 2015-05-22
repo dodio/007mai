@@ -41,9 +41,9 @@
 			<div style="margin: 80px 0 10px;">
 				<h2>头像展示：</h2>
 				<div>
-					<img id="J_avatar" src="{:avatar($info['id'], 200)}" title="100*100" width="100px" height="100px"/>
-					<img src="{:avatar($info['id'], 100)}" title="64*64"  width="64px" height="64px"/>
-					<img src="{:avatar($info['id'], 100)}" title="32*32"  width="32px" height="32px"/>
+					<img class="J_avatar" src="{:avatar($info['id'], 200)}" title="100*100" width="100px" height="100px"/>
+					<img class="J_avatar" src="{:avatar($info['id'], 100)}" title="64*64"  width="64px" height="64px"/>
+					<img class="J_avatar" src="{:avatar($info['id'], 100)}" title="32*32"  width="32px" height="32px"/>
 				</div>
 			</div>
 			<!-- /展示头像 -->
@@ -63,7 +63,7 @@
                 input_name: 'avatar',
                 onComplete: function(id, fileName, result){
                     if(result.status == '1'){
-                        $('#J_avatar').attr('src', result.data);
+                        $('.J_avatar').attr('src', result.data);
                     }
                 }
    });

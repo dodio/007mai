@@ -16,9 +16,18 @@ class loadTag {
         $combile_name = '/static/dist_js/' . md5($options['href']) . '.js';
         $path = ROOT_PATH . $combile_name;
         $statics_url = ROOT_PATH.'/static';
+
+        $files = explode(',', $options['href']);
+
+        if(APP_DEBUG){
+            foreach ($files as $val) {
+                $val = trim( str_replace('__STATIC__', __STATIC__ , $val) );
+                echo $this->_tag_js($val)."\n";
+            }
+            return;
+        }
         if (!is_file($path)) {
             //静态资源地址
-            $files = explode(',', $options['href']);
             $content = '';
             foreach ($files as $val) {
                 $val = trim( str_replace('__STATIC__', $statics_url, $val) );
@@ -26,7 +35,7 @@ class loadTag {
             }
             file_put_contents($path, $jm->minify($content));
         }
-        echo ( '<script type="text/javascript" src="' . __ROOT__ . $combile_name . '?v='.THIS_IS_IT.'"></script>');
+        echo $this->_tag_js($combile_name);
     }
 
 
@@ -52,8 +61,17 @@ class loadTag {
     private function _css($files,$dir){
         $combile_name = $dir."/dist_css/" . md5(implode(",", $files)) . '.css';
         $path = ROOT_PATH . $combile_name ;
+
+        if(APP_DEBUG){
+            foreach ($files as $val) {
+                $val = trim( str_replace('__STATIC__', __STATIC__ , $val) );
+                echo $this->_tag_css($val)."\n";
+            }
+            return;
+        }
+
         if(is_file($path)){
-            echo ( '<link rel="stylesheet" type="text/css" href="' . __ROOT__ . $combile_name . '?v='.THIS_IS_IT.'" />');
+            echo $this->_tag_css($combile_name);
             return;
         }
         if(!is_dir(dirname($path))){
@@ -74,6 +92,14 @@ class loadTag {
             $content.=file_get_contents(ROOT_PATH ."/" . $value)."\n";
         }
         file_put_contents($path, $content);
-        echo ( '<link rel="stylesheet" type="text/css" href="' . __ROOT__ . $combile_name . '?THIS_IS_IT" />');
+        echo $this->_tag_css($combile_name);
+    }
+
+
+    private function _tag_css($src){
+        return '<link rel="stylesheet" type="text/css" href="' . __ROOT__ . $src . '?v='.THIS_IS_IT.'" />';
+    }
+    private function _tag_js($src){
+        return ( '<script type="text/javascript" src="' . __ROOT__ . $src . '?v='.THIS_IS_IT.'"></script>');
     }
 }

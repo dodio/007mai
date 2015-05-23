@@ -68,8 +68,8 @@
 				<li class="tit">关于我们</li>
 				<li><a href="{:U('help/read',array('id'=>1))}" target="_blank">关于我们</a></li>
 				<li><a href="{:U('help/read',array('id'=>3))}" target="_blank">联系我们</a></li>
-				<li><a href="{:U('help/read',array('id'=>2))}" target="_blank">广告合作</a></li>
-				<li><a href="{:U('/baoming')}" target="_blank">商家报名</a></li>
+				<!-- <li><a href="{:U('help/read',array('id'=>2))}" target="_blank">广告合作</a></li> -->
+				<!-- <li><a href="{:U('/baoming')}" target="_blank">商家报名</a></li> -->
 					</ul>
 				</div>
 					<div class="help">
@@ -77,7 +77,7 @@
 						<li class="tit">用户帮助</li>
 						<li><a href="{:U('help/read',array('id'=>6))}" target="_blank">常见问题</a></li>
 						<li><a href="{:U('help/qianggou')}" target="_blank">抢购小技巧</a></li>
-						<li><a href="{:U('article/index')}" target="_blank">文章中心</a></li>
+						<!-- <li><a href="{:U('article/index')}" target="_blank">文章中心</a></li> -->
 					</ul>
 				</div>
 				<div class="user">
@@ -134,8 +134,8 @@
 <script type="text/javascript">
 var FTXIAER = {
     root: "__ROOT__",
-	site: "{:C('ftx_site_url')}",
-    uid: "<?php echo $visitor['id'];?>", 
+		site: "{:C('ftx_site_url')}",
+    uid: "{$visitor['id']}", 
     url: {}
 };
 var lang = {};

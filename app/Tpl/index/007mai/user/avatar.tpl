@@ -57,6 +57,7 @@
 </div>
 <!--主部结束-->
 <include file="public:footer" />
+<load type="js" href="__STATIC__/js/fileuploader.js"/>
 <script>
   $('#J_upload_avatar').uploader({
                 action_url: FTXIAER.root + '/?m=user&a=upload_avatar',

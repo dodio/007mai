@@ -10,7 +10,7 @@ return array (
     '/^index\/index\/status\/(\d+)\/sort\/(\d+)\/p\/(\d+)$/' => 'index/index?status=:1&sort=:2&p=:3',
     '/^index\/index\/sort\/(\d+)\/p\/(\d+)$/' => 'index/index?sort=:1&p=:2',
     '/^index\/index\/sort\/new$/' => 'index/index?sort=new',
-    '/^index\/index\/sort\/hot$/' => 'index/index?sort=new',
+    '/^index\/index\/sort\/hot$/' => 'index/index?sort=hot',
     '/^index\/index\/sort\/(\d+)$/' => 'index/index?sort=:1',
     '/^index\/index\/p\/(\d+)$/' => 'index/index?p=:1',
     '/^index\/cate\/cid\/(\d+)\/p\/(\d+)$/' => 'index/cate?cid=:1&p=:2',

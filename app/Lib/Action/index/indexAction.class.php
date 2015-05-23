@@ -16,7 +16,6 @@ class indexAction extends FirstendAction {
 		$p		= I('p',1 ,'intval'); //页码
 		$sort	= I('sort', 'default', 'trim'); //排序
 		$status = I('status', 'all', 'trim'); //排序
- 
 		$today_str = mktime(0,0,0,date("m"),date("d"),date("Y"));
 		$tomorr_str = mktime(0,0,0,date("m"),date("d")+1,date("Y"));
 		$today_wh['coupon_start_time'] = array(array('egt',$today_str),array('elt',$tomorr_str)) ;

@@ -45,7 +45,8 @@ __STATIC__/ftxia/new/css/nav-channel.css
               <a href="{:U('yugao/index')}" class="torrow"><i class="torrow"></i>明日预告</a>
             </li>
           </ul>
-        </notempty>   </div>
+        </notempty>  
+   </div>
 </div>
 
 

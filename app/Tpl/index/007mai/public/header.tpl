@@ -71,7 +71,7 @@
             <a title="商品验货质检" class="check"   target="_blank"></a>
         </div>
               <div class="search">
-                <form method="get" action="/index.php" onsubmit="return search_submit();" >
+                <form method="get" action="/index.php" target="_blank" onsubmit="return search_submit();" >
                 <span class="search-area fl search_box">
                   <input type="hidden" name="m" value="search" />
                   <input type="hidden" name="a" value="index" />

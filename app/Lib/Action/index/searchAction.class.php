@@ -86,14 +86,10 @@ class searchAction extends FirstendAction {
     $item_mod = M('items');
     $items_list = $item_mod->where($where)->order($order)->limit($start . ',' . $page_size)->select();
     
-    // if(empty($items_list)){
-    //   $g_curl = 'http://redirect.simba.taobao.com/rd?spm=0.0.0.0.0_0.0.0.0&f=';
-    //   $key = urlencode($k);
-    //   $g_param = 'http://ai.taobao.com/search/index.htm?key='.$key.'&pid=mm_108982726_9740782_32516681&unid=&source_id=tdj_search&w=unionapijs&p=mm_108982726_9740782_32516681&b=display_601_0_0_0_0&c=cn&pvid=1432406430_1071302r2_475452679&k=317b874644f98ccc';
-    //   $g_url = $g_curl.urlencode($g_param);
-    //   redirect($g_url,3,"跳转到爱淘宝搜索:{$k}");
-    //   exit();
-    // }
+    if(empty($items_list)){
+      $this->display("ai_search");
+      exit();
+    }
     
 		$items = array();
 		$pagecount = 0;

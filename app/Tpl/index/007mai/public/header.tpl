@@ -6,53 +6,51 @@
 		<li style="border:none;">上007买,东西很好买</li>
   </ul>
         
-        <div class="right-show fr" id="right-show">
-		<div class="union-login">
-			<volist name="oauth_list" id="val">
-				<a href="{:U('oauth/index', array('mod'=>$val['code']))}">{$val.name}</a>
-			</volist>　|
-		</div>
-		<div class="login-show">
-			<a href="{:U('user/login')}">登录</a>
-			<a href="{:U('user/register')}">免费注册</a>　|
-		</div>
-		<div class="other-show">
-			<a href="{:C('ftx_kefu_html')}" target="_blank" rel="nofollow">在线客服</a>
-		</div>
-	</div>
+    <div class="right-show fr" id="right-show">
+  		<div class="union-login">
+  			<volist name="oauth_list" id="val">
+  				<a href="{:U('oauth/index', array('mod'=>$val['code']))}">{$val.name}</a>
+  			</volist>　|
+  		</div>
+  		<div class="login-show">
+  			<a href="{:U('user/login')}">登录</a>
+  			<a href="{:U('user/register')}">免费注册</a>　|
+  		</div>
+  		<div class="other-show">
+  			<a href="{:C('ftx_kefu_html')}" target="_blank" rel="nofollow">在线客服</a>
+  		</div>
+  	</div>
+
 	<script>
-			function topHtml() {/*
-			<div class="logined-show">
-				<a id="{:U('user/index')}" href="{:U('user/index')}" class="normal-a"><span class="user"><literal>{$name}</literal></span><em class="cur"></em></a>
-				<div class="normal-box login-box">
-					<ul>
-						<li><a href="{:U('user/gift')}"><i class="icon icon-02"></i><span>我的订单</span></a></li>
-						<li><a href="{:U('user/index')}"><i class="icon icon-03"></i><span>账号设置</span></a></li>
-						<li><a href="{:U('user/logout')}" class="exit" ><i class="icon icon-04"></i><span>退出</span></a></li>
-					</ul>
-				</div>
-			</div>
-			<div class="personal-show">
-				<a href="{:U('user/mingxi')}"><span>账户明细</span></a>
-				<a href="{:U('user/gift')}"><span>我的订单</span></a>
-				<p class="info fr ffv"><a href="{:U('user/msg')}"><literal>{$msgsrc}</literal></a></p>
-				<em class="count" style="display: none;">0</em></a>　|
-			</div>
-			<div class="other-show"><a href="{:C('ftx_kefu_html')}" target="_blank" rel="nofollow">在线客服</a></div>*/;}
-				$.ajax({
-					url: '{:U('ajax/userinfo')}',
-					dataType:'jsonp',
-					jsonp:"callback",
-					success: function(data){
-						if(data.s==1){
-							topHtml=getTplObj(topHtml,data.user);
-							$('#right-show').html(topHtml).show();
-						}
-						else{
-							$('#right-show').show();
-						}
-					}
-				});
+      $(function(){
+        var html= "<div class=\"logined-show\">"
++ "          <a href=\"{:U('user/index')}\" class=\"normal-a\" id=\"{:U('user/index')}\"><span class=\"user\"><literal>{$name}</literal></span><em class=\"cur\"></em></a>"
++ "          <div class=\"normal-box login-box\">"
++ "            <ul>"
++ "              <li><a href=\"{:U('user/gift')}\"><i class=\"icon icon-02\"></i><span>我的订单</span></a></li>"
++ "              <li><a href=\"{:U('user/index')}\"><i class=\"icon icon-03\"></i><span>账号设置</span></a></li>"
++ "              <li><a href=\"{:U('user/logout')}\" class=\"exit\" ><i class=\"icon icon-04\"></i><span>退出</span></a></li>"
++ "            </ul>"
++ "          </div>"
++ "        </div>"
++ "        <div class=\"personal-show\">"
++ "          <a href=\"{:U('user/mingxi')}\"><span>账户明细</span></a>"
++ "          <a href=\"{:U('user/gift')}\"><span>我的订单</span></a>"
++ "          <p class=\"info fr ffv\"><a href=\"{:U('user/msg')}\"><literal>{$msgsrc}</literal></a></p>"
++ "          <em class=\"count\" style=\"display: none;\">0</em></a>　|"
++ "        </div>"
++ "        <div class=\"other-show\"><a href=\"{:C('ftx_kefu_html')}\" target=\"_blank\" rel=\"nofollow\">在线客服</a></div>";
+
+        $.MAI007.data.getUserinfo().done(function(data){
+            if(data.s==1){
+              tpl = _.template(html);
+              $('#right-show').html(tpl(data.user)).show();
+            }
+            else{
+              $('#right-show').show();
+            }
+          });
+      });
 			</script>
 
     </div>
@@ -111,7 +109,7 @@
               <a href="{:U('gift/index')}" target="_blank" class="mr20 btn_jfsc">情报商城</a> 
                 <div style="display: none;" class="normal-side-box" id="top-side-box">
                     <div class="box-tips">
-                        <p class="text">我的情报：</p>
+                        <p class="text">我的情报：<em class="icon_zhibi"></em></p>
                         <p class="other"> <a target="_blank" href="{:U('user/mingxi')}">我的情报</a>　｜　<a target="_blank" href="{:U('gift/index')}">情报商城</a></p>
                     </div>
                 </div>

@@ -86,44 +86,43 @@ function parse_str(url){
 }
 
 
-function u(mod,act,arr,wjt){
+function u(mod,act,param,wjt){
 	if(!arguments[2]){
-	    var arr = new Array();
+	    var param = new Array();
 	}
 	if(!arguments[3]){
 	    wjt=0;
 	}
-	var mod_act_url='';
-	if(act=='' && mod=='index'){
-	    mod_act_url='?';
-	}
-	else if(act==''){
-	    mod_act_url="index.php?m="+mod+"&a=index";
-	}
-	else{
+
+  mod = mod || "";
+  act = act || "";
+
+	var mod_act_url='/';
+	if(mod !== "" && act !== ""){
 		if(wjt==1){
-			var str='';
-			for(k in arr){
-			    str+='-'+arr[k];
-			}
-		    mod_act_url=mod+'/'+act+str+'.html';
+			var str = arr2param(param,"/");
+		  mod_act_url += mod+'/'+act+ "/" + str+'.html';
 		}
 		else{
-		    mod_act_url="index.php?m="+mod+"&a="+act+arr2param(arr);
+        param.m = mod ;
+        param.a = act ;
+		    mod_act_url="/index.php?" + arr2param(param);
 		}
 	}
-    return mod_act_url;
+  return mod_act_url;
 }
 
-function arr2param(arr){
-	var param='';
-	var k;
-    for(k in arr){
-		if(arr[k]!=''){
-		    param+='&'+k+'='+arr[k];
-		}
-	}
-	return param;
+function arr2param(obj,imp){
+	var param = [];
+  imp = imp || "&";
+  var param_split = imp === "&" ? "=" : "/";
+
+  for(var key in obj){
+    if( key !== "" && obj.hasOwnProperty(key)){
+      param.push(key + param_split + obj[key]);
+    }
+  }
+	return param.join(imp);
 }
 
 
@@ -820,13 +819,6 @@ function iframe(url,width,height){
 	document.write('<iframe id="testframe" scrolling="no" src="'+url+'" width="'+width+'" height="'+height+'" frameborder="0"></iframe>');
 }
 
-/*获取模板函数*/
-function getTpl(_function){
-	var tpl=_function.toString();
-	tpl=tpl.replace(/function\s*\w+\s*\(\)\s*{\/\*/,'').replace(/\*\/;}$/,'');
-	return tpl;
-	//alert(tpl.match(/^[\w]+\snav_tpl\(\)\{\s+\/\*([\w\s*\/\\<>'"=#;:$.()]+)\*\/\s+\}$/i)[1]);
-}
 
 function getFuncName(_callee) {
 	var ie = !-[1,];
@@ -836,35 +828,6 @@ function getFuncName(_callee) {
 	}
 	else{
 		return _callee.prototype.constructor.name;
-	}
-}
-
-/*循环对象模板*/
-function getTplObj(tplName,obj){
-	var tpl=getTpl(tplName);
-	var _tpl='';
-	var str='';
-	
-	if(typeof obj[0]=='undefined'){
-		_tpl=tpl;
-		for(var j in obj){
-			var pattern = "\{\\$"+j+"\}";
-			var reg = new RegExp(pattern, "g");
-			_tpl=_tpl.replace(reg,obj[j]);
-		}
-		return _tpl;
-	}
-	else{
-		for(i in obj){
-			_tpl=tpl;
-			for(var j in obj[i]){
-				var pattern = "\{\\$"+j+"\}";
-				var reg = new RegExp(pattern, "g");
-				_tpl=_tpl.replace(reg,obj[i][j]);
-			}
-			str+=_tpl;
-		}
-		return str;
 	}
 }
 
@@ -902,3 +865,4 @@ function tao_perfect_click($t){
 	$t.attr('href',url);
 	return true;
 }
+

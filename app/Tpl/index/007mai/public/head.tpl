@@ -23,13 +23,17 @@ __STATIC__/assets/css/ad.css
 "/>
 
 
+<load type="js" href="
+__STATIC__/assets/js/jquery/jquery.js
+"/>
 <ftx:load type="js" href="
-__STATIC__/assets/js/jquery/jquery.js,
+__STATIC__/assets/js/lib/funs.js,
 __STATIC__/assets/js/jquery/jquery.cookie.js,
 __STATIC__/assets/js/jquery/lazyload.js,
-__STATIC__/assets/js/lib/underscore.js
+__STATIC__/assets/js/lib/underscore.js,
+__STATIC__/assets/js/base/settings.js,
+__STATIC__/assets/js/base/MAI007.js
 "/>
-
 {:C('ftx_header_html')}
 <script language="javascript">window.onerror = function(){return true;}</script>
 

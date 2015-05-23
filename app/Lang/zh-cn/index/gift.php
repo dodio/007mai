@@ -2,7 +2,7 @@
 
 return array(
     'no_stock' => '商品已经被抢完了！',
-    'no_score' => '抱歉，您的金币不足，无法兑换!',
+    'no_score' => '抱歉，您的情报不足，无法兑换!',
 	'no_start' => '此商品还未开始兑换，请继续关注!',
 	'ending' => '此商品兑换时间已经结束!',
     'ec_user_maxnum' => '此商品每人限兑%s件！',
@@ -17,12 +17,12 @@ return array(
     'surplus_stock' => '剩余库存',
     'buy_num' => '已兑数量',
     'user_num' => '每人限兑',
-    'need_score' => '所需积分',
+    'need_score' => '所需情报',
     'ec_number' => '兑换数量',
     'ec_btn' => '立即兑换',
     'ec_btn_short' => '兑换',
     'score_item_desc_title' => '详细信息',
     'ec_desc' => '兑换说明',
-    'how_to_earn_score' => '如何获得积分？',
+    'how_to_earn_score' => '如何获得情报？',
 	'submit' => '提交',
 );

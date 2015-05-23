@@ -19,7 +19,7 @@
 				</ul>
 			</div>
 			<div class="u-tip">
-				<p>当前积分：<em>{$score_total}</em> 分</p>
+				<p>当前：<em>{$score_total}</em> </p>
 			</div>
 
 			 
@@ -27,7 +27,7 @@
 				<table border="0" cellspacing="0">
 					<tr class="thead">
 						<th>收入事件</th>
-						<th>积分</th>
+						<th>情报</th>
 						<th class="last">发生时间</th>
 					</tr>
 					<notempty name="logs_list">

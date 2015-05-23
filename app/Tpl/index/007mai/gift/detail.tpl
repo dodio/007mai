@@ -39,11 +39,11 @@
 			<div class="img_show fl"><img src="{:attach(str_replace('_s.'.array_pop(explode('.', $item['img'])), '_b.'.array_pop(explode('.', $item['img'])), $item['img']), 'score_item')}" alt="{$item.title}" /></div>
 			<div class="price-info fl">
 				<h3>{$item.title}</h3>
-				<p class="price">所需积分：<span class="jd-current">{$item.score}</span> <em class="unit">个</em></p>
-				<p>剩余份数：<em class="org_2">{$item.stock}</em> 份</p>
+				<p class="price">所需情报：<span class="jd-current">{$item.score}</span> <em class="unit">个</em></p>
+				<p>库存：<em class="org_2">{$item.stock}</em> 份</p>
 				<p>兑换时间：{$item.start_time|date="y年m月d日 H时s分",###} - {$item.end_time|date="y年m月d日 H时s分",###}</p>
-				<p>兑换限制：每名会员每天可兑换<em class="org_2">{$item.user_num}</em></span>次</p>
-				<p class="bady-btn"><a href="javascript:;"   class="btn fl mr15 J_gift_btn" data-id="{$item.id}" data-num="#J_num_{$item.id}">积分兑换</a></p>
+				<p>每名会员限兑换<em class="org_2">{$item.user_num}</em></span>次</p>
+				<p class="bady-btn"><a href="javascript:;"   class="btn fl mr15 J_gift_btn" data-id="{$item.id}" data-num="#J_num_{$item.id}">兑换</a></p>
 			</div>
 		</div>
 		<div class="bady-part clear">
@@ -73,15 +73,15 @@
 						<dt>兑换说明</dt>
 						<dd>1、兑换开始后，所有{:C('ftx_site_name')}会员均可点击“我要兑换”按钮进行兑换。</dd>
 						<dd>2、为了更好的回馈会员，所有的礼品兑换不收取任何费用（实物礼品我们包邮为您送到家）。</dd>
-						<dd>3、只能使用在{:C('ftx_site_name')}获得的积分兑换，积分余额不足则不能兑换。</dd>
-						<dd>4、一旦兑换即扣除相应积分，所兑换的礼品将在后台审核后发出。如审核过程中发现该用户积分行为异常，兑换礼品将不予发放，已扣除积分不退还。如该用户恶意刷积分行为严重，我们保留不另行通知而直接封禁该用户账号的权利。</dd>
+						<dd>3、只能使用在{:C('ftx_site_name')}获得的情报兑换，情报余额不足则不能兑换。</dd>
+						<dd>4、一旦兑换即扣除相应情报，所兑换的礼品将在后台审核后发出。如审核过程中发现该用户情报行为异常，兑换礼品将不予发放，已扣除情报不退还。如该用户恶意刷情报行为严重，我们保留不另行通知而直接封禁该用户账号的权利。</dd>
 					</dl>
 				</div>
 				<div class="rule-explain mb20">
 					<dl>
 						<dt>注意事项</dt>
 						<dd>1、所有礼品（除支付宝红包、优惠券等虚拟礼品除外）在兑换后的1-2个工作日，本站将从合作商城购买，具体到货时间取决于合作商城发货情况。</dd>
-						<dd>2、若兑换礼品缺货或收货地址无法送达，我们会在1~2个工作日将相应返利或积分返还至您的账户中。</dd>
+						<dd>2、若兑换礼品缺货或收货地址无法送达，我们会在1~2个工作日将相应返利或情报返还至您的账户中。</dd>
 						<dd>3、提交兑换后，需经管理员审核，成功后将以站内信，邮件等方式通知您。</dd>
 						<dd>4、兑换下单都有数量限制，兑换数量不足时，将无法申请兑换。</dd>
 						<dd>5、实物礼品是{:C('ftx_site_name')}与第三方网站合作完成的兑换。如因购买时价格变动，{:C('ftx_site_name')}和会员双方均不需要作差价补偿。</dd>
@@ -99,7 +99,7 @@
 					</div>
 					<div class="user-personal">
 						<span class="name"><a href="{:U('user/index')}"><i class="org_2">{$info.username}</i></a></span><br>
-						<span class="jfb">积分：<i class="green_3">{$info.score}</i> </span><br>
+						<span class="jfb">情报：<i class="green_3">{$info.score}</i> </span><br>
 					</div>
 					<div class="user-manage clear">
 						<a href="{:U('user/gift')}" class="ml10">兑换记录</a>

@@ -15,7 +15,7 @@
                     <a href="javascript:void(0);" class="sign sign_btn">
                         <img src="__STATIC__/assets/images/layout/sign.gif" style="margin-left: 5px;">
                     </a>
-                    <div class="tab-bar tab-bar-js" style="right: 35px; display: none;">签到送积分<div class="tab-tip-arr">◆</div></div>
+                    <div class="tab-bar tab-bar-js" style="right: 35px; display: none;">签到得情报<div class="tab-tip-arr">◆</div></div>
                 </div>
                 
                 <if condition="C('ftx_site_browser') neq ''">

@@ -36,7 +36,7 @@
 						<td><input type="text" name="coupon_price" id="coupon_price" class="input-text" size="10" style="width:200px;"  onkeyup="this.value=this.value.replace(/[^0-9.]/g,'')" onafterpaste="this.value=this.value.replace(/[^0-9.]/g,'')"></td>
 					</tr>
 					<tr>
-						<th>所需积分 :</th>
+						<th>所需情报 :</th>
 						<td><input type="text" name="score" id="score" class="input-text" size="10" style="width:200px;"  onkeyup="this.value=this.value.replace(/[^0-9.]/g,'')" onafterpaste="this.value=this.value.replace(/[^0-9.]/g,'')"></td>
 
 						<th>库存 :</th>

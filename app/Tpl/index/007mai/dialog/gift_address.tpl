@@ -1,6 +1,6 @@
 <div class="alert_duihuan">
 <div class="alert_content">
-	<div class="top_tips none jifen" style="display: block; ">本次兑换需花费 <em class="org exchange-num">{$item.score}</em> 个积分，您有积分 <em class="org">{$info.score}</em> 个</div>
+	<div class="top_tips none jifen" style="display: block; ">本次兑换需花费 <em class="org exchange-num">{$item.score}</em> 情报，您有情报 <em class="org">{$info.score}</em> 份</div>
 	<form id="J_address_form" name="J_address_form" method="post" action="{:U('gift/address')}">
 	<div class="address">
 		<ul>

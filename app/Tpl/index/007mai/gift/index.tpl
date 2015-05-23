@@ -29,7 +29,7 @@
 			<div class="user-img"><a class="userinfo-img" href="{:U('user/index')}"><img src="{:avatar($info['id'], 100)}" width="80" height="80" /></a></div>
 			<div class="user-personal">
 				<span class="name"><a href="{:U('user/index')}"><i class="org_2">{$info.username}</i></a></span><br>
-				<span class="jfb">积分：<i class="green_3">{$info.score}</i> </span><br>
+				<span class="jfb">情报：<i class="green_3">{$info.score}</i> </span><br>
 				 
 			</div>
 			<div class="user-manage clear">
@@ -50,10 +50,10 @@
 					<h5 class="good-title"><a target="_blank" href="{:U('gift/detail', array('id'=>$item['id']))}">{$item.title}</a></h5>
 					<div class="title-tips">
 						<span class="fl">开始时间：<em class="old-price">{$item.start_time|date="Y-m-d",###}</em></span>
-						<span class="fr">剩余：<em class="org_2">{$item.stock}</em>份</span>
+						<span class="fr">库存：<em class="org_2">{$item.stock}</em>份</span>
 					</div>
-										<div class="good-price clear">
-						<span class="price-current">{$item.score}<em class="unit">积分</em></span>
+						<div class="good-price clear">
+						<span class="price-current">{$item.score}<em class="unit">情报</em></span>
 						<div class="btn-new buy">
 							<a target="_blank" href="{:U('gift/detail', array('id'=>$item['id']))}"><span>我要兑换</span></a>
 						</div>

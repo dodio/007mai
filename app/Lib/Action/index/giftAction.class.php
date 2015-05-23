@@ -234,7 +234,7 @@ class giftAction extends FirstendAction {
         !$item['stock'] && $this->ajaxReturn(0, '商品已经被抢完了！');
         //积分够不？
         $user_score = $user_mod->where(array('id'=>$uid))->getField('score');
-        $user_score < $item['score'] && $this->ajaxReturn(0, '积分不够了！');
+        $user_score < $item['score'] && $this->ajaxReturn(0, '情报不够了！');
 
 		$eced_num = $order_mod->where(array('uid'=>$uid, 'item_id'=>$item['id']))->sum('item_num');
         if ($item['user_num'] && $eced_num + $num > $item['user_num']) {
@@ -284,7 +284,7 @@ class giftAction extends FirstendAction {
 			'fname' => 'SYSTEM',
 			'tuid' => $uid,
 			'tname' => $uname,
-			'info' => ' 您申请的积分兑换商品：'.$item['title'].' 、兑换数量：'.$num.'、消耗积分：'.$order_score.'。请等待系统审核，审核通过后会发货，谢谢!',
+			'info' => ' 您申请的情报兑换商品：'.$item['title'].' 、兑换数量：'.$num.'、消耗情报：'.$order_score.'。请等待系统审核，审核通过后会发货，谢谢!',
 			'add_time' => time(),
 		));
 		$msg_mod->add();

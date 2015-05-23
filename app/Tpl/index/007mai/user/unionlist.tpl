@@ -45,7 +45,7 @@
 					<tr><td colspan="4">
 						<div class="find_gift">
 						<p>还没有好友通过您的邀请注册哦！</p>
-						<p>邀请好友，得金币！<a target="_blank" href="{:U('user/union')}">赶快行动吧！</a></p>
+						<p>邀请好友，得情报！<a target="_blank" href="{:U('user/union')}">赶快行动吧！</a></p>
 						</div>
 						</td></tr>
 					</notempty>

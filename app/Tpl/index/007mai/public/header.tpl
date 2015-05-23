@@ -108,11 +108,11 @@
             </ul>
             <div class="state-show fr">
               <a href="javascript:;" class="dosign signin_a sign_btn" id="signIn_btn"></a>
-              <a href="{:U('gift/index')}" target="_blank" class="mr20 btn_jfsc">积分商城</a> 
+              <a href="{:U('gift/index')}" target="_blank" class="mr20 btn_jfsc">情报商城</a> 
                 <div style="display: none;" class="normal-side-box" id="top-side-box">
                     <div class="box-tips">
                         <p class="text">我的情报：</p>
-                        <p class="other"> <a target="_blank" href="{:U('user/mingxi')}">我的积分</a>　｜　<a target="_blank" href="{:U('gift/index')}">积分商城</a></p>
+                        <p class="other"> <a target="_blank" href="{:U('user/mingxi')}">我的情报</a>　｜　<a target="_blank" href="{:U('gift/index')}">情报商城</a></p>
                     </div>
                 </div>
             </div>

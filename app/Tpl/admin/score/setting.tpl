@@ -6,7 +6,7 @@
         <thead>
         <tr>
             <th width="150" align="left">用户行为</th>
-            <th width="150" align="left">积分</th>
+            <th width="150" align="left">情报</th>
             <th align="left">奖惩上限次数</th>
         </tr>
         </thead>
@@ -33,7 +33,7 @@
 			</td>
         </tr>
 		<tr>
-            <td>签到积分递增 :</td>
+            <td>签到情报递增 :</td>
             <td><input type="text" name="score_rule[sign_add]" class="input-text" size="10" value="{:C('ftx_score_rule.sign_add')}"></td>
             <td> </td>
         </tr>

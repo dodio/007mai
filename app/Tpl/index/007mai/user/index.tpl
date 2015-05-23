@@ -46,7 +46,7 @@ $(document).ready(function(){
 					<div class="quick-info">
 						<div class="my-mb-info">
 							<div class="icon mb"></div>
-							&nbsp;我的积分：<span class="f24 org_3">{$info.score}</span> 个
+							&nbsp;我的情报：<span class="f24 org_3">{$info.score}</span>
 						</div>
 						<div class="my-score">
 							<p>QQ号码：<b>{$info.qq}</b></p>

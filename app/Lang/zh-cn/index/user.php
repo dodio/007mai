@@ -48,7 +48,7 @@ return array(
     'edit_password_success' => '修改密码成功！',
 	'order_sn' => '订单号',
     'order_item' => '兑换礼品',
-    'order_score' => '使用积分',
+    'order_score' => '使用情报',
     'order_time' => '下单时间',
     'order_status' => '状态',
     'order_status_1' => '已完成',

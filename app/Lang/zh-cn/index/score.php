@@ -1,7 +1,7 @@
 <?php
 return array(
     'action' => '操作',
-    'score' => '积分',
+    'score' => '情报',
     'time' => '日期',
     'login' => '登陆',
     'register' => '注册',
@@ -13,13 +13,13 @@ return array(
     'go_gift' => '去兑换',
     'order_sn' => '订单号',
     'order_item' => '兑换礼品',
-    'order_score' => '使用积分',
+    'order_score' => '使用情报',
     'order_time' => '下单时间',
     'order_status' => '状态',
     'order_status_1' => '已完成',
     'order_status_0' => '处理中',
-    'no_order' => '还没有积分订单',
-    'score_log' => '积分明细',
-    'my_score' => '可用积分',
-    'no_score_logs' => '还没有积分记录。',
+    'no_order' => '还没有情报订单',
+    'score_log' => '情报明细',
+    'my_score' => '可用情报',
+    'no_score_logs' => '还没有情报记录。',
 );

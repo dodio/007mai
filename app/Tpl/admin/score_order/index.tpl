@@ -43,7 +43,7 @@
                 <th width="60"><span data-tdtype="order_by" data-field="uname">会员名</span></th>
                 <th><span data-tdtype="order_by" data-field="item_name">商品名称</span></th>
                 <th width="40"><span data-tdtype="order_by" data-field="item_num">数量</span></th>
-                <th width="40"><span data-tdtype="order_by" data-field="order_score">积分</span></th>
+                <th width="40"><span data-tdtype="order_by" data-field="order_score">情报</span></th>
 		<th width="60"><span data-tdtype="order_by" data-field="realname">姓名</span></th>
 		<th width="250">地址</th>
 		<th width="60">物流公司</th>

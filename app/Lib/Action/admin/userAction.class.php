@@ -130,7 +130,7 @@ class userAction extends BackendAction
                     'fname' => 'SYSTEM',
                     'tuid' => $id,
                     'tname' => $user['username'],
-                    'info' => $action.' - 增加积分：'.$jinbi,
+                    'info' => $action.' - 增加情报：'.$jinbi,
 					'add_time' => time(),
                 ));
             $msg_mod->add();

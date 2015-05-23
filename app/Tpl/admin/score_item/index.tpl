@@ -38,7 +38,7 @@
                 <th width="40"><span tdtype="order_by" fieldname="id">ID</span></th>
 				<th width="50" align="center">缩略图</th>
                 <th align="left"><span data-tdtype="order_by" data-field="title">商品名称</span></th>
-                <th width="80" align="left"><span data-tdtype="order_by" data-field="score">兑换积分</span></th>
+                <th width="80" align="left"><span data-tdtype="order_by" data-field="score">所需情报</span></th>
                 <th width="80" align="left"><span data-tdtype="order_by" data-field="stock">库存</span></th>
                 <th width="70" align="left"><span data-tdtype="order_by" data-field="user_num">每人限兑</span></th>
                 <th width="60" align="center">分类名称</th>

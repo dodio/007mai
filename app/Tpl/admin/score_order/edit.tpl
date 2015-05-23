@@ -8,7 +8,7 @@
 	<tr>
 		<th width="80">商品名称 :</th>
 		<td width="40%"><a href="/index.php?m=gift&a=detail&id={$info.item_id}" target="_blank">{$info.item_name}</a> &nbsp;<a href="http://detail.tmall.com/item.htm?id={$info.iid}" target="_blank">淘宝购买</a></td>
-		<th>消耗积分 :</th>
+		<th>消耗情报 :</th>
 		<td>{$info.order_score}</td>
 	</tr>
 	<tr>

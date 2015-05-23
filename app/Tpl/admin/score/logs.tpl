@@ -27,7 +27,7 @@
             <tr>
                 <th><span data-tdtype="order_by" data-field="uid">会员名</span></th>
 				<th>操作</th>
-                <th width="180">积分</th>
+                <th width="180">情报</th>
 				<th width="180">操作时间</th>
             </tr>
         </thead>

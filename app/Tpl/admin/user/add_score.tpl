@@ -6,11 +6,11 @@
 			<td>{$info.username}</td>
 		</tr>
         <tr>
-			<th>当前金币 :</th>
+			<th>当前情报 :</th>
 			<td>{$info.score}</td>
 		</tr>
         <tr>
-			<th>赠送金币 :</th>
+			<th>赠送情报 :</th>
 			<td><input type="text" name="jinbi" class="input-text" size="10"></td>
 		</tr>
 		<tr>

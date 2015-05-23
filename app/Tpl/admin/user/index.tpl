@@ -31,7 +31,7 @@
                 <th align="left"><span data-tdtype="order_by" data-field="username">用户名</span></th>
                 <th width="120" align="left"><span data-tdtype="order_by" data-field="email">邮箱</span></th>
                 <th width="40"><span data-tdtype="order_by" data-field="gender">性别</span></th>
-                <th width="60" align="right"><span data-tdtype="order_by" data-field="score">积分</span></th>
+                <th width="60" align="right"><span data-tdtype="order_by" data-field="score">情报</span></th>
                 <th width="120"><span data-tdtype="order_by" data-field="reg_time">注册时间</span></th>
                 <th width="120"><span data-tdtype="order_by" data-field="last_time">最后登陆</span></th>
                 <th width="100"><span data-tdtype="order_by" data-field="last_ip">最后IP</span></th>
@@ -57,7 +57,7 @@
                 <td align="center">{$val.last_ip}</td>
                 <td align="center"><img data-tdtype="toggle" data-id="{$val.id}" data-field="status" data-value="{$val.status}" src="__STATIC__/images/admin/toggle_<if condition="$val.status eq 0">disabled<else/>enabled</if>.gif" /></td>
                 <td align="center">
-                <a href="javascript:;" class="J_showdialog" data-uri="{:u('user/add_score', array('id'=>$val['id'], 'menuid'=>$menuid))}" data-title="赠送金币 - {$val.username}" data-id="add_score" data-width="400" data-height="170">赠送金币</a> |<a href="javascript:;" class="J_showdialog" data-uri="{:u('user/edit', array('id'=>$val['id'], 'menuid'=>$menuid))}" data-title="编辑-{$val.username}" data-id="edit" data-width="520" data-height="330">编辑</a> | <a href="javascript:void(0);" class="J_confirmurl" data-uri="{:u('user/delete', array('id'=>$val['id']))}" data-acttype="ajax" data-msg="{:sprintf(L('confirm_delete_one'),$val['username'])}">{:L('delete')}</a></td>
+                <a href="javascript:;" class="J_showdialog" data-uri="{:u('user/add_score', array('id'=>$val['id'], 'menuid'=>$menuid))}" data-title="赠送情报 - {$val.username}" data-id="add_score" data-width="400" data-height="170">赠送情报</a> |<a href="javascript:;" class="J_showdialog" data-uri="{:u('user/edit', array('id'=>$val['id'], 'menuid'=>$menuid))}" data-title="编辑-{$val.username}" data-id="edit" data-width="520" data-height="330">编辑</a> | <a href="javascript:void(0);" class="J_confirmurl" data-uri="{:u('user/delete', array('id'=>$val['id']))}" data-acttype="ajax" data-msg="{:sprintf(L('confirm_delete_one'),$val['username'])}">{:L('delete')}</a></td>
             </tr>
             </volist>
     	</tbody>

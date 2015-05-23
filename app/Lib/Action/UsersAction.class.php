@@ -29,13 +29,6 @@ class UsersAction extends FirstendAction {
                     'bind' => array('text'=>'帐号绑定', 'url'=>U('user/bind')),
                     
                 )
-            ),
-            'score' => array(
-                'text' => '积分中心',
-                'submenu' => array(
-                    'order' => array('text'=>'我的礼品', 'url'=>U('score/index')),
-                    'logs' => array('text'=>'我的积分', 'url'=>U('score/logs')),
-                )
             )
         );
         return $menu;

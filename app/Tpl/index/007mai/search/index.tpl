@@ -45,8 +45,7 @@ __STATIC__/ftxia/new/css/nav-channel.css
               <a href="{:U('yugao/index')}" class="torrow"><i class="torrow"></i>明日预告</a>
             </li>
           </ul>
-        </notempty>  
-   </div>
+        </notempty>   </div>
 </div>
 
 
@@ -58,7 +57,7 @@ __STATIC__/ftxia/new/css/nav-channel.css
 			<div re="11okav" class="list-good goods_box todayDb">
 				<h5 class="good-title">
 					<if condition="$item.shop_type eq 'C' "><a  target="_blank" class="icon t tao-n" title="淘宝网" style="display: none; "></a></if><if condition="$item.shop_type eq 'B' "><a  target="_blank" class="icon t tao-t" title="天猫商城" style="display: none; "></a></if>
-					<a target="_blank" href="{:U('jump/index',array('id'=>$item['id']))}" biz-itemid="{$item.num_iid}" isconvert=1 class="title">{$item.title}</a>
+					<a target="_blank" href="{:U('jump/index',array('id'=>$item['id']))}" data-type="0" biz-itemid="{$item.num_iid}" isconvert=1 class="title">{$item.title}</a>
 				</h5>
 				<div class="good-pic">
 					<div class="pic-img">

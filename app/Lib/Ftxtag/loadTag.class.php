@@ -21,7 +21,7 @@ class loadTag {
 
         if(APP_DEBUG){
             foreach ($files as $val) {
-                $val = trim( str_replace('__STATIC__', __STATIC__ , $val) );
+                $val = trim( $val );
                 echo $this->_tag_js($val)."\n";
             }
             return;
@@ -64,7 +64,7 @@ class loadTag {
 
         if(APP_DEBUG){
             foreach ($files as $val) {
-                $val = trim( str_replace('__STATIC__', __STATIC__ , $val) );
+                $val = trim( $val );
                 echo $this->_tag_css($val)."\n";
             }
             return;

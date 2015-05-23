@@ -7,7 +7,7 @@ $(function() {
    * 签到按钮的划出框
    * @type {[type]}
    */
-	$(".btn_jfsc,#top-side-box").bind({
+  $(".btn_jfsc,#top-side-box").bind({
         mouseover:function(){
             $("#top-side-box").show();
         },
@@ -19,7 +19,7 @@ $(function() {
   /**
    * 登录后的用户菜单
    */
-	$(".logined-show").live({
+  $(".logined-show").live({
         mouseover:function(){
             $(this).addClass("hover");
         },
@@ -29,21 +29,16 @@ $(function() {
     });
 
   //右侧窗口侧边栏会员中心按钮,检测是否登录
-	$('.mark').bind('click', function(){
-		if(!$.ftxia.dialog.islogin()) return !1;
-	});
+  $('.mark').bind('click', function(){
+  	if(!$.ftxia.dialog.islogin()) return !1;
+  });
 
 });
 
 
-
-/**
- * 跟comm.js一样，都是全站使用的效果js
- */
-
 /*搜索框ui效果*/
 $(document).ready(function(){
-  var word_top  = '在此输入您要找的宝贝！';
+  var word_top  = '输入宝贝名称！';
   var $word_top = $('.search_box .text');
   $word_top.focusClear();
 
@@ -61,73 +56,6 @@ $(document).ready(function(){
   });
 });
 
-function search_submit(){
-  var k = $(".search_box .text").val();
-  if(k == '请输入您要找的宝贝！'){
-    alert("请输入要搜索的内容！");
-    return false;
-  }
-}
-
-function formatFloat(src, pos){
-  return Math.round(src*Math.pow(10, pos))/Math.pow(10, pos);
-}
-
-/*收藏*/
-function AddFavorite(b) {
-  CloseNLRAF(true);
-  var c = null;
-  if (b == "childreTop") {
-    var c = SITEURL;
-  } else {
-    if (b == "welcomefavorite") {
-      var c = SITEURL+"?from=fav"
-    } else {
-      var c = location.href + (b == true ? "?from=topfavorite": "")
-    }
-  }
-  if ($.browser.msie) {
-    try {
-      window.external.addFavorite(c, ""+WEBNICK+"-省钱，从"+WEBNICK+"开始。")
-    } catch(a) {
-      alert("请按键盘 CTRL键 + D 把"+WEBNICK+"放入收藏夹，折扣信息一手掌握！")
-    }
-  } else {
-    if ($.browser.mozilla) {
-      try {
-        window.sidebar.addPanel(""+WEBNICK+"-网购，从"+WEBNICK+"开始。", c, "")
-      } catch(a) {
-        alert("请按键盘 CTRL键 + D 把"+WEBNICK+"放入收藏夹，折扣信息一手掌握！")
-      }
-    } else {
-      alert("请按键盘 CTRL键 + D 把"+WEBNICK+"放入收藏夹，折扣信息一手掌握！")
-    }
-  }
-  return false
-}
-
-function SetHome(url){
-  if (document.all) {
-    document.body.style.behavior='url(#default#homepage)';
-    document.body.setHomePage(url);
-  }else{ 
-    alert("您好,您的浏览器不支持自动设置页面为首页功能,请您手动在浏览器里设置该页面为首页!"); 
-  } 
-}
-
-function CloseNLRAF(a) {
-  if (a) {
-    $.cookie("NLRAF", "true", {
-      path: "/",
-      expires: 30
-    })
-  } else {
-    $.cookie("NLRAF", "true", {
-      path: "/"
-    })
-  }
-  $("#afp").slideUp()
-}
 
 $(function(){
   //图片懒加载
@@ -145,10 +73,11 @@ $(function(){
     $("#afp").slideDown("slow")
   }
 
-  
-  
 
-// 主导航的js效果
+});
+
+$(function(){
+  // 主导航的js效果
   allMenu_show=function(){
     if($(".top_bar").size() > 0){
       $(".nav ul li:first").addClass("open");
@@ -169,8 +98,8 @@ $(function(){
         );
     }
     allMenu_show();
-
 });
+
 
 $(function(){
     //左侧浮动导航
@@ -199,5 +128,4 @@ $(function(){
         }
     }
     F_nav_scroll();
-
 });

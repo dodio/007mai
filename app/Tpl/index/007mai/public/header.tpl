@@ -131,7 +131,6 @@
                           id:data.msg.id,
                           title:data.msg.title
                         }
-                        console.log(tpl.source);
                         $("#closest_duihuan").html( tpl(item) );
                       }else{
                         var html = "您已经收集了很多情报，快去情报商城兑换吧！";

@@ -70,7 +70,7 @@
 		</volist>
 	</ul>
 <script>
-(function($) {
+$(function() {
     
     $("a.my-like").bind('click', 
     function() {
@@ -127,7 +127,7 @@
             }
         });
     });
-})(jQuery);
+});
 
  var F_createEle = function(ele){
         var div = document.createElement('div');

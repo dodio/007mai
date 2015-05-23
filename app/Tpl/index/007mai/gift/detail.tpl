@@ -169,6 +169,9 @@ $(".bady-tab:eq(0) li").click(function(){
  </script>
 
 <include file="public:footer" />
-<script src="__STATIC__/jky/js/gift.js"></script>
+<ftx:load type="js" href="
+__STATIC__/js/jquery/plugins/jquery.tools.min.js,
+__STATIC__/jky/js/gift.js
+"/>
 </body>
 </html>

@@ -1,3 +1,72 @@
+function search_submit(){
+  var k = $(".search_box .text").val();
+  if(k == '输入宝贝名称！'){
+    alert("输入宝贝名称！");
+    return false;
+  }
+}
+
+function formatFloat(src, pos){
+  return Math.round(src*Math.pow(10, pos))/Math.pow(10, pos);
+}
+
+/*收藏*/
+function AddFavorite(b) {
+  CloseNLRAF(true);
+  var c = null;
+  if (b == "childreTop") {
+    var c = SITEURL;
+  } else {
+    if (b == "welcomefavorite") {
+      var c = SITEURL+"?from=fav"
+    } else {
+      var c = location.href + (b == true ? "?from=topfavorite": "")
+    }
+  }
+  if ($.browser.msie) {
+    try {
+      window.external.addFavorite(c, ""+WEBNICK+"-省钱，从"+WEBNICK+"开始。")
+    } catch(a) {
+      alert("请按键盘 CTRL键 + D 把"+WEBNICK+"放入收藏夹，折扣信息一手掌握！")
+    }
+  } else {
+    if ($.browser.mozilla) {
+      try {
+        window.sidebar.addPanel(""+WEBNICK+"-网购，从"+WEBNICK+"开始。", c, "")
+      } catch(a) {
+        alert("请按键盘 CTRL键 + D 把"+WEBNICK+"放入收藏夹，折扣信息一手掌握！")
+      }
+    } else {
+      alert("请按键盘 CTRL键 + D 把"+WEBNICK+"放入收藏夹，折扣信息一手掌握！")
+    }
+  }
+  return false
+}
+
+function SetHome(url){
+  if (document.all) {
+    document.body.style.behavior='url(#default#homepage)';
+    document.body.setHomePage(url);
+  }else{ 
+    alert("您好,您的浏览器不支持自动设置页面为首页功能,请您手动在浏览器里设置该页面为首页!"); 
+  } 
+}
+
+function CloseNLRAF(a) {
+  if (a) {
+    $.cookie("NLRAF", "true", {
+      path: "/",
+      expires: 30
+    })
+  } else {
+    $.cookie("NLRAF", "true", {
+      path: "/"
+    })
+  }
+  $("#afp").slideUp()
+}
+
+
 // JavaScript Document
 function fenduan(val,level,arr){
 	if(typeof arguments[3]!='undefined'){

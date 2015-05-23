@@ -142,8 +142,8 @@ var lang = {};
 <volist name=":L('js_lang')" id="val">lang.{$key} = "{$val}";</volist>
 </script>
 
-
 <ftx:load type="js" href="
+__STATIC__/js/jquery/plugins/formvalidator.js,
 __STATIC__/js/ftxia.js,
 __STATIC__/js/front.js,
 __STATIC__/js/dialog.js,

@@ -231,7 +231,6 @@
 </div>
 		
  
-<include file="public:list" />
 <script type="text/javascript" src="__STATIC__/assets/js/deal.js"></script>
 <script type="text/javascript">
     $(".bady-tab:eq(0) li:eq(0)").find("a").addClass("badyactive");

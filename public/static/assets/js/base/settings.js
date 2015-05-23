@@ -1,5 +1,5 @@
 (function(_){
   _.templateSettings = {
-    interpolate: /\{\$(.+?)\}/g
+    interpolate: /\{\$([\s\S]+?)\}/g
   };
 })(_);

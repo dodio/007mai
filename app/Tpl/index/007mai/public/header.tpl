@@ -109,11 +109,40 @@
               <a href="{:U('gift/index')}" target="_blank" class="mr20 btn_jfsc">情报商城</a> 
                 <div style="display: none;" class="normal-side-box" id="top-side-box">
                     <div class="box-tips">
-                        <p class="text">我的情报：<em class="icon_zhibi"></em></p>
-                        <p class="other"> <a target="_blank" href="{:U('user/mingxi')}">我的情报</a>　｜　<a target="_blank" href="{:U('gift/index')}">情报商城</a></p>
+                        <notempty name="visitor">
+                          <p class="text"><span>我的情报：</span><span class="score mr5">{$visitor.score}</span><em class="icon_zhibi"></em></p>
+                          <p class="text" id="closest_duihuan"></p>
+                        </notempty>
+                        <p class="other"> <a target="_blank" href="{:U('user/mingxi')}">我的情报</a>　｜　<a target="_blank" href="{:U('gift/index')}">情报商城</a> ｜ <a href="/" target="_blank">快速获得积分!</a></p>
                     </div>
                 </div>
             </div>
+            <script>
+              $(function(){
+                $.MAI007.data.getUserinfo().done(function(data){
+                  if(data.s == 1){
+                    var user = data.user;
+                    $.MAI007.data.getCloseScoreItem().done(function(data){
+                      if(data.status == 1 && data.msg){
+                        var html = '还差<span class="score ml5">{$(score)}</span><em class="icon_zhibi mr10 ml10"></em>就可以兑换：<br/><a target="_blank" href="/gift/detail/id/{$(id)}.html">{$(title)}</a>';
+                        var tpl = _.template(html);
+                        var item = {
+                          score: data.msg.score - user.jifen,
+                          id:data.msg.id,
+                          title:data.msg.title
+                        }
+                        console.log(tpl.source);
+                        $("#closest_duihuan").html( tpl(item) );
+                      }else{
+                        var html = "您已经收集了很多情报，快去情报商城兑换吧！";
+                        $("#closest_duihuan").html(html);
+                      }
+                    })
+                  }
+                });
+                
+              });
+            </script>
         </div>
     </div>
 </div>

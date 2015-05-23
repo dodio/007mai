@@ -306,6 +306,23 @@ class ajaxAction extends FirstendAction {
 		}
 	}
 
+	public function get_min_scoreItem(){
+		header('Content-Type:text/html; charset=utf-8');
+		if (!$this->visitor->is_login) {
+			$this->ajaxReturn(0, '请登录!');
+		}else{
+			$score_item = M("score_item");
+			$score = $this->visitor->get("score");
+			$where = array(
+				"end_time"=>array("GT" , time() ),
+				"start_time" => array("LT" , time() ),
+				"score" => array("GT" , $score)
+				);
+			$item = $score_item->where($where)->find();
+			$this->ajaxReturn(1, $item);
+		}
+	}
+
 	/**
 	 * 获取短消息
 	 */

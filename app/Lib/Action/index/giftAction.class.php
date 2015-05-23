@@ -19,7 +19,7 @@ class giftAction extends FirstendAction {
      */
     public function index() {
         $cid = I('cid','', 'intval');
-		$this->lists();  
+		$this->lists($cid);  
     }
 
 	public function cate() {

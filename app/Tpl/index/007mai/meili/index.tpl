@@ -24,7 +24,8 @@
 </div>
 </notempty>
 
-
+<include file="public:nav-classify" />
+<div class="side_nav_fix_pos"></div>
 <div class="main {:C('ftx_site_width')} clear">
 <ul class="goods-list {:C('ftx_site_wc')}">
 		<volist name="items_list" id="item" key="i" mod="4">

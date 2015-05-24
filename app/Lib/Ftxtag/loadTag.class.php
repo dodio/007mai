@@ -19,7 +19,7 @@ class loadTag {
 
         $files = explode(',', $options['href']);
 
-        if(APP_DEBUG){
+        if(NO_MERGE_STATICS){
             foreach ($files as $val) {
                 $val = trim( $val );
                 echo $this->_tag_js($val)."\n";
@@ -62,7 +62,7 @@ class loadTag {
         $combile_name = $dir."/dist_css/" . md5(implode(",", $files)) . '.css';
         $path = ROOT_PATH . $combile_name ;
 
-        if(APP_DEBUG){
+        if(NO_MERGE_STATICS){
             foreach ($files as $val) {
                 $val = trim( $val );
                 echo $this->_tag_css($val)."\n";

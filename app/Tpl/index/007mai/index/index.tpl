@@ -103,10 +103,10 @@
 
 <style>
   .side_nav{
-    margin-top: 20px;
+    display: none;
   }
   .side_nav.affix{
-    margin-top: 0;
+    display: block;
   }
 </style>
 <div class="side_nav_fix_pos"></div>

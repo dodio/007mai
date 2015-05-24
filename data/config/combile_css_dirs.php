@@ -1,1 +1,1 @@
-<?php	return array ( 0 => '/static/assets', 1 => '/static/jky', );?>
+<?php	return array ( 0 => '/static/assets', 1 => '/static/jky', 2 => '/static/ftxia/new', );?>

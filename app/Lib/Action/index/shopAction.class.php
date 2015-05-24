@@ -7,6 +7,8 @@ class shopAction extends FirstendAction {
     }
 
     public function index($idd) {
+		$this->redirect("/");
+		exit();
 		$this->_mod = D('items');
 		if($idd){
 			$id = $idd;
@@ -116,11 +118,7 @@ class shopAction extends FirstendAction {
 				));
 
 				$this->display('shop');
-				exit();
 			}
 		}
- 
-
-		$this->redirect("/");
   }
 }

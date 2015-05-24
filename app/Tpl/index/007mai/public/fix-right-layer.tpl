@@ -49,20 +49,3 @@
 	</div>
 
 </div>
-<script type="text/javascript">
-    $(window).resize(function(){
-        if($('#fix-right-layer').height()<580){
-            $('.fix-right-middle').hide();
-        }else{
-            $('.fix-right-middle').show();
-        }
-    });
-    /* 右侧浮动层*/
-    $('.img-span').hover(function(){
-        var bar = $(this).find(".tab-bar-js");
-        bar.css('right','60px').show().animate({right:"35px"},1000);
-    },function(){
-       $(this).find(".tab-bar-js").hide();
-    });
-    $('.gotop').click(function() {$("html, body").animate({ scrollTop: 0 }, 120);});
-</script>

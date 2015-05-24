@@ -136,3 +136,39 @@ $(function(){
     }
     F_nav_scroll();
 });
+
+
+// 页面最右侧边栏
+$(function(){
+    var $Right_layer = function() {
+        var st = $(document).scrollTop(), winh = $(window).height();
+        (st > 200)? $('#fix-right-layer').show(): $('#fix-right-layer').hide();
+        //IE6下的定位
+        if (!window.XMLHttpRequest) {
+            $('#fix-right-layer').css("top", st + winh - 166);
+        }
+    };
+    $(window).bind("scroll", $Right_layer);
+    $Right_layer();
+
+
+    $(window).resize(function(){
+        if($('#fix-right-layer').height()<580){
+            $('.fix-right-middle').hide();
+        }else{
+            $('.fix-right-middle').show();
+        }
+    });
+
+        /* 右侧浮动层*/
+    $('.img-span').hover(function(){
+        var bar = $(this).find(".tab-bar-js");
+        bar.css('right','60px').show().animate({right:"35px"},1000);
+    },function(){
+       $(this).find(".tab-bar-js").hide();
+    });
+    $('.gotop').click(function() {$("html, body").animate({ scrollTop: 0 }, 120);});
+});
+      
+
+    

@@ -592,19 +592,6 @@ function inArray(val,array){
 
  
 
- 	var $Right_layer = function() {
-        var st = $(document).scrollTop(), winh = $(window).height();
-        (st > 200)? $('#fix-right-layer').show(): $('#fix-right-layer').hide();
-        //IE6下的定位
-        if (!window.XMLHttpRequest) {
-            $('#fix-right-layer').css("top", st + winh - 166);
-        }
-    };
-    $(window).bind("scroll", $Right_layer);
-    $Right_layer();
-
-
-
 
 function domStop(id) {  //id外围需要一个position:relative的元素定位，id最好不要有css，只起到单纯的定位作用
 	var IO = document.getElementById(id),Y = IO,H = 0,IE6;

@@ -37,6 +37,8 @@
 </div>
 </div>
 <include file="public:footer" />
-<script src="__STATIC__/js/comment.js"></script>
+<ftx:load type="js" href="
+__STATIC__/js/comment.js
+"/>
 </body>
 </html>

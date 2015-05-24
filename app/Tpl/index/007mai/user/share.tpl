@@ -2,10 +2,13 @@
 <html>
 <head>
 <include file="public:head" />
-<load href="__STATIC__/ftxia/new/css/md-pagination.css" />
-<load href="__STATIC__/ftxia/new/css/md-goodslist.css" />
-<load href="__STATIC__/ftxia/new/css/md-public.css" />
-<load href="__STATIC__/ftxia/new/css/pg-zone.css" />
+<ftx:load type="css" href="
+__STATIC__/ftxia/new/css/md-pagination.css,
+__STATIC__/ftxia/new/css/md-goodslist.css,
+__STATIC__/ftxia/new/css/md-public.css,
+__STATIC__/ftxia/new/css/pg-zone.css
+"/>
+
 </head>
 <body>
 <include file="public:header" />
@@ -78,9 +81,12 @@
 <!--主部结束-->
 <include file="public:footer" />
 <link rel="stylesheet" type="text/css" href="__STATIC__/js/calendar/calendar-blue.css"/>
-<script src="__STATIC__/js/calendar/calendar.js"></script>
-<script src="__STATIC__/js/setting.js"></script>
-<script src="__STATIC__/js/minicity.js"></script>
+<ftx:load type="js" href="
+__STATIC__/js/calendar/calendar.js,
+__STATIC__/js/setting.js,
+__STATIC__/js/minicity.js
+"/>
+
 <script>
 $(function(){
     $.minicity( "#J_province", "#J_city", "<?php echo $info['province'];?>", "<?php echo $info['city'];?>");

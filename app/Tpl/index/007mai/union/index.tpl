@@ -2,9 +2,11 @@
 <html>
 <head>
 <include file="public:head" />
-<load href="__STATIC__/ftxia/new/css/md-pagination.css" />
-<load href="__STATIC__/ftxia/new/css/md-goodslist.css" />
-<load href="__STATIC__/ftxia/new/css/pg-zone.css" />
+<ftx:load type="css" href="
+__STATIC__/ftxia/new/css/md-pagination.css,
+__STATIC__/ftxia/new/css/md-goodslist.css,
+__STATIC__/ftxia/new/css/pg-zone.css
+"/>
 </head>
 <body>
 <include file="public:header" />

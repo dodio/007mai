@@ -2,7 +2,7 @@
 <html>
 <head>
 <include file="public:head" />
-<load href="__STATIC__/jky/css/article.css" />
+<ftx:load type="css" href="__STATIC__/jky/css/article.css" />
 </head>
 <body>
 <include file="public:header" />

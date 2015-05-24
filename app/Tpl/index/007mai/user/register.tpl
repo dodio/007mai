@@ -11,14 +11,18 @@
 <meta name="copyright" content="2010-2015 Ftxia Inc." />
 <meta name="MSSmartTagsPreventParsing" content="True" />
 <meta http-equiv="MSThemeCompatible" content="Yes" />
-<link rel=stylesheet type=text/css href="__STATIC__/jky/css/base.css" />
-<link rel=stylesheet type=text/css href="__STATIC__/jky/css/login.css" />
+<ftx:load type="css" href="
+__STATIC__/jky/css/base.css,
+__STATIC__/jky/css/login.css
+"/>
+<ftx:load type="js" href="
+__STATIC__/jky/js/jquery.js,
+__STATIC__/jky/js/jquery.cookie.js,
+__STATIC__/jky/js/funs.js,
+__STATIC__/jky/js/error.js,
+__STATIC__/jky/js/noWordArr.js
+"/>
 
-<script type="text/javascript" src="__STATIC__/jky/js/jquery.js"></script>
-<script type="text/javascript" src="__STATIC__/jky/js/jquery.cookie.js"></script>
-<script type="text/javascript" src="__STATIC__/jky/js/funs.js"></script>
-<script type="text/javascript" src="__STATIC__/jky/js/error.js"></script>
-<script type="text/javascript" src="__STATIC__/jky/js/noWordArr.js"></script>
  </head>
 <body>
 <!-- 主体 -->
@@ -115,9 +119,12 @@
 	</div>
 </div>
 <!-- /主体 -->
-<script charset="utf-8" type="text/javascript" src="__STATIC__/jky/js/jquery.validate.js" ></script>
-<script charset="utf-8" type="text/javascript" src="__STATIC__/jky/js/placeholder.js"></script> 
-<script charset="utf-8" type="text/javascript" src="__STATIC__/jky/js/jquery.emailmatch.js"></script>
+<ftx:load type="js" href="
+__STATIC__/jky/js/jquery.validate.js,
+__STATIC__/jky/js/placeholder.js,
+__STATIC__/jky/js/jquery.emailmatch.js
+"/>
+
 <script type="text/javascript">
 $(function(){
 	//获取焦点事件

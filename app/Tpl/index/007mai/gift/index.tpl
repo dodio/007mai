@@ -2,8 +2,10 @@
 <html>
 <head>
 <include file="public:head" />
-<load href="__STATIC__/jky/css/good.css" />
-<load href="__STATIC__/jky/css/gift.css" />
+<ftx:load type="css" href="
+__STATIC__/jky/css/good.css,
+__STATIC__/jky/css/gift.css
+"/>
 </head>
 <body>
 <include file="public:header" />

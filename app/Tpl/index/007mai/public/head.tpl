@@ -19,11 +19,12 @@ __STATIC__/assets/css/base.css,
 __STATIC__/assets/css/global.css,
 __STATIC__/assets/css/alert.css,
 __STATIC__/assets/css/page.css,
-__STATIC__/assets/css/ad.css
+__STATIC__/assets/css/ad.css,
+__STATIC__/assets/css/jiu-side-nav.css
 "/>
 
 
-<load type="js" href="
+<ftx:load type="js" href="
 __STATIC__/assets/js/jquery/jquery.js,
 __STATIC__/assets/js/jquery/jquery.cookie.js,
 __STATIC__/assets/js/jquery/lazyload.js

@@ -7,7 +7,7 @@ class cacheAction extends BackendAction
     }
 
     public function index() {
-        $this->assign("combile_css_dirs",S("combile_css_dirs"));
+        $this->assign("combile_css_dirs",F("combile_css_dirs",'',CONF_PATH));
         $this->display();
     }
 
@@ -61,7 +61,7 @@ class cacheAction extends BackendAction
     }
 
     private function _clear_dist_css($obj_dir){
-        $css_dirs = S("combile_css_dirs");
+        $css_dirs = F("combile_css_dirs",'',CONF_PATH);
         if($css_dirs === false){
             return;
         }

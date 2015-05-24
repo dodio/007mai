@@ -2,8 +2,10 @@
 <html>
 <head>
 <include file="public:head" />
-<link rel=stylesheet type=text/css href="__STATIC__/assets/css/good.css" />
-<link rel=stylesheet type=text/css href="__STATIC__/assets/css/brand.css" />
+<ftx:load type="css" href="
+__STATIC__/assets/css/good.css,
+__STATIC__/assets/css/brand.css
+"/>
 </head>
 <body>
 <include file="public:header" />

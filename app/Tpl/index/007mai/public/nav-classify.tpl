@@ -1,4 +1,3 @@
-<link rel=stylesheet type=text/css href="__STATIC__/assets/css/jiu-side-nav.css" />
 <div class="side_nav_wrap w1100">
 	
 <div id="sidenav" class="side_nav">

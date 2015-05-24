@@ -1,0 +1,1 @@
+<?php	return array ( 0 => '/static/assets', 1 => '/static/jky', );?>

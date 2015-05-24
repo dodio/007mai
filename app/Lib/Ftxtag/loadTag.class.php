@@ -78,19 +78,21 @@ class loadTag {
             mkdir(dirname($path));
         }
         //缓存一下css编译目录，方便通过后台清理
-        $css_dirs = S("combile_css_dirs");
+        $css_dirs = F("combile_css_dirs",'',CONF_PATH);
         if($css_dirs === false){
             $css_dirs = array();
         }
         if(!in_array($dir, $css_dirs)){
             $css_dirs[] = $dir;
         }
-        S("combile_css_dirs",$css_dirs);
+        F("combile_css_dirs",$css_dirs,CONF_PATH);
         
         $content = '';
         foreach ($files as $value) {
             $content.=file_get_contents(ROOT_PATH ."/" . $value)."\n";
         }
+        $content = $this->minifyCss($content);
+
         file_put_contents($path, $content);
         echo $this->_tag_css($combile_name);
     }
@@ -101,5 +103,13 @@ class loadTag {
     }
     private function _tag_js($src){
         return ( '<script type="text/javascript" src="' . __ROOT__ . $src . '?v='.THIS_IS_IT.'"></script>');
+    }
+
+    private function minifyCss($fc){
+        $fc = str_replace("\t", "", $fc); //清除空格
+        $fc = str_replace("\r\n", "", $fc); 
+        $fc = str_replace("\n", "", $fc); 
+        $fc = preg_replace("/\/\*[^\/]*\*\//s", "", $fc); 
+        return $fc;
     }
 }

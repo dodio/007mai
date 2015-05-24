@@ -8,18 +8,20 @@
 					<div class="user-edit"><a href="{:U('user/avatar')}" class="blue-link">换头像</a>　<a href="{:U('user/info')}" class="blue-link">帐户资料</a></div>
 				</div>
 			</div>
-			<div class="user-bind">
-				<div style="float:left">绑定：</div> 
-				<a href="{:U('user/bind')}">
-					<volist name="oauth_list" id="val">
-						<if condition="$val.isbind eq 1">
-						<div title="绑定后可用{$val.name}{:C('ftx_site_name')}" class="ico {$val.code}_sync"></div>
-						<else/>
-						<div title="绑定后可用{$val.name}{:C('ftx_site_name')}" class="ico {$val.code}_sync_no"></div>
-						</if>
-					</volist>
-                		</a>
-			</div>
+			<notempty name="oauth_list">
+				<div class="user-bind">
+					<div style="float:left">绑定：</div> 
+					<a href="{:U('user/bind')}">
+						<volist name="oauth_list" id="val">
+							<if condition="$val.isbind eq 1">
+							<div title="绑定后可用{$val.name}{:C('ftx_site_name')}" class="ico {$val.code}_sync"></div>
+							<else/>
+							<div title="绑定后可用{$val.name}{:C('ftx_site_name')}" class="ico {$val.code}_sync_no"></div>
+							</if>
+						</volist>
+	                		</a>
+				</div>
+			</notempty>
 	
 			<div class="admin-menu">
 				<ul class="left-menu-ul">
@@ -27,7 +29,7 @@
 						<div class="nav-title">
 							<div class="nav-mouse">
 								<div class="icon index"></div>
-								<div class="nav-name"><a href="{:U('user/index')}">我的后台</a></div>
+								<a href="{:U('user/index')}"><div class="nav-name">我的后台</div></a>
 							</div> 
 						</div>			 
 					</li>
@@ -35,7 +37,7 @@
 						<div class="nav-title">
 							<div class="nav-mouse">
 								<div class="icon share"></div>
-								<div class="nav-name"><a href="{:U('like/index')}">我的收藏</a></div>
+								<a href="{:U('user/like')}"><div class="nav-name">我的收藏</div></a>
 							</div> 
 						</div>			 
 					</li>

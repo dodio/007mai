@@ -9,7 +9,7 @@
 </head>
 <body>
 <include file="public:header" />
-<div class="main">
+<div class="main w1100">
 	<div class="piece jiu_goods">
 		<div class="piece_box">
 			<div class="jiu_info">

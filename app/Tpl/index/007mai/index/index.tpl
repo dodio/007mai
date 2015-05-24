@@ -106,7 +106,6 @@
 
 <include file="public:nav-classify" />
 
-
 <div class="side_nav_fix_pos">
 
   <div class="main w1100 group">

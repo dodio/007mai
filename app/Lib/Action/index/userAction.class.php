@@ -443,36 +443,64 @@ class userAction extends UsersAction {
         $this->display();
     }
 
-	public function like() {
-		$p = I('p',1);
-		$page_size = 20;
-		$start = $page_size * ($p - 1) ;
-		
-		$ids_list = D('items_like')->field('id,item_id')->limit($start . ',' . $page_size)->where(array('uid'=>$this->visitor->info['id']))->order('id desc')->select();
-		$ids=array(); 
-		if($ids_list){
-			foreach($ids_list as $val){
-				$ids[] = $val['item_id'];
-				$item_list[$val['item_id']]=$val['item_id'];
-				
-			}
-		}
-		$where['id'] = array('in',$ids);
-		$items = D('items')->field('id,num_iid,title,price,coupon_price,pic_url,likes,status,coupon_start_time,coupon_end_time')->where($where)->select();
-		$count = D('items_like')->where(array('uid'=>$this->visitor->info['id']))->count();
-		$pager = $this->_pager($count, $page_size);
-		foreach($items as $item){
-			$item_list[$item['id']] = $item;
-			$item_list[$item['id']]['class']	= D('items')->status($item['status'],$item['coupon_start_time'],$item['coupon_end_time']);
-		}
-		$this->assign('page', $pager->kshow());
-		$this->assign('count', $count);
-		$this->assign('items', $item_list);
-		$this->_config_seo(array(
-			'title' =>  '我的喜欢	-	' . C('ftx_site_name'),
-    ));
-		$this->display();
-	}
+    public function like(){
+        $prefix = C(DB_PREFIX);
+        $p = I('p',1);
+        $page_size = 24;
+        $start = $page_size * ($p - 1) ;
+        $like_count = M('items_like')->join($prefix.'items ON '.$prefix.'items.id='.$prefix.'items_like.item_id')->where($prefix."items_like.uid = ".$this->visitor->info['id'])->count();
+        $likes =  M('items_like')->field('item_id')->where(array('uid'=>$this->visitor->info['id']))->limit($start . ',' . $page_size)->order('id DESC')->select();
+
+        if(is_array($likes)){
+            $ids="";
+            foreach($likes as $like){
+                 $ids.=$like['item_id'].",";
+            }
+             $ids=substr($ids,0,-1);
+        }
+        $map['id'] = array ('in',$ids);
+
+        $mod = D('items');
+        $items_list = $mod->where($map)->select();
+  
+        $items = array();
+        $seller_arr = array();
+        $sellers = '';
+        foreach($items_list as $key=>$val){
+                $items['item_list'][$key]           = $val;
+                $items['item_list'][$key]['class']  = $mod->status($val['status'],$val['coupon_start_time'],$val['coupon_end_time']);
+                $items['item_list'][$key]['zk']     = round(($val['coupon_price']/$val['price'])*10, 1); 
+                if(!$val['click_url']){
+                    $items['item_list'][$key]['click_url']  =U('jump/index',array('id'=>$val['id']));
+                }
+                if($val['coupon_start_time']>time()){
+                    $items['item_list'][$key]['click_url']  =U('item/index',array('id'=>$val['id']));
+                    $items['item_list'][$key]['timeleft'] = $val['coupon_start_time']-time();
+                }else{
+                    $items['item_list'][$key]['timeleft'] = $val['coupon_end_time']-time();
+                }
+                $items['item_list'][$key]['cate_name']      =$cate_list['p'][$val['cate_id']]['name']; 
+                $url = C('ftx_site_url').U('item/index',array('id'=>$val['id']));
+                $items['item_list'][$key]['url'] = urlencode($url);
+                $items['item_list'][$key]['urltitle'] = urlencode($val['title']);
+                $items['item_list'][$key]['price'] = number_format($val['price'],1);
+                $items['item_list'][$key]['coupon_price'] = number_format($val['coupon_price'],1);
+                if($val['sellerId']){
+                    $items['seller_arr'][] = $val['sellerId'];
+                }
+        }
+
+     
+        $this->assign('items_list', $items['item_list']);
+        $pager = $this->_pager($like_count, $page_size);
+        $this->assign('page', $pager->kshow());
+        $this->assign('like_count',$like_count);
+        $this->assign('nav_curr', 'like');
+        $this->_config_seo(array(
+            'title' => ' 我的收藏 — ' ,
+        ));
+        $this->display();
+    }
 
  
 
@@ -566,6 +594,22 @@ class userAction extends UsersAction {
 	public function avatar(){
 		$this->display();
 	}
+
+
+    public function share() {
+        $p = I('p',1,'intval');
+        $sort = 'add_time';
+        $order = ' DESC ';
+        $mod = D('items_comment');
+        $where[C('DB_PREFIX').'items_comment.uname']= $this->visitor->info['username'];
+        $count = $mod->join(C('DB_PREFIX').'items ON '.C('DB_PREFIX').'items.id='.C('DB_PREFIX').'items_comment.item_id')->where($where)->count(C('DB_PREFIX').'items_comment.id');
+        $pager = $this->_pager($count, 10);
+        $list  = $mod->field(C('DB_PREFIX').'items_comment.add_time,'.C('DB_PREFIX').'items_comment.info,'.C('DB_PREFIX').'items_comment.uname,'.C('DB_PREFIX').'items.title,'.C('DB_PREFIX').'items.pic_url,'.C('DB_PREFIX').'items.price,'.C('DB_PREFIX').'items.coupon_price,'.C('DB_PREFIX').'items.coupon_start_time,'.C('DB_PREFIX').'items.num_iid,'.C('DB_PREFIX').'items_comment.status,'.C('DB_PREFIX').'items.id')->join(C('DB_PREFIX').'items ON '.C('DB_PREFIX').'items.id='.C('DB_PREFIX').'items_comment.item_id')->where($where)->order($sort . ' ' . $order)->limit($pager->firstRow.','.$pager->listRows)->select();
+        $this->assign('page', $pager->fshow());
+        $this->assign('list',$list);
+        $this->_config_seo(C('ftx_seo_config.index'));
+        $this->display();
+    }
  
 
 }

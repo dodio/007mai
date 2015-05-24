@@ -227,7 +227,7 @@ class Page {
      * @access public
      */
     public function fshow() {
-        if(0 == $this->totalRows) return '';
+        if(0 == $this->totalRows || 2 > $this->totalPages) return '';
         $p              =   $this->varPage;
         $middle         =   ceil($this->rollPage/2); //中间位置
 
@@ -324,7 +324,7 @@ class Page {
      * @access public
      */
     public function kshow() {
-        if(0 == $this->totalRows) return '';
+        if(0 == $this->totalRows || 2 > $this->totalPages) return '';
         $p              =   $this->varPage;
         $middle         =   ceil($this->rollPage/2); //中间位置
 

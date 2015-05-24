@@ -1,4 +1,4 @@
-﻿@charset "utf-8";
+@charset "utf-8";
 .jiu_help { height:auto; }
 .jiu_help .help_title { width:230px; height:auto; background:#fff; padding-top:20px; padding-bottom:50px; }
 .jiu_help .left_bg { background:url(../images/global/left_bg.png) no-repeat; display:block; height:159px; width:13px; position:absolute; top:0px; left:-13px; }

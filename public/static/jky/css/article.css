@@ -1,4 +1,4 @@
-﻿@charset "utf-8";
+@charset "utf-8";
 .about { height:auto; overflow:hidden; background:#FFF url(../images/about/left_cur.png) repeat-y; }
 .about .about_menu { width:176px !important; overflow:hidden; padding:5px 15px 20px 20px; min-height:800px; }
 .about .about_menu ul li { width:169px; margin:22px 0; }

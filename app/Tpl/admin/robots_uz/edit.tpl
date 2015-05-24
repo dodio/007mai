@@ -39,7 +39,7 @@
 
 					<select name="page" id="page">
 					<?php for($a=1;$a<=5;$a++){?>
-						<option value="<?=$a?>" <if condition="$info.page eq $a"> selected</if> >采集<?=$a?>页</option>
+						<option value="<?php echo $a?>" <if condition="$info.page eq $a"> selected</if> >采集<?php echo $a?>页</option>
 					<?php 
 					}
 					?>

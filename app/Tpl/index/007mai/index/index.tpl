@@ -99,20 +99,25 @@
   </div>
 </div>
 
+<include file="public:nav-classify" />
 
+<style>
+  .side_nav{
+    margin-top: 20px;
+  }
+  .side_nav.affix{
+    margin-top: 0;
+  }
+</style>
+<div class="side_nav_fix_pos"></div>
 <div class="main w1100 group">
   {:R('advert/index', array(4), 'Widget')}
 </div>
 
-<include file="public:nav-classify" />
-
-<div class="side_nav_fix_pos">
-
   <div class="main w1100 group">
-    <include file="pailist" />
+    {:R('advert/index', array(5), 'Widget')}
   </div>
   <include file="public:list" />
-</div>
 
 <include file="public:footer" />
 </body>

@@ -35,9 +35,8 @@
 .logowall .logo {
     float: left;
     *display: inline;
-    width: 60px;
-    height: 30px;
-    font: 0/0 a;
+    width: 90px;
+    height: 45px;
     padding: 7px 9px
 }
 

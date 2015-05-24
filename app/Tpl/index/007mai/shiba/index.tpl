@@ -5,8 +5,7 @@
 </head>
 <body>
 <include file="public:header" />
-
-
+ 
 <notempty name="tag_list"> 
 <div class="jiu-nav-main jiu-nav-main-2" id="seclevel">
 	<div class="jiu-nav {:C('ftx_site_width')}  seclevelinner">
@@ -15,7 +14,7 @@
 				<ul>
 				<li><a href="{:U('index/cate', array('cid'=>$cinfo['pid']))}" <empty name="tag"> class="active"</empty>>全部</a></li>
 				<volist name="tag_list" id="bcate">
-					<li><a href="{:U('shiba/index',array('tag'=>$bcate['id']))}" class=" <if condition="$tag eq $bcate['id']">active</if>" ><span></span>{$bcate.name}</a></li>
+					<li><a href="{:U('ba/index',array('tag'=>$bcate['id']))}" class=" <if condition="$tag eq $bcate['id']">active</if>" ><span></span>{$bcate.name}</a></li>
 
 				</volist>
 				</ul>
@@ -26,6 +25,10 @@
 </notempty>
 
 
+
+<include file="public:nav-classify" />
+
+<div class="side_nav_fix_pos"></div>
 <include file="public:list" />
 
 <include file="public:footer" />

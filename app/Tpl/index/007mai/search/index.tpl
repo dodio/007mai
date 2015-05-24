@@ -49,7 +49,13 @@ __STATIC__/ftxia/new/css/nav-channel.css
    </div>
 </div>
 
-
+<include file="public:nav-classify" />
+<style>
+  .side_nav{
+    margin-left: -240px;
+  }
+</style>
+<div class="side_nav_fix_pos"></div>
 <!--List Start-->
 <div class="main m0a clear wide_page">
 	<ul class="goods-list container" id="container">

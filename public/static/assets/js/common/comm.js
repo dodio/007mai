@@ -103,19 +103,22 @@ $(function(){
 
 $(function(){
     //左侧浮动导航
+    var headh = $("div.side_nav_fix_pos").offset().top;
+    var side_nav = $("div.side_nav");
     var $navFun = function() {
-        var st = $(document).scrollTop(), 
-            headh = $("div.head").height(),           
-            $nav_classify = $("div.jiu-side-nav");
+        var st = $(document).scrollTop();
 
         if(st > headh){
-            $nav_classify.addClass("fixed");
+          side_nav.addClass("affix");
         } else {
-            $nav_classify.removeClass("fixed");
+          side_nav.removeClass("affix");
         }
     };
 
     var F_nav_scroll = function () {
+        if(side_nav.length === 0){
+          return;
+        }
         if(navigator.userAgent.indexOf('iPad') > -1){
             return false;
         }      

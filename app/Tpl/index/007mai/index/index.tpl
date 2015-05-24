@@ -104,11 +104,16 @@
   {:R('advert/index', array(4), 'Widget')}
 </div>
 
-<div class="main w1100 group">
-  <include file="pailist" />
-</div>
+<include file="public:nav-classify" />
 
-<include file="public:list" />
+
+<div class="side_nav_fix_pos">
+
+  <div class="main w1100 group">
+    <include file="pailist" />
+  </div>
+  <include file="public:list" />
+</div>
 
 <include file="public:footer" />
 </body>

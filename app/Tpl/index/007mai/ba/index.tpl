@@ -23,7 +23,13 @@
 	</div>
 </div>
 </notempty>
-<include file="public:list" />
+
+
+<include file="public:nav-classify" />
+
+<div class="side_nav_fix_pos">
+  <include file="public:list" />
+</div>
 
 <include file="public:footer" />
 </body>

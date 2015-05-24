@@ -5,6 +5,7 @@
 </head>
 <body>
 <include file="public:header" />
+
 <div class="jiu-nav-main">
 	<div class="jiu-nav main" style="width: 1100px;">
 		<div class="nav-item fl">
@@ -55,11 +56,11 @@
 	</div>
 </notempty>
 
-<link rel=stylesheet type=text/css href="__STATIC__/assets/css/jiu-side-nav.css" />
 <include file="public:nav-classify" />
- 
- 
-<include file="public:list" />
+
+<div class="side_nav_fix_pos">
+	<include file="public:list" />
+</div>
  
 <include file="public:footer" />
 </body>

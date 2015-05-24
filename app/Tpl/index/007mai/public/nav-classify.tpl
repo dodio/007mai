@@ -3,7 +3,7 @@
 	
 <div id="sidenav" class="side_nav">
   <div class="logo">
-    <a href="http://www.zhe800.com/?utm_content=left_menu"><img alt="" src="http://z5.tuanimg.com/v2/core/img/side_logo_min.png"width="145" height="70"></a>
+    <a title="{:C('ftx_site_name')}" href="{:C('ftx_site_url')}"><img alt="" src="{:C('ftx_site_navlogo')}" width="145" height="70"></a>
   </div>
   <div class="content">
     <div class="bd">

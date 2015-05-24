@@ -7,12 +7,16 @@ $(function() {
    * 签到按钮的划出框
    * @type {[type]}
    */
-  $(".btn_jfsc,#top-side-box").bind({
+  var the;
+  $(".btn_jfsc,#signIn_btn,#top-side-box").bind({
         mouseover:function(){
+            clearTimeout(the);
             $("#top-side-box").show();
         },
         mouseout:function(){
-            $("#top-side-box").hide();
+            the = setTimeout(function(){
+              $("#top-side-box").hide();
+            },200);
         }
     });
 

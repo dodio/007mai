@@ -56,21 +56,21 @@
     </div>
 </div>
 <div class="header">
-    <div class="area {:C('ftx_site_width')}">
-        <div class="logo">
+    <div class="area group {:C('ftx_site_width')}">
+        <div class="logo fl">
 		<if condition="C('ftx_site_logo') neq ''">
-			<h1 class="fl"><a title="{:C('ftx_site_name')}" href="{:C('ftx_site_url')}"><img src="{:C('ftx_site_logo')}" width="238" height="50" /></a></h1>
+			<h1><a title="{:C('ftx_site_name')}" href="{:C('ftx_site_url')}"><img src="{:C('ftx_site_logo')}"/></a></h1>
 		<else />
-			<h1 class="fl"><a title="{:C('ftx_site_name')}" href="{:C('ftx_site_url')}"><img src="/static/assets/images/logo.png" width="238" height="50" /></a></h1>
+			<h1><a title="{:C('ftx_site_name')}" href="{:C('ftx_site_url')}"><img src="/static/assets/images/logo.png"/></a></h1>
 		</if>
 
         </div>
-        <div class="protection">
+        <div class="protection fl">
             <a title="每天22点开抢" class="update"   target="_blank"></a>
             <a title="职业买手砍价" class="lowest"  target="_blank"></a>
             <a title="商品验货质检" class="check"   target="_blank"></a>
         </div>
-              <div class="search">
+              <div class="search fr">
                 <form method="get" action="/index.php" target="_blank" onsubmit="return search_submit();" >
                 <span class="search-area fl search_box">
                   <input type="hidden" name="m" value="search" />

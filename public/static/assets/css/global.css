@@ -1,4 +1,4 @@
-﻿@charset "utf-8";
+@charset "utf-8";
 textarea,input[type="text"],input[type="password"]{ background:url(../images/global/input_bg_sd.png) no-repeat #FFF; font-family:'Microsoft Yahei',Tahoma,Helvetica,Arial,sans-serif;}
 :-moz-placeholder, ::-webkit-input-placeholder { color:#999999; }
 .placeholder { color:#999999; }

@@ -12,7 +12,7 @@
 
 <include file="bm_top" />
 
-<div class="main {:C('ftx_site_width')} mb20">
+<div class="main page007mai mb20">
 	<div class="main-newgood -2">
 
 		<div class="procedures bc">

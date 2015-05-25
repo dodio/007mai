@@ -1,7 +1,7 @@
 
 <load href="__STATIC__/ftxia/new/css/nav-channel.css" />
 
-<div class="main widescreen mb10 w1100">
+<div class="main widescreen mb10 page007mai">
   <ul class="nav-channel clear list-sort" style="width: 100%;">
       <li>
         <notempty name="cid">
@@ -15,7 +15,6 @@
         <a href="{:U('index/index',array('sort'=>'rate'))}" class="ju_nav <if condition="$index_info['sort'] eq 'rate'"> on </if>"><span>折扣</span>&nbsp;<i class="sort-sign"></i></a>
         <a href="{:U('index/index',array('sort'=>'new'))}" class="ju_nav <if condition="$index_info['sort'] eq 'new'"> on </if>"><span>最新</span>&nbsp;<i class="sort-sign"></i></a>
         </notempty>
-        <a class="right " href="{:U('before/index')}"><i class="on"></i>往期宝贝</a>
       </li>
       <li class="last">
         <a class="today" href="{:U('xinpin/index')}">今日新品<notempty name="today_item">(<font id="total_xinpin">{$today_item}</font>)</notempty></a>
@@ -26,7 +25,7 @@
 
 <link rel=stylesheet type=text/css href="__STATIC__/assets/css/good.css" />
 <!--List Start-->
-<div class="main {:C('ftx_site_width')} clear">
+<div class="main page007mai clear">
 	<include file="public:items_list" />
 	<div class="page">
 		<div class="pageNav">{$page}</div>

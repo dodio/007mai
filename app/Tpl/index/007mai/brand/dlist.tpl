@@ -28,7 +28,7 @@ __STATIC__/assets/css/brand.css
 </div>
 
 
-<div class="main {:C('ftx_site_width')} clear">
+<div class="main page007mai clear">
 	<ul class="goods-list {:C('ftx_site_wc')}">
 		<volist name="lists['items']" id="item" key="i" mod="4">
 		<li  class="<eq name="mod" value="3"> last</eq>">
@@ -71,7 +71,7 @@ __STATIC__/assets/css/brand.css
 
  
 
-<div class="bmain {:C('ftx_site_width')} pr mt25 clear">
+<div class="bmain page007mai pr mt25 clear">
         <div class="slide-logos clear">
     <span class="prev-btn" style="display: inline;"></span>
     <span class="next-btn" style="display: inline;"></span>

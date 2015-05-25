@@ -1,6 +1,6 @@
 <!-- 头部开始 -->
 <div id="toolbar">
-    <div class="bar-con  {:C('ftx_site_width')}">
+    <div class="bar-con  page007mai">
 
 	<ul class="topNav fl">
 		<li style="border:none;">上007买,东西很好买</li>
@@ -56,7 +56,7 @@
     </div>
 </div>
 <div class="header">
-    <div class="area group {:C('ftx_site_width')}">
+    <div class="area group page007mai">
         <div class="logo fl">
 		<if condition="C('ftx_site_logo') neq ''">
 			<h1><a title="{:C('ftx_site_name')}" href="{:C('ftx_site_url')}"><img src="{:C('ftx_site_logo')}"/></a></h1>
@@ -65,37 +65,23 @@
 		</if>
 
         </div>
-        <div class="protection fl">
-            <a title="每天22点开抢" class="update"   target="_blank"></a>
-            <a title="职业买手砍价" class="lowest"  target="_blank"></a>
-            <a title="商品验货质检" class="check"   target="_blank"></a>
+        <div class="search fr">
+          <form method="get" action="/index.php" target="_blank" onsubmit="return search_submit();" >
+          <span class="search-area fl search_box">
+            <input type="hidden" name="m" value="search" />
+            <input type="hidden" name="a" value="index" />
+            <input x-webkit-speech name="key" id="keywords" placeholder="请输入您要找的宝贝！" value="" class="txt text" />
+          </span>
+          <input type="submit" value="" class="smt fr">
+          </form>
         </div>
-              <div class="search fr">
-                <form method="get" action="/index.php" target="_blank" onsubmit="return search_submit();" >
-                <span class="search-area fl search_box">
-                  <input type="hidden" name="m" value="search" />
-                  <input type="hidden" name="a" value="index" />
-                  <input x-webkit-speech name="key" id="keywords" placeholder="请输入您要找的宝贝！" value="" class="txt text" />
-                </span>
-                <input type="submit" value="" class="smt fr">
-                </form>
-              </div>
         
     </div>
     <div class="mainNav">
-        <div class="nav {:C('ftx_site_width')}">
+        <div class="nav page007mai">
             <ul class="navigation fl">
 		<li class="<if condition="$nav_curr eq 'index'">current</if>   ">
 			<a href="{:C('ftx_site_url')}">{:L('index_page')}</a>
-			<div class="all-classify">
-                    <dl>
-                        <dd><a href="{:U('index/cate',array('cid'=>1))}"><i class="fushi"></i><span>女装</span></a><a href="{:U('index/cate',array('cid'=>3))}"><i class="jujia"></i><span>居家</span></a></dd>
-                            <dd><a href="{:U('index/cate',array('cid'=>4))}"><i class="muying"></i><span>母婴</span></a><a href="{:U('index/cate',array('cid'=>7))}"><i class="meishi"></i><span>美食</span></a></dd>
-                            <dd><a href="{:U('index/cate',array('cid'=>5))}"><i class="xiebaopeishi"></i><span>配饰</span></a><a href="{:U('index/cate',array('cid'=>9))}"><i class="meizhuang"></i><span>美妆</span></a></dd>
-                            <dd><a href="{:U('index/cate',array('cid'=>8))}"><i class="shuma"></i><span>数码</span></a><a href="{:U('index/cate',array('cid'=>10))}"><i class="wenti"></i><span>文体</span></a></dd>
-                        </dl>
-                    </div>
-		
 		</li>
 		<ftx:nav type="lists" style="main">
 			<volist name="data" id="val">
@@ -111,8 +97,10 @@
                     <div class="box-tips">
                         <notempty name="visitor">
                           <p class="text"><span>我的情报：</span><span class="score mr5">{$visitor.score}</span><em class="icon_zhibi"></em></p>
-                          <p class="text" id="closest_duihuan"></p>
+                        <else />
+                          <p class="text"><span>我的情报：</span><a href="{:U('user/login')}" class="score">登录</a>后显示</p>
                         </notempty>
+                        <p class="text" id="closest_duihuan"></p>
                         <p class="other"> <a target="_blank" href="{:U('user/mingxi')}">我的情报</a>　｜　<a target="_blank" href="{:U('gift/index')}">情报商城</a> ｜ <a href="/" target="_blank">快速获得积分!</a></p>
                     </div>
                 </div>
@@ -121,6 +109,7 @@
               $(function(){
                 $.MAI007.data.getUserinfo().done(function(data){
                   if(data.s == 1){
+                    //登录获取最接近的礼物商品
                     var user = data.user;
                     $.MAI007.data.getCloseScoreItem().done(function(data){
                       if(data.status == 1 && data.msg){
@@ -137,6 +126,10 @@
                         $("#closest_duihuan").html(html);
                       }
                     })
+                    //未登录
+                  }else{
+                    html = "登录以后可以看到，您可以马上兑换什么礼物。";
+                    $("#closest_duihuan").html(html);
                   }
                 });
                 

@@ -1,5 +1,5 @@
 
-	<ul class="goods-list {:C('ftx_site_wc')} group">
+	<ul class="goods-list group">
 		<volist name="items_list" id="item" key="i" mod="4">
 		<li  class="<eq name="mod" value="3"> last</eq>">
 			<div class="sid_{$item.sellerId}  list-good   {$item.class} " id="nid_{$item.num_iid}">
@@ -8,7 +8,7 @@
 					<div class="yhq"> </div>
 				</div>
 				<h3 class="good-title">
-					<if condition="$item.ems eq 1">[包邮]</if><a target="_blank" biz-itemid="{$item['num_iid']}" isconvert=1 href="http://detail.tmall.com/item.htm?id={$item['num_iid']}" class="title">{$item.title}</a>
+					<a target="_blank" biz-itemid="{$item['num_iid']}" isconvert=1 href="http://detail.tmall.com/item.htm?id={$item['num_iid']}" class="title">{$item.title}</a>
 					<if condition="$item.volume gt 0 "><span class="sold">已售<em>{$item.volume}</em></span><else/><span class="sold">新品上架<em></em></span></if>
 				</h3>
 				<div class="good-price">

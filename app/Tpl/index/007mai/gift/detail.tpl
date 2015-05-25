@@ -22,7 +22,7 @@ __STATIC__/ftxia/new/css/pg-try.css
 
 
 <div class="jiu-nav-main">
-	<div class="jiu-nav {:C('ftx_site_width')}">
+	<div class="jiu-nav page007mai">
 		<div class="nav-item fl">
 			<div class="item-list">
 				<ul>
@@ -36,7 +36,7 @@ __STATIC__/ftxia/new/css/pg-try.css
 	</div>
 </div>
 
-<div class="main {:C('ftx_site_width')} mb20 clear">
+<div class="main page007mai mb20 clear">
 	<div class="huan-left">
 		<div class="goods-inside clear">
 			<div class="img_show fl"><img src="{:attach(str_replace('_s.'.array_pop(explode('.', $item['img'])), '_b.'.array_pop(explode('.', $item['img'])), $item['img']), 'score_item')}" alt="{$item.title}" /></div>

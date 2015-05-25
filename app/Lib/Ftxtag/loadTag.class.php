@@ -106,10 +106,10 @@ class loadTag {
     }
 
     private function minifyCss($fc){
-        $fc = str_replace("\t", "", $fc); //清除空格
-        $fc = str_replace("\r\n", "", $fc); 
-        $fc = str_replace("\n", "", $fc); 
-        $fc = preg_replace("/\/\*[^\/]*\*\//s", "", $fc); 
+        $fc = str_replace("\t", "", $fc); //清除tab
+        // $fc = str_replace("\r\n", "", $fc); 
+        // $fc = str_replace("\n", "", $fc); 
+        $fc = preg_replace("/\/\*[^\/]*\*\//s", "", $fc);  //清除注释
         return $fc;
     }
 }

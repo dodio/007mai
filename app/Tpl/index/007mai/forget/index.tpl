@@ -6,7 +6,7 @@
 </head>
 <body>
 <include file="public:header" />
- <div class="main {:C('ftx_site_width')} clear">
+ <div class="main page007mai clear">
 	<div class="white_top"><div class="white_top_left"></div><div class="white_top_middle"></div><div class="white_top_right"></div></div>
 	<div class="white_bg wrap">
 		<div class="wrap_left get_password">

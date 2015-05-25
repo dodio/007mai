@@ -6,8 +6,8 @@
 </head>
 <body>
 <include file="public:header" />
-<div class="main clear mb20 {:C('ftx_site_width')}">
-	<div class="about {:C('ftx_site_width')}">
+<div class="main clear mb20 page007mai">
+	<div class="about page007mai">
 		<div class="about_menu fl">
 			<ul>
 				<li><a href="{:U('article/cate')}">文章首页</a></li>

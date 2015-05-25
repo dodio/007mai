@@ -48,8 +48,8 @@
 </notempty>
 <!-- 页脚 -->
 <div class="foot">
-	<div class="white_bg {:C('ftx_site_width')}">
-		<div class="xd_info {:C('ftx_site_width')}">
+	<div class="white_bg page007mai">
+		<div class="xd_info page007mai">
 			<div class="jky-info fl">
 				<if condition="C('ftx_site_flogo') neq ''">
 					<h2><img src="{:C('ftx_site_flogo')}" height="38" /></h2>
@@ -103,24 +103,8 @@
 					<img src="{:C('ftx_site_browser')}" width="100" height="100" />
 				</div>
 			</if>
-			  
-			<div class="links {:C('ftx_site_width')} group">
-				<span>友情链接：</span>
-				<div class="links_list_box">
-					<ul class="links_list">
-					<ftx:link type="lists" >
-						<li>
-			    			<volist name="data" id="val" mod="10">	
-			    				<a href="{$val.url}" target="_blank">{$val.name}</a>
-							<eq name="mod" value="9"></li><li></eq>
-						</volist>
-						</li>
-					</ftx:link>
-					</ul>
-				</div>
-			</div>
 		</div>
-		<p class="f_miibeian {:C('ftx_site_width')}"><a href="http://www.miibeian.gov.cn/" rel="nofollow" target="_blank">{:C('ftx_site_icp')}</a> © 2010-2015 007mai.com all Rights Reserved
+		<p class="f_miibeian page007mai"><a href="http://www.miibeian.gov.cn/" rel="nofollow" target="_blank">{:C('ftx_site_icp')}</a> © 2010-2015 007mai.com all Rights Reserved
 		{:C('ftx_statistics_code')}
 		</p>
 	</div>

@@ -14,7 +14,7 @@
 <body>
 <include file="public:header" />
 <!--商品详细-->
-<div class="main {:C('ftx_site_width')}">
+<div class="main page007mai">
 
 	<div class="place-explain">
 		您的位置：<a target="_blank" href="{:C('ftx_site_url')}">{:C('ftx_site_name')}</a>

@@ -1,4 +1,4 @@
-<div class="side_nav_wrap w1100">
+<div class="side_nav_wrap page007mai">
 	
 <div id="sidenav" class="side_nav">
   <div class="logo">

@@ -37,7 +37,7 @@
 </div>
 <notempty name="subnav">
 	<div class="jiu-nav-main jiu-nav-main-2" id="seclevel">
-		<div class="jiu-nav {:C('ftx_site_width')}  seclevelinner">
+		<div class="jiu-nav page007mai  seclevelinner">
 			<div class="nav-item  ">
 				<div class="item-list">
 					<ul>

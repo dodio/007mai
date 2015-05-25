@@ -11,7 +11,7 @@ __STATIC__/jky/css/gift.css
 <include file="public:header" />
 
 <div class="jiu-nav-main">
-	<div class="jiu-nav {:C('ftx_site_width')}">
+	<div class="jiu-nav page007mai">
 		<div class="nav-item fl">
 			<div class="item-list">
 				<ul>
@@ -24,7 +24,7 @@ __STATIC__/jky/css/gift.css
 		</div>
 	</div>
 </div>
-<div class="main {:C('ftx_site_width')} clear">
+<div class="main page007mai clear">
 	<div class="huan-login clear">
 		<div class="introduce fl"><img src="__STATIC__/images/gift_banner.jpg" /></a></div>
 		<div class="nav-userinfo fl">

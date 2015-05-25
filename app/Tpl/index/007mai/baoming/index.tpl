@@ -12,7 +12,7 @@
 
 
 <!--main start -->
-<div class="main {:C('ftx_site_width')} mb20 clear" style="overflow:visible">
+<div class="main page007mai mb20 clear" style="overflow:visible">
 	<div class="main-newgood">
 		<h3 class="megs">
 			<i class="tips-icon"></i>

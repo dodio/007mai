@@ -27,7 +27,7 @@
     </div>
 </div>
 
-<div class=" {:C('ftx_site_width')} con-wrap clear">
+<div class=" page007mai con-wrap clear">
 <p class="line-title line-bao">爆款专区</p>
 </div>
 

@@ -306,7 +306,6 @@ z-index:102; }
 
 .header{ min-width:1000px; background:#fff;}
 .header .area{position:relative; height:85px;  margin:0 auto;}
-/*.header .logo,.header .protection{position:absolute;}*/
 .header .logo{ margin-top: 10px; margin-right: 30px; }
 .header .logo .juan-user,.header .logo .juan-jifen,.header .logo .juan-fanli,.header .logo h1 .juan-iphone{ height: 47px;
     margin: 0 0 0 5px;}
@@ -322,11 +321,7 @@ z-index:102; }
 .header .logo .other-logo{background-position: 0 0;height: 50px;width: 70px;}
 .header .logo h1 .jiu-logo{ background-position:-82px 0;height: 0;padding-top: 50px;width: 128px;overflow: hidden;}
 .header .logo h1 .jiu-txt{background-position: -210px 0;height: 50px;width: 110px;}
-/*this is protection*/
-.header .protection{ background:url(../images/header-total.gif) no-repeat 0 0; height:30px; width:465px;margin-top: 28px;}
-.header .protection a{ display:block; float:left; height:14px; width:80px; margin:4px 0px 0 36px;}
-.header .protection a.lowest{ margin-left:60px;}
-.header .protection a.check{ margin-left:60px;}
+
 /*this is search*/
 .header .search{margin-top:25px; width:220px; height:35px;}
 .header .search .search-area{ display:block; width:182px; height:34px; }

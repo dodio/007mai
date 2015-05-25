@@ -5,7 +5,7 @@
 </head>
 <body>
 <include file="public:header" />
-<div class="jiu-nav {:C('ftx_site_width')}  seclevelinner main-ftxiacom clear">
+<div class="jiu-nav page007mai  seclevelinner main-ftxiacom clear">
             <div class="main-fanli main-my-like">
                 <h3 class="title">我的收藏<em class="number">(共{$like_count}件商品)</em></h3>
                 <span class="like-line"></span>

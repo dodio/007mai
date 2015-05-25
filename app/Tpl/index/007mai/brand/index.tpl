@@ -11,7 +11,7 @@ __STATIC__/assets/css/brand.css
 <include file="public:header" />
 
 
-<div class="bmain {:C('ftx_site_width')} pr mt25 clear">
+<div class="bmain page007mai pr mt25 clear">
         <div class="slide-logos clear">
 		<span class="prev-btn" style="display: inline;"></span>
 		<span class="next-btn" style="display: inline;"></span>
@@ -34,7 +34,7 @@ __STATIC__/assets/css/brand.css
 </div>
 
 
-<div class="bmain {:C('ftx_site_width')} m0a clear tag-list"">
+<div class="bmain page007mai m0a clear tag-list"">
 
 <div class="brand-box">
 <volist name="lists" id="val">
@@ -46,7 +46,7 @@ __STATIC__/assets/css/brand.css
                 </div>
             </div>
             <div class="bd">
-                <div class="main {:C('ftx_site_width')} clear">
+                <div class="main page007mai clear">
 	<ul class="goods-list {:C('ftx_site_wc')}">
 		<volist name="val['items']" id="item" key="i" mod="4" offset="0" length="8" >
 		<li  class="<eq name="mod" value="3"> last</eq>">
@@ -107,7 +107,7 @@ __STATIC__/assets/css/brand.css
 
 
 
-<div class="main {:C('ftx_site_width')} clear">
+<div class="main page007mai clear">
 	<div class="page">
 		<div class="pageNav">{$page}</div>
 	</div>

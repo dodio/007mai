@@ -9,8 +9,8 @@
 <include file="public:header" />
 
 	
-	<div class="main mb20 {:C('ftx_site_width')} clear">
-	<div class="jiu_help {:C('ftx_site_width')}">
+	<div class="main mb20 page007mai clear">
+	<div class="jiu_help page007mai">
 		<div style="position: absolute;">
 			<div id="lr_float" style="position: static; top: -205px;">
 				<div class="left_bg"></div>

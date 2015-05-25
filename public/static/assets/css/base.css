@@ -171,12 +171,19 @@ body {background:url(../images/global/background_bg.png) repeat scroll 0 0 trans
 .pr20{padding-right:20px!important;}
 .pr30{padding-right:30px!important;}
 
-.w980{ width:980px; }
-.w1100{ width:1200px; }
+.page007mai{ width:1200px; }
+/*.w980{ width:980px; }
+.w1100{ width:1100px; }
 .w1005{ width:1005px; }
 .wc1005{ width:1005px; }
-.w1120{ width:1120px; }
-.w1100 .product ,.w1100 .container{width: 1200px;}
+.w1120{ width:1120px; }*/
+/*.w1100 .product ,.w1100 .container{width: 1200px;}*/
 .wide_page{
   width: 1340px;
+}
+
+.w1005 .page007mai{
+  position: relative;
+  width: 1100px;
+  left:60px;
 }

@@ -12,7 +12,7 @@ __STATIC__/ftxia/new/css/pg-zone.css
 </head>
 <body>
 <include file="public:header" />
-<div class="main w1100">
+<div class="main page007mai">
 	<div class="piece jiu_goods">
 		<div class="piece_box">
 			<div class="jiu_info">

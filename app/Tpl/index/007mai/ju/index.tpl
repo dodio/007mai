@@ -12,11 +12,11 @@
 .w980 li.item-small-v3 .link-box {height: 320px;}
 .w980 li.item-small-v3 .item-pic {width: 320px;height: 220px;}
 .w980 li.item-small-v3 .multi, .w980 li.item-small-v3 .timetogo{top:180px;}
-.w1100 .ju-itemlist {width: 1100px;}
-.w1100 li.item-small-v3 {width: 360px!important;height: 330px!important;}
-.w1100 li.item-small-v3 .link-box {height: 340px;}
-.w1100 li.item-small-v3 .item-pic {width: 360px;height: 240px;}
-.w1100 li.item-small-v3 .multi, .w1100 li.item-small-v3 .timetogo{top:200px;}
+.page007mai .ju-itemlist {width: 1100px;}
+.page007mai li.item-small-v3 {width: 360px!important;height: 330px!important;}
+.page007mai li.item-small-v3 .link-box {height: 340px;}
+.page007mai li.item-small-v3 .item-pic {width: 360px;height: 240px;}
+.page007mai li.item-small-v3 .multi, .page007mai li.item-small-v3 .timetogo{top:200px;}
 .page div {position: relative;margin-right: auto;padding-top: 10px;display: inline;}
 </style>
 </head>
@@ -27,7 +27,7 @@ with(document)with(body)with(insertBefore(createElement("script"),firstChild))se
 <script>document.documentElement.className += (window.innerWidth || document.body.clientWidth) > 1240 ? " w1190 " : "";</script>
 <include file="public:header" />
 <div class="jiu-nav-main">
-	<div class="jiu-nav {:C('ftx_site_width')}">
+	<div class="jiu-nav page007mai">
 		<div class="nav-item ">
 			<div class="item-list">
 				<ul>
@@ -41,13 +41,13 @@ with(document)with(body)with(insertBefore(createElement("script"),firstChild))se
 	</div>
 </div>
 
-	<div  class="container ju-wrapper w1190  {:C('ftx_site_width')} ju-container ju-home">
+	<div  class="container ju-wrapper w1190  page007mai ju-container ju-home">
 		<div class="ju-itemlist">
 		{$html}
 		</div>
 	</div>
 
-	<div class="page {:C('ftx_site_width')} "><em></em><div>{$page}</div></div>
+	<div class="page page007mai "><em></em><div>{$page}</div></div>
 	 
 <include file="public:footer" />
 </body>

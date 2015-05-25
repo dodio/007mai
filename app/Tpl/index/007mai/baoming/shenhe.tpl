@@ -10,7 +10,7 @@
 
 <include file="bm_top" />
 
-<div class="main {:C('ftx_site_width')} mb20 clear">
+<div class="main page007mai mb20 clear">
 	<div class="main-newgood">
 		<div class="textcls">
 			<h2>审核说明</h2>

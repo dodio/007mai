@@ -20,7 +20,8 @@ __STATIC__/assets/css/global.css,
 __STATIC__/assets/css/alert.css,
 __STATIC__/assets/css/page.css,
 __STATIC__/assets/css/ad.css,
-__STATIC__/assets/css/jiu-side-nav.css
+__STATIC__/assets/css/jiu-side-nav.css,
+__STATIC__/8mobcom_zhe/css/base.css
 "/>
 
 
@@ -29,6 +30,21 @@ __STATIC__/assets/js/jquery/jquery.js,
 __STATIC__/assets/js/jquery/jquery.cookie.js,
 __STATIC__/assets/js/jquery/lazyload.js
 "/>
+<script>
+  // 兼容各个屏幕的js media query 兼容麻烦
+(function(){
+  function adaptscreen(){
+    var width = $(window).width();
+    if(width<=1366){
+      $("html").addClass("w1005");
+    }else{
+      $("html").removeClass("w1005");
+    }
+  }
+  $(window).resize(adaptscreen);
+  adaptscreen();
+})();
+</script>
 <ftx:load type="js" href="
 __STATIC__/assets/js/lib/funs.js,
 __STATIC__/assets/js/lib/underscore.js,
@@ -38,7 +54,5 @@ __STATIC__/assets/js/lib/placeholder.js
 "/>
 {:C('ftx_header_html')}
 <script language="javascript">window.onerror = function(){return true;}</script>
-
-<link rel=stylesheet type=text/css href="__STATIC__/8mobcom_zhe/css/base.css" />
 
 

@@ -1,5 +1,5 @@
 <div class="bm-nav">
-	<div class="nav-banner {:C('ftx_site_width')}">
+	<div class="nav-banner page007mai">
 		<div class="busi-not"></div>
 		<div class="nav-list">
 			<ul>

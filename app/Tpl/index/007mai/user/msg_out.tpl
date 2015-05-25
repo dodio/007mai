@@ -10,7 +10,7 @@
 </head>
 <body>
 <include file="public:header" />
-<div class="main mb20 {:C('ftx_site_width')} clear">
+<div class="main mb20 page007mai clear">
 	<div class="user_main">
 		<include file="user/left" />
 

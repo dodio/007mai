@@ -8,7 +8,7 @@
 <include file="public:header" />
 <notempty name="cats"> 
 <div class="jiu-nav-main jiu-nav-main-2" id="seclevel">
-	<div class="jiu-nav {:C('ftx_site_width')}  seclevelinner">
+	<div class="jiu-nav page007mai  seclevelinner">
 		<div class="nav-item  ">
 			<div class="item-list">
 				<ul>
@@ -26,7 +26,7 @@
 
 <include file="public:nav-classify" />
 <div class="side_nav_fix_pos"></div>
-<div class="main {:C('ftx_site_width')} clear">
+<div class="main page007mai clear">
 <ul class="goods-list {:C('ftx_site_wc')}">
 		<volist name="items_list" id="item" key="i" mod="4">
 		<li  class="<eq name="mod" value="3"> last</eq>">

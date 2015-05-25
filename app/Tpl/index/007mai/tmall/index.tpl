@@ -6,7 +6,7 @@
 </head>
 <body>
 <include file="public:header" />
-<div class="main {:C('ftx_site_width')} clear">
+<div class="main page007mai clear">
 	
 	<ul class="goods-list {:C('ftx_site_wc')}">
 		<volist name="items_list" id="item" key="i" mod="4">

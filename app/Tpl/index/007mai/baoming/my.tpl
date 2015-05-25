@@ -11,7 +11,7 @@
 <include file="bm_top" />
 
 <!--main start -->
-<div class="main {:C('ftx_site_width')} mb20 main-newgood">
+<div class="main page007mai mb20 main-newgood">
 		<div class="form-result">
 			<table width="100%" border="0" cellspacing="0" cellpadding="0">
 				<tr>

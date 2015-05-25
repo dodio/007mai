@@ -15,49 +15,21 @@ __STATIC__/ftxia/new/css/nav-channel.css
 <body>
 <include file="public:header" />
 <div class="jiu-nav widescreen clear">
-	 <div class="main wide_page">
+	 <div class="main page007mai">
     <notempty name="k">
         <ul class="nav-channel type clear">
           <li><a class="all" style="width:auto; padding:0 12px;">您搜索的内容为：<span class="red">{$k}</span></a></li>
           <span class="clear"></span>
         </ul>
-        <else />
-          <ul class="nav-channel clear list-sort">
-            <li>
-              <a href="{:U('index/index')}" class="all">
-                <i class="null"></i>全部 ({$total_item})
-              </a>
-              <notempty name="cid">
-              <a href="{:U('index/cate',array('cid'=>$cid,'sort'=>'default'))}" class="ju_nav <if condition="$index_info['sort'] eq 'default'"> on </if>"><span>默认</span></a>
-              <a href="{:U('index/cate',array('cid'=>$cid,'sort'=>'hot'))}" class="ju_nav <if condition="$index_info['sort'] eq 'hot'"> on </if>"><span>销量</span>&nbsp;<i class="sort-sign"></i></a>
-              <a href="{:U('index/cate',array('cid'=>$cid,'sort'=>'rate'))}" class="ju_nav <if condition="$index_info['sort'] eq 'rate'"> on </if>"><span>折扣</span>&nbsp;<i class="sort-sign"></i></a>
-              <a href="{:U('index/cate',array('cid'=>$cid,'sort'=>'new'))}" class="ju_nav <if condition="$index_info['sort'] eq 'new'"> on </if>"><span>最新</span>&nbsp;<i class="sort-sign"></i></a>
-              <else />
-              <a href="{:U('index/index',array('sort'=>'default'))}" class="ju_nav <if condition="$index_info['sort'] eq 'default'"> on </if>"><span>默认</span></a>
-              <a href="{:U('index/index',array('sort'=>'hot'))}" class="ju_nav <if condition="$index_info['sort'] eq 'hot'"> on </if>"><span>销量</span>&nbsp;<i class="sort-sign"></i></a>
-              <a href="{:U('index/index',array('sort'=>'rate'))}" class="ju_nav <if condition="$index_info['sort'] eq 'rate'"> on </if>"><span>折扣</span>&nbsp;<i class="sort-sign"></i></a>
-              <a href="{:U('index/index',array('sort'=>'new'))}" class="ju_nav <if condition="$index_info['sort'] eq 'new'"> on </if>"><span>最新</span>&nbsp;<i class="sort-sign"></i></a>
-              </notempty>
-              <a class="right " href="{:U('before/index')}"><i class="on"></i>往期宝贝</a>
-            </li>
-            <li class="last">
-              <a class="today" href="{:U('xinpin/index')}">今日新品(<font id="total_xinpin">{$today_item}</font>)</a>
-              <a href="{:U('yugao/index')}" class="torrow"><i class="torrow"></i>明日预告</a>
-            </li>
-          </ul>
-        </notempty>  
+    </notempty>
    </div>
 </div>
 
 <include file="public:nav-classify" />
-<style>
-  .side_nav{
-    margin-left: -240px;
-  }
-</style>
+
 <div class="side_nav_fix_pos"></div>
 <!--List Start-->
-<div class="main m0a clear wide_page">
+<div class="main clear page007mai">
 	<ul class="goods-list container" id="container">
 		<volist name="items_list" id="item" key="i" mod="3">
 		<li class="item  <eq name="mod" value="3"> last</eq>">

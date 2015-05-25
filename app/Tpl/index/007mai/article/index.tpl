@@ -9,8 +9,8 @@
 
 
 
-<div class="main clear mb20 {:C('ftx_site_width')}">
-	<div class="about {:C('ftx_site_width')}">
+<div class="main clear mb20 page007mai">
+	<div class="about page007mai">
 		<div class="about_menu fl">
 			<ul>
 				<li><a <empty name="cid">class="cur"</empty> href="{:U('article/cate')}">文章首页</a></li>

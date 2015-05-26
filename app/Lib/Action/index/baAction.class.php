@@ -71,7 +71,7 @@ class baAction extends FirstendAction {
 			if($cate_list['s'][$tag]){
 				$tag_list = $cate_list['s'][$tag];
 			}else{
-				if($cate_list['s']){
+				if($cate_list['s'][$taginfo['pid']]){
 					$tag_list = $cate_list['s'][$taginfo['pid']];
 				}else{
 					$tag_list = $cate_list['p'];

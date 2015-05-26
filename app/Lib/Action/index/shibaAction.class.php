@@ -60,17 +60,20 @@ class shibaAction extends FirstendAction {
 		if (false === $cate_list = S('cate_list')) {
 			$cate_list = $this->_cate_mod->cate_cache();
 		}
+
+		if (false === $cate_data = S('cate_data')) {
+			$cate_data = $this->_cate_mod->cate_data_cache();
+		}
+
 		if($tag){
+			$taginfo = $cate_data[$tag];
 			$id_arr = $this->_cate_mod->get_child_ids($tag, true);
-    		$map['cate_id'] = array('IN', $id_arr);
+    	$map['cate_id'] = array('IN', $id_arr);
 			if($cate_list['s'][$tag]){
 				$tag_list = $cate_list['s'][$tag];
 			}else{
-				if (false === $cate_data = S('cate_data')) {
-					$cate_data = $this->_cate_mod->cate_data_cache();
-				}
-				if($cate_list['s']){
-					$tag_list = $cate_list['s'][$cate_data[$tag]['pid']];
+				if($cate_list['s'][$taginfo['pid']]){
+					$tag_list = $cate_list['s'][$taginfo['pid']];
 				}else{
 					$tag_list = $cate_list['p'];
 				}
@@ -85,6 +88,7 @@ class shibaAction extends FirstendAction {
 		$this->assign('cid',$cid);
 		$this->assign('pager','cate');
 		$this->assign('cinfo',$cinfo);
+		$this->assign('taginfo',$taginfo);
 		if($cinfo['wait_time'] == '1'){
 			$map['coupon_start_time'] = array('egt',time());
 		}elseif($cinfo['wait_time'] =='2'){

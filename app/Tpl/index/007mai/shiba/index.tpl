@@ -12,9 +12,9 @@
 		<div class="nav-item  ">
 			<div class="item-list">
 				<ul>
-				<li><a href="{:U('index/cate', array('cid'=>$cinfo['pid']))}" <empty name="tag"> class="active"</empty>>全部</a></li>
+				<li><a href="{:U('shiba/index', array('cid'=>$cinfo['pid']))}" <empty name="tag"> class="active"</empty>>全部</a></li>
 				<volist name="tag_list" id="bcate">
-					<li><a href="{:U('ba/index',array('tag'=>$bcate['id']))}" class=" <if condition="$tag eq $bcate['id']">active</if>" ><span></span>{$bcate.name}</a></li>
+					<li><a href="{:U('shiba/index',array('tag'=>$bcate['id']))}" class=" <if condition="$tag eq $bcate['id']">active</if>" ><span></span>{$bcate.name}</a></li>
 
 				</volist>
 				</ul>

@@ -16,8 +16,9 @@ class FirstendAction extends TopAction {
         $this->_init_visitor();
         $this->_assign_oauth();
         $this->assign('nav_curr', '');
-        $cate_data = D('items_cate')->cate_data_cache();
-        $this->assign('cate_data', $cate_data);
+        $mod_cate  = D('items_cate');
+        $this->assign('cate_data', $mod_cate->cate_data_cache());
+        $this->assign('cate_list', $mod_cate->cate_cache());
     }
     
     /**

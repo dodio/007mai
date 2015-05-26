@@ -1,7 +1,7 @@
 
 <load href="__STATIC__/ftxia/new/css/nav-channel.css" />
 
-<div class="main widescreen mb10 page007mai">
+<!-- <div class="main widescreen mb10 page007mai">
   <ul class="nav-channel clear list-sort" style="width: 100%;">
       <li>
         <notempty name="cid">
@@ -21,7 +21,7 @@
         <a href="{:U('yugao/index')}" class="torrow"><i class="torrow"></i>明日预告</a>
       </li>
     </ul>
-</div>
+</div> -->
 
 <link rel=stylesheet type=text/css href="__STATIC__/assets/css/good.css" />
 <!--List Start-->

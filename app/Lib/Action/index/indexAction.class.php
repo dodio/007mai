@@ -338,6 +338,10 @@ class indexAction extends FirstendAction {
     		$id_arr = $this->_cate_mod->get_child_ids($cid, true);
     		$map['cate_id'] = array('IN', $id_arr);
 			$today_wh['cate_id'] = array('IN', $id_arr);
+		}else{
+			$single_id_map = array($cid);
+			$map['cate_id'] = array('IN', $single_id_map);
+			$today_wh['cate_id'] = array('IN', $single_id_map);
 		}
 		$today_str = mktime(0,0,0,date("m"),date("d"),date("Y"));
 		$tomorr_str = mktime(0,0,0,date("m"),date("d")+1,date("Y"));
@@ -381,28 +385,23 @@ class indexAction extends FirstendAction {
 		$index_info['p']=$p;
 		$start = $page_size * ($p - 1) ;
 
-		if (false === $cate_list = S('cate_list')) {
-			$cate_list = D('items_cate')->cate_cache();
-		}
-	
-		$this->assign('cate_list', $cate_list); //分类
-
-		if(C('ftx_site_cache')){
-			$file = 'cate_subnav_'.$cid;
-			if(false === $subnav = S($file)){
-				$subnav = $this->_cate_mod->where(array('pid'=>$cid))->select();
-				if($cinfo['pid'] && !$subnav){
-					$subnav = $this->_cate_mod->where(array('pid'=>$cinfo['pid']))->select();
-				}
-				S($file,$subnav);
-			}
-		}else{
-			$subnav = $this->_cate_mod->where(array('pid'=>$cid))->select();
-			if($cinfo['pid'] && !$subnav){
-				$subnav = $this->_cate_mod->where(array('pid'=>$cinfo['pid']))->select();
-			}
-		}
-		$this->assign('subnav', $subnav);
+		// 不要subnav 直接在模板中使用 cate_data 和 cate_list 按层级生成一系列子类
+		// if(C('ftx_site_cache')){
+		// 	$file = 'cate_subnav_'.$cid;
+		// 	if(false === $subnav = S($file)){
+		// 		$subnav = $this->_cate_mod->where(array('pid'=>$cid))->select();
+		// 		if($cinfo['pid'] && !$subnav){
+		// 			$subnav = $this->_cate_mod->where(array('pid'=>$cinfo['pid']))->select();
+		// 		}
+		// 		S($file,$subnav);
+		// 	}
+		// }else{
+		// 	$subnav = $this->_cate_mod->where(array('pid'=>$cid))->select();
+		// 	if($cinfo['pid'] && !$subnav){
+		// 		$subnav = $this->_cate_mod->where(array('pid'=>$cinfo['pid']))->select();
+		// 	}
+		// }
+		// $this->assign('subnav', $subnav);
 
 		if(C('ftx_site_cache')){
 			$mdarray['cid'] = $cid;

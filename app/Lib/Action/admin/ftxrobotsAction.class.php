@@ -24,6 +24,28 @@ class ftxrobotsAction extends BackendAction {
         $this->order ='last_time DESC';
     }
 
+  protected function _search(){
+    $map = array();
+    $cate_id = $this->_request('cate_id', 'intval');
+    if ($cate_id) {
+        $id_arr = $this->_cate_mod->get_child_ids($cate_id, true);
+        $map['cate_id'] = array('IN', $id_arr);
+        $spid = $this->_cate_mod->where(array('id'=>$cate_id))->getField('spid');
+        if( $spid==0 ){
+            $spid = $cate_id;
+        }else{
+            $spid .= $cate_id;
+        }
+    }
+    ($keyword = $this->_request('keyword', 'trim')) && $map['name'] = array('like', '%'.$keyword.'%');
+    $this->assign('search', array(
+        'selected_ids' => $spid,
+        'cate_id' => $cate_id,
+        'keyword' => $keyword
+    ));
+    return $map;
+  }
+
 	public function add(){
 		if (IS_POST) {
 			$name					= I('name','', 'trim');

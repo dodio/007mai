@@ -3,15 +3,36 @@
 <div class="subnav">
 	<div class="content_menu ib_a blue line_x">
     	<a class="add fb " href="{:U('ftxrobots/add_do')}" ><em>添加采集器</em></a>
-	<a class="add fb " href="javascript:auto_collect()" ><em>一键自动采集</em></a>
-	<notempty name="ftxrobots_collect_data"><a class="add fb " href="javascript:jx_collect({$ftxrobots_collect_data.rid},{$ftxrobots_collect_data.p})" ><em>继续采集</em></a></notempty>
+	<a class="add fb " href="javascript:auto_collect()" ><em>一键开始所有采集</em></a>
+	<notempty name="ftxrobots_collect_data"><a class="add fb " href="javascript:jx_collect({$ftxrobots_collect_data.rid},{$ftxrobots_collect_data.p})" ><em>继续所有采集</em></a></notempty>
 	<a class="add fb J_showdialog" href="javascript:void(0);" data-uri="{:U('setting/index',array('type'=>'ftxrobots'))}" data-title="采集设置" data-id="add" data-width="520" data-height="80"><em>采集设置</em></a>
 	</div>
 
 </div>
 <div class="pad_lr_10" >
-    
 
+    <form name="searchform" method="get" >
+    <table width="100%" cellspacing="0" class="search_form">
+        <tbody>
+            <tr>
+                <td>
+                <div class="explain_col">
+            <input type="hidden" name="g" value="admin" />
+            <input type="hidden" name="m" value="ftxrobots" />
+            <input type="hidden" name="a" value="index" />
+            <input type="hidden" name="menuid" value="{$menuid}" />
+            分类 :
+            <select class="J_cate_select mr10" data-pid="0" data-uri="{:U('items_cate/ajax_getchilds', array('type'=>0))}" data-selected="{$search.selected_ids}"></select>
+            <input type="hidden" name="cate_id" id="J_cate_id" value="{$search.cate_id}" />
+            &nbsp;&nbsp;关键字 :
+            <input name="keyword" type="text" class="input-text" size="25" value="{$search.keyword}" />
+            <input type="submit" name="search" class="btn" value="搜索" />        
+                </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    </form>
 
     <div class="J_tablelist table_list" data-acturi="{:U('ftxrobots/ajax_edit')}">
     <table width="100%" cellspacing="0">
@@ -123,6 +144,11 @@
             }
         });
     }
+</script>
+<script>
+    $(function(){
+        $('.J_cate_select').cate_select({top_option:lang.all}); //分类联动
+    });
 </script>
 </body>
 </html>

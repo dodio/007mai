@@ -11,10 +11,11 @@
       <div class="round">
           <div class="adType"></div>
       </div>
-      <div style="display:none;" class="banner_arrow" data-banner="arrow">
+      <!-- 弄成了全屏不要箭头了 -->
+<!--       <div style="display:none;" class="banner_arrow" data-banner="arrow">
           <a href="javascript:;" class="arrow_prev" data-arrow="prev"><i></i></a>
           <a href="javascript:;" class="arrow_next" data-arrow="next"><i></i></a>
-      </div>
+      </div> -->
     </div>
   </div>
 </notempty>

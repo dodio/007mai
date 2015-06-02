@@ -59,3 +59,81 @@
 .box-play .count-num { position:absolute; bottom:15px; left:50%; }      
 .box-play .count-num li { float:left; _display:inline; margin-left:10px; cursor:default; background: url(../images/good/switch2.gif) no-repeat -16px 0;width: 15px; height: 15px; border-radius: 10px; background: #fff; opacity: .8; _filter: Alpha(opacity = 80); overflow:hidden; }
 .box-play .count-num li.cur { background: #f60; opacity: 1; _filter: Alpha(opacity = 100); }
+
+
+
+
+/*this is top_bar*/
+.big_banner{
+  position: relative;
+  height: 362px;
+  overflow: hidden;
+}
+.top_bar{background-color: #f7f7f7;height:100%;overflow: hidden;width: 100%;}
+.top_bar .banner{ position:relative;height:100%;width: 100%;z-index: 0;overflow: hidden;}
+.top_bar .banner li{padding-left:0px;display:block !important;width: 100%;height: 100%;position:absolute;top:0;left;0;z-index:0;opacity:0;filter:alpha(opacity=0);}
+.top_bar .banner .pic{height:100%;display:block;width:1200px;margin:0 auto;}
+/*this is top_wrap*/
+.top_wrap{ margin-left: auto;
+    margin-right: auto; _height:1px;_overflow:hidden;}
+.top_wrap .top_box {
+    position: relative;
+    width: 100%;
+  height:0;
+}
+.banner_arrow {
+    display: none;
+}
+.banner_arrow .arrow_prev,.banner_arrow .arrow_next {
+    background-color: rgba(0, 0, 0, 0.2);
+    color: #fff;
+    display: block;
+    height: 45px;
+    line-height: 45px;
+    overflow: hidden;
+    position: absolute;
+    top:-220px;
+    width: 29px;
+    z-index: 12;
+}
+.banner_arrow .arrow_prev{left:250px;}
+.banner_arrow .arrow_next{right:250px;}
+.banner_arrow .arrow_prev:hover,.banner_arrow .arrow_next:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.banner_arrow .arrow_prev i,.banner_arrow .arrow_next i {
+    background:url(../images/global/arrow.png) no-repeat;
+    cursor: pointer;
+    display: block;
+    height: 21px;
+    margin: 12px 0 0 9px;
+    overflow: hidden;
+    width: 13px;
+}
+.banner_arrow .arrow_prev i{background-position:top left;}
+.banner_arrow .arrow_next i{background-position:top right;}
+
+.top_wrap .round {
+    position: absolute;
+    margin-right:-210px;
+    top:-25px;
+    width:200px;
+   right:50%;
+   margin-right: -100px;
+}
+.top_wrap .round .adType {
+    text-align:center;
+}
+.top_wrap .round .adType a {
+    background:#e2e2e2;
+    border-radius: 10px;
+    cursor: pointer;
+    display: inline-block;
+    height: 10px;
+    margin-right:7px;
+    width: 10px;
+  overflow:hidden;
+}
+.top_wrap .round .adType a.current {
+    background:#ff2d5e;
+}

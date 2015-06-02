@@ -16,7 +16,7 @@ return array(
 	'DATA_CACHE_TYPE'		=>'file',
 	'DATA_CACHE_TIME'		=>'3600', 
 	'DATA_CACHE_LEVEL'		=>3,							// 设置子目录的层次
-
+    'TMPL_EXCEPTION_FILE'=> dirname(APP_PATH).'/error.html',          // 错误模板页面
     'SHOW_PAGE_TRACE'		=> false,
     "TMPL_STRIP_SPACE"      => false,
     

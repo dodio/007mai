@@ -3,6 +3,7 @@
   position: relative;
   height: 0px;
   margin: 0 auto;
+  z-index: 10;
 }
 .side_nav { position: absolute; top: 0px; width: 146px; margin-left: -161px; text-align: left; z-index: 999; background: #FFF; }
 .side_nav .logo { display: none; }
@@ -128,7 +129,7 @@
 /*51783值得逛和值得买中间加了根竖线*/
 .side_nav .zhi_guang em { color: #cccccc; display: block; float: left; margin-top: 8px; *margin-top: 5px; }
 .side_nav .zhi_guang ul{padding-left: 6px;}
-.side_nav .zhi_guang li { width: 47%;}
+.side_nav .zhi_guang li { width: 47%;float: left;}
 
 /*Feature #32787*/
 .side_nav .bd .qrcode .add_link { margin-top: 0; }
@@ -166,6 +167,7 @@
   width: 610px;
   min-height: 100%;
   background-color: rgba(251,251,251,0.95);
+  background-color: #fafafa\9;
   border: 1px solid #ebebeb;
   border-left: none;
   -webkit-box-shadow: 1px 0 2px #978d8d;
@@ -275,14 +277,14 @@
 }
 
 .side_nav .side_sub_nav_i h3.cate-hufu a{
-  background-position: -23px -451px;
+  background-position: -23px -447px;
 }
 
 .side_nav .side_sub_nav_i h3.cate-caiz a{
-  background-position: -23px -409px;
+  background-position: -23px -400px;
 }
 .side_nav .side_sub_nav_i h3.cate-meiti a{
-  background-position: -23px -502px;
+  background-position: -25px -494px;
 }
 .side_nav .side_sub_nav_i h3.cate-dapei a{
   background-position: -23px -923px;

@@ -190,3 +190,6 @@ body {background:url(../images/global/background_bg.png) repeat scroll 0 0 trans
 .ui-tabdiv{
   display: none;
 }
+.middle{
+  margin: 0 auto;
+}

@@ -3,7 +3,11 @@
     <div class="bar-con  page007mai">
 
 	<ul class="topNav fl">
-		<li style="border:none;">上007买,东西很好买</li>
+    <ftx:nav type="lists" style="top">
+      <volist name="data" id="val">
+      <li><a href="{$val.link}" <if condition="$val.target eq 1">target="_blank"</if>>{$val.name}</a></li>
+      </volist>
+    </ftx:nav> 
   </ul>
         
     <div class="right-show fr" id="right-show">
@@ -77,6 +81,7 @@
         </div>
         
     </div>
+    
     <div class="mainNav">
         <div class="nav page007mai">
             <ul class="navigation fl">
@@ -91,7 +96,7 @@
 
             </ul>
             <div class="state-show fr">
-              <a href="javascript:;" class="dosign signin_a sign_btn" id="signIn_btn"></a>
+              <a href="javascript:;" class="dosign signin_a sign_btn" id="signIn_btn">签到</a>
               <a href="{:U('gift/index')}" target="_blank" class="mr20 btn_jfsc">情报商城</a> 
                 <div style="display: none;" class="normal-side-box" id="top-side-box">
                     <div class="box-tips">

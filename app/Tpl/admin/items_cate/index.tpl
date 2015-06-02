@@ -9,7 +9,7 @@
                 <th width="30"><span data-tdtype="order_by" data-field="id">ID</span></th>
                 <th>{:L('item_cate_name')}</th>
               	<th width="60"><span data-tdtype="order_by" data-field="ordid">{:L('sort_order')}</span></th>
-                <th width="60"><span data-tdtype="order_by" data-field="status">{:L('show_index')}</span></th>
+                <th width="60"><span data-tdtype="order_by" data-field="status">页面显示</span></th>
                 <th width="180">{:L('operations_manage')}</th>
             </tr>
         </thead>

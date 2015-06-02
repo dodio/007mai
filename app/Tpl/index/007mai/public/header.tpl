@@ -66,7 +66,7 @@
 
         </div>
         <div class="search fr">
-          <form method="get" action="/index.php" target="_blank" onsubmit="return search_submit();" >
+          <form method="get" action="/index.php" target="_blank" onsubmit="return search_submit(this);" >
           <span class="search-area fl search_box">
             <input type="hidden" name="m" value="search" />
             <input type="hidden" name="a" value="index" />

@@ -105,38 +105,6 @@ $(function(){
 });
 
 
-$(function(){
-    //左侧浮动导航
-    var headh = $("div.side_nav_fix_pos").offset().top;
-    var side_nav = $("div.side_nav");
-    var $navFun = function() {
-        var st = $(document).scrollTop();
-
-        if(st > headh){
-          side_nav.addClass("affix");
-        } else {
-          side_nav.removeClass("affix");
-        }
-    };
-
-    var F_nav_scroll = function () {
-        if(side_nav.length === 0){
-          return;
-        }
-        if(navigator.userAgent.indexOf('iPad') > -1){
-            return false;
-        }      
-        if (!window.XMLHttpRequest) {
-           return;          
-        }else{
-            //默认执行一次
-            $navFun();
-            $(window).bind("scroll", $navFun);
-        }
-    }
-    F_nav_scroll();
-});
-
 
 // 页面最右侧边栏
 $(function(){
@@ -171,4 +139,75 @@ $(function(){
 });
   
 
-  
+
+(function($){
+  $.fn.extend({xyz_tab:function(c,callback){
+      return this.each(function(j){
+        var _s = this;
+        setTimeout(function(){
+          var menu =$('.ui-tabmenu',_s);
+          var tabdiv=$('.ui-tabdiv',_s);
+          var method = c ? "click" : "mouseenter";
+          menu.each(function(i){
+            $(this)[method](function(){
+              tabdiv.hide()
+              if(tabdiv[i]){
+                tabdiv[i].style.display="block";
+              }
+              menu.removeClass('cur');
+              $(this).addClass('cur');
+              if($.isFunction(callback)){
+                callback(tabdiv[i]);
+              }
+            });
+          });
+        },j*300);
+      });
+    }});
+})(jQuery);
+
+$(function(){
+    //左侧浮动导航
+    var side_nav = $("#sidenav");
+    if(side_nav.length === 0){
+      return;
+    }
+    var headh = $("div.side_nav_fix_pos").offset().top;
+    var $navFun = function() {
+        var st = $(document).scrollTop();
+
+        if(st > headh){
+          side_nav.addClass("affix");
+        } else {
+          side_nav.removeClass("affix");
+        }
+    };
+    var F_nav_scroll = function () {
+        
+        if(navigator.userAgent.indexOf('iPad') > -1){
+            return false;
+        }      
+        if (!window.XMLHttpRequest) {
+           return;          
+        }else{
+            //默认执行一次
+            $navFun();
+            $(window).bind("scroll", $navFun);
+        }
+    }
+    F_nav_scroll();
+
+    var side_sub_nav = $("div.side_sub_nav",side_nav);
+    side_nav.mouseleave(function() {
+      side_sub_nav.fadeOut(200);
+      $('.ui-tabmenu',side_nav).removeClass('cur');
+    });
+    side_nav.xyz_tab(false,function(ele){
+      if(ele){
+        side_sub_nav.fadeIn(200);
+      }else{
+        side_sub_nav.hide();
+      }
+
+    });
+});

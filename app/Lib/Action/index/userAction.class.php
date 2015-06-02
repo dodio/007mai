@@ -23,7 +23,7 @@ class userAction extends UsersAction {
 				$re = json_encode(array('status' => 1));
 				exit($re);
             } else {
-				$re = json_encode(array('status' => 0, 'data' => '修改失败'));
+				$re = json_encode(array('status' => 0, 'data' => $passport->get_error() ));
 				exit($re);
             }
 		}

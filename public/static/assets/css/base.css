@@ -187,3 +187,6 @@ body {background:url(../images/global/background_bg.png) repeat scroll 0 0 trans
   width: 1100px;
   left:60px;
 }
+.ui-tabdiv{
+  display: none;
+}

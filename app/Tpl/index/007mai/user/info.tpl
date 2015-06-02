@@ -10,7 +10,7 @@
 </head>
 <body>
 <include file="public:header" />
-<script charset="utf-8" type="text/javascript" src="__STATIC__/assets/js/jquery.validate.js" ></script>
+<script charset="utf-8" type="text/javascript" src="__STATIC__/assets/js/jquery/jquery.validate.js" ></script>
 <script>
 $(function(){
 

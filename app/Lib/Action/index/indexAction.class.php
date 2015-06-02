@@ -520,5 +520,17 @@ class indexAction extends FirstendAction {
 		$this->display();
 	}
 
+	public function subcates(){
+		$cid = I("cid",'','intval');
+		$cate_list = $this->_cate_mod->cate_cache();
+		if(isset($cate_list['p'][$cid])){
+			$cate = $cate_list['p'][$cid];
+		}else{
+			$cate = $cate_list['s'][$cid];
+		}
 
+		foreach ($cate as $value) {
+			echo "<li><a href=\"/index/cate/cid/{$value['id']}\" target=\"_blank\">{$value['name']}</a></li>\n";
+		}
+	}
 }

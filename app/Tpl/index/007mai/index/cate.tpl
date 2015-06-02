@@ -9,7 +9,14 @@
 <include file="public:cate-nav" />
 
 <include file="public:nav-classify" />
-
+<style>
+  #sidenav{
+    display: none;
+  }
+  #sidenav.affix{
+    display: block;
+  }
+</style>
 <div class="side_nav_fix_pos">
 	<include file="public:list" />
 </div>

@@ -1,5 +1,5 @@
-function search_submit(){
-  var k = $(".search_box .text").val();
+function search_submit(form){
+  var k = $("input[name=key]",form).val();
   if(k == '输入宝贝名称！'){
     alert("输入宝贝名称！");
     return false;

@@ -23,7 +23,6 @@ return array (
     '/^index\/cate\/cid\/(\d+)\/status\/(\d+)\/sort\/(\d+)\/p\/(\d+)$/' => 'index/cate?cid=:1&status=:2&sort=:3&p=:4',
     '/^index\/cate\/cid\/(\d+)\/sort\/(\d+)\/status\/(\d+)\/p\/(\d+)$/' => 'index/cate?cid=:1&sort=:2&status=:3&p=:4',
     '/^shortcut\/$/' => 'index/shortcut',
-    '/^chaxun\/$/' => 'chaxun/index',
     '/^score\/$/' => 'score/index',
     '/^comment\/$/' => 'comment/index',
     '/^comment\/p\/(\d+)$/' => 'comment/index?p=:1',

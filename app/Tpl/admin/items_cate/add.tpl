@@ -23,7 +23,7 @@
 			</td>
 		</tr>
 		<tr>
-			<th>首页显示 :</th>
+			<th>页面显示 :</th>
 			<td>
 				<label><input type="radio" name="status" value="0" > 不显示</label>&nbsp;&nbsp;
 				<label><input type="radio" name="status" value="1" checked> 显示</label>

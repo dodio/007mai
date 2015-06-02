@@ -11,27 +11,33 @@ __STATIC__/assets/css/brand.css
 <include file="public:header" />
 
 
-<div class="bmain page007mai pr mt25 clear">
+<div class="mt25">
+  <include file="public:nav-classify" />
+  <div class="side_nav_fix_pos"></div>
+
+  <div class="bmain page007mai pr clear">
         <div class="slide-logos clear">
-		<span class="prev-btn" style="display: inline;"></span>
-		<span class="next-btn" style="display: inline;"></span>
-		<div class="logos-box">
-			<ul>
-			<li>
-			<volist name="brands" id="val" mod="20">
-				<a href="{:U('brand/dlist',array('uid'=>$val['uid']))}" target="_blank">
-					<img alt="{$val.shop-name}" src="{$val.shop_icon}">
-					<div class="masking"></div>
-					<span>{$val.discount}</span>
-				</a>                                 
-				<eq name="mod" value="19"></li><li></eq>
-			</volist>
-			</li>
-			</ul>
-		</div>
-	</div>
- 
+      <span class="prev-btn" style="display: inline;"></span>
+      <span class="next-btn" style="display: inline;"></span>
+      <div class="logos-box">
+        <ul>
+        <li>
+        <volist name="brands" id="val" mod="20">
+          <a href="{:U('brand/dlist',array('uid'=>$val['uid']))}" target="_blank">
+            <img alt="{$val.shop-name}" src="{$val.shop_icon}">
+            <div class="masking"></div>
+            <span>{$val.discount}</span>
+          </a>                                 
+          <eq name="mod" value="19"></li><li></eq>
+        </volist>
+        </li>
+        </ul>
+      </div>
+    </div>
+   
+  </div>
 </div>
+
 
 
 <div class="bmain page007mai m0a clear tag-list"">

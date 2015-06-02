@@ -34,6 +34,9 @@
 			<th>排序方式 :</th>
 			<td>
 			<select name="sort" class="J_tbcats mr10">
+				<option value="coupon_price desc , volume desc" <if condition="$info.sort  eq 'coupon_price desc , volume desc'">selected</if> >价格从高到低且销量从高到低</option>
+				<option value="coupon_price asc , volume asc" <if condition="$info.sort  eq 'coupon_price asc , volume asc'">selected</if> >价格从低到高且销量从高到低</option>
+				<optgroup label="──────"></optgroup>
 				<option value="volume desc"  <if condition="$info.sort  eq 'volume desc'">selected</if> >销量从高到低</option>
 				<option value="volume asc"   <if condition="$info.sort  eq 'volume asc'">selected</if>>销量从低到高</option>
 				<optgroup label="──────"></optgroup>

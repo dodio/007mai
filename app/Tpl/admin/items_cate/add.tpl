@@ -33,6 +33,9 @@
 			<th>排序方式 :</th>
 			<td>
 				<select name="sort" class="J_tbcats mr10">
+					<option value="coupon_price desc , volume desc"  >价格从高到低且销量从高到低</option>
+					<option value="coupon_price asc , volume asc" >价格从低到高且销量从高到低</option>
+					<optgroup label="──────"></optgroup>
 					<option value="volume desc"  >销量从高到低</option>
 					<option value="volume asc" >销量从低到高</option>
 					<optgroup label="──────"></optgroup>

@@ -137,3 +137,34 @@
 .top_wrap .round .adType a.current {
     background:#ff2d5e;
 }
+
+
+
+.l-floor .l-f-title {
+    background: url(../images/mall_title_bg.png) repeat-x #ED161D;
+    width: 1190px;
+    height: 60px;
+    line-height: 60px;
+    font-size: 24px;
+    color: #FFF;
+    font-weight: 700;
+    overflow: hidden;
+    text-align: center;
+    margin-top: 10px;
+    font-family:"Microsoft Yahei",tahoma,arial,"Hiragino Sans GB";
+}
+.l-floor .l-f-title:first-child {
+  margin-top: 0;
+}
+li.brand-mid-v2 {
+    margin: 10px 10px 0 0;
+    width: 590px;
+    float: left;
+}
+li.brand-mid-v2 img{
+    width: 100%;
+}
+li.brand-mid-v2 img:hover{
+    border-color: #f61d4b;
+    outline: #f61d4b solid 2px
+}

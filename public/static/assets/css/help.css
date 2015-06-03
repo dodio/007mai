@@ -10,7 +10,7 @@
 .jiu_help .help_title dl .cur a { color:#ee6217; font-weight:bold; font-size:14px; }
 .jiu_help .help_title dl .cur a:hover { text-decoration:none; }
 
-.help_content { height:auto; overflow:hidden; width:855px; background:#fff; }
+.help_content { height:auto; overflow:hidden;  background:#fff; }
 .help_content a:hover { text-decoration:none; }
 .help_content .help_list, .help_content .help_new_list { padding:25px; min-height:800px; }
 .help_content h3 { font-size:16px; color:#333; font-weight:normal; }

@@ -5,7 +5,6 @@
 .main .goods-list li:hover .good-price .btn-new.buy a,.main .goods-list li:hover .good-price .btn-new.sellout a, .main .goods-list li:hover .good-price .btn-new.end a {background: #ec1611;}
 .main .goods-list li:hover,.main .goods-list li:hover .pic-des {border-color: #ec1611;}
 .main .goods-list li .list-good .good-price .price-current {color: #ec1611;}
-.main .goods-list li .list-good .good-price .btn-new a {color: #ec1611;}
 .main .goods-list li:hover .good-price .btn-new.buy a, .main .goods-list li:hover .good-price .btn-new.sellout a, .main .goods-list li:hover .good-price .btn-new.end a {color: #fff;}
 .main .tb-thumb .tb-selected {border-color: #ec1611;}
 .nav-item .item-list ul li a.active, .jiu-nav .n_h a.active,.nav-item .item-list ul li a:hover, .jiu-nav .n_h a:hover {color: #ec1611;border-bottom: #ec1611 solid 2px;}

@@ -2,7 +2,7 @@
 <html>
 <head>
 <include file="public:head" />
-<load href="__STATIC__/jky/css/pg-skill.css" />
+<load href="__STATIC__/assets/css/pg-skill.css" />
 </head>
 <body>
 <include file="public:header" />

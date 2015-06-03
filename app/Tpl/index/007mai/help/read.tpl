@@ -2,7 +2,7 @@
 <html>
 <head>
 <include file="public:head" />
-<load href="__STATIC__/jky/css/help.css" />
+<load href="__STATIC__/assets/css/help.css" />
 <load href="__STATIC__/jky/js/help.js" />
 </head>
 <body>

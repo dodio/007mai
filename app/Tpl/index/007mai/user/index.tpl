@@ -16,7 +16,7 @@
 		<include file="user/left" />
 		<div class="right">
 			<div class="tip-info">
-				<script src="__STATIC__/assets/js/jcarousellite_1.0.1.pack.js"></script>
+				<script src="__STATIC__/assets/js/jquery/jcarousellite_1.0.1.pack.js"></script>
 <script type="text/javascript"> 
 $(document).ready(function(){
 	$("#user_notice").jCarouselLite({
@@ -35,6 +35,8 @@ $(document).ready(function(){
 		<volist name="notice" id="val">
 		<li><a class="blue-link" href="{:U('article/read',array('id'=>$val['id']))}" target="_blank">{$val.title}</a></li>
 		</volist>
+		<else/>
+		<li>暂时没有公告</li>
 		</notempty>
 	</ul>
 </div>

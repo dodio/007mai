@@ -5,6 +5,8 @@ class userAction extends UsersAction {
 	public function _initialize() {
         parent::_initialize();
 		$info = $this->visitor->get();
+        //打码
+        hideInfo($info);
         $this->assign('info', $info);
     }
 
@@ -246,10 +248,9 @@ class userAction extends UsersAction {
             }
             $this->assign('msg', $msg);
         }
-        $info = $this->visitor->get();
+
 		$notice = M('article')->where(array('cate_id'=>'1'))->select();
 		$this->assign('notice', $notice);
-        $this->assign('info', $info);
         $this->_config_seo(array(
             'title' => L('base_setting') . '	-	' . C('ftx_site_name'),
         ));

@@ -616,3 +616,27 @@ function strsub($str='',$len=0){
    }
    return $res;
 }
+/**给用户信息打码*/
+function hideInfo(&$info){
+    if(!is_array($info) || empty($info)){
+        return;
+    }
+
+    if(isset($info['mobile'])){
+        $info['mobile'] = substr_replace($info['mobile'],'*****',3,5);
+    }
+
+    if(isset($info['qq'])){
+        $info['qq'] = substr_replace($info['qq'],'*****',3,5);
+    }
+    if(isset($info['realname'])){
+        $info['realname'] = mb_substr($info['realname'],0,1,"utf8")."**";
+    }
+
+    if(isset($info['email'])){
+        $info['email'] = substr_replace($info['email'],'****',1,4);
+    }
+
+    
+
+}

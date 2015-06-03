@@ -29,6 +29,7 @@ class userAction extends UsersAction {
 				exit($re);
             }
 		}
+        $this->_config_seo(array("title"=>"修改信息"));
 		$this->display('info');
 	}
 

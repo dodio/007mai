@@ -585,3 +585,34 @@ function getTags($pscws,$str,$num){
     }
     return $tags;
 }
+
+
+function strsub($str='',$len=0){
+   $_k = array(128,224,240,248,252,254);
+   $_r = array(0,192,224,240,248,252);
+   $res = '';
+   $offset=0;
+   $substr=0;
+   $lenth = strlen($str);
+   if($lenth<=$len) return $str;
+   while(($offset<$lenth)&&($substr<$len)){
+      $head = ord(substr($str,$offset,1));
+    if(($head&$_k[0])==$_r[0]){
+    $cont=1;
+    }elseif(($head&$_k[1])==$_r[1]){
+    $cont=2;
+    }elseif(($head&$_k[2])==$_r[2]){
+    $cont=3;
+    }elseif(($head&$_k[3])==$_r[3]){
+      $cont=4;
+    }elseif(($head&$_k[4])==$_r[4]){
+      $cont=5;
+    }elseif(($head&$_k[5])==$_r[5]){
+    $cont =6;
+    }
+    $res.=substr($str,$offset,$cont);
+    $substr++;
+    $offset+=$cont;
+   }
+   return $res;
+}

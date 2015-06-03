@@ -53,7 +53,7 @@ class sitemapModel extends Model {
         if ($t == 'item') {
             foreach ($data as $k => $v) {
                 $rz[$k]['url']['loc'] = $this->url($url, 'index/cate', array(
-                        'id' => $v['id']
+                        'cid' => $v['id']
                     ));
                 $rz[$k]['url']['changefreq'] = $pl;
                 $rz[$k]['url']['priority'] = $iq;

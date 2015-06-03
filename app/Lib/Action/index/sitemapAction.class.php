@@ -51,7 +51,7 @@ class sitemapAction extends FirstendAction {
     }
     public function xml()
     {
-       $site_url = C('ftx_site_url');
+       $site_url = "http://www.007mai.com";
        $items_list = $this->_mod->getcate($this->items_xml_show);
        // $article_list = $this->_mod->article($this->article_xml_show);
        $items_list   =  $this->_mod->deal($items_list,$site_url,$this->priority_xml_items,$this->items_xml_change);

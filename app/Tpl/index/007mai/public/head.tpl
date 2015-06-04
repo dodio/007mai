@@ -35,7 +35,7 @@ __STATIC__/assets/js/jquery/lazyload.js
 (function(){
   function adaptscreen(){
     var width = $(window).width();
-    if(width<=1366){
+    if(width<=1440){
       $("html").addClass("w1005");
     }else{
       $("html").removeClass("w1005");

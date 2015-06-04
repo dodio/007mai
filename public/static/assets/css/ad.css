@@ -39,7 +39,9 @@
     height: 45px;
     padding: 7px 9px
 }
-
+.w1005 .logowall .logo{
+  width: 82px;
+}
 .logowall .logo img{
   width: 100%;
   height: 100%;
@@ -73,6 +75,11 @@
 .top_bar .banner{ position:relative;height:100%;width: 100%;z-index: 0;overflow: hidden;}
 .top_bar .banner li{padding-left:0px;display:block !important;width: 100%;height: 100%;position:absolute;top:0;left;0;z-index:0;opacity:0;filter:alpha(opacity=0);}
 .top_bar .banner .pic{height:100%;display:block;width:1200px;margin:0 auto;}
+.w1005 .top_bar .banner .pic {
+  width: 1100px;
+  position: relative;
+  left: 60px;
+}
 /*this is top_wrap*/
 .top_wrap{ margin-left: auto;
     margin-right: auto; _height:1px;_overflow:hidden;}
@@ -137,9 +144,17 @@
 .top_wrap .round .adType a.current {
     background:#ff2d5e;
 }
+.mall_banner .top-tms-container{
+  position: relative;
+  left: 50%;
+  float: left;
+}
 
-
-
+.mall_banner .top-tms-container .img-wrap{
+  left: -50%;
+  position: relative;
+  float: left;
+}
 .l-floor .l-f-title {
     background: url(../images/mall_title_bg.png) repeat-x #ED161D;
     width: 1190px;
@@ -153,6 +168,7 @@
     margin-top: 10px;
     font-family:"Microsoft Yahei",tahoma,arial,"Hiragino Sans GB";
 }
+
 .l-floor .l-f-title:first-child {
   margin-top: 0;
 }
@@ -168,3 +184,11 @@ li.brand-mid-v2 img:hover{
     border-color: #f61d4b;
     outline: #f61d4b solid 2px
 }
+.w1005 .l-floor .l-f-title{
+  width: 1090px;
+}
+
+.w1005 li.brand-mid-v2{
+  width: 540px;
+}
+

@@ -1,11 +1,18 @@
+<style>
+  .w1005 .page007mai{
+    left: 0;
+  }
+</style>
 <notempty name="ad_list">
 <div class="group" style="background-color:{$board_info.description};">
   <?php
     $big_banner = array_shift($ad_list);
    ?>
-  <div class="top-tms-container">
-    <div class="img-wrap" style="height:450px;">
-        <a href="{$big_banner.url}" target="_blank"><img src="{$big_banner.content}"></a>
+  <div class="group mall_banner">
+    <div class="top-tms-container">
+      <div class="img-wrap">
+          <a href="{$big_banner.url}" target="_blank"><img src="{$big_banner.content}"></a>
+      </div>
     </div>
   </div>
   

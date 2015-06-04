@@ -292,13 +292,4 @@ class giftAction extends FirstendAction {
         $this->ajaxReturn(1, '恭喜您，兑换成功！请等待发货');
     }
 
-    /**
-     * 积分规则
-     */
-    public function rule() {
-        $info = M('article_page')->find(6);
-        $this->assign('info', $info);
-        $this->_config_seo();
-        $this->display();
-    }
 }

@@ -10,11 +10,8 @@
 
 <include file="public:nav-classify" />
 <style>
-  #sidenav{
+  #side_nav_top{
     display: none;
-  }
-  #sidenav.affix{
-    display: block;
   }
 </style>
 <div class="side_nav_fix_pos">

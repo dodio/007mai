@@ -15,7 +15,7 @@ __STATIC__/jky/css/gift.css
 		<div class="nav-item fl">
 			<div class="item-list">
 				<ul>
-					<li><a href="{:U('gift/index')}" <if condition="$cid eq ''">class="active"</if>>热门兑换</a></li>
+					<!-- <li><a href="{:U('gift/index')}" <if condition="$cid eq ''">class="active"</if>>热门兑换</a></li> -->
 					<volist name="cate_list" id="cate">
 					<li><a href="{:U('gift/cate',array('cid'=>$cate['id']))}" title="{$cate.name}" <if condition="$cid eq $cate['id']">class="active"</if>>{$cate.name}</a></li>
 					</volist>
@@ -25,23 +25,6 @@ __STATIC__/jky/css/gift.css
 	</div>
 </div>
 <div class="main page007mai clear">
-	<div class="huan-login clear">
-		<div class="introduce fl"><img src="__STATIC__/images/gift_banner.jpg" /></a></div>
-		<notempty name="info">
-			<div class="nav-userinfo fl">
-				<div class="user-img"><a class="userinfo-img" href="{:U('user/index')}"><img src="{:avatar($info['id'], 100)}" width="80" height="80" /></a></div>
-				<div class="user-personal">
-					<span class="name"><a href="{:U('user/index')}"><i class="org_2">{$info.username}</i></a></span><br>
-					<span class="jfb">情报：<i class="green_3">{$info.score}</i> </span><br>
-					 
-				</div>
-				<div class="user-manage clear">
-					<a href="{:U('user/gift')}" class="ml10">兑换记录</a>
-					<a href="{:U('user/mingxi')}" class="ml25">收入明细</a>
-				</div>
-			</div>
-		</notempty>
-	</div>
 	
 	<div class="huan-list clear">
 		<ul class="goods-list {:C('ftx_site_wc')} clear">

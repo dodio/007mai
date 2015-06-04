@@ -193,8 +193,8 @@ _line-height: 36px;  }
 .w1100 .good-title .title {width: 238px;}
  
 
-.mask-bg {cursor: pointer;display: block;position: absolute;top: 0;left: 0;width: 283px;height: 285px;background: #fff;opacity: .5;filter: alpha(opacity=50);z-index: 10;}
-.goods-list li .buy-over {cursor: pointer;display: block;position: absolute;top: 80px;left: 80px;background: url(../images/good/soldouts.png) no-repeat;height: 0;width: 120px;padding-top: 120px;overflow: hidden;z-index: 15;}
+.mask-bg {cursor: pointer;display: block;position: absolute;top: 0;left: 0;width: 283px;height: 285px;background: #fff;opacity: .5;filter: alpha(opacity=50);z-index: 1;}
+.goods-list li .buy-over {cursor: pointer;display: block;position: absolute;top: 80px;left: 80px;background: url(../images/good/soldouts.png) no-repeat;height: 0;width: 120px;padding-top: 120px;overflow: hidden;z-index: 2;}
 
 .w1005  li .buy-over{top: 100px;left:100px;}
 .pic-des h5,.pic-des h6{display: block;position: absolute;left:0px;top:0px;width: 263px;height: 20px;padding:10px 10px 0 10px;overflow: hidden;text-align:left;background: #f4f4f4;color: #333;line-height: 20px;font-weight: normal;}

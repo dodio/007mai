@@ -144,11 +144,9 @@ $(function(){
     	success: function(msg) {
 			if(msg.code == 200){
 				var url = msg.data.items[0].ds_item_click;
-				var url = "http://click.ftxia.com/gclick/item?url=" + encodeURIComponent(url);
 				document.location.href = url;
 			}else if(msg.code == 201){
 				var url = msg.data.items[0].ds_item_click;
-				var url = "http://click.ftxia.com/gclick/item?url=" + encodeURIComponent(url);
 				document.location.href = url;
 			}else{
 				document.location.href = click_url;

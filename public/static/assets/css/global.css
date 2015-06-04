@@ -106,24 +106,22 @@ textarea,input[type="text"],input[type="password"]{ background:url(../images/glo
 .top_menu ul li a span { padding:1px; background:#00cf96; color:#FFF }
 
 /*签到按钮 积分商城按钮*/
+.state-show .btn_jfsc,#signIn_btn{
+  height: 40px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
+}
 .state-show .btn_jfsc{
-  width: 120px;
-  height: 35px;
-  text-indent: -8888px;
   float: right;
-  margin-top: 3px;
-  background:url("../images/site_btns.png") 0 0 no-repeat;
+  width: 120px;
 }
 #signIn_btn{
   width: 60px;
   float: right;
-  height: 40px;
-  color: #fff;
-  font-size: 18px;
-  font-weight: bold;
-  text-align: center;
 }
-#signIn_btn:hover{
+#signIn_btn:hover,.state-show .btn_jfsc:hover{
   text-decoration: none;
   background-color: #ec1611;
 }
@@ -136,7 +134,7 @@ textarea,input[type="text"],input[type="password"]{ background:url(../images/glo
 .state-show .btn_jfsc:hover{
   background-position: -125px 3px;
 }
-.state-show{ position:relative; z-index:100; }
+.state-show{ position:relative; z-index:100;width: 240px; }
 .state-show .normal-a{ font-size:13px; font-weight:bold; color:#fff; padding:8px 15px 0; display:inline; float:left; height:30px; }
 .state-show .normal-a:hover .icon-sign{ background-position:-20px -128px;}
 .state-show .normal-side-box{ top:37px; right:0;}
@@ -153,7 +151,7 @@ textarea,input[type="text"],input[type="password"]{ background:url(../images/glo
 }
 
 /*签到框*/
-.normal-side-box{ position:absolute; top:-65px; right:48px; width:240px; background:#fff; border:#00cf96 solid 1px;text-align:center; color:#666; display:none;}
+.normal-side-box{ position:absolute; top:-65px; right:48px; width:240px; background:#fff; border:#ee4e22 solid 1px;text-align:center; color:#666; display:none;}
 .normal-side-box .cur-img{ display:block; background:url(../images/global/cur-side.gif) no-repeat 0 18px; height:50px; width:8px; position:absolute;
 top:60px; right:-8px;}
 .normal-side-box p{ margin:10px; line-height:24px;}

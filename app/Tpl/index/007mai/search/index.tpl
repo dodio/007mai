@@ -51,7 +51,7 @@ __STATIC__/ftxia/new/css/nav-channel.css
 					<a class="btn {$item.class}" target="_blank" href="{:U('jump/index',array('id'=>$item['id']))}" biz-itemid="{$item.num_iid}" isconvert=1   rel="nofollow" ></a>
 				</div>
 				<div class="good-des">
-					<a href="#" class="icon tao-du" title="秒杀网独家" target="_blank"></a>
+					<a href="#" class="icon tao-du" title="007买独家" target="_blank"></a>
 				<notempty name="visitor">
 				<if condition="$visitor['username'] eq C('ftx_index_admin')">
 				<div class="show" style="top: 0px;right: 50px;position: absolute;width: 30px;" data-id="{$item.id}"><a title="不显示" href="javascript:void(0);" data-id="{$item.id}">取消</a></div>

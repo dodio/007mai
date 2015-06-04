@@ -5,15 +5,15 @@
     <a title="{:C('ftx_site_name')}" href="{:C('ftx_site_url')}" target="_blank"><img alt="" src="{:C('ftx_site_navlogo')}" width="145" height="70"></a>
   </div>
   <div class="content">
-    <div class="bd">
+    <div id="side_nav_top" class="bd">
       <ul>
-        <li class="bd0"><a target="_blank" href="/xinpin/" target="_blank">今日上新</a>
+        <li class="bd4"><a target="_blank" href="/brand">品牌折扣</a>
         </li>
-        <li class="bd2"><a target="_blank" href="/day10">每日10件</a>
+        <li class="bd0"><a target="_blank" href="/mall" target="_blank">特卖商城</a>
         </li>
-        <li class="bd3"><a target="_blank" href="/ba">8块8包邮</a>
+        <li class="bd2"><a target="_blank" href="/ba">八块八　</a>
         </li>
-        <li class="bd4"><a target="_blank" href="/brand">品牌团</a>
+        <li class="bd3"><a target="_blank" href="/shiba">十八块八</a>
         </li>
       </ul>
     </div>
@@ -63,17 +63,6 @@
         <input type="hidden" name="a" value="index">
         <input type="text" name="key" class="txt" autocomplete="off" placeholder="搜索"><input type="submit" value="" class="smt">
       </form>
-    </div>
-    <div class="zhi_guang">
-      <ul>
-        <li class="zhi_guang0">
-        	<a target="_blank" href="/mall">特卖商城</a>
-        </li>
-        <em>|</em>
-        <li class="zhi_guang1">
-        	<a target="_blank" href="/brand">品牌折扣</a>
-        </li>
-      </ul>
     </div>
   </div>
   <div class="side_sub_nav">

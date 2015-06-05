@@ -198,6 +198,10 @@
   float: left;
   overflow: hidden;
 }
+.l-floor li.l-f-shop img{
+  min-width: 100%;
+  min-height: 100%;
+}
 .l-floor li.l-f-shop img:hover{
     border-color: #f61d4b;
     outline: #f61d4b solid 2px

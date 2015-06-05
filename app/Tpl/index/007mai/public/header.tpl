@@ -64,7 +64,7 @@
 		<if condition="C('ftx_site_logo') neq ''">
 			<h1><a title="{:C('ftx_site_name')}" href="{:C('ftx_site_url')}"><img src="{:C('ftx_site_logo')}"/></a></h1>
 		<else />
-			<h1><a title="{:C('ftx_site_name')}" href="{:C('ftx_site_url')}"><img src="/static/assets/images/logo.png"/></a></h1>
+			<h1><a title="{:C('ftx_site_name')}" href="{:C('ftx_site_url')}"><img src="__STATIC__/assets/images/logo.png"/></a></h1>
 		</if>
 
         </div>

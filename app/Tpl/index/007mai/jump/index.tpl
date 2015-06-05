@@ -1,5 +1,5 @@
 <script language="javascript">window.onerror = function(){return true;}</script>
-<script type="text/javascript" src="/static/js/jquery/jquery.js"></script>
+<script type="text/javascript" src="__STATIC__/js/jquery/jquery.js"></script>
 <!--淘点金代码开始-->
 <script type="text/javascript">
     (function(win,doc){

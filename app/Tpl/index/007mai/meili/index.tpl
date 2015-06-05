@@ -32,7 +32,7 @@
 		<li  class="<eq name="mod" value="3"> last</eq>">
 			<div class="sid_{$item.sellerId}  list-good   {$item.class} " >
 				<div class="good-pic">
-					<a href="{$item['click_url']}" target="_blank"><img src='/static/assets/images/blank.gif' data-original='{:attach(get_thumb($item['pic_url'], '_b'),'item')}' alt="{$item.title}" class="lazy"   /></a>
+					<a href="{$item['click_url']}" target="_blank"><img src='__STATIC__/assets/images/blank.gif' data-original='{:attach(get_thumb($item['pic_url'], '_b'),'item')}' alt="{$item.title}" class="lazy"   /></a>
 					<div class="yhq"> </div>
 				</div>
 				<h3 class="good-title">

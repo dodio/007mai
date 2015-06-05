@@ -33,7 +33,7 @@
 		<volist name="items_list" id="item" key="i">
 			<li>
 				<a class="goods-a"  href="{$item['wap_url']}" target="_blank">
-					<img class="lazy" _src="{$item.pic_url}" src="/static/jky/images/blank.gif">            
+					<img class="lazy" _src="{$item.pic_url}" src="__STATIC__/jky/images/blank.gif">            
 					<span class="icon new">新品</span>
 				</a>
 				<a  href="{$item['wap_url']}"  target="_blank"><h3>{$item.title}</h3>

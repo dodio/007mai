@@ -3,30 +3,30 @@
 			<i style="width: 36px; height: 36px; background: #e4e4e4; float: left;"><img src="http://s.juancdn.com/jpwebapp/images/yellow.png?1" width="36px"></i><span style="padding-left: 10px; display: inline-block;"><span id="open_t">无法启动下载，请使用浏览器下载！</span><a style="color:rgba(2,137,205,1); text-decoration: underline;" id="open_o">查看>></a></span><i style="width: 40px; height: 36px; position: absolute; right: 20px;"></i>
 		</div>
 		<div id="xq_a" style="z-index: 99999;  margin: 0 auto; position: relative;max-width: 480px; min-width: 320px;display:none;">
-			<img width="100%" src="/static/8mobcom_jp/images/xiazai_a.png" />
+			<img width="100%" src="__STATIC__/8mobcom_jp/images/xiazai_a.png" />
 		</div>
 	</div>
 	<script type="text/javascript">
 	if(navigator.userAgent.indexOf("MicroMessenger") > -1 && navigator.userAgent.indexOf("iPhone") > -1 ){
 		if(location.href.indexOf("deal") > -1){
-			$("#xq_a").find('img').attr("src","/static/8mobcom_jp/images/goumai_i.png");
+			$("#xq_a").find('img').attr("src","__STATIC__/8mobcom_jp/images/goumai_i.png");
 			$("#open_t").html("无法正常购买？请在浏览器中打开！");
 		}else if(location.href.indexOf("apps") > -1){
-			$("#xq_a").find('img').attr("src","/static/8mobcom_jp/images/xiazai_i.png");
+			$("#xq_a").find('img').attr("src","__STATIC__/8mobcom_jp/images/xiazai_i.png");
 			$("#open_t").html("无法启动/下载？请在浏览器中打开！");
 		}else{
-			$("#xq_a").find('img').attr("src","/static/8mobcom_jp/images/xiazai_i.png");
+			$("#xq_a").find('img').attr("src","__STATIC__/8mobcom_jp/images/xiazai_i.png");
 			$("#open_t").html("无法启动/下载？请在浏览器中打开！");
 		}
 	}else{
 		if(location.href.indexOf("deal") > -1){
-			$("#xq_a").find('img').attr("src","/static/8mobcom_jp/images/goumai_a.png");
+			$("#xq_a").find('img').attr("src","__STATIC__/8mobcom_jp/images/goumai_a.png");
 			$("#open_t").html("无法正常购买，请在浏览器中打开！");
 		}else if(location.href.indexOf("apps") > -1){
-			$("#xq_a").find('img').attr("src","/static/8mobcom_jp/images/xiazai_a.png");
+			$("#xq_a").find('img').attr("src","__STATIC__/8mobcom_jp/images/xiazai_a.png");
 			$("#open_t").html("无法启动/下载？请在浏览器中打开！");
 		}else{
-			$("#xq_a").find('img').attr("src","/static/8mobcom_jp/images/xiazai_a.png");
+			$("#xq_a").find('img').attr("src","__STATIC__/8mobcom_jp/images/xiazai_a.png");
 			$("#open_t").html("无法启动/下载？请在浏览器中打开！");
 		}
 	}

@@ -37,7 +37,7 @@
 						<volist name="msg_list" id="msg" mod="2">
 						<tr class="tr  <eq name="mod" value="1">  tr-one</eq>">
 							<td><input class="checkbox" type='checkbox' name='ids[]' value='{$msg.id}' id='content_{$msg.id}' /></td>
-							<td align="center"><img src="/static/jky/images/msg{$msg.status}.gif" width="14" height="10" /></td>
+							<td align="center"><img src="__STATIC__/jky/images/msg{$msg.status}.gif" width="14" height="10" /></td>
 							<td><a class="read" id="{$msg.id}" href="{:U('ajax/get_msg',array('id'=>$msg['id']))}"> {$msg.info|utf_substr=64} </a></td>
 							<td width="90">{$msg.add_time|date="Y-m-d H:i:s",###}</td>
 							<td><a class="blue-link read" id="{$msg.id}" href="{:U('ajax/get_msg',array('id'=>$msg['id']))}">阅读</a></td>

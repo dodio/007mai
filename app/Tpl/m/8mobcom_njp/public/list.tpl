@@ -25,8 +25,8 @@
 					<volist name="items_list" id="item" key="i">
 					<li>
 						<a class="goods-a" target="_blank" href="{:U('jump/index',array('id'=>$item['num_iid']))}">
-							<img class="lazy" _src="{$item.pic_url}_310x310.jpg" src="/static/jky/images/blank.gif" alt="{$item.title}" height="226px;">
-							<img class="new-icon" src="/static/8mobcom_jp/images/new_product.png" />
+							<img class="lazy" _src="{$item.pic_url}_310x310.jpg" src="__STATIC__/jky/images/blank.gif" alt="{$item.title}" height="226px;">
+							<img class="new-icon" src="__STATIC__/8mobcom_jp/images/new_product.png" />
 							<h1>{$item.title}</h1>
 						</a>
 						<a href="{:U('jump/index',array('id'=>$item['num_iid']))}" target="_blank">

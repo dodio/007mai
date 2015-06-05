@@ -173,9 +173,9 @@ class ajaxAction extends FirstendAction {
 			$map['status'] = 0;
 			$count = $msg_mod->where($map)->order('id DESC')->count('id');
 			if($count){
-				$result['user']['msgsrc']  = '<img src="/static/jky/images/msg.gif" border="0" alt="有新短消息" />';
+				$result['user']['msgsrc']  = '<img src="'.CDN_ROOT.'/jky/images/msg.gif" border="0" alt="有新短消息" />';
 			}else{
-				$result['user']['msgsrc']  = '<img src="/static/jky/images/msg1.gif" border="0" alt="短消息" />';
+				$result['user']['msgsrc']  = '<img src="'.CDN_ROOT.'/jky/images/msg1.gif" border="0" alt="短消息" />';
 			}
 			$result['user']['avatar']  = CDN_ROOT.'/upload/avatar/default_24.jpg';
 		}

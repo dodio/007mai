@@ -4,7 +4,7 @@
 		<volist name="items_list" id="item" key="i">
 			<li>
 				<a class="goods-a" biz-itemid="{$item['num_iid']}" isconvert=1 href="http://detail.tmall.com/item.htm?id={$item['num_iid']}" target="_blank">
-					<img class="lazy" _src="{$item.pic_url}_310x310.jpg" src="/static/jky/images/blank.gif">            
+					<img class="lazy" _src="{$item.pic_url}_310x310.jpg" src="__STATIC__/jky/images/blank.gif">            
 					<span class="icon new">新品</span>
 				</a>
 				<a biz-itemid="{$item['num_iid']}" isconvert=1 href="http://detail.tmall.com/item.htm?id={$item['num_iid']}"  target="_blank"><h3>{$item.title}</h3>

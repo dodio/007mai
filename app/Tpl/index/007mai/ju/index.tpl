@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="http://g.tbcdn.cn/ju/common/1.3.6/global-min.css"/>
 <script src="http://g.tbcdn.cn/??kissy/k/1.4.2/seed-min.js,ju/common/1.3.6/global-min.js" charset="utf-8"></script>
 <link rel="stylesheet" href="http://g.tbcdn.cn/ju/home/1.2.3/pages/2014/index.less.css" />
-<link rel=stylesheet type=text/css href="/static/assets/css/good.css" />
+<link rel=stylesheet type=text/css href="__STATIC__/assets/css/good.css" />
 <style>
 .w980 .ju-itemlist {width: 980px;}
 .w980 li.item-small-v3 {width: 320px!important;height: 320px!important;}

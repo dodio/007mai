@@ -4,7 +4,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>正在为您跳转...</title>
-<script type="text/javascript" src="/static/js/jquery/jquery.js"></script>
+<script type="text/javascript" src="__STATIC__/js/jquery/jquery.js"></script>
 </head>
 <body> 
 <script language="javascript">

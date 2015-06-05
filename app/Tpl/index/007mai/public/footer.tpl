@@ -3,7 +3,7 @@
 <script type="text/javascript">
 	function noshow(id){
 		if(!$.ftxia.dialog.islogin()) return ;
-		$(this).html('<img src="/static/ftxia/images/loading.gif" />');
+		$(this).html('<img src="__STATIC__/ftxia/images/loading.gif" />');
 		$.ajax({
 			url: FTXIAER.root + '/?m=item&a=noshow',
 				type: 'POST',
@@ -24,7 +24,7 @@
 	$(".show a").click(function() {
 		id = $(this).attr("data-id");
 		if(!$.ftxia.dialog.islogin()) return ;
-		$(this).html('<img src="/static/ftxia/images/loading.gif" />');
+		$(this).html('<img src="__STATIC__/ftxia/images/loading.gif" />');
 		$.ajax({
 			url: FTXIAER.root + '/?m=item&a=noshow',
 				type: 'POST',
@@ -54,13 +54,13 @@
 				<if condition="C('ftx_site_flogo') neq ''">
 					<h2><img src="{:C('ftx_site_flogo')}" height="38" /></h2>
 				<else />
-					<h2><img src="/static/assets/images/logo.jpg" height="38" /></h2>
+					<h2><img src="__STATIC__/assets/images/logo.jpg" height="38" /></h2>
 				</if>
-				<div class="attentionlist">
+<!-- 				<div class="attentionlist">
 					<a class="sina" href="{:C('ftx_sina_url')}" target="_blank" rel="nofollow">新浪微博</a>
 					<a class="zone" href="{:C('ftx_qzone_url')}" target="_blank" rel="nofollow">QQ空间</a>
 					<a class="tt" href="{:C('ftx_tenxun_url')}" target="_blank" rel="nofollow">腾讯微博</a>
-				</div>
+				</div> -->
 			</div>
 			<div class="fl">
 				<div class="abouts">

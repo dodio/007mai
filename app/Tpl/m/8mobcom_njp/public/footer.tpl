@@ -2,7 +2,7 @@
 	<div class="tips"><div><img src="http://s.juancdn.com/webapp/images/images.png" width="100%;"></div></div>
             <div class="tips01"><div><img src="http://s.juancdn.com/webapp/images/images01.png" width="100%;"></div></div>
 	<div id="back_top" class="slide-box" style="display: none;">
-		<a href="#" class="back-top"><img src="/static/m_8mob_jp/images/icon/back-top.png"></a>      
+		<a href="#" class="back-top"><img src="__STATIC__/m_8mob_jp/images/icon/back-top.png"></a>      
 	</div>
 	<script type="text/javascript">
 
@@ -93,8 +93,8 @@
 	{:C('ftx_taojindian_html')}
 	<div id="foot">
 	    <div class="foot-nav">
-		<a href="{:C('ftx_site_url')}"><img src="/static/m_8mob_jp/images/icon/phone.png">电脑版</a>
-		<a href="{:U('index/index')}" class="_border"><img src="/static/m_8mob_jp/images/icon/home.png">返回首页</a>
+		<a href="{:C('ftx_site_url')}"><img src="__STATIC__/m_8mob_jp/images/icon/phone.png">电脑版</a>
+		<a href="{:U('index/index')}" class="_border"><img src="__STATIC__/m_8mob_jp/images/icon/home.png">返回首页</a>
 	    </div>
 	    <div class="foot-copyright"></div>
 	    <h2>copyright © 2015 {:C('ftx_site_name')}</h2>

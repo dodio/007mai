@@ -177,7 +177,7 @@ class ajaxAction extends FirstendAction {
 			}else{
 				$result['user']['msgsrc']  = '<img src="/static/jky/images/msg1.gif" border="0" alt="短消息" />';
 			}
-			$result['user']['avatar']  = 'data/upload/avatar/default_24.jpg';
+			$result['user']['avatar']  = CDN_ROOT.'/upload/avatar/default_24.jpg';
 		}
 		header('Content-Type:text/html; charset=utf-8');
 		exit($callback.'('.json_encode($result).')');

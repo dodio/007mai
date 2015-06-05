@@ -11,7 +11,7 @@
   <div class="group mall_banner">
     <div class="top-tms-container">
       <div class="img-wrap">
-          <a href="{$big_banner.url}" target="_blank"><img src="{$big_banner.content}"></a>
+          <a href="{$big_banner.url}" target="_blank"><img src="{:attach($big_banner['content'],'advert')}"></a>
       </div>
     </div>
   </div>
@@ -48,7 +48,7 @@
        foreach ($group as $ad) {
         ?>
        <li class="brand-mid-v2" title="{$ad.description}"> 
-         <a href="{$ad.url}" target="_blank"> <img class="brand-pic" src="{$ad.content}" />
+         <a href="{$ad.url}" target="_blank"> <img class="brand-pic" src="{:attach($ad['content'],'advert')}" />
          </a> 
         </li> 
         <?php

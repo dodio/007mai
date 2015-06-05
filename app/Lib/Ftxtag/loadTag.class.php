@@ -99,9 +99,11 @@ class loadTag {
 
 
     private function _tag_css($src){
+        $src = str_replace("/static", CDN_ROOT, $src);
         return '<link rel="stylesheet" type="text/css" href="' . __ROOT__ . $src . '?v='.THIS_IS_IT.'" />';
     }
     private function _tag_js($src){
+        $src = str_replace("/static", CDN_ROOT, $src);
         return ( '<script type="text/javascript" src="' . __ROOT__ . $src . '?v='.THIS_IS_IT.'"></script>');
     }
 

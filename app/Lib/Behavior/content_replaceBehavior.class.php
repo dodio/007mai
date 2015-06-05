@@ -17,10 +17,10 @@ class content_replaceBehavior extends Behavior {
         if ($statics_url != '') {
             $replace['__STATIC__'] = $statics_url;
         } else {
-            $replace['__STATIC__'] = __ROOT__.'/static';
+            $replace['__STATIC__'] = CDN_ROOT;
         }
         //附件地址
-        $replace['__UPLOAD__'] = __ROOT__.'/data/upload';
+        $replace['__UPLOAD__'] = CDN_ROOT.'/upload';
         $content = str_replace(array_keys($replace),array_values($replace),$content);
         return $content;
     }

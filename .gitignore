@@ -4,7 +4,7 @@ data/runtime/
 data/backup/
 thinkphp/
 public/static/dist_js/
-public/data/
+public/static/upload
 
 ftpsync.settings
 desktop.ini

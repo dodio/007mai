@@ -244,7 +244,7 @@ function avatar($uid, $size) {
     if (!is_file(C('ftx_attach_path') . 'avatar/' . $avatar_file)) {
         $avatar_file = "default_{$size}.jpg";
     }
-    return __ROOT__ . '/' . C('ftx_attach_path') . 'avatar/' . $avatar_file;
+    return CDN_ROOT . '/upload/' . 'avatar/' . $avatar_file;
 }
 
 function avatar_dir($uid) {
@@ -287,7 +287,7 @@ function utf8( $string, $code = "" ){
 function attach($attach, $type) {
     if (false === strpos($attach, 'http://')) {
         //本地附件
-        return __ROOT__ . '/' . C('ftx_attach_path') . $type . '/' . $attach;
+        return CDN_ROOT . '/upload/'. $type . '/' . $attach;
         //远程附件
         //todo...
     } else {
@@ -636,7 +636,4 @@ function hideInfo(&$info){
     if(isset($info['email'])){
         $info['email'] = substr_replace($info['email'],'****',1,4);
     }
-
-    
-
 }

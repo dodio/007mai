@@ -33,7 +33,7 @@ class zhuantiAction extends FirstendAction {
 						'keywords' => $zc['name'].',专场活动',
 						'description' => '【'.$zc['name'].'】!	' . C('ftx_site_name' ).'专场活动',
 					));
-				$this->display('indexs');
+				$this->display('index');
 			}else{
 				$where['pass'] = 1;
 				$where['isshow'] = '1';

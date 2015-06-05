@@ -5,12 +5,14 @@
 <meta name="renderer" content="webkit">
 <meta name="MSSmartTagsPreventParsing" content="True" />
 <meta http-equiv="MSThemeCompatible" content="Yes" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1">
 <script type="text/javascript" src="__STATIC__/assets/js/common/uaredirect.js"></script>
 <script type="text/javascript">
   uaredirect("http://m.007mai.com");
 	SITEURL="{:C('ftx_site_url')}";
 	CURURL="{:C('ftx_site_url')}";
 	WEBNICK="{:C('ftx_site_name')}";
+  CDN_ROOT = '<?php echo CDN_ROOT; ?>';
 	URL_COOKIE=0;
   var _czc = _czc || [];
 </script>

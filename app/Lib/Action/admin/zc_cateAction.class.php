@@ -159,8 +159,8 @@ class zc_cateAction extends BackendAction {
 	public function _before_delete(){
 		$id=I('id');
 		$zc=D('zc_cate')->where(array('id'=>$id))->find();
-		$pic_path1="./data/upload/zc/".$zc['pic_url'];
-		$pic_path2="./data/upload/zc/".$zc['banner_pic'];
+		$pic_path1="./static/upload/zc/".$zc['pic_url'];
+		$pic_path2="./static/upload/zc/".$zc['banner_pic'];
 		@unlink($pic_path1);
 		@unlink($pic_path2);
 

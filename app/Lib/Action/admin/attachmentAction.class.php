@@ -16,7 +16,7 @@ class attachmentAction extends BackendAction
         $allow_exts = array_intersect($ext_arr[$file_type], $allow_exts_conf);
         $allow_max && $upload->maxSize = $allow_max * 1024;   //文件大小限制
         $allow_exts && $upload->allowExts = $allow_exts;  //文件类型限制
-        $upload->savePath =  './data/upload/editer/' . $file_type . '/';
+        $upload->savePath =  './static/upload/editer/' . $file_type . '/';
         $upload->saveRule = 'uniqid';
         $upload->autoSub = true;
         $upload->subType = 'date';
@@ -33,7 +33,7 @@ class attachmentAction extends BackendAction
         if ($result['error']) {
             echo json_encode(array('error'=>1, 'message'=>$result['info']));
         } else {
-            echo json_encode(array('error'=>0, 'url'=>'./data/upload/editer/' . $file_type . '/' . $result['info'][0]['savename']));
+            echo json_encode(array('error'=>0, 'url'=>CDN_ROOT.'/upload/editer/' . $file_type . '/' . $result['info'][0]['savename']));
         }
         exit;
     }
@@ -42,8 +42,8 @@ class attachmentAction extends BackendAction
      * 编辑器图片空间 
      */
     public function editer_manager() {
-        $root_path = './data/upload/editer/';
-        $root_url = './data/upload/editer/';
+        $root_path = './static/upload/editer/';
+        $root_url = './static/upload/editer/';
         $ext_arr = array('gif', 'jpg', 'jpeg', 'png', 'bmp');
         $dir_name = empty($_GET['dir']) ? '' : trim($_GET['dir']);
         

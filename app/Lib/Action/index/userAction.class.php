@@ -6,7 +6,7 @@ class userAction extends UsersAction {
         parent::_initialize();
 		$info = $this->visitor->get();
         //打码
-        hideInfo($info);
+        $this->_hideInfo($info);
         $this->assign('info', $info);
     }
 
@@ -287,7 +287,7 @@ class userAction extends UsersAction {
             if ($result['error']) {
                 $this->ajaxReturn(0, $result['info']);
             } else {
-                $data = __ROOT__.'/data/upload/avatar/'.$avatar_dir.md5($uid).'_'.$size.'.jpg?'.time();
+                $data = CDN_ROOT.'/upload/avatar/'.$avatar_dir.md5($uid).'_'.$size.'.jpg?'.time();
                 $this->ajaxReturn(1, L('upload_success'), $data);
             }
         } else {
@@ -594,6 +594,7 @@ class userAction extends UsersAction {
 	}
 
 	public function avatar(){
+        $this->_config_seo(array("title"=>"修改头像 "));
 		$this->display();
 	}
 
@@ -613,5 +614,25 @@ class userAction extends UsersAction {
         $this->display();
     }
  
+    /**给用户信息打码*/
+    private function _hideInfo(&$info){
+        if(!is_array($info) || empty($info)){
+            return;
+        }
 
+        if(isset($info['mobile'])){
+            $info['mobile'] = substr_replace($info['mobile'],'*****',3,5);
+        }
+
+        if(isset($info['qq'])){
+            $info['qq'] = substr_replace($info['qq'],'*****',3,5);
+        }
+        if(isset($info['realname'])){
+            $info['realname'] = mb_substr($info['realname'],0,1,"utf8")."**";
+        }
+
+        if(isset($info['email'])){
+            $info['email'] = substr_replace($info['email'],'****',1,4);
+        }
+    }
 }

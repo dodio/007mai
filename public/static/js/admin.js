@@ -101,7 +101,7 @@
 		switch(ftype){
 			case 'image':
 				if(!$(this).find('.attachment_tip')[0]){
-					$('<div class="attachment_tip"><img src="'+rel+'" /></div>').prependTo($(this)).fadeIn();
+					$('<div class="attachment_tip"><img width="200" src="'+rel+'" /></div>').prependTo($(this)).fadeIn();
 				}else{
 					$(this).find('.attachment_tip').fadeIn();
 				}

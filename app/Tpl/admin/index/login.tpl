@@ -90,7 +90,6 @@
     <td bgcolor="#289121">&nbsp;</td>
   </tr>
 </table>
-<INPUT type=image height=0 width=0 src="__STATIC__/css/admin/bgimg/clear.gif" value="" name=Submit>
 <map name="Map"><area shape="rect" coords="3,3,36,19" href="javascript:myform.submit();"><area shape="rect" coords="40,3,78,18" href="javascript:myform.reset();"></map>
 </form>
  

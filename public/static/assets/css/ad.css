@@ -172,15 +172,15 @@
 .l-floor .l-f-title:first-child {
   margin-top: 0;
 }
-li.brand-mid-v2 {
+.l-floor li.brand-mid-v2 {
     margin: 10px 10px 0 0;
     width: 590px;
     float: left;
 }
-li.brand-mid-v2 img{
+.l-floor li.brand-mid-v2 img{
     width: 100%;
 }
-li.brand-mid-v2 img:hover{
+.l-floor li.brand-mid-v2 img:hover{
     border-color: #f61d4b;
     outline: #f61d4b solid 2px
 }
@@ -191,4 +191,17 @@ li.brand-mid-v2 img:hover{
 .w1005 li.brand-mid-v2{
   width: 540px;
 }
-
+.l-floor li.l-f-shop{
+  margin: 10px 10px 0 0;
+  width: 290px;
+  height: 290px;
+  float: left;
+  overflow: hidden;
+}
+.l-floor li.l-f-shop img:hover{
+    border-color: #f61d4b;
+    outline: #f61d4b solid 2px
+}
+.w1005 .l-floor li.l-f-shop{
+  width: 265px;
+}

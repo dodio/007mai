@@ -69,7 +69,7 @@
 </table>
 </form>
 </div>
-<script src="__STATIC__/js/fileuploader.js"></script>
+<script src="/static/js/fileuploader.js"></script>
 <script>
 Calendar.setup({
     inputField : "start_time",

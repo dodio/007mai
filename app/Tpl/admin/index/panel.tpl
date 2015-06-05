@@ -7,7 +7,7 @@
 		<div class="col-2 fl mr10" style="width:48%">
 			<h6>我的个人信息</h6>
 			<div class="content">
-				您好，<b style="color:#06C"> {$my_admin.username}</b> &nbsp;[超级管理员]<br />
+				您好，<b style="color:#06C"> {$my_admin.username}</b> &nbsp;{$my_admin.rolename}<br />
 				登录IP： {$ip} [ {$time}]<br />
 				<div class="bk20 hr"><hr /></div>
 				<h2>第一次使用? <a href="http://bbs.8mob.com/forum.php?mod=viewthread&tid=5700" target="_blank">点此查看教程</a></h2>

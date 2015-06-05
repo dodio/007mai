@@ -68,7 +68,7 @@
 /*this is top_bar*/
 .big_banner{
   position: relative;
-  height: 362px;
+  height: 360px;
   overflow: hidden;
 }
 .top_bar{background-color: #f7f7f7;height:100%;overflow: hidden;width: 100%;}

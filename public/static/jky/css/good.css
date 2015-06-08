@@ -57,7 +57,6 @@
 
 .goods-list { margin: 0 auto 0; }
 .goods-list li {
-	width: 258px;
 	border: #fff solid 1px;
 	background: #FFF;
 	float: left;

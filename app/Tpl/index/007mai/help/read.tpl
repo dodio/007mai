@@ -9,19 +9,17 @@
 <include file="public:header" />
 
 	
-	<div class="main mb20 page007mai clear">
-	<div class="jiu_help page007mai">
-		<div style="position: absolute;">
-			<div id="lr_float" style="position: static; top: -205px;">
-				<div class="left_bg"></div>
-				<div class="help_title fl">
-					<dl>
-						<dt>帮助中心</dt>
-						<volist name="helps" id="vol">
-							<dd <if condition="$vol.id eq $id"> class="cur" </if>><a href="{:U('help/read',array('id'=>$vol['id']))}">{$vol.title}</a></dd>
-						</volist>
-					</dl>
-				</div>
+	<div class="middle mb20 page007mai clear">
+	<div class="jiu_help group">
+		<div id="lr_float fl">
+			<div class="left_bg"></div>
+			<div class="help_title fl">
+				<dl>
+					<dt>帮助中心</dt>
+					<volist name="helps" id="vol">
+						<dd <if condition="$vol.id eq $id"> class="cur" </if>><a href="{:U('help/read',array('id'=>$vol['id']))}">{$vol.title}</a></dd>
+					</volist>
+				</dl>
 			</div>
 		</div>
 		<div class="help_content fr">

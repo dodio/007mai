@@ -9,11 +9,6 @@
 <include file="public:cate-nav" />
 
 <include file="public:nav-classify" />
-<style>
-  #side_nav_top{
-    display: none;
-  }
-</style>
 <div class="side_nav_fix_pos">
 	<include file="public:list" />
 </div>

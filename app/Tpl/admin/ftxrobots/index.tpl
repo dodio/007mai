@@ -38,6 +38,7 @@
     <table width="100%" cellspacing="0">
         <thead>
             <tr>
+                <th width=25><input type="checkbox" id="checkall_t" class="J_checkall"></th>
                 <th><span data-tdtype="order_by" data-field="id">ID</span></th>
                 <th align="left"><span data-tdtype="order_by" data-field="name">商品名称</span></th>
                 <th width="80"><span data-tdtype="order_by" data-field="cate_id">分类</span></th>
@@ -52,6 +53,7 @@
     	<tbody>
             <volist name="list" id="val" >
             <tr>
+                <td align="center"><input type="checkbox" class="J_checkitem" value="{$val.id}"></td>
                 <td align="center">{$val.id}</td>
                 <td align="left"><span data-tdtype="edit" data-field="name" data-id="{$val.id}" class="tdedit"  >{$val.name}</span></td>
                 <td align="center"><b>{$cate_list[$val['cate_id']]}</b></td>
@@ -68,6 +70,8 @@
     </div>
 
     <div class="btn_wrap_fixed">
+        <label class="select_all mr10"><input type="checkbox" name="checkall" class="J_checkall">{:L('select_all')}/{:L('cancel')}</label>
+        <input type="button" class="btn" data-tdtype="batch_action" data-acttype="ajax" data-uri="{:U('ftxrobots/delete')}" data-name="id" data-msg="{:L('confirm_delete')}" value="{:L('delete')}" />
         <div id="pages">{$page}</div>
     </div>
 </div>

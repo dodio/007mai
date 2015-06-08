@@ -32,7 +32,8 @@
 			<input type="text" name="nick" class="input-text" size="12" value="{$search.nick}" />
 			&nbsp;&nbsp;关键字 :
 			<input name="keyword" type="text" class="input-text" size="25" value="{$search.keyword}" />
-			<input type="submit" name="search" class="btn" value="搜索" />		
+			<input type="submit" name="search" class="btn" value="搜索" />
+            <input type="submit" name="delete" class="btn" value="删除" data-uri="{:u('items/delete', array('id'=>$val['id']))}" data-acttype="ajax" />	
                 </div>
                 </td>
             </tr>
@@ -100,6 +101,7 @@
 
     <div class="btn_wrap_fixed">
         <label class="select_all mr10"><input type="checkbox" name="checkall" class="J_checkall">{:L('select_all')}/{:L('cancel')}</label>
+        <input type="button" class="btn J_check_reverse" value="反选" />
 	<input type="button" class="btn btn_submit" data-tdtype="batch_action" data-acttype="ajax_form" data-id="move" data-uri="{:U('items/move',array('move'=>2))}" data-name="id" data-title="批量分类" value="批量分类" /> 
 	<input type="button" class="btn btn_submit" data-tdtype="batch_action" data-acttype="ajax_form" data-id="move" data-uri="{:U('items/move',array('move'=>1))}" data-name="id" data-title="批量加入专场" value="批量专场" /> 
         <input type="button" class="btn" data-tdtype="batch_action" data-acttype="ajax" data-uri="{:U('items/delete')}" data-name="id" data-msg="{:L('confirm_delete')}" value="{:L('delete')}" />

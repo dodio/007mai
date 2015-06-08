@@ -64,7 +64,7 @@
 <input type="hidden" name="id" id="id" value="{$info.id}" />
 </form>
 </div>
-<script src="__STATIC__/js/fileuploader.js"></script>
+<script src="/static/js/fileuploader.js"></script>
 <script type="text/javascript">
 Calendar.setup({
     inputField : "start_time",

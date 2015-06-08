@@ -14,8 +14,8 @@ class zc_cateAction extends BackendAction {
         $result = $this->_mod->order($sort . ' ' . $order)->select();
         $array = array();
         foreach($result as $r) {
-            $r['str_status'] = '<img data-tdtype="toggle" data-id="'.$r['id'].'" data-field="status" data-value="'.$r['status'].'" src="__STATIC__/images/admin/toggle_' . ($r['status'] == 0 ? 'disabled' : 'enabled') . '.gif" />';
-			$r['str_bm_xs'] = '<img data-tdtype="toggle" data-id="'.$r['id'].'" data-field="bm_xs" data-value="'.$r['bm_xs'].'" src="__STATIC__/images/admin/toggle_' . ($r['bm_xs'] == 0 ? 'disabled' : 'enabled') . '.gif" />';
+            $r['str_status'] = '<img data-tdtype="toggle" data-id="'.$r['id'].'" data-field="status" data-value="'.$r['status'].'" src="/static/images/admin/toggle_' . ($r['status'] == 0 ? 'disabled' : 'enabled') . '.gif" />';
+			$r['str_bm_xs'] = '<img data-tdtype="toggle" data-id="'.$r['id'].'" data-field="bm_xs" data-value="'.$r['bm_xs'].'" src="/static/images/admin/toggle_' . ($r['bm_xs'] == 0 ? 'disabled' : 'enabled') . '.gif" />';
             $r['str_manage'] = '<a href="javascript:;" class="J_showdialog" data-uri="'.U('zc_cate/edit',array('id'=>$r['id'])).'" data-title="'.L('edit').' - '. $r['name'] .'" data-id="edit" data-width="500" data-height="20">'.L('edit').'</a> |
             <a href="javascript:;" class="J_confirmurl" data-acttype="ajax" data-uri="'.U('zc_cate/delete',array('id'=>$r['id'])).'" data-msg="'.sprintf(L('confirm_delete_one'),$r['name']).'">'.L('delete').'</a>';
 
@@ -27,7 +27,7 @@ class zc_cateAction extends BackendAction {
                 <td align='center'>\$id</td>
                 <td align='left'>\$spacer<span data-tdtype='edit' data-field='name' data-id='\$id' class='tdedit'  style='color:\$fcolor'>\$name</span></td>
                 <td align='center'><span data-tdtype='edit' data-field='ename' data-id='\$id' class='tdedit'  style='color:\$fcolor'>\$ename</span></td>
-				<td align='center'><img src='/data/upload/zc/\$banner_pic' height='30px' /></td>
+				<td align='center'><img src='/static/upload/zc/\$banner_pic' height='30px' /></td>
                 <td align='center'><span data-tdtype='edit' data-field='ordid' data-id='\$id' class='tdedit'>\$ordid</span></td>
                 <td align='center'>\$str_status</td>
 				<td align='center'>\$str_bm_xs</td>

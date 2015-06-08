@@ -91,7 +91,7 @@
         </div>
 	</form>
 </div>
-<script src="__STATIC__/js/fileuploader.js"></script>
+<script src="/static/js/fileuploader.js"></script>
 <script>
 $(function(){
 	$('.J_cate_select').cate_select('请选择');

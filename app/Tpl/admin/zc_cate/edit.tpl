@@ -115,7 +115,7 @@
 	<input type="hidden" name="id" value="{$info.id}" />
 </form>
 </div>
-<script src="__STATIC__/js/fileuploader.js"></script>
+<script src="/static/js/fileuploader.js"></script>
 <script>
 $('.J_cate_select').cate_select('请选择');
 var check_name_url = "{:U('zc_cate/ajax_check_name', array('id'=>$info['id']))}";

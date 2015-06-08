@@ -96,6 +96,7 @@
 				<th>商品分类：：</th>
 				<td>
 					<select class="J_cate_select mr10" data-pid="0" data-uri="{:U('items_cate/ajax_getchilds')}" data-selected=""></select><input type="hidden" name="cate_id" id="J_cate_id" value="" />
+					<label for="delete_sub_cate">删除子分类</label><input id="delete_sub_cate" type="checkbox" name="delete_sub_cate">
 				</td>
 			</tr>
 	                <tr>

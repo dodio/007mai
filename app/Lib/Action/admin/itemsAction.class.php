@@ -186,7 +186,12 @@ class itemsAction extends BackendAction {
                     $where .= " AND title LIKE '%" . $keyword . "%'";
                 }
                 if ($cate_id != ''&&$cate_id!=0) {
-                    $where .= " AND cate_id=" . $cate_id;
+                    $delete_sub_cate = I('delete_sub_cate');
+                    if(!$delete_sub_cate){
+                        $where .= " AND cate_id=" . $cate_id;
+                    }else{
+                        $where .= " AND cate_id in (". implode(",", $this->_cate_mod->get_child_ids($cate_id,true) ) . ") ";
+                    }
                 }
                 if ($time_start != '') {
                     $time_start_int = strtotime($time_start);

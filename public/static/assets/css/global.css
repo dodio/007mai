@@ -88,10 +88,9 @@ textarea,input[type="text"],input[type="password"]{ background:url(../images/glo
 .login-ed .normal .login-box ul li a .icon-07{ width:13px; height:13px; background-position:-188px -89px; }
 .login-ed .normal .login-box ul li a:hover{ background:#ffebd2; text-decoration:none;}
 
-.mainNav { width:100%; height:38px; background:#ee4e22; }
-.mainNav .nav { height:38px; margin:0 auto; }
-.mainNav li { float:left; display:inline; height:38px; position:relative; z-index:98; }
-.mainNav li a { float:left; padding: 8px 22px 0; height:30px; color:#fff; font-size:15px; font-weight:bold; position:relative; }
+.mainNav { width:100%; height:40px; background:#ee4e22; }
+.mainNav li { float:left; display:inline; height:40px; position:relative; z-index:98; }
+.mainNav li a {font-weight:bold; position:relative; }
 .mainNav li.last { background:none; }
 .mainNav li.current { background:#c63f1a; }
 .mainNav li a:hover{ text-decoration:none; background:#c63f1a;}

@@ -105,7 +105,7 @@
                           <p class="text"><span>我的情报：</span><a href="{:U('user/login')}" class="score">登录</a>后显示</p>
                         </notempty>
                         <p class="text" id="closest_duihuan"></p>
-                        <p class="other"> <a target="_blank" href="{:U('user/mingxi')}">我的情报</a>　｜　<a target="_blank" href="{:U('gift/index')}">情报商城</a> ｜ <a href="/" target="_blank">快速获得情报!</a></p>
+                        <p class="other"> <a target="_blank" href="{:U('user/mingxi')}">我的情报</a>　｜　<a target="_blank" href="{:U('gift/index')}">情报商城</a> ｜ <a href="http://www.007mai.com/help/read/id/7.html" target="_blank">快速获得情报!</a></p>
                     </div>
                 </div>
             </div>

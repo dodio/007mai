@@ -50,5 +50,7 @@ return array (
     '/^list\/p\/(\d+)$/' => 'list/index?p=:1',
     '/^item\/id\/(\d+)$/' => 'item/index?id=:1',
     '/^item\/iid\/(\d+)$/' => 'item/index?iid=:1',
+
+    "/help\/qingbao$" => 'help/read?id=7'
   ),
 );

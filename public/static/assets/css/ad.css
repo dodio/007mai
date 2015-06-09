@@ -144,6 +144,10 @@
 .top_wrap .round .adType a.current {
     background:#ff2d5e;
 }
+.mall_banner{
+  width: 100%;
+  overflow: hidden;
+}
 .mall_banner .top-tms-container{
   position: relative;
   left: 50%;

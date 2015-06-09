@@ -314,7 +314,7 @@
         <li><a href="/index/cate/cid/213" target="_blank">假发</a></li>
       </ul>
       <h3 class="cate-title cate-shoushi"><a href="/index/cate/cid/193" target="_blank">首饰/手表/项链</a></h3>
-      <ul class="group">
+      <ul class="group bdb">
         <li><a href="/index/cate/cid/216" target="_blank">耳钉</a></li>
         <li><a href="/index/cate/cid/217" target="_blank">戒指</a></li>
         <li><a href="/index/cate/cid/219" target="_blank">手链</a></li>
@@ -323,6 +323,15 @@
         <li><a href="/index/cate/cid/223" target="_blank">脚链</a></li>
         <li><a href="/index/cate/cid/224" target="_blank">胸针</a></li>
         <li><a href="/index/cate/cid/218" target="_blank">项链</a></li>
+      </ul>
+
+      <ul class="group">
+<li><a href="/index/cate/cid/233" target="_blank">纹身贴</a></li>
+<li><a href="/index/cate/cid/232" target="_blank">腰带</a></li>
+<li><a href="/index/cate/cid/231" target="_blank">头绳</a></li>
+<li><a href="/index/cate/cid/226" target="_blank">手表</a></li>
+<li><a href="/index/cate/cid/228" target="_blank">手机壳</a></li>
+<li><a href="/index/cate/cid/229" target="_blank">丝巾</a></li>
       </ul>
     </div>
 

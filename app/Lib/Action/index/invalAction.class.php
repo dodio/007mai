@@ -19,8 +19,8 @@ class invalAction extends FirstendAction {
         }
         if (!$union_mod->where(array('ip'=>get_client_ip()))->count()) {
 			$score_data = array('score'=>array('exp','score+'.C('ftx_score_rule.union_visit')), 'sign_time'=>strtotime(date('Ymd')));
-			D('user')->where(array('id'=>$user['id']))->setField($score_data); //¸Ä±äÓÃ»§»ı·Ö
-			//Ìí¼ÓÒ»Ìõ»ı·Ö¼ÇÂ¼
+			D('user')->where(array('id'=>$user['id']))->setField($score_data); //æ”¹å˜ç”¨æˆ·ç§¯åˆ†
+			//æ·»åŠ ä¸€æ¡ç§¯åˆ†è®°å½•
 			$score_log_data['uid']		=	$user['id'];
 			$score_log_data['uname']	=	$user['username'];
 			$score_log_data['action']	=	'union_visit';

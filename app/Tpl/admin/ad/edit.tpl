@@ -30,7 +30,7 @@
         <th>{:L('ad_image')} :</th>
         <td><input type="text" name="img" id="J_img" class="input-text fl mr10" size="30" value="{$info.content}">
           <div id="J_upload_img" class="upload_btn"><span>{:L('upload')}</span></div>
-		<if condition="$info.type eq 'image'"><notempty name="info['content']"><span class="attachment_icon J_attachment_icon" file-type="image" file-rel="{$img_dir}{$info.content}"><img src="__STATIC__/images/filetype/image_s.gif" /></span></notempty></if>
+		<if condition="$info.type eq 'image'"><notempty name="info['content']"><span class="attachment_icon J_attachment_icon" file-type="image" file-rel="{:attach($info['content'],'advert')}"><img src="__STATIC__/images/filetype/image_s.gif" /></span></notempty></if>
 		</td>
     </tr>
     <tr id="ad_code" class="bill_media" style="display:none;">

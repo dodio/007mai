@@ -23,7 +23,7 @@
                 <td align="center"><input type="checkbox" class="J_checkitem" value="{$val.id}"></td>
                 <td align="center">{$val.id}</td>
                 <td align="right">
-                    <notempty name="val['pic_url']"><div class="img_border"><a href="http://item.taobao.com/item.htm?id={$val.num_iid}" target="_blank"><img src="{:attach(get_thumb($val['pic_url'], '_s'), 'item')}" width="32" width="32" class="J_preview" data-bimg="{:attach(get_thumb($val['pic_url '],'_m'), 'item')}"></a></div></notempty>
+                    <notempty name="val['pic_url']"><div class="img_border"><a href="http://item.taobao.com/item.htm?id={$val.num_iid}" target="_blank"><img src="{:attach(get_thumb($val['pic_url'], '_s'), 'item')}" width="96" width="96" class="J_preview" data-bimg="{:attach(get_thumb($val['pic_url '],'_m'), 'item')}"></a></div></notempty>
                 </td>
                 <td align="left"><span data-tdtype="edit" data-field="title" data-id="{$val.id}" class="tdedit" style="color:{$val.colors};">{$val.title}</span></td>
                 <td align="center">{$val.nick}</td>

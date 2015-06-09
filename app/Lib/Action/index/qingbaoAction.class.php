@@ -32,7 +32,6 @@
 
       $cate_list = $this->_cate_mod->cate_cache(true);
       $subnav = $cate_list['s'][$chanel_id];
-
       $this->assign('nav_curr', 'tongkuan');
       $this->assign('subnav', $subnav);
       $this->assign("chanel_id",$chanel_id);

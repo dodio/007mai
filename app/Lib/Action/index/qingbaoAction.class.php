@@ -10,10 +10,47 @@
     }
 
     public function qinglv(){
-      $this->_common(27);
+      $chanel_id = 27;
+      $cid = I("cid",$chanel_id,"intval");
+      $this->_common($cid);
+
+      $cate_list = $this->_cate_mod->cate_cache(true);
+      $subnav = $cate_list['s'][$chanel_id];
+
+      $this->assign('nav_curr', 'qinglv');
+      $this->assign('subnav', $subnav);
+      $this->assign("chanel_id",$chanel_id);
+
+      $this->display();
     }
 
+    public function tongkuan(){
+      $chanel_id = 285;
+      $cid = I("cid",$chanel_id,"intval");
+      $this->_common($cid);
 
+      $cate_list = $this->_cate_mod->cate_cache(true);
+      $subnav = $cate_list['s'][$chanel_id];
+
+      $this->assign('nav_curr', 'tongkuan');
+      $this->assign('subnav', $subnav);
+      $this->assign("chanel_id",$chanel_id);
+      $this->display();
+    }
+
+    public function yuehui(){
+      $chanel_id = 286;
+      $cid = I("cid",$chanel_id,"intval");
+      $this->_common($cid);
+
+      $cate_list = $this->_cate_mod->cate_cache(true);
+      $subnav = $cate_list['s'][$chanel_id];
+
+      $this->assign('nav_curr', 'yuehui');
+      $this->assign('subnav', $subnav);
+      $this->assign("chanel_id",$chanel_id);
+      $this->display();
+    }
 
     private function _common($cid){
       $cinfo = $this->_cate_mod->cate_info($cid);
@@ -151,14 +188,13 @@
       $this->assign('total_item',$count);
       $this->assign('ajaxurl',U('index/cate',array('cid'=>$cid,'p'=>$index_info['p'],'sort'=>$index_info['sort'])));
 
-      $this->assign('nav_curr', 'index');
+
       $this->_config_seo(C('ftx_seo_config.cate'), array(
         'cate_name' => $cinfo['name'],
         'seo_title' => $cinfo['seo_title'],
         'seo_keywords' => $cinfo['seo_keys'],
         'seo_description' => $cinfo['seo_desc'],
           ));
-      $this->display();
     }
   }
 

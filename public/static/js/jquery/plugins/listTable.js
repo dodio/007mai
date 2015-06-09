@@ -48,11 +48,18 @@
 			$('.J_checkitem').attr('checked', this.checked);
 			$('.J_checkall').attr('checked', this.checked);
     	});
-    	$('.J_check_reverse').live('click', function(){
+    $('.J_check_reverse').live('click', function(){
     		$('.J_checkitem').each(function(){
     			$(this).attr("checked",!this.checked);
     		});
     	});
+    $(".J_checkitem",self).live("click",function(e){
+    	e.stopPropagation();
+    })
+    $("tbody tr td:first-child",self).live("click",function(){
+    	var i = $(this).find('.J_checkitem');
+    	i.attr("checked",!i.attr("checked"));
+    });
     	//历史排序
 		$('span[data-tdtype="order_by"]', $(self)).each(function() {
 			if($(this).attr('data-field') == sort) {

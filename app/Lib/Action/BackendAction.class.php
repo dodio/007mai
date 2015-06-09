@@ -190,7 +190,7 @@ class BackendAction extends TopAction
      * @param string $field_list 显示字段
      * @param intval $pagesize 每页数据行数
      */
-    protected function _list($model, $map = array(), $sort_by='', $order_by='', $field_list='*', $pagesize=50)
+    protected function _list($model, $map = array(), $sort_by='', $order_by='', $field_list='*', $pagesize=72)
     {
         //排序
         $mod_pk = $model->getPk();

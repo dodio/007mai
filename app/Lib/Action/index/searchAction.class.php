@@ -9,12 +9,6 @@ class searchAction extends FirstendAction {
 	public function _empty(){
 		$this->index();
 	}
-	public function etao(){
-		$k		= I('key');
-		header("Location: http://s.etao.com/search?q=".$k);
-		exit();
-
-	}
 
 	public function index() {
 		$sort	= I('sort', 'new', 'trim'); //排序

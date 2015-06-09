@@ -211,6 +211,10 @@
   width: auto;
   margin-right: 10px;
 }
+.side_nav .side_sub_nav_i ul.bdb{
+  border-bottom:1px dashed #B8B8B8;
+  padding-bottom: 10px;
+}
 .side_nav .side_sub_nav_i ul li a{
   font-size: 12px;
 }
@@ -287,4 +291,14 @@
 }
 .side_nav .side_sub_nav_i h3.cate-shoushi a{
   background-position: -29px -964px;
+}
+.side_nav .side_sub_nav_i h3.cate-yunfu a{
+  background-position: -23px -1628px;
+}
+
+.side_nav .side_sub_nav_i h3.cate-baby a{
+  background-position: -23px -1152px;
+}
+.side_nav .side_sub_nav_i h3.cate-child a{
+  background-position: -20px -1440px;
 }

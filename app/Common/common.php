@@ -637,3 +637,57 @@ function hideInfo(&$info){
         $info['email'] = substr_replace($info['email'],'****',1,4);
     }
 }
+
+
+function getSort($sort,$default = ""){
+    switch ($sort) {
+        case 'new':
+            $order =  ' , coupon_start_time DESC';
+            break;
+        case 'price':
+            $order =  ' , price DESC';
+            break;
+        case 'hot':
+            $order =  ' , volume DESC';
+            break;
+        case 'rate':
+            $order =  ' , coupon_rate ASC';
+            break;
+        default:
+            if($default == ""){
+                $order =  "";
+            }else{
+                $order =  ', '. $default;
+            }
+    }
+    return $order;
+}
+
+function mapCinfo( $cinfo, &$map ){
+    // 店铺类型
+    if($cinfo['shop_type']){$map['shop_type'] = $cinfo['shop_type'];}
+    // 价格区间
+    if($cinfo['mix_price']>0){$map['coupon_price'] = array('egt',$cinfo['mix_price']);}
+    if($cinfo['max_price']>0){$map['coupon_price'] = array('elt',$cinfo['max_price']);}
+    if($cinfo['max_price']>0 && $cinfo['mix_price']>0){$map['coupon_price'] = array(array('egt',$cinfo['mix_price']),array('elt',$cinfo['max_price']),'and');}
+    // 销量区间
+    if($cinfo['mix_volume']>0){$map['volume'] = array('egt',$cinfo['mix_volume']);}
+    if($cinfo['max_volume']>0){$map['volume'] = array('elt',$cinfo['max_volume']);}
+    if($cinfo['max_volume']>0 && $cinfo['mix_volume']>0){$map['volume'] = array(array('egt',$cinfo['mix_volume']),array('elt',$cinfo['max_volume']),'and');}
+    // 显示未开始
+    if($cinfo['wait_time'] == '1'){
+        $map['coupon_start_time'] = array('egt',time());
+    }elseif($cinfo['wait_time'] =='2'){
+        $map['coupon_start_time'] = array('elt',time());
+    }
+    if($cinfo['end_time'] == '1'){
+        $map['coupon_end_time'] = array('egt',time());
+    }
+    if($cinfo['ems'] == '1'){
+        $map['ems'] = '1';
+    }
+    $map['pass']="1";
+    $map['isshow'] = '1';
+    $map['status']="underway";
+}
+

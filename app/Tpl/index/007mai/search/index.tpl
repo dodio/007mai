@@ -36,11 +36,11 @@ __STATIC__/ftxia/new/css/nav-channel.css
 			<div re="11okav" class="list-good goods_box todayDb">
 				<h5 class="good-title">
 					<if condition="$item.shop_type eq 'C' "><a  target="_blank" class="icon t tao-n" title="淘宝网" style="display: none; "></a></if><if condition="$item.shop_type eq 'B' "><a  target="_blank" class="icon t tao-t" title="天猫商城" style="display: none; "></a></if>
-					<a target="_blank" href="{:U('jump/index',array('id'=>$item['id']))}" data-type="0" biz-itemid="{$item.num_iid}" isconvert=1 class="title">{$item.title}</a>
+					<a target="_blank" href="" biz-itemid="{$item.num_iid}" isconvert=1 class="title">{$item.title}</a>
 				</h5>
 				<div class="good-pic">
 					<div class="pic-img">
-						<a href="{:U('jump/index',array('id'=>$item['id']))}" biz-itemid="{$item.num_iid}" isconvert=1 target="_blank">
+						<a href="" biz-itemid="{$item.num_iid}" isconvert=1 target="_blank">
 							<img src="{:attach(get_thumb($item['pic_url'], '_b'),'item')}" width="290px" height="270px">
 						</a>
 					</div>
@@ -48,7 +48,7 @@ __STATIC__/ftxia/new/css/nav-channel.css
 				<div class="good-price">
 					<span class="price-current"><em>¥ </em>{$item.coupon_price}</span>
 					<span class="price-discount"><em>¥ </em>{$item.price}</span>
-					<a class="btn {$item.class}" target="_blank" href="{:U('jump/index',array('id'=>$item['id']))}" biz-itemid="{$item.num_iid}" isconvert=1   rel="nofollow" ></a>
+					<a class="btn {$item.class}" target="_blank" href="" biz-itemid="{$item.num_iid}" isconvert=1   rel="nofollow" ></a>
 				</div>
 				<div class="good-des">
 					<a href="#" class="icon tao-du" title="007买独家" target="_blank"></a>

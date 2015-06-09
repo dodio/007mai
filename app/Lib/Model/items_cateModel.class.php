@@ -87,12 +87,16 @@ class items_cateModel extends Model
     /**
      * 读取写入缓存(有层级的分类数据)
      */
-    public function cate_cache() {
+    public function cate_cache($all = false) {
 		$cate_list = array();
-
+        $cache_file_name = $all ? "cate_list_all" : "cate_list";
 		if(C('ftx_site_cache')){
-			if(false === $cate_list = S('cate_list')){
-				$cate_data = $this->field('id,pid,name')->where('status=1')->order('ordid')->select();
+			if(false === $cate_list = S($cache_file_name)){
+                if(!$all){
+                    $cate_data = $this->field('id,pid,name')->where('status=1')->order('ordid')->select();
+                }else{
+                    $cate_data = $this->field('id,pid,name')->order('ordid')->select();
+                }
 				foreach ($cate_data as $val) {
 					if ($val['pid'] == '0') {
 						$cate_list['p'][$val['id']] = $val;
@@ -101,10 +105,14 @@ class items_cateModel extends Model
 					}
 				}
 
-				S('cate_list',$cate_list);
+				S($cache_file_name,$cate_list);
 			}
 		}else{
-			$cate_data = $this->field('id,pid,name')->where('status=1')->order('ordid')->select();
+			if(!$all){
+                $cate_data = $this->field('id,pid,name')->where('status=1')->order('ordid')->select();
+            }else{
+                $cate_data = $this->field('id,pid,name')->order('ordid')->select();
+            }
 			foreach ($cate_data as $val) {
 				if ($val['pid'] == '0') {
 					$cate_list['p'][$val['id']] = $val;
@@ -112,7 +120,7 @@ class items_cateModel extends Model
 					$cate_list['s'][$val['pid']][$val['id']] = $val;
 				}
 			}
-			S('cate_list', $cate_list);
+			S($cache_file_name, $cate_list);
 		}
 
         return $cate_list;
@@ -142,6 +150,23 @@ class items_cateModel extends Model
 		}
 
         return $cate_data;
+    }
+
+    /**
+     * 获取 cinfo 
+     */
+    
+    public function cate_info($cid){
+        if(C('ftx_site_cache')){
+            $file = 'cinfo_'.$cid;
+            if(false === $cinfo = S($file)){
+                $cinfo = $this->where(array('id'=>$cid))->find();
+                S($file,$cinfo);
+            }
+        }else{
+            $cinfo = $this->where(array('id'=>$cid))->find();
+        }
+        return $cinfo;
     }
 
     /**

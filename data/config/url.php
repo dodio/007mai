@@ -51,6 +51,6 @@ return array (
     '/^item\/id\/(\d+)$/' => 'item/index?id=:1',
     '/^item\/iid\/(\d+)$/' => 'item/index?iid=:1',
 
-    "/help\/qingbao$" => 'help/read?id=7'
+    "/^help\/qingbao$/" => 'help/read?id=7'
   ),
 );

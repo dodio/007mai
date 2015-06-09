@@ -13,6 +13,7 @@ class FirstendAction extends TopAction {
             header('Content-Type:text/html; charset=utf-8');
             exit(C('ftx_closed_reason'));
         }
+        C('DATA_CACHE_TIME',C('ftx_site_cachetime'));
         $this->_init_visitor();
         $this->_assign_oauth();
         $this->assign('nav_curr', '');

@@ -8,7 +8,10 @@
     public function _empty(){
       $this->redirect("/");
     }
-
+    /**
+     * 情侣必备
+     * @return [type] [description]
+     */
     public function qinglv(){
       $chanel_id = 27;
       $cid = I("cid",$chanel_id,"intval");
@@ -23,7 +26,10 @@
 
       $this->display();
     }
-
+    /**
+     * 明星同款
+     * @return [type] [description]
+     */
     public function tongkuan(){
       $chanel_id = 285;
       $cid = I("cid",$chanel_id,"intval");
@@ -37,7 +43,10 @@
       $this->assign("chanel_id",$chanel_id);
       $this->display();
     }
-
+    /**
+     * 约会神器
+     * @return [type] [description]
+     */
     public function yuehui(){
       $chanel_id = 286;
       $cid = I("cid",$chanel_id,"intval");
@@ -52,6 +61,11 @@
       $this->display();
     }
 
+    /**
+     * 显示分类下的商品，通用方法
+     * @param  [type] $cid [description]
+     * @return [type]      [description]
+     */
     private function _common($cid){
       $cinfo = $this->_cate_mod->cate_info($cid);
       $sort = I('sort', 'default', 'trim'); //排序方式

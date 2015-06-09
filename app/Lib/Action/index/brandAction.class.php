@@ -14,8 +14,10 @@ class brandAction extends FirstendAction {
     $req->setFields('title,name');
 		$req->setTime(date("y-m-d-H",time()));
 		$resp = $top->execute($req);
-        $brandlist = object_to_array($resp->brandlist);
-
+    if($resp->msg){
+      $this->redirect("/","出现网络故障，没有为您成功取回情报.",3);
+    }
+    $brandlist = object_to_array($resp->brandlist);
 		$totals = count($brandlist['list']);
 		$alllist = $brandlist['list'];
 		$start=($p-1)*$per;
@@ -48,6 +50,11 @@ class brandAction extends FirstendAction {
 		$req->setUid($uid);
 		$req->setTime(date("y-m-d",time()));
 		$resp = $top->execute($req);
+
+    if($resp->msg){
+      $this->redirect("/","出现网络故障，没有为您成功取回情报.",3);
+    }
+    
     $brandlist = object_to_array($resp->brandlist);
 
     foreach ($brandlist['brand'] as $key => $value) {

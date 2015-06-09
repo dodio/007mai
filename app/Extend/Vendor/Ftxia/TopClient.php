@@ -58,6 +58,8 @@ class TopClient{
 		curl_setopt($ch, CURLOPT_URL, $url);
 		curl_setopt($ch, CURLOPT_FAILONERROR, false);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+		curl_setopt($ch, CURLOPT_TIMEOUT, 5); //内容都比较小5秒内足够
+		curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5); //对方服务器可能挂了
 		//https 请求
 		if(strlen($url) > 5 && strtolower(substr($url,0,5)) == "https" ) {
 			curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);

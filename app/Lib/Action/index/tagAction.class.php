@@ -15,6 +15,9 @@ class tagAction extends FirstendAction {
 	}
  
 	public function so($k) {
+    if(!$k){
+      $this->redirect("/");
+    }
 		$sort	= I('sort', 'hot', 'trim'); //排序
 		$status = I('status', 'all', 'trim'); //排序
 		$cid	= I('cid','', 'intval');
@@ -76,8 +79,8 @@ class tagAction extends FirstendAction {
 		$this->assign('items_list', $items);
 		$this->assign('index_info',$index_info);
 		$count = $item_mod->where($where)->count();
-        $pager = $this->_pager($count, $page_size);
-        $this->assign('page', $pager->kshow());
+    $pager = $this->_pager($count, $page_size);
+    $this->assign('page', $pager->kshow());
 		$this->assign('total_item',$count);
 
 		if (false === $cate_list = F('cate_list')) {
@@ -90,7 +93,8 @@ class tagAction extends FirstendAction {
     
 		$page_seo=array(
 			'title' => $k.'什么牌子好,'.$k.'哪里有卖 - '.C('ftx_site_name'),
-        );
+      'keywords' => implode("," , array($k,"品牌") )
+    );
 		$this->assign('page_seo', $page_seo);
         $this->display('index');
     }

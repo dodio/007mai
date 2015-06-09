@@ -691,3 +691,28 @@ function mapCinfo( $cinfo, &$map ){
     $map['status']="underway";
 }
 
+function getPriceRange($str,&$map){
+    if($str == ""){
+        return false;
+    }
+    $range = explode("~", $str);
+
+    if(count($range) != 2 ){
+        return false;
+    }
+    $range[0] = (float)$range[0];
+    $range[1] = (float)$range[1];
+
+    $cinfo = array();
+
+    if($range[0] > 0){
+        $cinfo["mix_price"] = $range[0];
+    }
+
+    if($range[1] > 0 ){
+        $cinfo['max_price'] = $range[1];
+    }
+    if($cinfo['mix_price']>0){$map['coupon_price'] = array('egt',$cinfo['mix_price']);}
+    if($cinfo['max_price']>0){$map['coupon_price'] = array('elt',$cinfo['max_price']);}
+    if($cinfo['max_price']>0 && $cinfo['mix_price']>0){$map['coupon_price'] = array(array('egt',$cinfo['mix_price']),array('elt',$cinfo['max_price']),'and');}
+}

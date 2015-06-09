@@ -1,3 +1,4 @@
+<h2 style="margin-top:50px;"><center>正在为您偷取情报....</center></h2>
 <script language="javascript">window.onerror = function(){return true;}</script>
 <script type="text/javascript" src="__STATIC__/js/jquery/jquery.js"></script>
 <!--淘点金代码开始-->

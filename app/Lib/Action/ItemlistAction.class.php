@@ -15,7 +15,12 @@ class ItemlistAction extends FirstendAction {
       $sort = I('sort', 'default', 'trim'); //排序方式
       $order  = 'ordid asc ';
       $order .= getSort( $sort, $cinfo['sort'] );
+
+
       mapCinfo($cinfo,$map);
+
+      $price_range = I("price","","trim");
+      getPriceRange($price_range,$map);
 
       if($cinfo['thiscid']==0){
           $id_arr = $this->_cate_mod->get_child_ids($cid, true);
@@ -29,6 +34,7 @@ class ItemlistAction extends FirstendAction {
 
       $list_info['sort']=$sort;
       $list_info['cid']=$cid;
+      $list_info['price'] = $price_range;
       $page_size = C('ftx_index_page_size');
       $p = I('p',1,'intval'); //页码
       $list_info['p']=$p;
@@ -42,20 +48,18 @@ class ItemlistAction extends FirstendAction {
         $mdarray['sort'] = $sort;
         $mdarray['p'] = $p;
         $mdarray['order'] = $order;
+        $mdarray['price'] = $price_range;
         $md_id = md5(implode("-",$mdarray));
         $file = 'cate_'.$md_id;
         if(false === $items = S($file)){
           $items_list = $this->_mod->where($map)->order($order)->limit($start . ',' . $page_size)->select();
           $items = $this->_deal_item_list($items_list);
-
           S($file,$items);
         }
       }else{
         $items_list = $this->_mod->where($map)->order($order)->limit($start . ',' . $page_size)->select();
         $items = $this->_deal_item_list($items_list);
-
       }
-
       // $seller_arr = array_unique($items['seller_arr']);
       // $sellers = implode(",",$seller_arr);
       // $this->assign('sellers', $sellers);
@@ -107,7 +111,7 @@ class ItemlistAction extends FirstendAction {
      * 处理列表数据
      * 引用传递，节约内存
      */
-    protected function _deal_item_list(&$item_list){
+    protected function _deal_item_list(&$items_list){
         $items = array();
         $cate_data = $this->_cate_mod->cate_data_cache();
         foreach($items_list as $key=>$val){
@@ -125,7 +129,7 @@ class ItemlistAction extends FirstendAction {
           }else{
             $items['item_list'][$key]['timeleft'] = $val['coupon_end_time']-time();
           }
-          $items['item_list'][$key]['cate_name']    =$cate_data[$val['cate_id']]['name'];
+          $items['item_list'][$key]['cate_name']  = $cate_data[$val['cate_id']]['name'];
           $url = C('ftx_site_url').U('item/index',array('id'=>$val['id']));
           $items['item_list'][$key]['url'] = urlencode($url);
           $items['item_list'][$key]['urltitle'] = urlencode($val['title']);

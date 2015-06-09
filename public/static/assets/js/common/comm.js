@@ -64,7 +64,7 @@ $(document).ready(function(){
 $(function(){
   //图片懒加载
   $('img.lazy').lazyload({
-    threshold:200,
+    threshold:500,
     failure_limit:40,
     effect : "fadeIn"
   });

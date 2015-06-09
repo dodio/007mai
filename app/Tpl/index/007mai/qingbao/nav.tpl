@@ -5,7 +5,9 @@
           <div class="item-list">
             <ul>
               <volist name="subnav" id="s">
+              <?php if($s['status']){ ?>
               <li><a href="/qingbao/{$nav_curr}/cid/{$s.id}" <if condition="$s['id'] eq $cid">class="active"</if>>{$s.name}</a></li>
+              <?php } ?>
               </volist>
             </ul>
           </div>

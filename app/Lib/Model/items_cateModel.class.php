@@ -93,9 +93,9 @@ class items_cateModel extends Model
 		if(C('ftx_site_cache')){
 			if(false === $cate_list = S($cache_file_name)){
                 if(!$all){
-                    $cate_data = $this->field('id,pid,name')->where('status=1')->order('ordid')->select();
+                    $cate_data = $this->field('id,pid,name,status')->where('status=1')->order('ordid')->select();
                 }else{
-                    $cate_data = $this->field('id,pid,name')->order('ordid')->select();
+                    $cate_data = $this->field('id,pid,name,status')->order('ordid')->select();
                 }
 				foreach ($cate_data as $val) {
 					if ($val['pid'] == '0') {
@@ -109,9 +109,9 @@ class items_cateModel extends Model
 			}
 		}else{
 			if(!$all){
-                $cate_data = $this->field('id,pid,name')->where('status=1')->order('ordid')->select();
+                $cate_data = $this->field('id,pid,name,status')->where('status=1')->order('ordid')->select();
             }else{
-                $cate_data = $this->field('id,pid,name')->order('ordid')->select();
+                $cate_data = $this->field('id,pid,name,status')->order('ordid')->select();
             }
 			foreach ($cate_data as $val) {
 				if ($val['pid'] == '0') {
@@ -136,9 +136,9 @@ class items_cateModel extends Model
 		if(C('ftx_site_cache')){
 			if(false === $cate_data = S($cache_file_name)){
 				if($all){
-                    $result = $this->field('id,pid,spid,name,seo_title,seo_keys,seo_desc')->order('ordid')->select();
+                    $result = $this->field('id,pid,spid,name,seo_title,seo_keys,seo_desc,status')->order('ordid')->select();
                 }else{
-                 $result = $this->field('id,pid,spid,name,seo_title,seo_keys,seo_desc')->where('status=1')->order('ordid')->select();
+                 $result = $this->field('id,pid,spid,name,seo_title,seo_keys,seo_desc,status')->where('status=1')->order('ordid')->select();
                 }
 				foreach ($result as $val) {
 					$cate_data[$val['id']] = $val;
@@ -148,9 +148,9 @@ class items_cateModel extends Model
 			}
 		}else{
             if($all){
-                $result = $this->field('id,pid,spid,name,seo_title,seo_keys,seo_desc')->order('ordid')->select();
+                $result = $this->field('id,pid,spid,name,seo_title,seo_keys,seo_desc,status')->order('ordid')->select();
             }else{
-			 $result = $this->field('id,pid,spid,name,seo_title,seo_keys,seo_desc')->where('status=1')->order('ordid')->select();
+			 $result = $this->field('id,pid,spid,name,seo_title,seo_keys,seo_desc,status')->where('status=1')->order('ordid')->select();
             }
 			foreach ($result as $val) {
 				$cate_data[$val['id']] = $val;

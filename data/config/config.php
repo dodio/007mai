@@ -18,7 +18,8 @@ return array(
 	'DATA_CACHE_LEVEL'		=>3,							// 设置子目录的层次
     'TMPL_EXCEPTION_FILE'=> dirname(APP_PATH).'/error.html',          // 错误模板页面
     'SHOW_PAGE_TRACE'		=> false,
-    "TMPL_STRIP_SPACE"      => false,
+
+    "TMPL_STRIP_SPACE"      => true,
     
 	'APP_SUB_DOMAIN_DEPLOY' => true,						// 开启子域名配置
     'APP_SUB_DOMAIN_RULES'  => array(

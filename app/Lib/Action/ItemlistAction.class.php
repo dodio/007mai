@@ -44,6 +44,7 @@ class ItemlistAction extends FirstendAction {
       $this->_custom_map($map);
 
       if(C('ftx_site_cache')){
+        $mdarray = array();
         $mdarray['cid'] = $cid;
         $mdarray['sort'] = $sort;
         $mdarray['p'] = $p;
@@ -60,9 +61,7 @@ class ItemlistAction extends FirstendAction {
         $items_list = $this->_mod->where($map)->order($order)->limit($start . ',' . $page_size)->select();
         $items = $this->_deal_item_list($items_list);
       }
-      // $seller_arr = array_unique($items['seller_arr']);
-      // $sellers = implode(",",$seller_arr);
-      // $this->assign('sellers', $sellers);
+
       if(IS_AJAX){
         if(!$items){$this->ajaxReturn(0, '加载完成');}
         $this->assign('items_list', $items['item_list']);
@@ -74,7 +73,11 @@ class ItemlistAction extends FirstendAction {
       $this->assign('list_info',$list_info);
 
       if(C('ftx_site_cache')){
-        $file = 'cate_count_'.$cid;
+        $mdarray = array();
+        $mdarray['cid'] = $cid;
+        $mdarray['price'] = $price_range;
+        $md_id = md5(implode("-",$mdarray));
+        $file = 'cate_count_'.implode("-", $md_id);
         if(false === $count = S($file)){
           $count = $this->_mod->where($map)->count();
           S($file,$count);

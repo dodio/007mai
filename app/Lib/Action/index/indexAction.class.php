@@ -4,7 +4,6 @@ class indexAction extends FirstendAction {
         parent::_initialize();
         $this->_mod = D('items');
         $this->_cate_mod = D('items_cate');
-		C('DATA_CACHE_TIME',C('ftx_site_cachetime'));
     }
 	public function _empty(){
     	$this->index();
@@ -285,128 +284,58 @@ class indexAction extends FirstendAction {
 	public function cate(){
 		$cid	=	I('cid','', 'intval');
 		$sort	=	I('sort', 'default', 'trim'); //排序
-		$status =	I('status', 'all', 'trim'); //排序
 		$order	=	'ordid asc ';
 		if(!$cid) redirect(U('index/index'));
  
-		if(C('ftx_site_cache')){
-			$file = 'cinfo_'.$cid;
-			if(false === $cinfo = S($file)){
-				$cinfo = $this->_cate_mod->where(array('id'=>$cid))->find();
-				S($file,$cinfo);
-			}
-		}else{
-			$cinfo = $this->_cate_mod->where(array('id'=>$cid))->find();
-		}
+		$cinfo = $this->_cate_mod->cate_info($cid);
 
-		switch ($sort) {
-			case 'new':
-                $order.= ', coupon_start_time DESC';
-                break;
-			case 'price':
-                $order.= ', price DESC';
-                break;
-			case 'hot':
-                $order.= ', volume DESC';
-                break;
-			case 'rate':
-                $order.= ', coupon_rate ASC';
-                break;
-			case 'default':
-				$order.= ', '.$cinfo['sort'];
-		}
+		$order .= getSort( $sort, $cinfo['sort'] );
+		mapCinfo($cinfo,$map);
 
-		switch ($status) {
-			case 'all':
-                //$map['status']="underway";
-                break;
-			case 'underway':
-                $map['status']="underway";
-                break;
-			case 'sellout':
-				$map['status']="sellout";
-				break;
-		}
-		if($cinfo['shop_type']){$map['shop_type'] = $cinfo['shop_type'];}
-		if($cinfo['mix_price']>0){$map['coupon_price'] = array('egt',$cinfo['mix_price']);}
-		if($cinfo['max_price']>0){$map['coupon_price'] = array('elt',$cinfo['max_price']);}
-		if($cinfo['max_price']>0 && $cinfo['mix_price']>0){$map['coupon_price'] = array(array('egt',$cinfo['mix_price']),array('elt',$cinfo['max_price']),'and');}
-		if($cinfo['mix_volume']>0){$map['volume'] = array('egt',$cinfo['mix_volume']);}
-		if($cinfo['max_volume']>0){$map['volume'] = array('elt',$cinfo['max_volume']);}
-		if($cinfo['max_volume']>0 && $cinfo['mix_volume']>0){$map['volume'] = array(array('egt',$cinfo['mix_volume']),array('elt',$cinfo['max_volume']),'and');}
 		if($cinfo['thiscid']==0){
     		$id_arr = $this->_cate_mod->get_child_ids($cid, true);
     		$map['cate_id'] = array('IN', $id_arr);
-			$today_wh['cate_id'] = array('IN', $id_arr);
+			// $today_wh['cate_id'] = array('IN', $id_arr);
 		}else{
 			$single_id_map = array($cid);
 			$map['cate_id'] = array('IN', $single_id_map);
-			$today_wh['cate_id'] = array('IN', $single_id_map);
-		}
-		$today_str = mktime(0,0,0,date("m"),date("d"),date("Y"));
-		$tomorr_str = mktime(0,0,0,date("m"),date("d")+1,date("Y"));
-		$today_wh['add_time'] = array(array('egt',$today_str),array('elt',$tomorr_str)) ;
-		$today_wh['pass'] = '1';
-		$today_wh['isshow'] = '1';
-
-		if(C('ftx_site_cache')){
-			$md_id = md5(implode("-",$today_wh));
-			$file = 'cate_today_item_'.$md_id;
-			if(false === $today_item = S($file)){
-				$today_item = $this->_mod->where($today_wh)->count();
-				S($file,$today_item);
-			}
-		}else{
-			$today_item = $this->_mod->where($today_wh)->count();
+			// $today_wh['cate_id'] = array('IN', $single_id_map);
 		}
 
-		$this->assign('today_item', $today_item);
+		// $today_str = mktime(0,0,0,date("m"),date("d"),date("Y"));
+		// 不要今日新增
+		// $tomorr_str = mktime(0,0,0,date("m"),date("d")+1,date("Y"));
+
+		// $today_wh['add_time'] = array(array('egt',$today_str),array('elt',$tomorr_str)) ;
+		// $today_wh['pass'] = '1';
+		// $today_wh['isshow'] = '1';
+
+		// if(C('ftx_site_cache')){
+		// 	$md_id = md5(implode("-",$today_wh));
+		// 	$file = 'cate_today_item_'.$md_id;
+		// 	if(false === $today_item = S($file)){
+		// 		$today_item = $this->_mod->where($today_wh)->count();
+		// 		S($file,$today_item);
+		// 	}
+		// }else{
+		// 	$today_item = $this->_mod->where($today_wh)->count();
+		// }
+
+		// $this->assign('today_item', $today_item);
 		$this->assign('cid',$cid);
 		$this->assign('pager','cate');
 		$this->assign('cinfo',$cinfo);
-		if($cinfo['wait_time'] == '1'){
-			$map['coupon_start_time'] = array('egt',time());
-		}elseif($cinfo['wait_time'] =='2'){
-			$map['coupon_start_time'] = array('elt',time());
-		}
-		if($cinfo['end_time'] == '1'){
-			$map['coupon_end_time'] = array('egt',time());
-		}
-		if($cinfo['ems'] == '1'){
-			$map['ems'] = '1';
-		}
-		$map['pass']="1";
-		$map['isshow'] = '1';
+
 		$index_info['sort']=$sort;
-		$index_info['status']=$status;
 		$index_info['cid']=$cid;
 		$page_size = C('ftx_index_page_size');
 		$p = I('p',1,'intval'); //页码
 		$index_info['p']=$p;
 		$start = $page_size * ($p - 1) ;
 
-		// 不要subnav 直接在模板中使用 cate_data 和 cate_list 按层级生成一系列子类
-		// if(C('ftx_site_cache')){
-		// 	$file = 'cate_subnav_'.$cid;
-		// 	if(false === $subnav = S($file)){
-		// 		$subnav = $this->_cate_mod->where(array('pid'=>$cid))->select();
-		// 		if($cinfo['pid'] && !$subnav){
-		// 			$subnav = $this->_cate_mod->where(array('pid'=>$cinfo['pid']))->select();
-		// 		}
-		// 		S($file,$subnav);
-		// 	}
-		// }else{
-		// 	$subnav = $this->_cate_mod->where(array('pid'=>$cid))->select();
-		// 	if($cinfo['pid'] && !$subnav){
-		// 		$subnav = $this->_cate_mod->where(array('pid'=>$cinfo['pid']))->select();
-		// 	}
-		// }
-		// $this->assign('subnav', $subnav);
-
 		if(C('ftx_site_cache')){
 			$mdarray['cid'] = $cid;
 			$mdarray['sort'] = $sort;
-			$mdarray['status'] = $status;
 			$mdarray['p'] = $p;
 			$mdarray['order'] = $order;
 			$md_id = md5(implode("-",$mdarray));
@@ -487,7 +416,7 @@ class indexAction extends FirstendAction {
 			if(!$items){$this->ajaxReturn(0, '加载完成');}
 			$this->assign('items_list', $items['item_list']);
 			$resp = $this->fetch('ajax');
-            $this->ajaxReturn(1, '', $resp);
+      $this->ajaxReturn(1, '', $resp);
 		}
 		$this->assign('pagecount', $pagecount);
 
@@ -510,10 +439,10 @@ class indexAction extends FirstendAction {
 		$this->assign('total_item',$count);
 		$this->assign('ajaxurl',U('index/cate',array('cid'=>$cid,'p'=>$index_info['p'],'sort'=>$index_info['sort'])));
 
-        $this->assign('nav_curr', 'index');
-        $this->_config_seo(C('ftx_seo_config.cate'), array(
-            'cate_name' => $cinfo['name'],
-            'seo_title' => $cinfo['seo_title'],
+    $this->assign('nav_curr', 'index');
+    $this->_config_seo(C('ftx_seo_config.cate'), array(
+      'cate_name' => $cinfo['name'],
+      'seo_title' => $cinfo['seo_title'],
 			'seo_keywords' => $cinfo['seo_keys'],
 			'seo_description' => $cinfo['seo_desc'],
         ));
@@ -522,15 +451,14 @@ class indexAction extends FirstendAction {
 
 	public function subcates(){
 		$cid = I("cid",'','intval');
-		$cate_list = $this->_cate_mod->cate_cache();
-		if(isset($cate_list['p'][$cid])){
-			$cate = $cate_list['p'][$cid];
-		}else{
+		$cate_list = $this->_cate_mod->cate_cache(true);
+		if(isset($cate_list['s'][$cid])){
 			$cate = $cate_list['s'][$cid];
-		}
 
-		foreach ($cate as $value) {
-			echo "<li><a href=\"/index/cate/cid/{$value['id']}\" target=\"_blank\">{$value['name']}</a></li>\n";
+			foreach ($cate as $value) {
+				echo "<li><a href=\"/index/cate/cid/{$value['id']}\" target=\"_blank\">{$value['name']}</a></li>\n";
+			}
 		}
+		
 	}
 }

@@ -11,13 +11,13 @@
           </div>
           <div class="n_h">
             <if condition="$chanel_id eq $cid">
-            <a href="{:U('qingbao/'.$nav_curr,array('sort'=>'default'))}"  class=" <if condition="$index_info['sort'] eq 'default'"> active </if> ">默认</a>
-            <a href="{:U('qingbao/'.$nav_curr,array('sort'=>'new'))}" class=" <if condition="$index_info['sort'] eq 'new'"> active </if> ">最新</a>
-            <a href="{:U('qingbao/'.$nav_curr,array('sort'=>'hot'))}" class=" <if condition="$index_info['sort'] eq 'hot'"> active </if> ">最热</a>
+            <a href="{:U('qingbao/'.$nav_curr,array('sort'=>'default'))}"  class=" <if condition="$list_info['sort'] eq 'default'"> active </if> ">默认</a>
+            <a href="{:U('qingbao/'.$nav_curr,array('sort'=>'new'))}" class=" <if condition="$list_info['sort'] eq 'new'"> active </if> ">最新</a>
+            <a href="{:U('qingbao/'.$nav_curr,array('sort'=>'hot'))}" class=" <if condition="$list_info['sort'] eq 'hot'"> active </if> ">最热</a>
             <else/>
-            <a href="{:U('qingbao/'.$nav_curr,array('cid'=>$cid, 'sort'=>'default'))}"  class=" <if condition="$index_info['sort'] eq 'default'"> active </if> ">默认</a>
-            <a href="{:U('qingbao/'.$nav_curr,array('cid'=>$cid, 'sort'=>'new'))}" class=" <if condition="$index_info['sort'] eq 'new'"> active </if> ">最新</a>
-            <a href="{:U('qingbao/'.$nav_curr,array('cid'=>$cid, 'sort'=>'hot'))}" class=" <if condition="$index_info['sort'] eq 'hot'"> active </if> ">最热</a>
+            <a href="{:U('qingbao/'.$nav_curr,array('cid'=>$cid, 'sort'=>'default'))}"  class=" <if condition="$list_info['sort'] eq 'default'"> active </if> ">默认</a>
+            <a href="{:U('qingbao/'.$nav_curr,array('cid'=>$cid, 'sort'=>'new'))}" class=" <if condition="$list_info['sort'] eq 'new'"> active </if> ">最新</a>
+            <a href="{:U('qingbao/'.$nav_curr,array('cid'=>$cid, 'sort'=>'hot'))}" class=" <if condition="$list_info['sort'] eq 'hot'"> active </if> ">最热</a>
             </if>
           </div>
         </div>

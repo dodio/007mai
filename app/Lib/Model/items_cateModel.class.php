@@ -129,24 +129,33 @@ class items_cateModel extends Model
     /**
      * 读取写入缓存(无层级分类列表)
      */
-    public function cate_data_cache() {
+    public function cate_data_cache($all = false) {
         $cate_data = array();
 
+        $cache_file_name = $all ? "cate_data_all" : "cate_data";
 		if(C('ftx_site_cache')){
-			if(false === $cate_data = S('cate_data')){
-				$result = $this->field('id,pid,spid,name,seo_title,seo_keys,seo_desc')->where('status=1')->order('ordid')->select();
+			if(false === $cate_data = S($cache_file_name)){
+				if($all){
+                    $result = $this->field('id,pid,spid,name,seo_title,seo_keys,seo_desc')->order('ordid')->select();
+                }else{
+                 $result = $this->field('id,pid,spid,name,seo_title,seo_keys,seo_desc')->where('status=1')->order('ordid')->select();
+                }
 				foreach ($result as $val) {
 					$cate_data[$val['id']] = $val;
 				}
 
-				S('cate_data',$cate_data);
+				S($cache_file_name,$cate_data);
 			}
 		}else{
-			$result = $this->field('id,pid,spid,name,seo_title,seo_keys,seo_desc')->where('status=1')->order('ordid')->select();
+            if($all){
+                $result = $this->field('id,pid,spid,name,seo_title,seo_keys,seo_desc')->order('ordid')->select();
+            }else{
+			 $result = $this->field('id,pid,spid,name,seo_title,seo_keys,seo_desc')->where('status=1')->order('ordid')->select();
+            }
 			foreach ($result as $val) {
 				$cate_data[$val['id']] = $val;
 			}
-			S('cate_data', $cate_data);
+			S($cache_file_name, $cate_data);
 		}
 
         return $cate_data;

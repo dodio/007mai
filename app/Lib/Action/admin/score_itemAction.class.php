@@ -43,6 +43,7 @@ class score_itemAction extends BackendAction
             $data = $this->_before_insert($data);
 			$data['start_time']=strtotime($data['start_time']);
 			$data['end_time']=strtotime($data['end_time']);
+            $data['add_time']=time();
 			//exit(print_r($data));
             if( $mod->add($data) ){
                 if( method_exists($this, '_after_insert')){

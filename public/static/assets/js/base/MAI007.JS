@@ -18,8 +18,7 @@
 
 data.getCloseScoreItem = dataApiFactory(function() {
     return $.ajax({
-          url: u('ajax','get_min_scoreItem'),
-          jsonp:"callback"
+          url: u('ajax','get_min_scoreItem')
         });
   });
 

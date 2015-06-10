@@ -9,11 +9,7 @@
     $big_banner = array_shift($ad_list);
    ?>
   <div class="group mall_banner">
-    <div class="top-tms-container">
-      <div class="img-wrap">
-          <a href="{$big_banner.url}" target="_blank"><img src="{:attach($big_banner['content'],'advert')}"></a>
-      </div>
-    </div>
+    <div class="top-tms-container"><div class="img-wrap"><img src="{:attach($big_banner['content'],'advert')}"/></div></div>
   </div>
   
   <?php 
@@ -35,27 +31,38 @@
       $ad_group[] = $tmp;
     }
    ?>
-
-  <div class="group middle l-floor page007mai">
+  
+  <style>
+    .l-title_bar{
+      height: 60px;
+      overflow: hidden;
+      width: 100%;
+    }
+  </style>
+  <div class="group">
     <?php 
     foreach ($ad_group as $group) {
       $title = array_shift($group);
      ?>
-     <div class="l-f-title">{$title.name}</div>
-     <div class="ju-itemlist"> 
-      <ul class="group">
-       <?php 
-       foreach ($group as $ad) {
-        ?>
-       <li class="l-f-shop" title="{$ad.description}"> 
-         <a href="{$ad.url}" target="_blank"> <img class="brand-pic" src="{:attach($ad['content'],'advert')}" />
-         </a> 
-        </li> 
-        <?php
-          }
-        ?>
-      </ul> 
-     </div> 
+     <?php if($title['content'] != ""){ ?> <div class="l-title_bar" style="background:url('{$title.desc}') repeat-x;" >
+       <div class="page007mai middle" style="background:url('{$title.content}') center center no-repeat;height:100%;"></div>
+     </div><?php } ?>
+     <div class="group middle l-floor page007mai">
+       <div class="ju-itemlist"> 
+        <ul class="group">
+         <?php 
+         foreach ($group as $ad) {
+          ?>
+         <li class="l-f-shop" title="{$ad.description}"> 
+           <a href="{$ad.url}" target="_blank"> <img class="brand-pic" src="{:attach($ad['content'],'advert')}" />
+           </a> 
+          </li> 
+          <?php
+            }
+          ?>
+        </ul> 
+       </div>
+     </div>
 
     <?php 
     }

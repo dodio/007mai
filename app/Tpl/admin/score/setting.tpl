@@ -11,25 +11,24 @@
         </tr>
         </thead>
         <tbody>
+<!--         <tr>
+            <td><?php dump(C('ftx_score_rule')); ?></td>
+        </tr> -->
         <tr>
             <td>注册赠送 :</td>
             <td><input type="text" name="score_rule[register]" class="input-text" size="10" value="{:C('ftx_score_rule.register')}"></td>
-            <td>每日 {:C('ftx_score_rule.register_nums')} 次
-                <input type="text" name="score_rule[register_nums]" class="input-text" size="10" value="{:C('ftx_score_rule.register_nums')}" style="display:none">
-            </td>
+            <td>每人{:C('ftx_score_rule.register_nums')}次<input type="text" name="score_rule[register_nums]" class="input-text" size="10" value="1" style="display:none"></td>
         </tr>
         <tr>
             <td>每日登录 :</td>
             <td><input type="text" name="score_rule[login]" class="input-text" size="10" value="{:C('ftx_score_rule.login')}"></td>
-            <td>每日 {:C('ftx_score_rule.login_nums')} 次
-				<input type="text" name="score_rule[login_nums]" class="input-text" size="10" value="{:C('ftx_score_rule.login_nums')}"  style="display:none">
-			</td>
+            <td>每日 {:C('ftx_score_rule.login_nums')} 次<input type="text" name="score_rule[login_nums]" class="input-text" size="10" value="1" style="display:none"></td>
         </tr>
 		<tr>
             <td>首次签到 :</td>
             <td><input type="text" name="score_rule[sign]" class="input-text" size="10" value="{:C('ftx_score_rule.sign')}"></td>
             <td>每日 {:C('ftx_score_rule.sign_nums')} 次
-				<input type="text" name="score_rule[sign_nums]" class="input-text" size="10" value="{:C('ftx_score_rule.sign_nums')}" style="display:none">
+				<input type="text" name="score_rule[sign_nums]" class="input-text" size="10" value="1" style="display:none">
 			</td>
         </tr>
 		<tr>
@@ -41,6 +40,27 @@
             <td>签到天数封顶 :</td>
             <td><input type="text" name="score_rule[sign_day]" class="input-text" size="10" value="{:C('ftx_score_rule.sign_day')}"></td>
             <td> </td>
+        </tr>
+
+        <tr>
+            <td>下载快捷方式 :</td>
+            <td><input type="text" name="score_rule[download_shortcut]" class="input-text" size="10" value="{:C('ftx_score_rule.download_shortcut')}"></td>
+            <td>每月 <input type="text" name="score_rule[download_shortcut_nums]" class="input-text" size="2" value="{:C('ftx_score_rule.download_shortcut_nums')}"> 次</td>
+        </tr>
+        <tr>
+            <td>快捷方式打开 :</td>
+            <td><input type="text" name="score_rule[from_client]" class="input-text" size="10" value="{:C('ftx_score_rule.from_client')}"></td>
+            <td>每日 {:C('ftx_score_rule.from_client_nums')} 次 <input type="text" name="score_rule[from_client_nums]" class="input-text" size="2" value="1" style="display: none;"></td>
+        </tr>
+        <tr>
+            <td>日常 :浏览10个页面</td>
+            <td><input type="text" name="score_rule[read_page10]" class="input-text" size="10" value="{:C('ftx_score_rule.read_page10')}"></td>
+            <td>每日 {:C('ftx_score_rule.read_page10_nums')} 次 <input type="text" name="score_rule[read_page10_nums]" class="input-text" size="2" value="1" style="display: none;"></td>
+        </tr>
+        <tr>
+            <td>日常 :浏览50个页面</td>
+            <td><input type="text" name="score_rule[read_page50]" class="input-text" size="10" value="{:C('ftx_score_rule.read_page50')}"></td>
+            <td>每日 {:C('ftx_score_rule.read_page50_nums')} 次 <input type="text" name="score_rule[read_page50_nums]" class="input-text" size="2" value="1" style="display: none;"></td>
         </tr>
 		<tr>
             <td>邀请访问奖励 :</td>

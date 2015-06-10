@@ -716,3 +716,18 @@ function getPriceRange($str,&$map){
     if($cinfo['max_price']>0){$map['coupon_price'] = array('elt',$cinfo['max_price']);}
     if($cinfo['max_price']>0 && $cinfo['mix_price']>0){$map['coupon_price'] = array(array('egt',$cinfo['mix_price']),array('elt',$cinfo['max_price']),'and');}
 }
+
+function background($code,$dir = "",$repeat = true){
+    //如果是颜色代码
+    if(strpos($code,"#") === 0 || strpos($code, "rgb") === 0){
+        return "background-color:".$code.";";
+    }
+    if($dir == ""){
+        return "";
+    }
+    if($repeat){
+        return "background:url(".attach($code,$dir).");";
+    }else{
+        return "background:url(".attach($code,$dir).") no-repeat;";
+    }
+}

@@ -8,7 +8,7 @@
   <?php
     $big_banner = array_shift($ad_list);
    ?>
-  <div class="group mall_banner">
+  <div class="group mall_banner" style="{:background($big_banner['desc'],'advert')} height: 320px;">
     <div class="top-tms-container"><div class="img-wrap"><img src="{:attach($big_banner['content'],'advert')}"/></div></div>
   </div>
   
@@ -44,8 +44,8 @@
     foreach ($ad_group as $group) {
       $title = array_shift($group);
      ?>
-     <?php if($title['content'] != ""){ ?> <div class="l-title_bar" style="background:url('{$title.desc}') repeat-x;" >
-       <div class="page007mai middle" style="background:url('{$title.content}') center center no-repeat;height:100%;"></div>
+     <?php if($title['content'] != ""){ ?> <div class="l-title_bar" style="{:background($title['desc'],'advert')}" >
+       <div class="page007mai middle" style="{:background($title['content'],'advert')} height:100%;"></div>
      </div><?php } ?>
      <div class="group middle l-floor page007mai">
        <div class="ju-itemlist"> 

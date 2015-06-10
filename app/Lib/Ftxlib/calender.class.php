@@ -1,14 +1,14 @@
 <?php
 /**
- * ÈÕÀú
+ * æ—¥å†
  * @author Ftxia
  */
 class calender {
-	private $day;			//µ±Ç°ÈÕÆÚ
-    private $month;			//µ±Ç°ÔÂ·İ
-	private $year;			//µ±Ç°Äê
-	private $days;			//µ±ÔÂÌìÊı
-	private $start_weakday;	//µ±ÔÂµÚÒ»ÌìĞÇÆÚ¼¸
+	private $day;			//å½“å‰æ—¥æœŸ
+    private $month;			//å½“å‰æœˆä»½
+	private $year;			//å½“å‰å¹´
+	private $days;			//å½“æœˆå¤©æ•°
+	private $start_weakday;	//å½“æœˆç¬¬ä¸€å¤©æ˜ŸæœŸå‡ 
 
     public function __construct() {
         $this->day				= date( 'd'); 
@@ -39,12 +39,12 @@ class calender {
 		}
 		$i=0;		
 		while($i < $this->days) { 
-			//ÏÂÃæµÄÅĞ¶ÏÓï¾äÓÃÓÚÃ¿ÏÔÊ¾7¸öÊ±¼äÎ»ÖÃ×ª»»µ½ÏÂÒ»ĞĞ
+			//ä¸‹é¢çš„åˆ¤æ–­è¯­å¥ç”¨äºæ¯æ˜¾ç¤º7ä¸ªæ—¶é—´ä½ç½®è½¬æ¢åˆ°ä¸‹ä¸€è¡Œ
 			if(($dayrow % 7) == 0) { 
 				$html.="</tr><tr>"; 
 			} 
 			$adjusted_day = $i+1;
-			//µ±ÌìµÄÈÕÆÚÓÃºìÉ«ÏÔÊ¾
+			//å½“å¤©çš„æ—¥æœŸç”¨çº¢è‰²æ˜¾ç¤º
 			if($sign[$adjusted_day]){
 				$html.='<td class="current"><p><i>'.$sign[$adjusted_day]['score'].'</i><span class="days">'.$adjusted_day.'</span></p></td>';
 			} else{

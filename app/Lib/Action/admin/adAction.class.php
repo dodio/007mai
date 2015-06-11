@@ -41,7 +41,7 @@ class adAction extends BackendAction {
             'height' => '350',
         );
         $this->assign('big_menu', $big_menu);
-		$this->assign('img_dir', '/static/upload/advert/');
+		$this->assign('img_dir', '/static/upload/images/');
 
         $res = $this->_adboard_mod->field('id,name')->select();
         $board_list = array();
@@ -125,7 +125,7 @@ class adAction extends BackendAction {
         $type = $this->_get('type', 'trim', 'img');
         if (!empty($_FILES[$type]['name'])) {
             $dir = date('ym/d/');
-            $result = $this->_upload($_FILES[$type], 'advert/'. $dir );
+            $result = $this->_upload($_FILES[$type], 'images/'. $dir );
             if ($result['error']) {
                 $this->ajaxReturn(0, $result['info']);
             } else {

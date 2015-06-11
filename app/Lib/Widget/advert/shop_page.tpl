@@ -4,12 +4,12 @@
   }
 </style>
 <notempty name="ad_list">
-<div class="group" style="background-color:{$board_info.description};">
+<div class="group" style="{:background($board_info['description'],'images')}">
   <?php
     $big_banner = array_shift($ad_list);
    ?>
-  <div class="group mall_banner" style="{:background($big_banner['desc'],'advert')} height: 320px;">
-    <div class="top-tms-container"><div class="img-wrap"><img src="{:attach($big_banner['content'],'advert')}"/></div></div>
+  <div class="group mall_banner" style="{:background($big_banner['desc'],'images')} height: 320px;">
+    <div class="top-tms-container"><div class="img-wrap"><img src="{:attach($big_banner['content'],'images')}"/></div></div>
   </div>
   
   <?php 
@@ -44,8 +44,8 @@
     foreach ($ad_group as $group) {
       $title = array_shift($group);
      ?>
-     <?php if($title['content'] != ""){ ?> <div class="l-title_bar" style="{:background($title['desc'],'advert')}" >
-       <div class="page007mai middle" style="{:background($title['content'],'advert')} height:100%;"></div>
+     <?php if($title['content'] != ""){ ?> <div class="l-title_bar" style="{:background($title['desc'],'images')}" >
+       <div class="page007mai middle" style="{:background($title['content'],'images')} height:100%;"></div>
      </div><?php } ?>
      <div class="group middle l-floor page007mai">
        <div class="ju-itemlist"> 
@@ -54,7 +54,7 @@
          foreach ($group as $ad) {
           ?>
          <li class="l-f-shop" title="{$ad.description}"> 
-           <a href="{$ad.url}" target="_blank"> <img class="brand-pic" src="{:attach($ad['content'],'advert')}" />
+           <a href="{$ad.url}" target="_blank"> <img class="brand-pic" src="{:attach($ad['content'],'images')}" />
            </a> 
           </li> 
           <?php

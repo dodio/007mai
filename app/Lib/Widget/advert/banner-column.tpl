@@ -2,7 +2,7 @@
  <div class="top_bar">
 	<ul id="banner_list" class="banner">
 	<volist name="ad_list" id="ad" key="i">
-		<li style="background:url({:attach($ad['content'],'advert')}) no-repeat center center;" ><a  title="{$ad.desc}"   target="_blank" href="{$ad.url}" class="pic"></a></li>
+		<li style="background:url({:attach($ad['content'],'images')}) no-repeat center center;" ><a  title="{$ad.desc}"   target="_blank" href="{$ad.url}" class="pic"></a></li>
 	</volist>
 	</ul>
 </div>

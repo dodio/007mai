@@ -3,7 +3,7 @@
 	<div id="img-list">
 		<ul class="img-list">
 		<volist name="ad_list" id="ad" key="i">
-			<li <if condition="$i eq 1">class="cur" </if>style="background:url('{:attach($ad['content'],'advert')}') 49.99% top no-repeat;"><a class="{:C('ftx_site_width')}" href="{$ad.url}" target="_blank" hidefocus="true"  alt="{$ad.desc}"></a></li>
+			<li <if condition="$i eq 1">class="cur" </if>style="background:url('{:attach($ad['content'],'images')}') 49.99% top no-repeat;"><a class="{:C('ftx_site_width')}" href="{$ad.url}" target="_blank" hidefocus="true"  alt="{$ad.desc}"></a></li>
 		</volist>
 			 
 		</ul>

@@ -33,6 +33,7 @@ class ajaxAction extends FirstendAction {
 
 	public function check_email(){
 		$email = I('email');
+		!is_email($email) && exit('false');
 		$map['email'] = $email;
 		$result = M('user')->where($map)->find();
 		if($result){

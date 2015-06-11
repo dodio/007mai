@@ -1,14 +1,14 @@
 <meta charset="utf-8" />
-<title>{$page_seo.title} — {:C('ftx_site_name')}</title>
+<title>{$page_seo.title}</title>
 <meta name="keywords" content="{$page_seo.keywords}" />
 <meta name="description" content="{$page_seo.description}" />
 <meta name="renderer" content="webkit">
 <meta name="MSSmartTagsPreventParsing" content="True" />
 <meta http-equiv="MSThemeCompatible" content="Yes" />
 <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1">
-<script type="text/javascript" src="__STATIC__/assets/js/common/uaredirect.js"></script>
+<!-- <script type="text/javascript" src="__STATIC__/assets/js/common/uaredirect.js"></script> -->
 <script type="text/javascript">
-  uaredirect("http://m.007mai.com");
+  // uaredirect("http://m.007mai.com");
 	SITEURL="{:C('ftx_site_url')}";
 	CURURL="{:C('ftx_site_url')}";
 	WEBNICK="{:C('ftx_site_name')}";

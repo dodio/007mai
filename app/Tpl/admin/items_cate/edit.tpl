@@ -113,6 +113,20 @@
             			<label><input type="radio" <if condition="$info.thiscid eq '1'">checked="checked"</if> value="1" name="thiscid"> 全部分类 </label>
 			</td>
     		</tr>
+
+    	<tr class="y-bg">
+    		<th>分类描述:</th>
+    		<td>
+    			<input type="text" class="input-text" value="{$info.remark}" size="30" name="remark">
+    		</td>
+    	</tr>
+
+    	<tr class="y-bg">
+    		<th>标签:</th>
+    		<td>
+    			<input type="text" class="input-text" value="{$info.tags}" size="30" name="tags">
+    		</td>
+    	</tr>
 	</table>
 	</div>
 

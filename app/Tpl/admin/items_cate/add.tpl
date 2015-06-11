@@ -108,6 +108,19 @@
             			<label><input type="radio" value="1" name="thiscid"> 全部分类 </label>
 			</td>
     		</tr>
+    	<tr class="y-bg">
+    		<th>分类描述:</th>
+    		<td>
+    			<input type="text" class="input-text" size="30" name="remark">
+    		</td>
+    	</tr>
+
+    	<tr class="y-bg">
+    		<th>标签:</th>
+    		<td>
+    			<input type="text" class="input-text" size="30" name="tags">
+    		</td>
+    	</tr>
 	</table>
 	</div>
 	<div class="content_list pad_10 hidden">

@@ -6,7 +6,8 @@
 <link rel="stylesheet" type="text/css" href="__STATIC__/js/calendar/calendar-blue.css"/>
 <script type="text/javascript" src="__STATIC__/js/calendar/calendar.js"></script>
 <form id="info_form" action="{:u('items/add')}" method="post" enctype="multipart/form-data">
-<div class="pad_lr_10">
+<div><input type="submit" value="{:L('submit')}" id="dosubmit" name="dosubmit" class="smt mr10" style="margin-left: 20px;margin-bottom: 10px;"></div>
+<div class="pad_lr_10" style="clear:both;">
 	<div class="col_tab">
 		<ul class="J_tabs tab_but cu_li">
 			<li class="current">基本信息</li>
@@ -136,7 +137,6 @@
 		</div>
         
         </div>
-		<div class="mt10"><input type="submit" value="{:L('submit')}" id="dosubmit" name="dosubmit" class="smt mr10" style="margin:0 0 10px 150px;"></div>
 	</div>
 </div>
 <input type="hidden" name="menuid"  value="{$menuid}"/>

@@ -93,7 +93,7 @@
         },
 
 		sign: function(){
-			$('.sign_btn').live('click',function(){
+			$('.sign_btn,.signIn_btn').live('click',function(){
 				if(!$.ftxia.dialog.islogin()) return !1;
 				$.getJSON(FTXIAER.root + '/?m=sign&a=ajax_sign', function(result){
 					if(result.status == 1){
@@ -135,46 +135,6 @@
 			});
 			
 			
-			$('.signIn_btn').live('click',function(){
-				if(!$.ftxia.dialog.islogin()) return !1;
-				$.getJSON(FTXIAER.root + '/?m=sign&a=ajax_sign', function(result){
-					if(result.status == 1){
-
-						var dou_calender_tpl='<div class="alert_content"><div class="top_tips">'
-											+'{HEADER}'
-											+'</div>'
-											+'<div class="weeks">'
-											+'<span>周日</span>'
-											+'<span>周一</span>'
-											+'<span>周二</span>'
-											+'<span>周三</span>'
-											+'<span>周四</span>'
-											+'<span>周五</span>'
-											+'<span>周六</span>'
-											+'</div>'
-											+'<table width="100%" cellspacing="2" cellpadding="0" border="0">'
-											+'<tbody>{TABLE}</tbody>'
-											+'</table></div>';
-						var not_sign='<p class="tips">恭喜您，成功获得<span class="num">{TODAY_DOU}</span>份情报！</p>'
-									+'<p class="tom_tips">明天再来，就可以领到 {TOMORROW_DOU} 份情报，别忘记哦~</p>';
-						var signed='<p class="tips">您今天已经签过到了，明天再来，就可以获得{TOMORROW_DOU}份情报！</p>';
-						var today_dou=result.data.point;
-						var tomorrow_dou=result.data.tmr_point;
-						if($('div.juan_btn a.signIn_btn').text().indexOf('已签到')!=-1){
-							var dou_calender=dou_calender_tpl.replace(/{HEADER}/,signed);
-						}else{
-							var dou_calender=dou_calender_tpl.replace(/{HEADER}/,not_sign);
-							var totaldou_obj=$('p.all_juandou').eq(0);
-							var total_dou=totaldou_obj.text().match(/\d+/);totaldou_obj.text(totaldou_obj.text().replace(/\d+/,parseInt(total_dou)+parseInt(today_dou)));
-							//$('div.juan_btn a.signIn_btn').text('已签到 +'+today_dou);
-						}
-						dou_calender=dou_calender.replace(/{TODAY_DOU}/i,today_dou).replace(/{TOMORROW_DOU}/i,tomorrow_dou).replace(/{TABLE}/i,result.data.table);
-						$.dialog({id:'sign_success', title:result.msg, content:dou_calender, width:450, padding:'', fixed:true, lock:true});
-					}else{
-						$.ftxia.tip({content:result.msg, icon:'error'});
-					}
-				});
-			});
 		},
 
 		changeTag: function(){

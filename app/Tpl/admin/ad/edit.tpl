@@ -33,6 +33,7 @@
 		<if condition="$info.type eq 'image'"><notempty name="info['content']"><span class="attachment_icon J_attachment_icon" file-type="image" file-rel="{:attach($info['content'],'images')}"><img src="__STATIC__/images/filetype/image_s.gif" /></span></notempty></if>
 		</td>
     </tr>
+
     <tr id="ad_code" class="bill_media" style="display:none;">
         <th>{:L('ad_code')} :</th>
         <td><textarea rows="3" cols="50" name="code" id="code">{$info.content}</textarea></td>
@@ -52,6 +53,14 @@
             <input type="text" name="start_time" id="start_time" class="date" size="12" value="{$info.start_time|date='Y-m-d',###}">
             <input type="text" name="end_time" id="end_time" class="date" size="12" value="{$info.end_time|date='Y-m-d',###}">
         </td>
+    </tr>
+    <tr id="ad_image">
+      <th>扩展图片 :</th>
+      <td>
+          <input type="text" name="extimg" id="J_extimg" class="input-text fl mr10" value="{$info.extimg}" size="30">
+          <div id="J_upload_extimg" class="upload_btn"><span>{:L('upload')}</span></div>
+          <if condition="$info.type eq 'image'"><notempty name="info['extimg']"><span class="attachment_icon J_attachment_icon" file-type="image" file-rel="{:attach($info['extimg'],'images')}"><img src="__STATIC__/images/filetype/image_s.gif" /></span></notempty></if>
+      </td>
     </tr>
     <tr>
         <th>{:L('enabled')} :</th>

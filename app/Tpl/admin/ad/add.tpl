@@ -59,6 +59,13 @@
         <input type="text" name="end_time" id="end_time" class="date" size="12">
       </td>
     </tr>
+    <tr id="ad_extimage">
+      <th>扩展图片 :</th>
+      <td>
+          <input type="text" name="extimg" id="J_extimg" class="input-text fl mr10" size="30">
+          <div id="J_upload_extimg" class="upload_btn"><span>{:L('upload')}</span></div>
+      </td>
+    </tr>
     <tr>
         <th>{:L('enabled')} :</th>
         <td>

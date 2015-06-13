@@ -44,6 +44,7 @@
             <th align="center"><span data-tdtype="order_by" data-field="cate_id">分类</span></th>
             <th align="center"><span data-tdtype="order_by" data-field="shop_type">店铺类型</span></th>
             <th width="200" align="left">推荐理由</th>
+            <th align="left"><span data-tdtype="order_by" data-field="average_price">平均价格</span></th>
             <th>商家旺旺ID：</span></th>
             <th width="150">有效时间</th>
             <th width="60"><span data-tdtype="order_by" data-field="ordid">{:L('sort_order')}</span></th>
@@ -61,6 +62,7 @@
             <td align="center"><?php echo $cate_data[$val['cate_id']]['name']; ?></td>
             <td align="center">{$val.shop_type}</td>
             <td align="left"><span data-tdtype="edit" data-field="reason" data-id="{$val.reason}" class="tdedit">{$val.reason}</span></td>
+            <td align="left"><span data-tdtype="edit" data-field="average_price" data-id="{$val.average_price}" class="tdedit">{$val.average_price}</span></td>
             <td align="center">{$val.num_iid}</td>
             <td align="center">{$val.start_time|date='Y-m-d',###} / {$val.end_time|date='Y-m-d',###}</td>
             <td align="center"><span data-tdtype="edit" data-field="ordid" data-id="{$val.id}" class="tdedit">{$val.ordid}</span></td>

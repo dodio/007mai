@@ -113,6 +113,9 @@ class BackendAction extends TopAction
         } else {
             $id = $this->_get($pk, 'intval');
             $info = $mod->find($id);
+            if(method_exists($this,"_before_edit_show")){
+                $info = $this->_before_edit_show($info);
+            }
             $this->assign('info', $info);
             $this->assign('open_validator', true);
             if (IS_AJAX) {

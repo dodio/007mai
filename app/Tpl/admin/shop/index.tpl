@@ -45,7 +45,7 @@
             <th align="center"><span data-tdtype="order_by" data-field="shop_type">店铺类型</span></th>
             <th width="200" align="left">推荐理由</th>
             <th align="left"><span data-tdtype="order_by" data-field="average_price">平均价格</span></th>
-            <th>商家旺旺ID：</span></th>
+            <th>商家userId：</span></th>
             <th width="150">有效时间</th>
             <th width="60"><span data-tdtype="order_by" data-field="ordid">{:L('sort_order')}</span></th>
             <th width="60"><span data-tdtype="order_by" data-field="status">{:L('status')}</span></th>

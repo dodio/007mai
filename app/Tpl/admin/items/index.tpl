@@ -19,6 +19,7 @@
 			&nbsp;&nbsp;分类 :
 			<select class="J_cate_select mr10" data-pid="0" data-uri="{:U('items_cate/ajax_getchilds', array('type'=>0))}" data-selected="{$search.selected_ids}"></select>
 			<input type="hidden" name="cate_id" id="J_cate_id" value="{$search.cate_id}" />
+            &nbsp;&nbsp;<label>隐藏: <input type="checkbox" name="ishidden" value="1" <if condition="$search.ishidden eq 1">checked</if> /></label>
 			<div class="bk8"></div>
 			价格区间 :
 			<input type="text" name="price_min" class="input-text" size="5" value="{$search.price_min}" />
@@ -61,8 +62,9 @@
 		<th width="60"><span data-tdtype="order_by" data-field="totalnum">推广量</span></th>
 		<th width="60"><span data-tdtype="order_by" data-field="volume">销量</span></th>
                 <th width="40"><span data-tdtype="order_by" data-field="ordid">{:L('sort_order')}</span></th>
-                <th width="40"><span data-tdtype="order_by" data-field="pass">{:L('pass')}</span></th>
                 <th width="120"><span data-tdtype="order_by" data-field="add_time">发布时间</span></th>
+                <th width="40"><span data-tdtype="order_by" data-field="pass">{:L('pass')}</span></th>
+                <th width="120"><span data-tdtype="order_by" data-field="isshow">显示</span></th>
                 <th width="80">{:L('operations_manage')}</th>
             </tr>
         </thead>
@@ -86,8 +88,9 @@
 		<td align="center"><span data-tdtype="edit" data-field="totalnum" data-id="{$val.id}" class="tdedit">{$val.totalnum}</span></td>
 		<td align="center"><span data-tdtype="edit" data-field="volume" data-id="{$val.id}" class="tdedit">{$val.volume}</span></td>
                 <td align="center"><span data-tdtype="edit" data-field="ordid" data-id="{$val.id}" class="tdedit">{$val.ordid}</span></td>
-                <td align="center"><img data-tdtype="toggle" data-id="{$val.id}" data-field="pass" data-value="{$val.pass}" src="__STATIC__/images/admin/toggle_<if condition="$val.pass eq 0">disabled<else/>enabled</if>.gif" /></td>
                 <td align="center">{$val.add_time|frienddate}</td>
+                <td align="center"><img data-tdtype="toggle" data-id="{$val.id}" data-field="pass" data-value="{$val.pass}" src="__STATIC__/images/admin/toggle_<if condition="$val.pass eq 0">disabled<else/>enabled</if>.gif" /></td>
+                <td align="center"><img data-tdtype="toggle" data-id="{$val.id}" data-field="isshow" data-value="{$val.isshow}" src="__STATIC__/images/admin/toggle_<if condition="$val.isshow eq 0">disabled<else/>enabled</if>.gif" /></td>
                 <td align="center"><a href="{:u('items/edit', array('id'=>$val['id'], 'menuid'=>$menuid))}">{:L('edit')}</a> | <a href="javascript:void(0);" class="J_confirmurl" data-uri="{:u('items/delete', array('id'=>$val['id']))}" data-acttype="ajax" data-msg="{:sprintf(L('confirm_delete_one'),$val['title'])}">{:L('delete')}</a></td>
             </tr>
             </volist>

@@ -53,6 +53,31 @@
 </div>
 
 <div class="subnav">
+    <h1 class="title_2 line_x">清空被隐藏的宝贝</h1>
+</div>
+<div class="pad_lr_10" >
+<form action="{:u('items/clear')}" method="post" name="searchform" id="info_form">
+	<table width="100%" cellspacing="0" class="table_form">
+		<tbody>
+			<tr>
+				<th>确认删除：</th>
+				<td>
+					<input name="isok" type="checkbox" class="input-text" value="1" />&nbsp;&nbsp;<font color=red>(注：确认是否要删除，删除的数据不可恢复！)</font> 
+				</td>
+			</tr>
+	                <tr>
+				<th width="120">清空已过期宝贝:</th>
+				<td>
+					<input type="hidden" name="action" value="hidden" />
+					<input type="submit" name="dosubmit" class="smt mr10" value="清空" id="dosubmit"/>
+				</td>
+			</tr>
+		</tbody>
+	</table>           
+</form>
+</div>
+
+<div class="subnav">
     <h1 class="title_2 line_x">清空未审核宝贝</h1>
 </div>
 <div class="pad_lr_10" >
@@ -99,13 +124,23 @@
 					<label for="delete_sub_cate">删除子分类</label><input id="delete_sub_cate" type="checkbox" name="delete_sub_cate">
 				</td>
 			</tr>
-	                <tr>
+	    <tr>
 				<th>审核状态：</th>
 				<td>
-					<select name="status">
+					<select name="pass">
 						<option value="" selected>-所有状态-</option>
 						<option value="1">已审核</option>
 						<option value="0">未审核</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<th>显示状态：</th>
+				<td>
+					<select name="isshow">
+						<option value="" selected>-全部-</option>
+						<option value="0">隐藏</option>
+						<option value="1">显示</option>
 					</select>
 				</td>
 			</tr>

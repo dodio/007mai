@@ -39,6 +39,9 @@ class itemsAction extends BackendAction {
         ($rates_max = $this->_request('rates_max', 'trim')) && $map['coupon_rate'][] = array('elt', $rates_max);
         ($nick = $this->_request('nick', 'trim')) && $map['nick'] = array('like', '%'.$nick.'%');
         $cate_id = $this->_request('cate_id', 'intval');
+        $map['isshow'] = 1;
+        ($ishidden = I("ishidden",0,"intval")) && $map['isshow'] = 0;
+        
         if ($cate_id) {
             $id_arr = $this->_cate_mod->get_child_ids($cate_id, true);
             $map['cate_id'] = array('IN', $id_arr);
@@ -63,6 +66,7 @@ class itemsAction extends BackendAction {
             'selected_ids' => $spid,
             'cate_id' => $cate_id,
             'keyword' => $keyword,
+            'ishidden' => $ishidden
         ));
         return $map;
     }
@@ -136,16 +140,18 @@ class itemsAction extends BackendAction {
 				$action	= $this->_post('action', 'trim');
 				$where = '1=1';
 				if('outtime' == $action){
-					$where.=" AND pass=1  AND coupon_end_time <".time();
+					$where.=" AND isshow=1 AND pass=1  AND coupon_end_time <".time();
 				}elseif('notpass' == $action){
-					$where.=" AND pass=0";
+					$where.=" AND isshow=1 AND pass=0";
 				}elseif('clear' == $action){
 					$db_file = CONF_PATH . 'db.php';
 					$db = require $db_file;
 					$sql = 'TRUNCATE TABLE '.$db['DB_PREFIX'].'items ';
 					$mes = M()->execute($sql);
 					$this->success(L('clear_success'));
-				}
+				}elseif('hidden' == $action){
+                    $where.=" AND isshow=0";
+                }
 				/*
 				$ids_list = $this->_mod->where($where)->select();
 				$ids = "";
@@ -175,13 +181,15 @@ class itemsAction extends BackendAction {
                 $where = '1=1';
                 $keyword = trim($_POST['keyword']);
                 $cate_id = trim($_POST['cate_id']);
-                $cate_id = trim($_POST['cate_id']);
                 $time_start = trim($_POST['time_start']);
                 $time_end = trim($_POST['time_end']);
                 $status = trim($_POST['status']);
                 $min_price = trim($_POST['min_price']);
                 $max_price = trim($_POST['max_price']);
-            
+                $isshow = I('isshow','','trim');
+                if($isshow != ''){
+                    $where .= " AND isshow=".$isshow;
+                }
                 if ($keyword != '') {
                     $where .= " AND title LIKE '%" . $keyword . "%'";
                 }

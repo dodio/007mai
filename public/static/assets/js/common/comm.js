@@ -211,3 +211,14 @@ $(function(){
 
     });
 });
+
+$(function(){
+  var score_change = $.MAI007.util.thinkCookie('score_change');
+  if(score_change){
+    $.ftxia.tip({
+      content: score_change.action +": +" + score_change.score,
+      time: 3000
+    });
+    $.cookie('score_change',null);
+  }
+});

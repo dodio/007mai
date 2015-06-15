@@ -52,6 +52,7 @@ __STATIC__/assets/js/lib/funs.js,
 __STATIC__/assets/js/lib/underscore.js,
 __STATIC__/assets/js/base/settings.js,
 __STATIC__/assets/js/base/MAI007.js,
+__STATIC__/assets/js/base/util.js,
 __STATIC__/assets/js/lib/placeholder.js
 "/>
 {:C('ftx_header_html')}

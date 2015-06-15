@@ -7,7 +7,7 @@ public/static/dist_js/
 public/static/upload
 ftpsync.settings
 desktop.ini
-
+html_page/css/
 *dist*/
 data/config/config.php
 data/config/debug.php

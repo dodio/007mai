@@ -28,6 +28,7 @@ return array(
 		'm' => array("m/"),
     ),
 
-  'TITLE_BAN_WORDS' => require(CONF_PATH."title_ban_words.php")
+  'TITLE_BAN_WORDS' => require(CONF_PATH."title_ban_words.php"),
+  'score_action' => require(CONF_PATH."score_action.php")
 
 );

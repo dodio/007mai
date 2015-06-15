@@ -115,7 +115,16 @@ class indexAction extends ItemlistAction {
 		Prop3=19,2 
 		"; 
 		Header("Content-type: application/octet-stream"); 
-		header("Content-Disposition: attachment; filename=".C('ftx_site_name').".url;"); 
+		header("Content-Disposition: attachment; filename=".C('ftx_site_name').".url;");
+		if ($this->visitor->is_login) {
+			$user = $this->visitor->info;
+			$arg = array(
+				"uid" => $user['id'],
+				"uname" => $user['username'],
+				"action" => "download_shortcut"
+				);
+			tag("download_shortcut",$arg);
+    }
 		echo $Shortcut; 
 	}
 

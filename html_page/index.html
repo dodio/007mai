@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>007买 - 偷来的商品情报</title>
+  <meta name="keywords" content="{$page_seo.keywords}" />
+  <meta name="description" content="{$page_seo.description}" />
+  <meta name="renderer" content="webkit">
+  <meta name="MSSmartTagsPreventParsing" content="True" />
+  <meta http-equiv="MSThemeCompatible" content="Yes" />
+  <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1">
+  <link rel="stylesheet" href="css/global.css">
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="container group">
+      <div class="topnav fl">
+        <a href="/" target="_blank">手机app</a>
+        <a href="http://tieba.baidu.com/f?kw=007%E4%B9%B0" target="_blank">官方贴吧</a>
+      </div>
+      <div class="fr">
+        <div class="login-show fl">
+          <a href="/user/login">登录</a>
+          <a href="/user/login" target="_blank">注册</a>
+        </div>
+        <div class="other-show fl">
+          <a href="" target="_blank" class="mr0">在线客服</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="header">
+    <div class="container group">
+      <div class="logo">
+        <a href="/"><img src="./images/logo.png" alt=""></a>
+      </div>
+      <div class="search">
+        <form method="get" action="/index.php" target="_blank" onsubmit="return search_submit(this);">
+          <span class="search-area fl">
+            <input type="hidden" name="m" value="search">
+            <input type="hidden" name="a" value="index">
+            <input x-webkit-speech="" name="key" placeholder="京东618,超级女装" value="" class="text">
+          </span>
+          <input type="submit" value="" class="smt fl btn">
+        </form>
+      </div>
+
+      <div class="sign-area">
+        <a href="" class="signIn"><i class="sign-icon icon"></i>签到领取情报</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="big_banner">
+    <div id="banner" class="carousel">
+        <div class="wrap group">
+            <div class="carousel-item" style="display: block;">
+              <div class="banner_item" style="background: url(http://cdn.007mai.com/upload/images/1506/03/556e640b80b5d.jpg) 50% 50% no-repeat;">
+                <a href="" target="_blank" class="bannerlink"></a>
+              </div>
+            </div>
+
+           
+            <div class="carousel-item">
+              <div class="banner_item" style="background: url(http://cdn.007mai.com/upload/images/1506/02/556dc1c858e54.png) 50% 50% no-repeat;">
+                <a href="" target="_blank" class="bannerlink"></a>
+              </div>
+            </div>
+           
+            <div class="carousel-item">
+              <div class="banner_item" style="background: url(http://cdn.007mai.com/upload/images/1506/02/556dc77c69b9d.jpg) 50% 50% no-repeat;">
+                <a href="" target="_blank" class="bannerlink"></a>
+              </div>
+            </div>
+        </div>
+        <div class="carousel-control">
+          <div class="carousel-btns">
+            <div class="carousel-btn cur"></div>
+            <div class="carousel-btn"></div>
+            <div class="carousel-btn"></div>
+          </div>
+        </div>
+    </div>
+  </div>
+  
+  <script src="http://localhost/wuhan/public/js/jquery.1.10.min.js" type="text/javascript"></script>
+  <script type="text/javascript" src="carousel.js"></script>
+  <script>
+    var xyz = $("#banner").carousel({
+      effect:{
+        name:"fade",
+        speed:300
+      }
+    });
+  </script>
+</body>
+</html>

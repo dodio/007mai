@@ -27,17 +27,18 @@
 	border-radius: @r;
 }
 
-.ui-abtn(@w;@h;@x1;@y1;@x2;@y2){
+.btn(@w;@h;@x1;@y1;@x2;@y2){
 	width: @w;
 	height: @h;
-	.ui-abtn-icon{
-		.bg(@x1,@y1);
-	}
+	.bg(@x1,@y1);
 	&:hover{
-		.ui-abtn-icon{
-			background-position: @x2 @y2;
-		}
+		background-position: @x2 @y2;
 	}
+}
+.icon(@w;@h;@x;@y;){
+	width: @w;
+	height: @h;
+	.bg(@x,@y);
 }
 
 .fade(@t:500ms){

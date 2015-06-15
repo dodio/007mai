@@ -1,0 +1,54 @@
+.btn,.icon{
+  display: inline-block;
+  *display: inline;
+  *zoom:1;
+  border: none;
+}
+.icon{
+  vertical-align: middle;
+}
+
+
+.carousel{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  .wrap{
+    width: 10000px;
+  }
+  .carousel-item{
+    float: left;
+    display: none;
+  }
+  .carousel-control{
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+  }
+  .carousel-btns{
+    position: relative;
+    left: 50%;
+    margin-top: 13px;
+    float: left;
+    .carousel-btn{
+        position: relative;
+        left: -50%;
+        @rad:15px;
+        width: @rad;
+        height: @rad;
+        .bdrs(30px);
+        background-color: #fff;
+        box-sizing: border-box;
+        border: 1px solid #e1e1e1;
+        float: left;
+        margin-left: 8px;
+        cursor: pointer;
+        &.cur{
+            border: none;
+            background-color: #000;
+        }
+    }
+  }
+}

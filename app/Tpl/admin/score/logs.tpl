@@ -32,10 +32,11 @@
             </tr>
         </thead>
     	<tbody>
+            <?php $actions = C("score_action"); ?>
             <volist name="list" id="val" >
             <tr>
                 <td align="center">{$val.uname}</td>
-				<td align="center">{:L($val['action'])}</td>
+				<td align="center"><?php echo $actions[$val['action']]['lang']; ?></td>
                 <td align="center"><if condition="$val['score'] gt 0"><label class="green">+{$val.score}</label><else /><label class="red">{$val.score}</label></if></td>
                 <td align="center">{$val.add_time|date="Y-m-d H:i:s",###}</td>
             </tr>

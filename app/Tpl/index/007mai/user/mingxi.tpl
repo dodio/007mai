@@ -31,9 +31,10 @@
 						<th class="last">发生时间</th>
 					</tr>
 					<notempty name="logs_list">
+           <?php $actions = C("score_action"); ?>
 					<volist name="logs_list" id="val" mod="2">
 					<tr <eq name="mod" value="0">class="tr"</eq> <eq name="mod" value="1">class="tr-one"</eq>>
-						<td>{:L($val['action'])}</td>
+						<td><?php echo $actions[$val['action']]['lang']; ?></td>
 						<td><if condition="$val['score'] gt 0">{$val.score}<else/>{$val.score}</if></td>
 						<td>{$val.add_time|frienddate}</td>
 					</tr>

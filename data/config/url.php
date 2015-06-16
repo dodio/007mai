@@ -51,6 +51,13 @@ return array (
     '/^item\/id\/(\d+)$/' => 'item/index?id=:1',
     '/^item\/iid\/(\d+)$/' => 'item/index?iid=:1',
 
-    "/^help\/qingbao$/" => 'help/read?id=7'
+    "/^help\/qingbao$/" => 'help/read?id=7' //情报规则
+    "/^help\/question$/" => 'help/read?id=6'//常见问题
+    "/^help\/aboutus$/" => 'help/read?id=1' //关于我们
+    "/^help\/disclaimer$/" => 'help/read?id=5' //免责申明
+    "/^help\/exchange$/" => 'help/read?id=8' //兑换流程
+    "/^help\/seller$/" => 'help/read?id=2' //商家合作
+
+
   ),
 );

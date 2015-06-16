@@ -8,6 +8,10 @@ public/static/upload
 ftpsync.settings
 desktop.ini
 html_page/css/
+html_page/images/
+html_page/psd/
+html_page/*.html/
+html_page/*.js
 *dist*/
 data/config/config.php
 data/config/debug.php

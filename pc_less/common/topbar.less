@@ -1,0 +1,153 @@
+.topbar {
+  @topbar_height: 36px;
+  height: @topbar_height;
+  background-color: #000;
+
+  .topnav, .login-show, .other-show {
+    line-height: @topbar_height;
+
+  a{
+      color: @color_blue;
+      margin-right: 20px;
+    }
+  }
+  img {
+    vertical-align: middle;
+  }
+  a .count {
+    width: 12px;
+    padding: 0 3px;
+    color: #fff;
+    margin-left: 2px;
+    color: #fff;    
+  }
+  .logined-show {
+    position: relative;
+    height: @topbar_height;
+  }
+  .logined-show .normal-a {
+    float: left;
+    display: block;
+    margin-top: 10px;
+    line-height: normal;
+    cursor: pointer;
+  }
+  .logined-show img {
+    margin-right: 5px;
+    float: left;
+    display: inline;
+    width: 18px;
+    height: 18px;
+    vertical-align: middle;
+  }
+  .logined-show a .user {
+    color: #0b8;
+    font-weight: bold;
+    display: inline;
+    float: left;
+    max-width: 100px;
+    _width: 100px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  .logined-show a .cur {
+    display: block;
+    float: left;
+    background: url(../images/cur.gif) no-repeat;
+    width: 10px;
+    height: 5px;
+    transition: all .4s;
+    -webkit-transition: all .4s;
+    -o-transition: all .4s;
+    -moz-transition: all .4s;
+    margin-left: 2px;
+    margin-top: 8px;
+    -webkit-backface-visibility: hidden;
+  }
+  .logined-show a:hover {
+    text-decoration: none;
+  }
+  .logined-show .normal-box {
+    position: absolute;
+    top: 35px;
+    background: #fff;
+    border: #c6eaab solid 1px;
+    width: 92px;
+    border-radius: 5px;
+    overflow: hidden;
+    display: none;
+    z-index: 13;
+  }
+  .hover .normal-box {
+    display: block;
+  }
+  .logined-show.hover a .cur {
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+  }
+  .logined-show .login-box {
+    height: 92px;
+  }
+  .logined-show .normal-box ul li {
+    float: left;
+    height: 30px;
+    line-height: 30px;
+    border-bottom: #c6eaab solid 1px;
+  }
+  .logined-show .normal-box ul li a .icon {
+    width: 12px;
+    height: 14px;
+    margin: 10px 5px 0 10px;
+    float: left;
+    .bg(0,0);
+  }
+  .logined-show .normal-box ul li a span {
+    display: inline;
+    float: left;
+  }
+  .logined-show .normal-box ul li a .icon-01 {
+    background-position: -256px -27px;
+  }
+  .logined-show .normal-box ul li a .icon-02 {
+    background-position: -276px -4px;
+  }
+  .logined-show .normal-box ul li a .icon-03 {
+    background-position: -276px -24px;
+  }
+  .logined-show .normal-box ul li a .icon-04 {
+    background-position: -300px -4px;
+  }
+  .logined-show .normal-box ul li a {
+    display: block;
+    margin-left: 0;
+    color: #50830b;
+    height: 30px;
+    width: 92px;
+    cursor: pointer;
+  }
+  .logined-show .normal-box ul li a:hover {
+    background: #edffdf;
+    text-decoration: none;
+  }
+  .personal-show {
+    float: left;
+    line-height: @topbar_height;
+    margin-left: 15px;
+    a {
+      color: @color_blue;
+    }
+  }
+  .personal-show a:hover {
+    text-decoration: none;
+  }
+  .personal-show a:hover span {
+    text-decoration: underline;
+  }
+  .logined-show img {
+    vertical-align: -5px;
+    margin-right: 5px;
+  }
+}

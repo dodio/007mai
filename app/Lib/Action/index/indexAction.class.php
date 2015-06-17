@@ -1,6 +1,10 @@
 <?php
 class indexAction extends ItemlistAction {
-	
+	public function _initialize(){
+		parent::_initialize();
+    $api_config = M('items_site')->where(array('code' => 'ftxia'))->getField('config');
+    $this->_tbconfig = unserialize($api_config);
+	}
 	public function _empty(){
     	$this->index();
     }
@@ -97,10 +101,21 @@ class indexAction extends ItemlistAction {
 			$count = $this->_mod->where($where)->count();
 		}
 
+		$top = $this->_get_top();
+
+		$req = $top->load_api('FtxiaBrandListsGetRequest');
+    $req->setFields('title,name');
+		$req->setTime(date("y-m-d-H",time()));
+		$resp = $top->execute($req);
+    if($resp->msg){
+      $this->redirect("/","出现网络故障，没有为您成功取回情报.",3);
+    }
+    $brandlist = object_to_array($resp->brandlist);
+    
 		$pager = $this->_pager($count, $page_size);
 		$this->assign('page', $pager->kshow());
 		$this->assign('total_item',$count);
- 
+ 		$this->assign('brands',$brandlist['brand']);
   	$this->assign('nav_curr', 'index');
   	$this->_config_seo(C('ftx_seo_config.index'));
 		$this->display();
@@ -153,4 +168,13 @@ class indexAction extends ItemlistAction {
 		}
 		
 	}
+	private function _get_top() {
+      vendor('Ftxia.TopClient');
+      vendor('Ftxia.RequestCheckUtil');
+      vendor('Ftxia.Logger');
+      $top = new TopClient;
+      $top->appkey = $this->_tbconfig['app_key'];
+      $top->secretKey = $this->_tbconfig['app_secret'];
+      return $top;
+  }
 }

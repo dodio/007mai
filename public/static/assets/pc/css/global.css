@@ -1158,6 +1158,7 @@ body {
   position: absolute;
   width: 100%;
   z-index: 1;
+  height: 0;
 }
 /*侧边次级导航*/
 .sidenav .side_sub_nav {

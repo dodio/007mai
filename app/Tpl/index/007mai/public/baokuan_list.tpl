@@ -3,7 +3,13 @@
         <li <eq name="mod" value="4">class="mr0"</eq> >
           <div class="baokuan-item" id="nid_{$item.num_iid}">
             <div class="bk-pic">
-              <a biz-itemid="{$item['num_iid']}" isconvert=1 href="" target="_blank"><img src='{:attach(get_thumb($item['pic_url'], '_b'),'item')}' alt="{$item.title}"  /></a>
+              <a biz-itemid="{$item['num_iid']}" isconvert=1 href="" target="_blank">
+                <if condition="$item.pic_urls neq ''">
+                <img src='{:attach(get_thumb($item['pic_urls'], '_b'),'item')}' alt="{$item.title}"  />
+                <else/>
+                <img src='{:attach(get_thumb($item['pic_url'], '_b'),'item')}' alt="{$item.title}"  />
+                </if>
+              </a>
             </div>
             <div class="bk-name"><a biz-itemid="{$item['num_iid']}" isconvert=1 href="" target="_blank">{$item.title}</a></div>
             <div class="mt15">

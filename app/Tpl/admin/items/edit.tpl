@@ -102,7 +102,7 @@
 				<th></th>
 				<td><notempty name="info['pic_url']"> <img src="{:attach(get_thumb($info['pic_url'], '_m'), 'item')}"  width="250" id="J_pic_url_img"/></notempty><br /></td>
 				<th></th>
-				<td><notempty name="info['pic_urls']"><img src="{:attach(get_thumb($info['pic_urls'], '_m'), 'item')}" width="250" id="J_pic_url_imgs"/></notempty><br /></td>
+				<td><notempty name="info['pic_urls']"><img src="{:attach($info['pic_urls'], 'item')}" width="250" id="J_pic_url_imgs"/></notempty><br /></td>
 			</tr>
 			<tr>
 				<th>推广链接 :</th>

@@ -5,7 +5,7 @@
             <div class="bk-pic">
               <a biz-itemid="{$item['num_iid']}" isconvert=1 href="" target="_blank">
                 <if condition="$item.pic_urls neq ''">
-                <img src='{:attach(get_thumb($item['pic_urls'], '_b'),'item')}' alt="{$item.title}"  />
+                <img src='{:attach($item['pic_urls'],'item')}' alt="{$item.title}"  />
                 <else/>
                 <img src='{:attach(get_thumb($item['pic_url'], '_b'),'item')}' alt="{$item.title}"  />
                 </if>
@@ -19,8 +19,9 @@
               <span class="bk-zk ml10">{$item.zk}折</span>
             </div>
             <div class="bk-reason mt15">
-              推荐理由：<i class="icon heart3-icon"></i>{$item.intro}
+              推荐理由：<i class="icon heart3-icon"></i>
             </div>
+            <div class="bk-reason mt10">{$item.intro}</div>
             <div class="bk-mask">
               <a href="" biz-itemid="{$item['num_iid']}" isconvert=1 target="_blank" class="bk-link">
                 <div class="bk-maimaimai">立即购买</div>

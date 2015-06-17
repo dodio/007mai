@@ -12,13 +12,9 @@ class content_replaceBehavior extends Behavior {
 
     private function _replace($content) {
         $replace = array();
-        //静态资源地址
-        $statics_url = C('ftx_statics_url');
-        if ($statics_url != '') {
-            $replace['__STATIC__'] = $statics_url;
-        } else {
-            $replace['__STATIC__'] = CDN_ROOT;
-        }
+        
+        $replace['__STATIC__'] = CDN_ROOT;
+
         //附件地址
         $replace['__UPLOAD__'] = CDN_ROOT.'/upload';
         $content = str_replace(array_keys($replace),array_values($replace),$content);

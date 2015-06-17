@@ -10,7 +10,9 @@
 <include file="qingbao:nav" />
 
 
-<div class="qinglv_pic" style="width: 100%;height: 200px;background-color: #fafafa;"></div>
+<div class="container">
+  <div class="qinglv_pic" style="width: 100%;height: 205px;background:url(__STATIC__/images/mingxing.png) 0 0 no-repeat;"></div>
+</div>
 <include file="public:sidenav" />
 <include file="public:list" />
 

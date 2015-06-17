@@ -74,11 +74,11 @@
 
 			<tr>
 				<th>30天支出佣金 :</th>
-				<td><input type="text" name="volume" id="volume" class="input-text" size="10" value="{$info.totalfee}">元</td>
+				<td><input type="text" name="totalfee" id="totalfee" class="input-text" size="10" value="{$info.totalfee}">元</td>
 				<th>30天推广量 :</th>
-				<td><input type="text" name="volume" id="volume" class="input-text" size="10" value="{$info.totalnum}"></td>
+				<td><input type="text" name="totalnum" id="totalnum" class="input-text" size="10" value="{$info.totalnum}"></td>
 				<th>佣金 :</th>
-				<td><input type="text" name="volume" id="volume" class="input-text" size="10" value="{$info.commission}">元</td>
+				<td><input type="text" name="commission" id="commission" class="input-text" size="10" value="{$info.commission}">元</td>
 			</tr>
 
 
@@ -96,7 +96,7 @@
 					<div id="J_pics_upload" class="upload_btn"><span>{:L('upload')}</span></div>
 				</td>
 				<th>佣金比率 :</th>
-				<td><input type="text" name="volume" id="volume" class="input-text" size="10" value="{$info.commission_rate}"></td>
+				<td><input type="text" name="commission_rate" id="commission_rate" class="input-text" size="10" value="{$info.commission_rate}"></td>
 			</tr>
 			<tr>
 				<th></th>

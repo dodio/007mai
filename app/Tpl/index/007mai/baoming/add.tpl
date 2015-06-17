@@ -2,7 +2,7 @@
 <html>
 <head>
 <include file="public:head" />
-<css file="__STATIC__/jky/css/baoming.css" />
+<css file="__STATIC__/assets/pc/css/baoming.css" />
 
 <link rel="stylesheet" type="text/css" href="__STATIC__/js/calendar/calendar-blue.css"/>
 <script type="text/javascript" src="__STATIC__/js/calendar/calendar.js"></script>
@@ -12,7 +12,7 @@
 
 <include file="bm_top" />
 
-<div class="main page007mai mb20">
+<div class="main container mb20">
 	<div class="main-newgood -2">
 
 		<div class="procedures bc">

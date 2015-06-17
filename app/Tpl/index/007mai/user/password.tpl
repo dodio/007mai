@@ -2,13 +2,10 @@
 <html>
 <head>
 <include file="public:head" />
-<link rel=stylesheet type=text/css href="__STATIC__/jky/css/user.css" />
-<style type="text/css">
-.left .user-bind .taobao_sync { background-position:0 -448px; }
-.left .user-bind .taobao_sync_no { background-position:0 -464px; }
-</style>
+<link rel=stylesheet type=text/css href="__STATIC__/assets/pc/css/user.css" />
 </head>
 <body>
+<include file="public:topbar" />
 <include file="public:header" />
 <script charset="utf-8" type="text/javascript" src="__STATIC__/jky/js/jquery.validate.js" ></script>
 <script>
@@ -56,7 +53,7 @@ $(function(){
 
 });
 </script>
-<div class="main mb20 page007mai clear">
+<div class="main mb20 container group">
 	<div class="user_main">
 		<include file="user/left" />
 

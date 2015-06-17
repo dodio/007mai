@@ -3,59 +3,52 @@
 <head>
 <include file="public:head" />
 <ftx:load type="css" href="
-__STATIC__/assets/css/good.css,
-__STATIC__/assets/css/brand.css
+__STATIC__/assets/pc/css/good.css
 "/>
 </head>
 <body>
 <include file="public:header" />
 
+<include file="public:sidenav" />
 
-<div class="mt25">
-  <include file="public:nav-classify" />
-  <div class="side_nav_fix_pos"></div>
 
-  <div class="bmain page007mai pr clear">
-        <div class="slide-logos clear">
-      <span class="prev-btn" style="display: inline;"></span>
-      <span class="next-btn" style="display: inline;"></span>
-      <div class="logos-box">
-        <ul>
-        <li>
-        <volist name="brands" id="val" mod="20">
-          <a href="{:U('brand/dlist',array('uid'=>$val['uid']))}" target="_blank">
-            <img alt="{$val.shop-name}" src="{$val.shop_icon}">
-            <div class="masking"></div>
-            <span>{$val.discount}</span>
-          </a>                                 
-          <eq name="mod" value="19"></li><li></eq>
-        </volist>
-        </li>
-        </ul>
-      </div>
+<div class="bmain container mt20 group">
+    <div class="slide-logos group">
+        <span class="prev-btn" style="display: inline;"></span>
+        <span class="next-btn" style="display: inline;"></span>
+        <div class="logos-box">
+            <ul>
+                <li>
+                <volist name="brands" id="val" mod="20">
+                  <a href="{:U('brand/dlist',array('uid'=>$val['uid']))}" target="_blank">
+                    <img alt="{$val.shop-name}" src="{$val.shop_icon}">
+                    <div class="masking"></div>
+                    <span>{$val.discount}</span>
+                  </a>                                 
+                  <eq name="mod" value="19"></li><li></eq>
+                </volist>
+                </li>
+            </ul>
+        </div>
     </div>
-   
-  </div>
 </div>
 
-
-
-<div class="bmain page007mai m0a clear tag-list"">
+<div class="bmain container group tag-list"">
 
 <div class="brand-box">
 <volist name="lists" id="val">
                         <div class="bd">
-                <div class="normal-title clear">
+                <div class="normal-title group">
                     <a href="{:U('brand/dlist',array('uid'=>$val['shop']['uid']))}" target="_blank" se_prerender_url="complete">
                         <div class="title"><h3>{$val['shop']['txt']}</h3></div><span class="txt fr">{$val['shop']['discount']}</span>
                     </a>
                 </div>
             </div>
             <div class="bd">
-                <div class="main page007mai clear">
+                <div class="main page007mai group">
 	<ul class="goods-list {:C('ftx_site_wc')}">
-		<volist name="val['items']" id="item" key="i" mod="4" offset="0" length="8" >
-		<li  class="<eq name="mod" value="3"> last</eq>">
+		<volist name="val['items']" id="item" key="i" mod="3" offset="0" length="8" >
+		<li  class="<eq name="mod" value="2"> last</eq>">
 			<div class="sid_{$item.sellerId}  list-good   {$item.class} {$i}" id="nid_{$item.num_iid}">
 				<div class="good-pic">
 					<a biz-itemid="{$item['num_iid']}" isconvert=1 href="http://detail.tmall.com/item.htm?id={$item['num_iid']}"   target="_blank"><img src='__STATIC__/assets/images/blank.gif' data-original='{:attach(get_thumb($item['pic_url'], '_b'),'item')}' alt="{$item.title}" class="lazy"   /></a>
@@ -96,9 +89,8 @@ __STATIC__/assets/css/brand.css
 		</li>
 		</volist>
 	</ul>
-	<div class="clear"></div> 
 </div>
-            </div>
+    </div>
                     
 
 
@@ -113,15 +105,16 @@ __STATIC__/assets/css/brand.css
 
 
 
-<div class="main page007mai clear">
+<div class="main container group">
 	<div class="page">
 		<div class="pageNav">{$page}</div>
 	</div>
 </div>
 
 	 
- <script>
-        //初始化
+<script>
+$(function(){
+    //初始化
         $(".slide-logos .next-btn").click(function(){
             $(".logos-box ul").stop(true,true).animate({marginLeft:-1*$(".logos-box li:eq(0)").width()},100,function(){
                 $(".logos-box ul").append($(".logos-box li:eq(0)").clone());
@@ -143,8 +136,9 @@ __STATIC__/assets/css/brand.css
                 $(this).removeClass("selected-active")
             })
         }
-        F_selected();
-    </script> 
+        F_selected();          
+});        
+</script> 
 <include file="public:footer" />
 </body>
 </html>

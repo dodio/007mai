@@ -3,8 +3,8 @@
 <head>
 <include file="public:head" />
 <ftx:load type="css" href="
-__STATIC__/jky/css/good.css,
-__STATIC__/jky/css/gift.css
+__STATIC__/assets/pc/css/good.css,
+__STATIC__/assets/pc/css/gift.css
 "/>
 <ftx:load type="css" href="
 __STATIC__/ftxia/new/css/md-goodslist.css,
@@ -18,9 +18,10 @@ __STATIC__/ftxia/new/css/pg-try.css
 </style>
 </head>
 <body>
+<include file="public:topbar" />
 <include file="public:header" />
 
-
+<include file="public:sidenav"/>
 <div class="jiu-nav-main">
 	<div class="jiu-nav page007mai">
 		<div class="nav-item fl">
@@ -36,9 +37,9 @@ __STATIC__/ftxia/new/css/pg-try.css
 	</div>
 </div>
 
-<div class="main page007mai mb20 clear">
+<div class="main container group">
 	<div class="huan-left">
-		<div class="goods-inside clear">
+		<div class="goods-inside group">
 			<div class="img_show fl"><img src="{:attach(str_replace('_s.'.array_pop(explode('.', $item['img'])), '_b.'.array_pop(explode('.', $item['img'])), $item['img']), 'score_item')}" alt="{$item.title}" /></div>
 			<div class="price-info fl">
 				<h3>{$item.title}</h3>
@@ -49,7 +50,7 @@ __STATIC__/ftxia/new/css/pg-try.css
 				<p class="bady-btn"><a href="javascript:;"   class="btn fl mr15 J_gift_btn" data-id="{$item.id}" data-num="#J_num_{$item.id}">兑换</a></p>
 			</div>
 		</div>
-		<div class="bady-part clear">
+		<div class="bady-part group">
 			<div class="bady-tab">
 				<ul>
 					<li>
@@ -97,19 +98,20 @@ __STATIC__/ftxia/new/css/pg-try.css
 		<div id="lr_float">
 			<div class="huan-login h-good">
 				<div class="nav-userinfo fl">
-					<div class="user-img">
-						<a class="userinfo-img" href="{:U('user/index')}"><img src="{:avatar($info['id'], 100)}" width="80" height="80" /></a>
-					</div>
-					<div class="user-personal">
-						<span class="name"><a href="{:U('user/index')}"><i class="org_2">{$info.username}</i></a></span><br>
-						<span class="jfb">情报：<i class="green_3">{$info.score}</i> </span><br>
-					</div>
-					<div class="user-manage clear">
+					<div class="group">
+            <div class="user-img">
+              <a class="userinfo-img" href="{:U('user/index')}"><img src="{:avatar($info['id'], 100)}" width="80" height="80" /></a>
+            </div>
+            <div class="user-personal">
+              <span class="name"><a href="{:U('user/index')}"><i class="org_2">{$info.username}</i></a></span><br>
+              <span class="jfb">情报：<i class="green_3">{$info.score}</i> </span><br>
+            </div>     
+          </div>
+					<div class="user-manage group">
 						<a href="{:U('user/gift')}" class="ml10">兑换记录</a>
 						<a href="{:U('user/mingxi')}" class="ml25">收入明细</a>
 					</div>
 				</div>
-				<div class="clear"></div>
 			</div>
 			<div class="right_ad">
 				<div style="" id='ad10'></div>

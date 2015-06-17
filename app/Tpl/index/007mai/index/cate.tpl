@@ -4,14 +4,14 @@
 <include file="public:head" />
 </head>
 <body>
+<include file="public:topbar" />
 <include file="public:header" />
 
-<include file="public:cate-nav" />
 
-<include file="public:nav-classify" />
-<div class="side_nav_fix_pos">
-	<include file="public:list" />
-</div>
+<include file="public:sidenav" />
+
+<include file="public:cate-nav"/>
+<include file="public:list" />
  
 <include file="public:footer" />
 </body>

@@ -2,20 +2,21 @@
 <html>
 <head>
 <include file="public:head" />
-<link rel=stylesheet type=text/css href="__STATIC__/assets/css/user.css" />
+<link rel=stylesheet type=text/css href="__STATIC__/assets/pc/css/user.css" />
 <style>
 .left .user-bind .taobao_sync { background-position:0 -448px; }
 .left .user-bind .taobao_sync_no { background-position:0 -464px; }
 </style>
 </head>
 <body>
+<include file="public:topbar" />
 <include file="public:header" />
+<div class="main mb20 container group">
 
-<div class="main mb20 page007mai clear">
-	<div class="user_main">
+	<div class="user_main group">
 		<include file="user/left" />
 		<div class="right">
-			<div class="tip-info">
+			<div class="tip-info group">
 				<script src="__STATIC__/assets/js/jquery/jcarousellite_1.0.1.pack.js"></script>
 <script type="text/javascript"> 
 $(document).ready(function(){
@@ -43,7 +44,7 @@ $(document).ready(function(){
 				<div class="fr">上次登录时间：{$info.last_time|date="Y-m-d H:i:s",###}</div>
 				<div class="clear"></div>
 			</div>
-			<div class="user-panel">
+			<div class="user-panel group">
 				<div class="user-quick">
 					<div class="quick-info">
 						<div class="my-mb-info">
@@ -53,7 +54,6 @@ $(document).ready(function(){
 						<div class="my-score">
 							<p>QQ号码：<b>{$info.qq}</b></p>
 							<p>电子邮箱：<b>{$info.email}</b></p>
-												 
 						</div>
 					</div>
 					

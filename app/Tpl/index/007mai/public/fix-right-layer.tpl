@@ -4,7 +4,7 @@
 	        <div class="fix-right-middle" style="overflow: visible; display: block;">
 	            <div class="img-span">
 			<a href="{:U('user/index')}" target="_blank" class="mark" title="会员中心">
-	                    <img src="__STATIC__/assets/images/layout/my.png">
+	                    <img src="__STATIC__/assets/pc/images/layout/my.png">
 	                </a>
                     <div class="tab-bar tab-bar-js" style="display:none;">会员中心<div class="tab-tip-arr">◆</div></div>
                 </div>
@@ -13,7 +13,7 @@
             <div class="fix-right-bottom">
                 <div class="img-span">
                     <a href="javascript:void(0);" class="sign sign_btn">
-                        <img src="__STATIC__/assets/images/layout/sign.gif" style="margin-left: 5px;">
+                        <img src="__STATIC__/assets/pc/images/layout/sign.gif" style="margin-left: 5px;">
                     </a>
                     <div class="tab-bar tab-bar-js" style="right: 35px; display: none;">签到得情报<div class="tab-tip-arr">◆</div></div>
                 </div>
@@ -21,7 +21,7 @@
                 <if condition="C('ftx_site_browser') neq ''">
                     <div class="img-span">
                         <a href="javascript:void(0);">
-                            <img src="__STATIC__/assets/images/layout/qrcode.png">
+                            <img src="__STATIC__/assets/pc/images/layout/qrcode.png">
                         </a>
                         <div class="qrcode-tab-bar tab-bar-js" style="right: 35px; display: none;">
                             <img src="{:C('ftx_site_browser')}" width="140px">
@@ -31,14 +31,14 @@
                 
                 <div class="img-span">
                     <a href="{:C('ftx_kefu_html')}" target="_blank" rel="nofollow">
-                        <img src="__STATIC__/assets/images/layout/qq.png">
+                        <img src="__STATIC__/assets/pc/images/layout/qq.png">
                     </a>
                     <div class="tab-bar tab-bar-js" style="display:none;">联系客服<div class="tab-tip-arr">◆</div></div>
                 </div>
                 <div class="img-span">
                     <div id="gotop" class="gotop" style="display: block;">
 	                    <a href="javascript:void(0);">
-	                        <img src="__STATIC__/assets/images/layout/gotop.png">
+	                        <img src="__STATIC__/assets/pc/images/layout/gotop.png">
 	                    </a>
                     </div>
                     <div class="tab-bar tab-bar-js" style="display:none;">返回顶部<div class="tab-tip-arr">◆</div></div>

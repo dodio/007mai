@@ -2,7 +2,7 @@
 <html>
 <head>
 <include file="public:head" />
-<css file="__STATIC__/jky/css/baoming.css" />
+<css file="__STATIC__/assets/pc/css/baoming.css" />
 </head>
 <body>
 <include file="public:header" />
@@ -10,7 +10,7 @@
 
 <include file="bm_top" />
 
-<div class="main page007mai mb20 clear">
+<div class="main container mb20 clear">
 	<div class="main-newgood">
 		<div class="textcls">
 			<h2>活动要求</h2>

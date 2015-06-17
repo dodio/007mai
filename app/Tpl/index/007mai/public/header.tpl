@@ -17,7 +17,7 @@
       </div>
 
       <div class="sign-area">
-        <a href="" class="signIn"><i class="sign-icon icon"></i>签到领取情报</a>
+        <a href="javascript:" class="signIn_btn signIn"><i class="sign-icon icon"></i>签到领取情报</a>
       </div>
     </div>
 
@@ -25,11 +25,11 @@
       <div class="container">
         <ul class="navigation group">
           <ftx:nav type="lists" style="main">
-            <li class="<if condition="$nav_curr eq 'index'">cur</if>   ">
+            <li <if condition="$nav_curr eq 'index'">class="cur"</if> >
               <a href="{:C('ftx_site_url')}">{:L('index_page')}</a>
             </li>
             <volist name="data" id="val">
-            <li class="  <if condition="$nav_curr eq $val['alias']">cur</if>"><a href="{$val.link}" <if condition="$val.target eq 1">target="_blank"</if>>{$val.name}</a></li>
+            <li <if condition="$nav_curr eq $val['alias']">class="cur"</if> ><a href="{$val.link}" <if condition="$val.target eq 1">target="_blank"</if>>{$val.name}</a></li>
             </volist>
           </ftx:nav>
         </ul>

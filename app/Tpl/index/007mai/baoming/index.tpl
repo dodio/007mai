@@ -2,7 +2,7 @@
 <html>
 <head>
 <include file="public:head" />
-<css file="__STATIC__/jky/css/baoming.css" />
+<css file="__STATIC__/assets/pc/css/baoming.css" />
 </head>
 <body>
 <include file="public:header" />
@@ -12,7 +12,7 @@
 
 
 <!--main start -->
-<div class="main page007mai mb20 clear" style="overflow:visible">
+<div class="main container">
 	<div class="main-newgood">
 		<h3 class="megs">
 			<i class="tips-icon"></i>
@@ -55,17 +55,15 @@
 		<div class="sign_channel">
 			<div class="sing_type">
 				<h4 class="title">请根据您的需求报名相应的优质商品</h4>
-				<div class="con">
+				<div class="con group">
 					<div class="box">
 						<p class="box-title">正常报名</p>
 						<p class="txt">报名价格需低于市场价格并包邮，少数偏远地区可不包邮。商品市场价值在25元以上，信誉1钻以上，历史销量不限、给力商品优先审核排期！</p>
 						<div class="links-all">
-							<span class="links"><a target="_blank" href="{:U('index/index')}">商品展示位置&gt;&gt;</a></span>
 							<div class="btns-all"><a href="{:U('baoming/add')}" class="btn">活动报名</a></div>
 						</div>
 					</div>
 				</div>
-				<div class="clear"></div>
 			</div>
 		</div>
 	</div>

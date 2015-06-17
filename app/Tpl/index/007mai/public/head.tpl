@@ -16,17 +16,13 @@
 	URL_COOKIE=0;
   var _czc = _czc || [];
 </script>
-<!-- <ftx:load type="css" href="
-__STATIC__/pc/css/base.css,
-__STATIC__/assets/css/global.css,
-__STATIC__/assets/css/alert.css,
-__STATIC__/assets/css/page.css,
-__STATIC__/assets/css/ad.css,
-__STATIC__/assets/css/jiu-side-nav.css,
-__STATIC__/8mobcom_zhe/css/base.css
-"/> -->
+
 <ftx:load type="css" href="
 __STATIC__/assets/pc/css/global.css,
+__STATIC__/assets/pc/css/alert.css
+"/>
+
+<ftx:load type="css" href="
 __STATIC__/assets/pc/css/index.css
 "/>
 

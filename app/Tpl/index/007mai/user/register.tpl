@@ -2,28 +2,25 @@
 <html>
 <head>
 <meta charset="utf-8" />
-<title>{$page_seo.title}  {:C('ftx_site_name')} - Powered by Ftxia!</title>
+<title>{$page_seo.title}  {:C('ftx_site_name')}</title>
 <meta name="keywords" content="{$page_seo.keywords}" />
 <meta name="description" content="{$page_seo.description}" />
-<meta name="generator" content="Ftxia! 7.0" />
 <meta name="renderer" content="webkit">
-<meta name="author" content="Ftxia Team  bbs.8mob.com" />
-<meta name="copyright" content="2010-2015 Ftxia Inc." />
 <meta name="MSSmartTagsPreventParsing" content="True" />
 <meta http-equiv="MSThemeCompatible" content="Yes" />
 <ftx:load type="css" href="
-__STATIC__/jky/css/base.css,
-__STATIC__/jky/css/login.css
+__STATIC__/assets/pc/css/global.css,
+__STATIC__/assets/pc/css/login.css
 "/>
 <ftx:load type="js" href="
-__STATIC__/jky/js/jquery.js,
-__STATIC__/jky/js/jquery.cookie.js,
-__STATIC__/jky/js/funs.js,
-__STATIC__/jky/js/error.js,
-__STATIC__/jky/js/noWordArr.js
+__STATIC__/assets/js/jquery.js,
+__STATIC__/assets/js/jquery.cookie.js,
+__STATIC__/assets/js/lib/funs.js,
+__STATIC__/assets/js/data/error.js,
+__STATIC__/assets/js/data/noWordArr.js
 "/>
-
  </head>
+ 
 <body>
 <!-- 主体 -->
 <div class="login-main">
@@ -114,7 +111,7 @@ __STATIC__/jky/js/noWordArr.js
 				</form>
 			</div>
 		</div>
-		<p><a href="http://www.miibeian.gov.cn/" rel="nofollow" target="_blank">{:C('ftx_site_icp')}</a> Copyright © 2010-2015 8MOB.com V7.0 正式版 all Rights Reserved <a href="http://bbs.8mob.com/" target="_blank">飞天侠淘宝客官方</a>
+		<p><a href="http://www.miibeian.gov.cn/" rel="nofollow" target="_blank">{:C('ftx_site_icp')}</a> Copyright © 2010-2015&nbsp;&nbsp;
 {:C('ftx_statistics_code')}</p>
 	</div>
 </div>

@@ -45,7 +45,7 @@
       $title = array_shift($group);
      ?>
      <?php if($title['content'] != ""){ ?> <div class="l-title_bar" style="{:background($title['desc'],'images')}" >
-       <div class="page007mai middle" style="{:background($title['content'],'images')} height:100%;"></div>
+       <div class="container" style="{:background($title['content'],'images')} height:100%;"></div>
      </div><?php } ?>
      <div class="group middle l-floor page007mai">
        <div class="ju-itemlist"> 

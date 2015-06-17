@@ -1,8 +1,3 @@
-<style>
-  .w1005 .page007mai{
-    left: 0;
-  }
-</style>
 <notempty name="ad_list">
 <div class="group" style="background-color:{$board_info.description};">
   <?php
@@ -36,7 +31,7 @@
     }
    ?>
 
-  <div class="group middle l-floor page007mai">
+  <div class="group l-floor container">
     <?php 
     foreach ($ad_group as $group) {
       $title = array_shift($group);
@@ -61,5 +56,10 @@
     }
      ?>
   </div>
+  <style>
+    .footer{
+      margin-top: 0;
+    }
+  </style>
 </div>
 </notempty>

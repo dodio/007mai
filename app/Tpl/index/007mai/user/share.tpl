@@ -11,8 +11,9 @@ __STATIC__/ftxia/new/css/pg-zone.css
 
 </head>
 <body>
+<include file="public:topbar" />
 <include file="public:header" />
-<div class="main page007mai">
+<div class="main container">
 	<div class="piece jiu_goods">
 		<div class="piece_box">
 			<div class="jiu_info">

@@ -11,11 +11,9 @@
 
 
 
-<include file="public:nav-classify" />
-<div class="side_nav_fix_pos">
-  <div class="qinglv_pic" style="width: 100%;height: 200px;background-color: #fafafa;"></div>
-  <include file="public:list" />
-</div>
+<div class="qinglv_pic" style="width: 100%;height: 200px;background-color: #fafafa;"></div>
+<include file="public:sidenav" />
+<include file="public:list" />
  
 <include file="public:footer" />
 </body>

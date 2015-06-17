@@ -1,7 +1,7 @@
 
 	<ul class="goods-list group">
-		<volist name="items_list" id="item" key="i" mod="4">
-		<li  class="<eq name="mod" value="3"> last</eq>">
+		<volist name="items_list" id="item" key="i" mod="3">
+		<li  <eq name="mod" value="2">class="last"</eq>>
 			<div class="sid_{$item.sellerId}  list-good   {$item.class} " id="nid_{$item.num_iid}">
 				<div class="good-pic">
 					<a biz-itemid="{$item['num_iid']}" isconvert=1 href=""   target="_blank">

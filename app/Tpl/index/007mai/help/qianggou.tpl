@@ -2,12 +2,14 @@
 <html>
 <head>
 <include file="public:head" />
-<load href="__STATIC__/assets/css/pg-skill.css" />
+<load href="__STATIC__/assets/pc/css/help.css" />
 </head>
 <body>
+<include file="public:topbar" />
 <include file="public:header" />
 
-<div class="main mt0 clear">
+<include file="public:sidenav"/>
+<div class="container group mt20">
 	<div class="skill_top">
 		<div class="center_img"></div>
 		<div class="bottom_img"></div>

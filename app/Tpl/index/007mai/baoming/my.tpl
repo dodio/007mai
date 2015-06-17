@@ -2,7 +2,7 @@
 <html>
 <head>
 <include file="public:head" />
-<css file="__STATIC__/jky/css/baoming.css" />
+<css file="__STATIC__/assets/pc/css/baoming.css" />
 </head>
 <body>
 <include file="public:header" />
@@ -11,7 +11,7 @@
 <include file="bm_top" />
 
 <!--main start -->
-<div class="main page007mai mb20 main-newgood">
+<div class="main container main-newgood">
 		<div class="form-result">
 			<table width="100%" border="0" cellspacing="0" cellpadding="0">
 				<tr>
@@ -53,16 +53,8 @@
 			</table>
 					<else/>
 			</table>
-					<div class="tc f14 pt50">没有找到您要查询的信息哦，您可以先去<a href="{:U('baoming/index')}" style="color:#0289CD;">报名&gt;&gt;</a></div>
+					<div class="tc f14 mt30 ml20">没有找到您要查询的信息哦，您可以先去<a href="{:U('baoming/index')}" style="color:#0289CD;">报名&gt;&gt;</a></div>
 					</notempty>
-
-
-
-				
-				
-				
-							
-
 
 							<div class="page"><div class="pageNav"> {$page_bar}</div></div> 
 		</div>

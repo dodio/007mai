@@ -4,6 +4,7 @@
 <include file="public:head" />
 </head>
 <body>
+<include file="public:topbar" />
 <include file="public:header" />
  
 <notempty name="tag_list"> 
@@ -26,9 +27,8 @@
 
 
 
-<include file="public:nav-classify" />
+<include file="public:sidenav" />
 
-<div class="side_nav_fix_pos"></div>
 <include file="public:list" />
 
 <include file="public:footer" />

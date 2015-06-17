@@ -10,14 +10,14 @@
             <a href="#shoppint-index" class="sidenav-item">购物大全</a>
           </div>
           <div class="sidenav-catenav">
-            <a href="" class="sidenav-item ui-tabmenu"><span class="cateicon sdcn-nv"></span><span class="hover_bg"></span><span class="hover_text">女装</span></a>
-            <a href="" class="sidenav-item ui-tabmenu"><span class="cateicon sdcn-nei"></span><span class="hover_bg"></span><span class="hover_text">内衣</span></a>
-            <a href="" class="sidenav-item ui-tabmenu"><span class="cateicon sdcn-nan"></span><span class="hover_bg"></span><span class="hover_text">男装</span></a>
-            <a href="" class="sidenav-item ui-tabmenu"><span class="cateicon sdcn-xiezi"></span><span class="hover_bg"></span><span class="hover_text">鞋子</span></a>
-            <a href="" class="sidenav-item ui-tabmenu"><span class="cateicon sdcn-jujia"></span><span class="hover_bg"></span><span class="hover_text">居家</span></a>
-            <a href="" class="sidenav-item ui-tabmenu"><span class="cateicon sdcn-peishi"></span><span class="hover_bg"></span><span class="hover_text">配饰</span></a>
-            <a href="" class="sidenav-item ui-tabmenu"><span class="cateicon sdcn-meizhuang"></span><span class="hover_bg"></span><span class="hover_text">美妆</span></a>
-            <a href="" class="sidenav-item"><span class="cateicon sdcn-muying"></span><span class="hover_bg"></span><span class="hover_text">母婴</span></a>
+            <a target="_blank" href="/index/cate/cid/1" class="sidenav-item ui-tabmenu"><span class="cateicon sdcn-nv"></span><span class="hover_bg"></span><span class="hover_text">女装</span></a>
+            <a target="_blank" href="/index/cate/cid/236" class="sidenav-item ui-tabmenu"><span class="cateicon sdcn-nei"></span><span class="hover_bg"></span><span class="hover_text">内衣</span></a>
+            <a target="_blank" href="/index/cate/cid/381" class="sidenav-item ui-tabmenu"><span class="cateicon sdcn-nan"></span><span class="hover_bg"></span><span class="hover_text">男装</span></a>
+            <a target="_blank" href="/index/cate/cid/234" class="sidenav-item ui-tabmenu"><span class="cateicon sdcn-xiezi"></span><span class="hover_bg"></span><span class="hover_text">鞋子</span></a>
+            <a target="_blank" href="/index/cate/cid/3" class="sidenav-item ui-tabmenu"><span class="cateicon sdcn-jujia"></span><span class="hover_bg"></span><span class="hover_text">居家</span></a>
+            <a target="_blank" href="/index/cate/cid/5" class="sidenav-item ui-tabmenu"><span class="cateicon sdcn-peishi"></span><span class="hover_bg"></span><span class="hover_text">配饰</span></a>
+            <a target="_blank" href="/index/cate/cid/9" class="sidenav-item ui-tabmenu"><span class="cateicon sdcn-meizhuang"></span><span class="hover_bg"></span><span class="hover_text">美妆</span></a>
+            <a target="_blank" href="/index/cate/cid/9" class="sidenav-item"><span class="cateicon sdcn-muying"></span><span class="hover_bg"></span><span class="hover_text">母婴</span></a>
           </div>
 
             <div class="side_sub_nav">
@@ -419,7 +419,7 @@ $(function(){
 });
 
 $(function(){
-    var headh = $("#side_nav_fix_pos").offset().top;
+    var headh = window.sidenav_fix || $("#side_nav_fix_pos").offset().top;
     var sidenav = $("#sidenav");
     var sidenav_width = sidenav.width();
     $(".sidenav-nav-wrap",sidenav).width(sidenav_width);

@@ -499,7 +499,7 @@ class userAction extends UsersAction {
         $this->assign('like_count',$like_count);
         $this->assign('nav_curr', 'like');
         $this->_config_seo(array(
-            'title' => ' 我的收藏 — ' ,
+            'title' => ' 我的收藏 — '.C("ftx_site_name") 
         ));
         $this->display();
     }
@@ -581,7 +581,7 @@ class userAction extends UsersAction {
 			$this->redirect('user/msg');
 		}
 
-        $this->_config_seo(array('title' => '站内信   -  ',));
+        $this->_config_seo(array('title' => '站内信   -  '.C("ftx_site_name") ,));
 		$this->display($tpl);
 	}
 
@@ -589,12 +589,12 @@ class userAction extends UsersAction {
 	 * 快递
 	 */
 	public function kuaidi(){
-		$this->_config_seo(array('title' => '快递查询   -  ',));
+		$this->_config_seo(array('title' => '快递查询   -  '.C("ftx_site_name") ,));
 		$this->display();
 	}
 
 	public function avatar(){
-        $this->_config_seo(array("title"=>"修改头像 "));
+        $this->_config_seo(array("title"=>"修改头像 ".C("ftx_site_name") ));
 		$this->display();
 	}
 

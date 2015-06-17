@@ -3,16 +3,13 @@
 <head>
 <include file="public:head" />
 <ftx:load type="css" href="
-__STATIC__/assets/css/good.css,
-__STATIC__/assets/css/brand.css
+__STATIC__/assets/pc/css/good.css,
+__STATIC__/assets/pc/css/brand.css
 "/>
 </head>
 <body>
+<include file="public:topbar" />
 <include file="public:header" />
-
-
-	
-
 
 <div style="background:url({$lists['shop']['big_img']}) no-repeat" class="brand-banner">
 	<div class="center">
@@ -27,11 +24,11 @@ __STATIC__/assets/css/brand.css
 	</div>
 </div>
 
-
-<div class="main page007mai clear">
+<include file="public:sidenav"/>
+<div class="main container group">
 	<ul class="goods-list {:C('ftx_site_wc')}">
-		<volist name="lists['items']" id="item" key="i" mod="4">
-		<li  class="<eq name="mod" value="3"> last</eq>">
+		<volist name="lists['items']" id="item" key="i" mod="3">
+		<li  class="<eq name="mod" value="2"> last</eq>">
 			<div class="sid_{$item.sellerId}  list-good   {$item.class} " id="nid_{$item.num_iid}">
 				<div class="good-pic">
 					<a biz-itemid="{$item['num_iid']}" isconvert=1 href="http://detail.tmall.com/item.htm?id={$item['num_iid']}"   target="_blank"><img src='__STATIC__/assets/images/blank.gif' data-original='{:attach(get_thumb($item['pic_url'], '_b'),'item')}' alt="{$item.title}" class="lazy"   /></a>
@@ -66,13 +63,12 @@ __STATIC__/assets/css/brand.css
 		</li>
 		</volist>
 	</ul>
-	<div class="clear"></div> 
 </div>
 
  
 
-<div class="bmain page007mai pr mt25 clear">
-        <div class="slide-logos clear">
+<div class="bmain container group">
+        <div class="slide-logos group">
     <span class="prev-btn" style="display: inline;"></span>
     <span class="next-btn" style="display: inline;"></span>
     <div class="logos-box">

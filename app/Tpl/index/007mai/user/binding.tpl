@@ -2,12 +2,9 @@
 <html>
 <head>
 <include file="public:head" />
-<css file="__STATIC__/css/ftxia/user.css" />
-<css file="__STATIC__/css/ftxia/loginreg.css" />
 </head>
 <body>
 <include file="public:header" />
-
 
 <div class="mains">
 	<div class="white_top">

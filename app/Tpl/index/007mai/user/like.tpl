@@ -4,8 +4,9 @@
 <include file="public:head" />
 </head>
 <body>
+<include file="public:topbar" />
 <include file="public:header" />
-<div class="jiu-nav page007mai  seclevelinner main-ftxiacom clear">
+<div class="jiu-nav container  seclevelinner main-ftxiacom group">
             <div class="main-fanli main-my-like">
                 <h3 class="title">我的收藏<em class="number">(共{$like_count}件商品)</em></h3>
                 <span class="like-line"></span>
@@ -19,20 +20,16 @@
              		</div>
           	</div>
 		</empty>
-
-
-            </div>  
+</div>  
 </div>
- 
-<include file="public:nav-classify" />
 
-<div class="side_nav_fix_pos"></div>
+<script>
+  window.sidenav_fix =  300;
+</script>
+<include file="public:sidenav" />
+
 <include file="public:list" />
- <style>
-  .widescreen{
-    display: none;
-  }
- </style>
+
 
 <include file="public:footer" />
 </body>

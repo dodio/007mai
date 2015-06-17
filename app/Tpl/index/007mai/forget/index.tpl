@@ -2,11 +2,12 @@
 <html>
 <head>
 <include file="public:head" /> 
-<css file="__STATIC__/jky/css/forget.css" />
+<css file="__STATIC__/assets/pc/css/forget.css" />
 </head>
 <body>
+<include file="public:topbar" />
 <include file="public:header" />
- <div class="main page007mai clear">
+ <div class="container group">
 	<div class="white_top"><div class="white_top_left"></div><div class="white_top_middle"></div><div class="white_top_right"></div></div>
 	<div class="white_bg wrap">
 		<div class="wrap_left get_password">

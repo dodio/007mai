@@ -66,7 +66,7 @@ class settingAction extends BackendAction {
                 $this->error( $result['info'] );
             }else{
                 $data['img'] = $result['info'][0]['savename'];
-                $this->ajaxReturn( 1, L( "operation_success" ), "/".C( "ftx_attach_path" )."site/".$data['img'] );
+                $this->ajaxReturn( 1, L( "operation_success" ), CDN_ROOT."/upload/"."site/".$data['img'] );
             }
         }else{
             $this->ajaxReturn( 0, L( "illegal_parameters" ) );

@@ -2,15 +2,15 @@
 <html>
 <head>
 <include file="public:head" />
-<css file="__STATIC__/jky/css/article.css" />
 </head>
 <body>
+<include file="public:topbar" /> 
 <include file="public:header" /> 
 
 
 
-<div class="main clear mb20 page007mai">
-	<div class="about page007mai">
+<div class="main">
+	<div class="about container">
 		<div class="about_menu fl">
 			<ul>
 				<li><a <empty name="cid">class="cur"</empty> href="{:U('article/cate')}">文章首页</a></li>
@@ -19,7 +19,7 @@
 				</volist>
 			</ul>
 		</div>
-		<div class="about_contain fr">
+		<div class="about_contain">
 			<div class="about_tit"><empty name="cid">文章首页<else />{$acats[$cid]['name']}</empty></div>
 			<div class="about_content">
 				<ul class="about_notes">

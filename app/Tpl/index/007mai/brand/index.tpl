@@ -3,7 +3,8 @@
 <head>
 <include file="public:head" />
 <ftx:load type="css" href="
-__STATIC__/assets/pc/css/good.css
+__STATIC__/assets/pc/css/good.css,
+__STATIC__/assets/pc/css/brand.css
 "/>
 </head>
 <body>

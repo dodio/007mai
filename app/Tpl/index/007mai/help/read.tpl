@@ -2,7 +2,7 @@
 <html>
 <head>
 <include file="public:head" />
-<load href="__STATIC__/assets/css/help.css" />
+<load href="__STATIC__/assets/pc/css/help.css" />
 </head>
 <body>
 <include file="topbar"/>

@@ -3,11 +3,11 @@
       <div id="sidenav" class="sidenav">
         <div class="sidenav-nav-wrap">
           <div class="sidenav-nav">
-            <a href="" class="sidenav-item">品牌折扣</a>
-            <a href="" class="sidenav-item">特卖商城</a>
-            <a href="" class="sidenav-item">八块八</a>
-            <a href="" class="sidenav-item">十八块八</a>
-            <a href="#shoppint-index" class="sidenav-item">购物大全</a>
+            <a href="/mall/haitao" class="sidenav-item">品牌折扣</a>
+            <a href="/mall" class="sidenav-item">特卖商城</a>
+            <a href="/ba" class="sidenav-item">八块八</a>
+            <a href="/shiba" class="sidenav-item">十八块八</a>
+            <a href="/#shoppint-index" class="sidenav-item">购物大全</a>
           </div>
           <div class="sidenav-catenav">
             <a target="_blank" href="/index/cate/cid/1" class="sidenav-item ui-tabmenu"><span class="cateicon sdcn-nv"></span><span class="hover_bg"></span><span class="hover_text">女装</span></a>

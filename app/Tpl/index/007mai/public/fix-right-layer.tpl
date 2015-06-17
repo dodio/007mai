@@ -1,5 +1,5 @@
 <div class="container" style="_position:relative;">
-	<div class="fix-right-layer" id="fix-right-layer" style="display: none; right: 0px;">
+	<div class="fix-right-layer" id="fix-right-layer" style="right: 0px;">
 	    <div class="fix-right-body">
 	        <div class="fix-right-middle" style="overflow: visible; display: block;">
 	            <div class="img-span">
@@ -47,5 +47,34 @@
             
 	    </div>
 	</div>
-
 </div>
+<script>
+
+    $(function(){
+        var rightbar = $("#fix-right-layer");
+        var width = rightbar.width();
+        $.scrollManager.add({
+          up:function(){
+            rightbar.animate({right:0},300);
+          },
+          down:function(){
+            rightbar.animate({right:-width},300);
+          }
+        });
+
+          //右侧窗口侧边栏会员中心按钮,检测是否登录
+        $('.mark',rightbar).bind('click', function(){
+            if(!$.ftxia.dialog.islogin()) return !1;
+        });
+
+        /* 右侧浮动层*/
+        $('.img-span',rightbar).hover(function(){
+            var bar = $(this).find(".tab-bar-js");
+            bar.css('right','60px').show().animate({right:"35px"},1000);
+        },function(){
+           $(this).find(".tab-bar-js").hide();
+        });
+        $('.gotop',rightbar).click(function() {$("html, body").animate({ scrollTop: 0 }, 120);});
+    });
+
+</script>

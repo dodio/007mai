@@ -1,59 +1,26 @@
-<div class="side_nav_wrap page007mai">
-	
-<div id="sidenav" class="side_nav">
-  <div class="logo">
-    <a title="{:C('ftx_site_name')}" href="{:C('ftx_site_url')}" target="_blank"><img alt="" src="{:C('ftx_site_navlogo')}" width="145" height="70"></a>
-  </div>
-  <div class="content">
-    <div id="side_nav_top" class="bd">
-      <ul>
-        <li class="bd4"><a target="_blank" href="/brand">品牌折扣</a>
-        </li>
-        <li class="bd0"><a target="_blank" href="/mall" target="_blank">特卖商城</a>
-        </li>
-        <li class="bd2"><a target="_blank" href="/ba">八块八　</a>
-        </li>
-        <li class="bd3"><a target="_blank" href="/shiba">十八块八</a>
-        </li>
-      </ul>
-    </div>
-    <div class="line">
-    </div>
-    <div class="bdc">
-      <ul>
-        <li class="ui-tabmenu bdc0">
-          <a target="_blank" href="/index/cate/cid/1"><i></i>女装/裙子/裤子</a>
-        </li>
-        <li class="ui-tabmenu bdc1">
-          <a target="_blank" href="/index/cate/cid/236"><i></i>内衣/睡衣/袜子</a>
-        </li>
-        <li class="ui-tabmenu bdc2">
-          <a target="_blank" href="/index/cate/cid/381"><i></i>男友/男装</a>
-        </li>
-        <li class="ui-tabmenu bdc3">
-          <a target="_blank" href="/index/cate/cid/234"><i></i>鞋子/箱包</a>
-        </li>
-        <li class="ui-tabmenu bdc7">
-          <a target="_blank" href="/index/cate/cid/"><i></i>居家/家纺/玩具</a>
-        </li>
-        <li class="ui-tabmenu bdc13">
-          <a target="_blank" href="/index/cate/cid/5"><i></i>配饰/头饰/手链</a>
-        </li>
-        <li class="ui-tabmenu bdc14">
-          <a target="_blank" href="/index/cate/cid/9"><i></i>美妆/护肤</a>
-        </li>
-        <li class="ui-tabmenu bdc5">
-          <a target="_blank" href="/index/cate/cid/481"><i></i>母婴/孕妇/童装</a>
-        </li>
-      </ul>
-      <form class="search" target="_blank" method="get" action="/index.php" onsubmit="return search_submit(this);">
-        <input type="hidden" name="m" value="search">
-        <input type="hidden" name="a" value="index">
-        <input type="text" name="key" class="txt" autocomplete="off" placeholder="搜索"><input type="submit" value="" class="smt">
-      </form>
-    </div>
-  </div>
-  <div class="side_sub_nav">
+<div id="side_nav_fix_pos">
+    <div class="container sidenav-wrap">
+      <div id="sidenav" class="sidenav">
+        <div class="sidenav-nav-wrap">
+          <div class="sidenav-nav">
+            <a href="" class="sidenav-item">品牌折扣</a>
+            <a href="" class="sidenav-item">特卖商城</a>
+            <a href="" class="sidenav-item">八块八</a>
+            <a href="" class="sidenav-item">十八块八</a>
+            <a href="#shoppint-index" class="sidenav-item">购物大全</a>
+          </div>
+          <div class="sidenav-catenav">
+            <a href="" class="sidenav-item ui-tabmenu"><span class="cateicon sdcn-nv"></span><span class="hover_bg"></span><span class="hover_text">女装</span></a>
+            <a href="" class="sidenav-item ui-tabmenu"><span class="cateicon sdcn-nei"></span><span class="hover_bg"></span><span class="hover_text">内衣</span></a>
+            <a href="" class="sidenav-item ui-tabmenu"><span class="cateicon sdcn-nan"></span><span class="hover_bg"></span><span class="hover_text">男装</span></a>
+            <a href="" class="sidenav-item ui-tabmenu"><span class="cateicon sdcn-xiezi"></span><span class="hover_bg"></span><span class="hover_text">鞋子</span></a>
+            <a href="" class="sidenav-item ui-tabmenu"><span class="cateicon sdcn-jujia"></span><span class="hover_bg"></span><span class="hover_text">居家</span></a>
+            <a href="" class="sidenav-item ui-tabmenu"><span class="cateicon sdcn-peishi"></span><span class="hover_bg"></span><span class="hover_text">配饰</span></a>
+            <a href="" class="sidenav-item ui-tabmenu"><span class="cateicon sdcn-meizhuang"></span><span class="hover_bg"></span><span class="hover_text">美妆</span></a>
+            <a href="" class="sidenav-item"><span class="cateicon sdcn-muying"></span><span class="hover_bg"></span><span class="hover_text">母婴</span></a>
+          </div>
+
+            <div class="side_sub_nav">
 
     <!-- 女装 -->
     <div class="side_sub_nav_i ui-tabdiv">
@@ -429,5 +396,60 @@
       </ul>
     </div>
   </div>
-</div>
-</div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+$(function(){
+    var side_nav = $("#sidenav");
+    var side_sub_nav = $("div.side_sub_nav",side_nav);
+    side_nav.mouseleave(function() {
+      side_sub_nav.fadeOut(200);
+      $('.ui-tabmenu',side_nav).removeClass('cur');
+    });
+    side_nav.xyz_tab(false,function(ele){
+      if(ele){
+        side_sub_nav.fadeIn(200);
+      }else{
+        side_sub_nav.hide();
+      }
+    });
+});
+
+$(function(){
+    var headh = $("#side_nav_fix_pos").offset().top;
+    var sidenav = $("#sidenav");
+    var sidenav_width = sidenav.width();
+    $(".sidenav-nav-wrap",sidenav).width(sidenav_width);
+    $.scrollManager.add({
+      height:headh,
+      up:function(st){
+        sidenav.removeClass("affix");
+      },
+      down:function(st){
+        sidenav.addClass('affix');
+      }
+    });
+
+    $.scrollManager.add({
+      up:function(st,ot){
+        if(st<headh)
+          return;
+        sidenav.show();
+        sidenav.stop(true).animate({width:sidenav_width},200);
+      },
+      down:function(st,ot){
+        if(st<headh){
+          return;
+        }
+        sidenav.stop(true).animate({width:0},200,function(){
+          sidenav.hide();
+        });
+      }
+    });
+
+
+});
+</script>

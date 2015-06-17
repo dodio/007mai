@@ -24,7 +24,9 @@ function Carousel(conf,ele){
   var total = items.length;
   var btns = carousel.find(".carousel-btn");
   var pre = carousel.find(".carousel-btn.cur").index();
-
+  if(pre === -1 ){
+    pre = 0 ;
+  }
 
 
   carousel.on('click',".carousel-btn_pre",function(){

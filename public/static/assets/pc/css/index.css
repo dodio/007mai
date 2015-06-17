@@ -84,7 +84,8 @@
 .baokuan-item .bk-coupon {
   color: #010101;
 }
-.baokuan-item .bk-sell {
+.baokuan-item .bk-sell,
+.baokuan-item .bk-zk {
   font-size: 12px;
   color: #0dbed8;
 }

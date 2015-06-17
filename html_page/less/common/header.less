@@ -1,8 +1,7 @@
 .header{
-  @header_height:100px;
-  height: @header_height;
+  // @header_height:100px;
+  // height: @header_height;
   background-color: #f5f5f5;
-  border-bottom: 1px solid #c1c1c1;
   .logo{
     float: left;
     margin-top: 19px;
@@ -45,6 +44,38 @@
       }
       &:hover{
         text-decoration: none;
+      }
+    }
+  }
+
+  .mainNav{
+    @nav_height:40px;
+    height: @nav_height;
+    background-color: #fff;
+    border-top: 1px solid #c1c1c1;
+    border-bottom: 1px solid #c1c1c1;
+    .navigation{
+      li{
+        float: left;
+        .vm(@nav_height);
+        margin-right: 66px;
+        a{
+          font-size: 20px;
+          color: #282828;
+          &:hover{
+            text-decoration: none;
+          }
+        }
+        &:hover{
+          a{
+            color: @color_blue;
+          }
+        }
+        &.cur{
+          a{
+            color: @color_red;
+          }
+        }
       }
     }
   }

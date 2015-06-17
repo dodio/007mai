@@ -1,21 +1,25 @@
 <notempty name="ad_list">
- <div class="top_bar">
-	<ul id="banner_list" class="banner">
-	<volist name="ad_list" id="ad" key="i">
-		<li style="background:url({:attach($ad['content'],'images')}) no-repeat center center;" ><a  title="{$ad.desc}"   target="_blank" href="{$ad.url}" class="pic"></a></li>
-	</volist>
-	</ul>
-</div>
-  <div class="top_wrap {:C('ftx_site_wc')}">
-    <div class="top_box">
-      <div class="round">
-          <div class="adType"></div>
+ <div id="banner_board_{$board_info.id}" class="carousel">
+    <div class="wrap group">
+        <volist name="ad_list" id="ad" key="i">
+          <div class="carousel-item" <if condition="$i eq 1">style="display: block;" </if> >
+            <div class="banner_item" style="background: url({:attach($ad['content'],'images')}) 50% 50% no-repeat;">
+              <a href="{$ad.url}" target="_blank" title="{$ad.desc}" class="bannerlink"></a>
+            </div>
+          </div>
+        </volist>
+    </div>
+    <div class="carousel-control">
+      <div class="carousel-btns">
+        <volist name="ad_list" id="ad" key="i">
+          <div class="carousel-btn <if condition="$i eq 1"> cur</if>" ></div>
+        </volist>
       </div>
-      <!-- 弄成了全屏不要箭头了 -->
-<!--       <div style="display:none;" class="banner_arrow" data-banner="arrow">
-          <a href="javascript:;" class="arrow_prev" data-arrow="prev"><i></i></a>
-          <a href="javascript:;" class="arrow_next" data-arrow="next"><i></i></a>
-      </div> -->
     </div>
   </div>
+  <script>
+    $(function(){
+      $("#banner_board_{$board_info.id}").carousel();
+    });
+  </script>
 </notempty>

@@ -47,68 +47,39 @@
 </if>
 </notempty>
 <!-- 页脚 -->
-<div class="foot">
-	<div class="white_bg page007mai">
-		<div class="xd_info page007mai">
-			<div class="jky-info fl">
-				<if condition="C('ftx_site_flogo') neq ''">
-					<h2><img src="{:C('ftx_site_flogo')}" height="38" /></h2>
-				<else />
-					<h2><img src="__STATIC__/assets/images/logo.jpg" height="38" /></h2>
-				</if>
-<!-- 				<div class="attentionlist">
-					<a class="sina" href="{:C('ftx_sina_url')}" target="_blank" rel="nofollow">新浪微博</a>
-					<a class="zone" href="{:C('ftx_qzone_url')}" target="_blank" rel="nofollow">QQ空间</a>
-					<a class="tt" href="{:C('ftx_tenxun_url')}" target="_blank" rel="nofollow">腾讯微博</a>
-				</div> -->
-			</div>
-			<div class="fl">
-				<div class="abouts">
-					<ul>
-				<li class="tit">关于我们</li>
-				<li><a href="{:U('help/read',array('id'=>1))}" target="_blank">关于我们</a></li>
-				<li><a href="{:U('help/read',array('id'=>3))}" target="_blank">联系我们</a></li>
-				<!-- <li><a href="{:U('help/read',array('id'=>2))}" target="_blank">广告合作</a></li> -->
-				<!-- <li><a href="{:U('/baoming')}" target="_blank">商家报名</a></li> -->
-					</ul>
-				</div>
-					<div class="help">
-					<ul>
-						<li class="tit">用户帮助</li>
-						<li><a href="{:U('help/read',array('id'=>6))}" target="_blank">常见问题</a></li>
-						<li><a href="{:U('help/qianggou')}" target="_blank">抢购小技巧</a></li>
-						<!-- <li><a href="{:U('article/index')}" target="_blank">文章中心</a></li> -->
-					</ul>
-				</div>
-				<div class="user">
-					<ul>
-						<li class="tit">会员服务</li>
-						<li><a href="{:U('user/register')}" target="_blank">免费注册</a></li>
-						<li><a href="{:U('user/login')}" target="_blank">登录本站</a></li>
-						<li><a href="{:U('forget/index')}" target="_blank">找回密码</a></li>
-					</ul>
-				</div>
-			</div>
-			<if condition="C('ftx_site_weixin') neq ''">
-				<div class="fl">
-					<span class="tit">微信服务号</span>
-					<br />
-					<img src="{:C('ftx_site_weixin')}" width="100" height="100" />
-				</div>
-			</if>
-			<if condition="C('ftx_site_browser') neq ''">
-				<div style="float:left;margin: 0px 0 0 44px;">
-					<span class="tit">手机版</span>
-					<br />
-					<img src="{:C('ftx_site_browser')}" width="100" height="100" />
-				</div>
-			</if>
-		</div>
-		<p class="f_miibeian page007mai"><a href="http://www.miibeian.gov.cn/" rel="nofollow" target="_blank">{:C('ftx_site_icp')}</a> © 2010-2015 007mai.com all Rights Reserved
+
+<div class="footer">
+    <div class="container group">
+      <div class="help-group">
+        <div class="help-icon icon"></div>
+        <div class="help-topic">了解007买</div>
+        <div class="help-item"><a href="/help/aboutus" target="_blank">关于我们</a></div>
+        <div class="help-item"><a href="/help/disclaimer" target="_blank">免责申明</a></div>
+        <div class="help-item"><a href="/help/question" target="_blank">常见问题</a></div>
+        <div class="help-item highlight"><a href="/help/qingbao" target="_blank">情报规则</a></div>
+        <div class="help-item highlight"><a href="/help/exchange" target="_blank">兑换流程</a></div>
+      </div>
+
+      <div class="help-group">
+        <div class="help-icon icon"></div>
+        <div class="help-topic">商家合作</div>
+        <div class="help-item"><a href="/help/seller" target="_blank">商家合作</a></div>
+      </div>
+
+      <div class="help-group">
+        <div class="help-icon icon"></div>
+        <div class="help-topic">会员服务</div>
+        <div class="help-item"><a href="/user/login" target="_blank">用户登录</a></div>
+        <div class="help-item"><a href="/user/register" target="_blank">注册</a></div>
+        <div class="help-item"><a href="/forget" target="_blank">找回密码</a></div>
+      </div>
+    </div>
+    <div class="container mt30 copyright">
+    	<p class="f_miibeian tac page007mai"><a href="http://www.miibeian.gov.cn/" rel="nofollow" target="_blank">{:C('ftx_site_icp')}</a> © 2010-2015 007mai.com all Rights Reserved
 		{:C('ftx_statistics_code')}
 		</p>
-	</div>
-</div>
+    </div>
+  </div>
 
 <!-- /页脚 -->
 <include file="public:fix-right-layer" />
@@ -125,7 +96,6 @@ var FTXIAER = {
 var lang = {};
 <volist name=":L('js_lang')" id="val">lang.{$key} = "{$val}";</volist>
 </script>
-
 <ftx:load type="js" href="
 __STATIC__/js/jquery/plugins/formvalidator.js,
 __STATIC__/js/ftxia.js,

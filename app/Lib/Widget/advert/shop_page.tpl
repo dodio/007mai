@@ -47,7 +47,7 @@
      <?php if($title['content'] != ""){ ?> <div class="l-title_bar" style="{:background($title['desc'],'images')}" >
        <div class="container" style="{:background($title['content'],'images')} height:100%;"></div>
      </div><?php } ?>
-     <div class="group middle l-floor page007mai">
+     <div class="group container l-floor">
        <div class="ju-itemlist"> 
         <ul class="group">
          <?php 

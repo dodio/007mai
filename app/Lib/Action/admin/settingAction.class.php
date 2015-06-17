@@ -5,7 +5,7 @@ class settingAction extends BackendAction {
     public function _initialize() {
         parent::_initialize();
         $this->_mod = D('setting');
-		$cate_data = D('items_cate')->cate_data_cache();
+		$cate_data = D('items_cate')->cate_data_cache(true);
         $this->assign('cate_data', $cate_data);
     }
 

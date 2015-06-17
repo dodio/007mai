@@ -2,6 +2,9 @@
 <html>
 <head>
 <include file="public:head" />
+<ftx:load type="css" href="
+__STATIC__/assets/pc/css/index.css
+"/>
 </head>
 <body>
 <include file="public:topbar" />

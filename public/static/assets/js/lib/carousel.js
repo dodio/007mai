@@ -1,4 +1,4 @@
-(function($){
+;(function($){
 
 function Carousel(conf,ele){
   conf = $.extend({
@@ -20,7 +20,7 @@ function Carousel(conf,ele){
 
   var items = carousel.find(".carousel-item");
       items.width(conf.width);
-
+  carousel.find(".wrap").width(10000);
   var total = items.length;
   var btns = carousel.find(".carousel-btn");
   var pre = carousel.find(".carousel-btn.cur").index();

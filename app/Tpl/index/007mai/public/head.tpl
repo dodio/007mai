@@ -22,9 +22,6 @@ __STATIC__/assets/pc/css/global.css,
 __STATIC__/assets/pc/css/alert.css
 "/>
 
-<ftx:load type="css" href="
-__STATIC__/assets/pc/css/index.css
-"/>
 
 <ftx:load type="js" href="
 __STATIC__/assets/js/jquery/jquery.js,

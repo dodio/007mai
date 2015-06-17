@@ -1,5 +1,5 @@
 
-(function($){
+;(function($){
   var pluginName = "cursorMask";
 
   function Plugin(ele,conf){

@@ -2,13 +2,14 @@
 <html>
 <head>
 <include file="public:head" />
-<link rel=stylesheet type=text/css href="__STATIC__/assets/css/good.css" />
+<link rel=stylesheet type=text/css href="__STATIC__/assets/pc/css/good.css" />
 </head>
 <body>
+<include file="public:topbar" />
 <include file="public:header" />
 <notempty name="cats"> 
 <div class="jiu-nav-main jiu-nav-main-2" id="seclevel">
-	<div class="jiu-nav page007mai  seclevelinner">
+	<div class="jiu-nav container  seclevelinner">
 		<div class="nav-item  ">
 			<div class="item-list">
 				<ul>
@@ -24,12 +25,11 @@
 </div>
 </notempty>
 
-<include file="public:nav-classify" />
-<div class="side_nav_fix_pos"></div>
-<div class="main page007mai clear">
-<ul class="goods-list {:C('ftx_site_wc')}">
-		<volist name="items_list" id="item" key="i" mod="4">
-		<li  class="<eq name="mod" value="3"> last</eq>">
+<include file="public:sidenav" />
+<div class="main container group">
+<ul class="goods-list">
+		<volist name="items_list" id="item" key="i" mod="3">
+		<li  class="<eq name="mod" value="2"> last</eq>">
 			<div class="sid_{$item.sellerId}  list-good   {$item.class} " >
 				<div class="good-pic">
 					<a href="{$item['click_url']}" target="_blank"><img src='__STATIC__/assets/images/blank.gif' data-original='{:attach(get_thumb($item['pic_url'], '_b'),'item')}' alt="{$item.title}" class="lazy"   /></a>

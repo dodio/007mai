@@ -12,14 +12,14 @@
   <div class="label fl">类型：</div>
   <div class="fl ml15">
     <volist name="erji" id="er">
-    <div class="erji-box">
-      <a href="/index/cate/cid/{$er.id}#root_cates" class="erji <if condition="$cid eq $er['id']">cur</if>">{$er.name}</a>
+    <div class="erji-box group">
+      <a href="{:U(__ACTION__,array("cid"=>$er['id']))}#root_cates" class="erji <if condition="$cid eq $er['id']">cur</if>">{$er.name}</a>
       <div class="sanji">
         <?php 
           $sanji = $cate_list['s'][$er['id']];
          ?>
         <volist name="sanji" id="san">
-        <a href="/index/cate/cid/{$san.id}#root_cates" <if condition="$cid eq $san['id']">class="cur"</if>>{$san.name}</a>
+        <a href="{:U(__ACTION__,array("cid"=>$san['id']))}#root_cates" <if condition="$cid eq $san['id']">class="cur"</if>>{$san.name}</a>
         </volist>
       </div>
     </div>

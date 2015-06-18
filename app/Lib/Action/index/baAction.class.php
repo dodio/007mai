@@ -5,7 +5,7 @@ class baAction extends ItemlistAction {
 		$sort	=	I('sort', 'default', 'trim'); //排序
 		$status =	I('status', 'all', 'trim'); //排序
 		$order	=	'ordid asc ';
-		$tag	=	I('tag');
+		$tag	=	I('cid');
 
 		$cinfo = $this->_cate_mod->cate_info($cid);
 		$order .= getSort($sort,$cinfo['sort']);
@@ -35,15 +35,20 @@ class baAction extends ItemlistAction {
 		}else{
 			$tag_list = $cate_list['p'];
 		}
-		$this->assign('tag_list',$tag_list);
+		
+		if(!$tag){
+			$tag=1;
+		}
+
+		$list_info['cid']=$tag;
 		$this->assign('tag',$tag);
-		$this->assign('cid',$cid);
+
+		$this->assign('cid',$tag);
 		$this->assign('taginfo',$taginfo);
 		$this->assign('cinfo',$cinfo);
-
 		$list_info['sort']=$sort;
 		$list_info['status']=$status;
-		$list_info['cid']=$cid;
+
 		$page_size = C('ftx_index_page_size');
 		$p = I('p',1, 'intval'); //页码
 		$list_info['p']=$p;
@@ -71,6 +76,7 @@ class baAction extends ItemlistAction {
 
 		
 		$this->assign('items_list', $items['item_list']);
+		$this->assign('seller_arr', $items['seller_arr']);
 
 		$this->assign('list_info',$list_info);
 

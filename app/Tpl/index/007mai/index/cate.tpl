@@ -7,6 +7,7 @@ __STATIC__/assets/pc/css/cate.css
 "/>
 </head>
 <body>
+<?php $action = __ACTION__; ?>
 <include file="public:topbar" />
 <include file="public:header" />
 
@@ -17,6 +18,7 @@ __STATIC__/assets/pc/css/cate.css
 <block name="root_cates">
   <include file="index:root_cates"/>
 </block>
+
 <div class="container mt20 group">
   <div class="shop_promote fl">
     <div class="sp-title mb10">优秀店铺</div>

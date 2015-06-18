@@ -1,9 +1,9 @@
 <div id="rate-order" class="rate-order mt10 group">
-  <a href="{:U('index/cate',array('cid'=>$cid,'price'=>$list_info['price']))}#root_cates"  class="rate <if condition="$list_info['sort'] eq 'default'"> cur </if> ">默认</a>
-  <a href="{:U('index/cate',array('cid'=>$cid,'sort'=>'new','price'=>$list_info['price']))}#root_cates" class="rate <if condition="$list_info['sort'] eq 'new'"> cur </if> ">最新<i class="rate-icon icon"></i></a>
-  <a href="{:U('index/cate',array('cid'=>$cid,'sort'=>'hot','price'=>$list_info['price']))}#root_cates" class="rate <if condition="$list_info['sort'] eq 'hot'"> cur </if> ">销量<i class="rate-icon icon"></i></a>
-  <a href="{:U('index/cate',array('cid'=>$cid,'sort'=>'rate','price'=>$list_info['price']))}#root_cates" class="rate <if condition="$list_info['sort'] eq 'rate'"> cur </if> ">折扣<i class="rate-icon icon"></i></a>
-  <a href="{:U('index/cate',array('cid'=>$cid,'sort'=>'price','price'=>$list_info['price']))}#root_cates" class="rate <if condition="$list_info['sort'] eq 'price'"> cur </if> ">价格<i class="rate-icon icon"></i></a>
+  <a href="{:U(__ACTION__,array('cid'=>$cid,'price'=>$list_info['price']))}#root_cates"  class="rate <if condition="$list_info['sort'] eq 'default'"> cur </if> ">默认</a>
+  <a href="{:U(__ACTION__,array('cid'=>$cid,'sort'=>'new','price'=>$list_info['price']))}#root_cates" class="rate <if condition="$list_info['sort'] eq 'new'"> cur </if> ">最新<i class="rate-icon icon"></i></a>
+  <a href="{:U(__ACTION__,array('cid'=>$cid,'sort'=>'hot','price'=>$list_info['price']))}#root_cates" class="rate <if condition="$list_info['sort'] eq 'hot'"> cur </if> ">销量<i class="rate-icon icon"></i></a>
+  <a href="{:U(__ACTION__,array('cid'=>$cid,'sort'=>'rate','price'=>$list_info['price']))}#root_cates" class="rate <if condition="$list_info['sort'] eq 'rate'"> cur </if> ">折扣<i class="rate-icon icon"></i></a>
+  <a href="{:U(__ACTION__,array('cid'=>$cid,'sort'=>'price','price'=>$list_info['price']))}#root_cates" class="rate <if condition="$list_info['sort'] eq 'price'"> cur </if> ">价格<i class="rate-icon icon"></i></a>
 </div>
 <script>
   $(function(){

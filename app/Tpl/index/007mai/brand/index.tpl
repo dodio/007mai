@@ -35,7 +35,7 @@ __STATIC__/assets/pc/css/brand.css
     </div>
 </div>
 
-<div class="bmain container group tag-list"">
+<div class="bmain container group tag-list">
 
 <div class="brand-box">
 <volist name="lists" id="val">

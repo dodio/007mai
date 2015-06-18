@@ -38,7 +38,7 @@
 						</li>
 						<li>
 							<input type="hidden" name="do" id="do" value="savemsg" />
-							<input type="submit" class="smt smt1" value="立即发送">
+							<input type="submit" class="smt btn smt1" value="立即发送">
 						</li>
 					</ul>
 				</div>

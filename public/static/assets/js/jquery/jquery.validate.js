@@ -856,7 +856,7 @@
 			}
 		}
 	});
-})(jQuery);; (function($) {
+})(jQuery); (function($) {
 	var ajax = $.ajax;
 	var pendingRequests = {};
 	$.ajax = function(settings) {

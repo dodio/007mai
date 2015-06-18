@@ -8,7 +8,6 @@ a:visited { text-decoration: none; }
 a:hover { text-decoration: none; }
 a:active { text-decoration: none; }
 form label.checking { padding-left:18px; background:transparent url(../images/checking.gif) no-repeat; margin-left:5px; font-style:italic; color:#9C9C9C; display:none; }
-.footer{text-align:center;padding-top:20px;height:30px;margin-top:20px;}
 .c-FA7820 { color:#FA7820; font-weight:bold; font-family:Verdana; }
 .c-ED4E8E { color:#ED4E8E; font-weight:bold; font-family:Verdana; }
 .c-0AB025 { color:#0AB025; font-weight:bold; font-family:Verdana; }
@@ -224,7 +223,8 @@ background-color:#FFFFFF; display:none; }
 .btn_addPic { display: inline-block; position: relative; height: 45px; overflow: hidden; background:url(../images/user/up_avatar_button.gif); color: #999999; cursor: pointer; width:172px; margin-left:139px; margin-top:60px; outline: none; }
 a.btn_addPic:active { star:~"expression(this.onFocus=this.blur())";
 }
-.filePrew { display: block; width: 140px; height: 39px; font-size: 100px; /* 增大不同浏览器的可点击区域 */ cursor: pointer; opacity: 0; /* 实现的关键点 */  filter:alpha(opacity: 0);/* 兼容IE */
+.filePrew { display: block; width: 140px; height: 39px; font-size: 100px;
+  cursor: pointer; opacity: 0; filter:~"alpha(opacity: 0)";
 }
 .up_avatar_bg { width:450px; height:253px; background:url(../images/user/up_avatar_bg.jpg) }
 .up_avatar_bg .img-button { margin-top:20px; margin-left:190px }

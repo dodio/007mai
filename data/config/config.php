@@ -27,6 +27,11 @@ return array(
 		'back' => array("admin/"),
 		'm' => array("m/"),
     ),
+    
+    'TMPL_PARSE_STRING'  =>array(
+     '__STATIC__' => CDN_ROOT, 
+     '__UPLOAD__' => CDN_ROOT.'/upload'
+    ),
 
   'TITLE_BAN_WORDS' => require(CONF_PATH."title_ban_words.php"),
   'score_action' => require(CONF_PATH."score_action.php")

@@ -18,7 +18,7 @@ __STATIC__/assets/pc/css/index.css
 
  <div class="container mt20">
     <div class="chao-title"><div class="chao-title-text">热门品牌</div></div>
-    <include file="public:brand-list"/>
+    <include file="brand:brand-list"/>
   </div>
 
 

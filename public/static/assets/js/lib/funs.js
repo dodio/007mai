@@ -911,14 +911,4 @@ else{
 	IE=0;
 }
 
-function tao_perfect_click($t){
-	u=$t.attr('href').replace(/&rf=[\w-%\.]+&/,'&rf='+encodeURIComponent(SITEURL)+'&');
-	setCookie('tao_click_url',u,30);
-	var url=$t.attr('a_jump_click');
-	if(URL_COOKIE==0){
-		url+='&url='+encodeURIComponent(u);
-	}
-	$t.attr('href',url);
-	return true;
-}
 

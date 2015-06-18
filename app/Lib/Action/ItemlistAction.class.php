@@ -70,6 +70,8 @@ class ItemlistAction extends FirstendAction {
       }
 
       $this->assign('items_list', $items['item_list']);
+      $this->assign('seller_arr',$items['seller_arr']);
+      
       $this->assign('list_info',$list_info);
 
       if(C('ftx_site_cache')){
@@ -116,6 +118,7 @@ class ItemlistAction extends FirstendAction {
      */
     protected function _deal_item_list(&$items_list){
         $items = array();
+        $seller_arr = array();
         $cate_data = $this->_cate_mod->cate_data_cache();
         foreach($items_list as $key=>$val){
           $items['item_list'][$key]     = $val;
@@ -139,10 +142,11 @@ class ItemlistAction extends FirstendAction {
           $items['item_list'][$key]['price'] = number_format($val['price'],1);
           $items['item_list'][$key]['coupon_price'] = number_format($val['coupon_price'],1);
           if($val['sellerId']){
-            $items['seller_arr'][] = $val['sellerId'];
+            $seller_arr[$val['sellerId']] = true;
           }
-          
         }
+
+        $items['seller_arr'] = array_keys($seller_arr);
         return $items;
     }
 

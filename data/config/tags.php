@@ -14,9 +14,6 @@ return array(
     'view_template' => array(
         'basic_template','_overlay'=>1, //自动定位模板文件
     ),
-    'view_filter' => array(
-        'content_replace', //路径替换
-    ),
 	'action_begin' => array(
 		'OnlineCheck', //在线检测
 	),

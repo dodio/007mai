@@ -1,0 +1,118 @@
+@import "./lib/funclib.less";
+@import "./common/var.less";
+@import "./mixin/show-item.less";
+@import "./inc/roote_cates.less";
+
+.shop_promote{
+  width: 206px;
+  .sp-title{
+    .vm(32px);
+    border-left: 4px solid #cc0000;
+    background-color: #f9f9f9;
+    text-indent: 10px;
+    font-size: 18px;
+    color: #000;
+  }
+  @import "./mixin/shop-item.less";
+  .shop-item(206px);
+}
+
+.cate-right{
+  width: 884px;
+}
+.box{
+  border: 1px solid #dddddd;
+  .label{
+    font-size: 16px;
+  }
+}
+.subcates{
+  padding: 10px;
+  padding-bottom: 0;
+  border-bottom: 1px solid #f5f5f5;
+  font-size: 14px;
+  .erji{
+    color: #ef5c5c;
+    display: block;
+    float: left;
+  }
+  .sanji{
+    float: left;
+    width: 730px;
+    margin-left: 10px;
+    a{
+      color: #646464;
+      display: block;
+      margin-bottom: 10px;
+      float: left;
+      margin-left: 10px;
+    }
+  }
+  .cur{
+    color:@color_red!important;
+  }
+}
+
+.price-filter{
+  margin: 10px;
+  a{
+    display: block;
+    float: left;
+    margin-left: 15px;
+    .vm(26px);
+    &:hover{
+      text-decoration: none;
+      color: @color_blue;
+    }
+    &.cur{
+      background-color: @color_red;
+      color: #fff;
+      padding: 0 10px;
+      text-decoration: none;
+    }
+  }
+}
+
+.rate-order{
+  height: 36px;
+  background-color: #f5f5f5;
+  width: 100%;
+  .rate,.toggle_effect{
+    display: block;
+    .vm(36px);
+    float: left;
+    margin-left: 10px;
+    margin-right: 25px;
+    color: #646464;
+    &.cur{
+      color: #000;
+      .icon-rate{
+        background-position: -384px -2px;
+      }
+    }
+  }
+  .toggle_effect{
+    float: right;
+    width: 50px;
+    text-align: center;
+    margin-right: 0;
+    background-color: #696969;
+    color: #fff;
+    &:hover{
+      background-color: #7B3232;
+    }
+  }
+}
+
+.itemlist{
+  ul li{
+    float: left;
+    width: 212px;
+    margin-bottom: 25px;
+    margin-right: 12px;
+    height: 300px;
+  }
+  
+  @import "./mixin/item-item.less";
+  .item-item(212px);
+}

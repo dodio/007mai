@@ -1,0 +1,44 @@
+.item-item(@width){
+  .show-item(@width);
+  
+  .item{
+    display: block;
+    .item-info{
+      margin-top: 5px;
+      .item-price{
+        font-size: 16px;
+        color: #010101;
+        s{
+          font-size: 12px;
+          color: #969696;
+        }
+      }
+      .item-sell{
+        color: #0dbed8;
+        font-size: 12px;
+        margin-top: 3px;
+      }
+    }
+    .item-shop{
+      margin-top: 10px;
+      .icon{
+        margin-right: 5px;
+      }
+      a{
+        color: #646464;
+      }
+    }
+  }
+
+  .show-hover:hover{
+    .item-info .item-price{
+      color: #18F2FA;
+    }
+    .item-shop{
+      color: #aaa;
+      a{
+        color: #eee;
+      }
+    }
+  }
+}

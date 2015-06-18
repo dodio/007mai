@@ -1,11 +1,13 @@
 <div class="left">
 			<div class="user">
 				<div class="user-face">
-					<img src="{:avatar($info['id'], 100)}" width="48" height="48" border="0"/>
+					<a href="{:U('user/avatar')}" title="换头像">
+						<img src="{:avatar($info['id'], 100)}" width="48" height="48" border="0"/>
+					</a>
 				</div>
 				<div class="user-info">
 					<div class="user-nick org_{$info.id}">{$info.username}</div>
-					<div class="user-edit"><a href="{:U('user/avatar')}" class="blue-link">换头像</a>　<a href="{:U('user/info')}" class="blue-link">帐户资料</a></div>
+					<div class="user-edit"> <a href="{:U('user/info')}" class="blue-link">帐户资料</a></div>
 				</div>
 			</div>
 			<notempty name="oauth_list">
@@ -37,7 +39,7 @@
 						<div class="nav-title">
 							<div class="nav-mouse">
 								<div class="icon share"></div>
-								<a href="{:U('user/like')}"><div class="nav-name">我的收藏</div></a>
+								<a href="{:U('user/like')}" target="_blank"><div class="nav-name">我的收藏</div></a>
 							</div> 
 						</div>			 
 					</li>

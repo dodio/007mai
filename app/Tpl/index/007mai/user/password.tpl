@@ -99,7 +99,7 @@ $(function(){
 						</li>
 						<li>
 							<input type="hidden" name="sub" value="1" />
-							<input type="submit" class="smt smt1" value="保存信息">
+							<input type="submit" class="smt btn smt1" value="保存信息">
 						</li>
 					</ul>
 				</div>

@@ -1,0 +1,41 @@
+.shop-item(@width){
+  .show-item(@width);
+  
+  .show-item{
+    &:hover{
+      .show-pic{
+        img{
+          .opac(0.8);
+        }
+      }
+    }
+  }
+
+  .shop{
+    &:hover{
+      .shop-go{
+        background-color: #000;
+        color: #fff;
+        border: 1px solid #000;
+        text-decoration: none;
+      }
+    }
+    .shop-go{
+      display: block;
+      margin: 0 auto;
+      width: 180px;
+      text-align: center;
+      .vm(36px);
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      border: 1px solid #c4c4c4;
+      color: #000;
+      .trans();
+      &:hover{
+        background-color: #aa0000;
+        border: 1px solid #aa0000;
+      }
+    }
+  }
+}

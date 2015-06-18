@@ -1,7 +1,7 @@
 /**
  * comm.js
  */
-(function($){
+;(function($){
   $.fn.extend({xyz_tab:function(c,callback){
       return this.each(function(j){
         var _s = this;
@@ -28,7 +28,6 @@
 })(jQuery);
 
 $(function() {
-
   /**
    * 签到按钮的划出框
    * @type {[type]}
@@ -75,7 +74,7 @@ $(function(){
     if (!$("#afp").length) {
       $("body").prepend('<div id="afp" style="display:none;"><div class="afpc"><p>请按键盘 <strong>CTRL + D</strong> 把'+WEBNICK+'放入收藏夹，折扣信息一手掌握！<a id="af" class="afpa" href="javascript:void(0)" onclick="AddFavorite(true)">加入收藏夹</a><a href="'+SITEURL+'index.php?m=index&a=shortcut" class="desktop">添加到桌面</a></p></div><div class="close_area"><label id="nlraf" onclick="CloseNLRAF(true)" for="check_nlraf"><input type="checkbox" id="check_nlraf" />不再提醒</label><a id="cafp" href="javascript:void(0)" onclick="CloseNLRAF(false)"></a></div></div>')
     }
-    $("#afp").slideDown("slow")
+    $("#afp").slideDown("slow");
   }
 });
   
@@ -88,6 +87,84 @@ $(function(){
       content: score_change.action +":　情报 +" + score_change.score,
       time: 3000
     });
-    $.cookie('score_change',null);
+    $.removeCookie('score_change');
   }
+});
+
+
+$(function(){
+  var root_cates = $("#root_cates .rc_wrap");
+  if(root_cates.length == 0 )
+    return;
+  var top_height = root_cates.offset().top;
+  var height = root_cates.height();
+  $.scrollManager.add({
+    down:function(st,ot){
+      if(st>top_height){
+        root_cates.hide();
+      }
+    },
+    up:function(st,ot){
+      root_cates.css({top:-height}).addClass("affix").show().animate({top:0},300);
+    }
+  });
+
+  $.scrollManager.add({
+    height:height,
+    up:function(){
+      root_cates.removeClass("affix").show();
+    }
+  });
+});
+
+
+$(function(){
+    var side_nav = $("#sidenav");
+    var side_sub_nav = $("div.side_sub_nav",side_nav);
+    side_nav.mouseleave(function() {
+      side_sub_nav.fadeOut(200);
+      $('.ui-tabmenu',side_nav).removeClass('cur');
+    });
+    side_nav.xyz_tab(false,function(ele){
+      if(ele){
+        side_sub_nav.fadeIn(200);
+      }else{
+        side_sub_nav.hide();
+      }
+    });
+});
+
+$(function(){
+    var sidenav = $("#sidenav");
+    if(sidenav.length == 0 )
+      return;
+    var headh = window.sidenav_fix || $("#side_nav_fix_pos").offset().top;
+    var sidenav_width = sidenav.width();
+    $(".sidenav-nav-wrap",sidenav).width(sidenav_width);
+    $.scrollManager.add({
+      height:headh,
+      up:function(st){
+        sidenav.removeClass("affix");
+      },
+      down:function(st){
+        sidenav.addClass('affix');
+      }
+    });
+
+    $.scrollManager.add({
+      up:function(st,ot){
+        if(st<headh)
+          return;
+        sidenav.show();
+        sidenav.stop(true).animate({width:sidenav_width},200);
+      },
+      down:function(st,ot){
+        if(st<headh){
+          return;
+        }
+        sidenav.stop(true).animate({width:0},200,function(){
+          sidenav.hide();
+        });
+      }
+    });
 });

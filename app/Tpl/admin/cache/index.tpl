@@ -11,7 +11,7 @@
 
 			<thead>
 				<tr>
-					<th width="3%" align="left"><input type="checkbox" checked name="checkall" class="J_checkall"/></th>
+					<th width="3%" align="left"><input type="checkbox" name="checkall" class="J_checkall"/></th>
 					<th width="40%" align="left">缓存目录</th>
 					<th width="20%" align="left">描述</th> 
 					<th width="37%" align="left">说明</th> 
@@ -19,37 +19,37 @@
 			</thead>
 
 			<tr>
-				<td width="10"><label><input type="checkbox" checked value="field" name="type" class="mr5" data-uri="{:U('cache/clear', array('type'=>'field'))}"> </label></td>
+				<td width="10"><label><input type="checkbox" value="field" name="type" class="mr5" data-uri="{:U('cache/clear', array('type'=>'field'))}"> </label></td>
 				<td width="120"><img src="/static/images/admin/folde.gif" width="16" height="14"> data/runtime/Data/_fields </td>
 				<td>{:L('field_cache')}</td>
 				<td><span class="gray mr10">{:L('field_cache_desc')}</span><span id="field_ifm"></span></td>
 			</tr>
 			<tr>
-				<td><label><input type="checkbox" checked value="tpl" name="type" class="mr5" data-uri="{:U('cache/clear', array('type'=>'tpl'))}"></label></td>
+				<td><label><input type="checkbox" value="tpl" name="type" class="mr5" data-uri="{:U('cache/clear', array('type'=>'tpl'))}"></label></td>
 				<td><img src="/static/images/admin/folde.gif" width="16" height="14"> data/runtime/Cache </td>
 				<td> {:L('tpl_cache')}</td>
 				<td><span class="gray mr10">{:L('tpl_cache_desc')}</span><span id="tpl_ifm"></span></td>
 			</tr>
 			<tr>
-				<td><label><input type="checkbox" checked value="data" name="type" class="mr5" data-uri="{:U('cache/clear', array('type'=>'data'))}"></label></td>
+				<td><label><input type="checkbox" value="data" name="type" class="mr5" data-uri="{:U('cache/clear', array('type'=>'data'))}"></label></td>
 				<td><img src="/static/images/admin/folde.gif" width="16" height="14"> data/runtime/Data </td>
 				<td> {:L('data_cache')}</td>
 				<td><span class="gray mr10">{:L('data_cache_desc')}</span><span id="data_ifm"></span></td>
 			</tr>
 			<tr>
-				<td><label><input type="checkbox" checked value="runtime" name="type" class="mr5" data-uri="{:U('cache/clear', array('type'=>'runtime'))}"> </label></td>
+				<td><label><input type="checkbox" value="runtime" name="type" class="mr5" data-uri="{:U('cache/clear', array('type'=>'runtime'))}"> </label></td>
 				<td><img src="/static/images/admin/folde.gif" width="16" height="14"> data/runtime/~runtime.php </td>
 				<td>{:L('runtime_cache')}</td>
 				<td><span class="gray mr10">{:L('runtime_cache_desc')}</span><span id="runtime_ifm"></span></td>
 			</tr>
 			<tr>
-				<td><label><input type="checkbox" checked value="logs" name="type" class="mr5" data-uri="{:U('cache/clear', array('type'=>'logs'))}"></label></td>
+				<td><label><input type="checkbox" value="logs" name="type" class="mr5" data-uri="{:U('cache/clear', array('type'=>'logs'))}"></label></td>
 				<td><img src="/static/images/admin/folde.gif" width="16" height="14"> data/runtime/Logs</td>
 				<td> {:L('logs_cache')}</td>
 				<td><span class="gray mr10">{:L('logs_cache_desc')}</span><span id="logs_ifm"></span></td>
 			</tr>
 			<tr>
-				<td><label><input type="checkbox" checked value="js" name="type" class="mr5" data-uri="{:U('cache/clear', array('type'=>'js'))}"> </label></td>
+				<td><label><input type="checkbox" value="js" name="type" class="mr5" data-uri="{:U('cache/clear', array('type'=>'js'))}"> </label></td>
 				<td><img src="/static/images/admin/folde.gif" width="16" height="14">public/static/dist_js
           <notempty name="combile_css_dirs">
             <volist name="combile_css_dirs" id="dir"><br><img src="/static/images/admin/folde.gif" width="16" height="14">{$dir}/dist_css</volist>
@@ -60,14 +60,14 @@
 			</tr>
 
 			<tr>
-				<td><label><input type="checkbox" checked value="api" name="type" class="mr5" data-uri="{:U('cache/clear', array('type'=>'api'))}"> </label></td>
+				<td><label><input type="checkbox" value="api" name="type" class="mr5" data-uri="{:U('cache/clear', array('type'=>'api'))}"> </label></td>
 				<td><img src="/static/images/admin/folde.gif" width="16" height="14"> data/runtime/FtxiaAPI</td>
 				<td>飞天侠API缓存</td>
 				<td><span class="gray mr10">清空飞天侠开放平台API缓存文件</span><span id="api_ifm"></span></td>
 			</tr>
 
 			<tr>
-				<td><label><input type="checkbox" checked value="taobao" name="type" class="mr5" data-uri="{:U('cache/clear', array('type'=>'taobao'))}"> </label></td>
+				<td><label><input type="checkbox" value="taobao" name="type" class="mr5" data-uri="{:U('cache/clear', array('type'=>'taobao'))}"> </label></td>
 				<td><img src="/static/images/admin/folde.gif" width="16" height="14"> data/runtime/TaobaoAPI</td>
 				<td>淘宝API缓存</td>
 				<td><span class="gray mr10">清空阿里妈妈API缓存文件</span><span id="taobao_ifm"></span></td>

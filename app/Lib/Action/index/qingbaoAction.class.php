@@ -65,6 +65,12 @@
       $this->assign("chanel_id",$chanel_id);
       $subnav = $cate_list['s'][$chanel_id];
       $this->assign('subnav', $subnav);
+      $this->_config_seo(C('ftx_seo_config.cate'), array(
+        'cate_name' => $cinfo['name'],
+        'seo_title' => $cinfo['seo_title'],
+        'seo_keywords' => $cinfo['seo_keys'],
+        'seo_description' => $cinfo['seo_desc'],
+      ));
     }
     
   }

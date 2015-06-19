@@ -1,7 +1,7 @@
 <div class="show-item show-normal item" id="item_{$item.id}">
   <div class="show-pic">
     <a href="{:U('gift/detail', array('id'=>$item['id']))}" target="_blank">
-      <?php if($i < 8 ) { ?>
+      <?php if($i < 16 ) { ?>
       <img src='{:attach(str_replace('_s.'.array_pop(explode('.', $item['img'])), '_b.'.array_pop(explode('.', $item['img'])), $item['img']), 'score_item')}' alt="{$item.title}"  />
       <?php }else{ ?>
       <img src='__STATIC__/assets/images/blank.gif' data-original='<img src="{:attach(str_replace('_s.'.array_pop(explode('.', $item['img'])), '_b.'.array_pop(explode('.', $item['img'])), $item['img']), 'score_item')}' alt="{$item.title}" class="lazy"   />

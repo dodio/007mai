@@ -91,7 +91,7 @@ class loadTag {
         foreach ($files as $value) {
             $content.=file_get_contents(ROOT_PATH ."/" . $value)."\n";
         }
-        $content = $this->minifyCss($content);
+        // $content = $this->minifyCss($content);
 
         file_put_contents($path, $content);
         echo $this->_tag_css($combile_name);

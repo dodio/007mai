@@ -8,6 +8,7 @@ __STATIC__/assets/pc/css/qingbao.css
 "/>
 </head>
 <body>
+<include file="public:topbar" />
 <include file="public:header" />
 
 <div class="container group mt20">

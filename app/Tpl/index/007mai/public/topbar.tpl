@@ -32,6 +32,7 @@
 + "            <ul>"
 + "              <li><a href=\"{:U('user/gift')}\"><i class=\"icon icon-02\"></i><span>我的订单</span></a></li>"
 + "              <li><a href=\"{:U('user/info')}\"><i class=\"icon icon-03\"></i><span>账号设置</span></a></li>"
++ "              <li><a href=\"{:U('user/like')}\"><i class=\"icon icon-01\"></i><span>我的收藏</span></a></li>"
 + "              <li><a href=\"{:U('user/logout')}\" class=\"exit\" ><i class=\"icon icon-04\"></i><span>退出</span></a></li>"
 + "            </ul>"
 + "          </div>"

@@ -89,7 +89,7 @@ class userAction extends UsersAction {
                 $this->assign('from', $from);
                 $this->assign('synlogout', $synlogout);
 				$this->_config_seo(array(
-					'title' => C('ftx_site_name').'登录,登陆'. C('ftx_site_name').'    -    '.C('ftx_site_name'),
+					'title' => '登录,登陆',
 				));
                 $this->display();
             }
@@ -115,7 +115,9 @@ class userAction extends UsersAction {
     public function binding() {
         $user_bind_info = object_to_array(cookie('user_bind_info'));
         $this->assign('user_bind_info', $user_bind_info);
-        $this->_config_seo();
+        $this->_config_seo(array(
+            "title"=>"第三方帐号绑定"
+            ));
         $this->display();
     }
 
@@ -188,7 +190,7 @@ class userAction extends UsersAction {
                 $this->error(C('ftx_reg_closed_reason'));
             }
             $this->_config_seo(array(
-				'title' => ' 注册	-	' . C('ftx_site_name'),
+				'title' => '注册',
 			));
             $this->display();
         }
@@ -253,7 +255,7 @@ class userAction extends UsersAction {
 		$notice = M('article')->where(array('cate_id'=>'1'))->select();
 		$this->assign('notice', $notice);
         $this->_config_seo(array(
-            'title' => L('base_setting') . '	-	' . C('ftx_site_name'),
+            'title' => L('base_setting'),
         ));
         $this->display();
     }
@@ -326,7 +328,7 @@ class userAction extends UsersAction {
             $this->assign('msg', $msg);
         }
         $this->_config_seo(array(
-            'title' => L('edit_password') . '	-	' . C('ftx_site_name'),
+            'title' => L('edit_password'),
         ));
         $this->display();
     }
@@ -346,7 +348,7 @@ class userAction extends UsersAction {
 		$this->assign('union_url', $union_url);
 		$this->assign('share_url', $share_url);
         $this->_config_seo(array(
-            'title' => '邀请好友访问 -	' . C('ftx_site_name'),
+            'title' => '邀请好友访问',
         ));
 
 		$this->display();
@@ -372,7 +374,7 @@ class userAction extends UsersAction {
 		$this->assign('union_list', $union_list);
 		$this->assign('page', $pager->fshow());
 		$this->_config_seo(array(
-            'title' => L('user_union') . '	-	' . C('ftx_site_name'),
+            'title' => L('user_union'),
         ));
 		$this->display();
 	}
@@ -393,7 +395,7 @@ class userAction extends UsersAction {
         $this->assign('page', $pager->fshow());
         $this->_curr_menu('order');
         $this->_config_seo(array(
-            'title' => L('my_gift') . '	-	' . C('ftx_site_name'),
+            'title' => L('my_gift'),
         ));
         $this->display();
     }
@@ -412,7 +414,7 @@ class userAction extends UsersAction {
         $this->assign('page', $pager->fshow());
         $this->assign('score_total', $score_total);
         $this->_config_seo(array(
-            'title' => L('user_score') . '	-	' . C('ftx_site_name'),
+            'title' => L('user_score'),
         ));
         $this->display();
     }
@@ -440,7 +442,7 @@ class userAction extends UsersAction {
         }
         $this->assign('oauth_list', $oauth_list);
         $this->_config_seo(array(
-            'title' => L('user_bind') . '	-	' . C('ftx_site_name'),
+            'title' => L('user_bind'),
         ));
         $this->display();
     }
@@ -499,7 +501,7 @@ class userAction extends UsersAction {
         $this->assign('like_count',$like_count);
         $this->assign('nav_curr', 'like');
         $this->_config_seo(array(
-            'title' => ' 我的收藏 — '.C("ftx_site_name") 
+            'title' => '我的收藏' 
         ));
         $this->display();
     }
@@ -581,7 +583,7 @@ class userAction extends UsersAction {
 			$this->redirect('user/msg');
 		}
 
-        $this->_config_seo(array('title' => '站内信   -  '.C("ftx_site_name") ,));
+        $this->_config_seo(array('title' => '站内信'));
 		$this->display($tpl);
 	}
 
@@ -589,12 +591,12 @@ class userAction extends UsersAction {
 	 * 快递
 	 */
 	public function kuaidi(){
-		$this->_config_seo(array('title' => '快递查询   -  '.C("ftx_site_name") ,));
+		$this->_config_seo(array('title' => '快递查询'));
 		$this->display();
 	}
 
 	public function avatar(){
-        $this->_config_seo(array("title"=>"修改头像 ".C("ftx_site_name") ));
+        $this->_config_seo(array("title"=>"修改头像 "));
 		$this->display();
 	}
 

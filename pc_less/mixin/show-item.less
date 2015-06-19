@@ -68,9 +68,9 @@
     &:hover{
       .show-pic{
         img{
-          -webkit-border-radius: 100px;
-          -moz-border-radius: 100px;
-          border-radius: 100px;
+          -webkit-border-radius: 100%;
+          -moz-border-radius: 100%;
+          border-radius: 100%;
           -webkit-transform: rotate(360deg);
           -moz-transform: rotate(360deg);
           -ms-transform: rotate(360deg);
@@ -82,7 +82,11 @@
   }
   .show-normal{
     &:hover{
-      outline: 2px solid @color_red;
+      @pw:4px;
+      padding: @pw;
+      left: -@pw;
+      top: -@pw;
+      outline: 2px solid #0b8;
     }
   }
 }

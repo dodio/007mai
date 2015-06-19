@@ -1,13 +1,5 @@
-<!doctype html>
-<html>
-<head>
-<include file="public:head" />
-</head>
-<body>
-<include file="public:header" />
+<extend name="index"/>
 
+<block name="ad">
 {:R('advert/index', array(7), 'Widget')}
-
-<include file="public:footer" />
-</body>
-</html>
+</block>

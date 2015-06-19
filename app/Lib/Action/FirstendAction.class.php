@@ -20,6 +20,27 @@ class FirstendAction extends TopAction {
         $mod_cate  = D('items_cate');
         $this->assign('cate_data', $mod_cate->cate_data_cache());
         $this->assign('cate_list', $mod_cate->cate_cache());
+
+        if(!IS_AJAX){
+            //不是ajax 才布置淘点金
+            $action = explode("/", __ACTION__);
+            $m =  $action[1];
+            $a = $action[2];
+            $dianjin = C("TAO_DIAN_JIN");
+            if(!isset($dianjin[$m])){
+                $pid = $dianjin['default'];
+
+            }else{
+                if(isset($dianjin[$m][$a])){
+                    $pid = $dianjin[$m][$a];
+                }elseif(isset($dianjin[$m]['default'])){
+                    $pid = $dianjin[$m]['default'];
+                }else{
+                    $pid = $dianjin['default'];
+                }
+            }
+            $this->assign('taodianjin_pid',$pid);
+        }
     }
     
     /**

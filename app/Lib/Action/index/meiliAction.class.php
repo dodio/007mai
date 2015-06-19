@@ -46,7 +46,7 @@ class meiliAction extends FirstendAction {
 		$this->assign('sort', $sort);
         $this->assign('nav_curr', 'meili');
         $this->_config_seo(array(
-			'title' => '美丽说 — 汇集美丽商品 — ',
+			'title' => '美丽说 — 汇集美丽商品',
 		));
         $this->display();
     }

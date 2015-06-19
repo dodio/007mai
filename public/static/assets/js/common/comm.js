@@ -168,3 +168,106 @@ $(function(){
       }
     });
 });
+
+
+
+
+
+$(function() {
+    if($('.itemlist').length == 0 ){
+      return;
+    }
+  var F_createEle = function(ele){
+          var div = document.createElement('div');
+          div.id = "likeico";
+          div.innerHTML = "<span class='heart_left'></span><span class='heart_right'></span>";
+          ele.append(div);
+      }
+
+  var Mylike_add = function(event) {
+    if(!$.ftxia.dialog.islogin()) return !1;
+   
+          var obj = $(this);
+          var parent = obj;
+          var id = parent.attr('lkid');
+          var s = parent.attr('lks');
+          var gtype = parent.attr("gtype");
+
+          F_createEle(obj);
+          setTimeout(function(){$("#likeico").remove()}, 600);
+          if(s == 1) {
+              // like success
+              parent.attr('lks',0);
+              obj.find('i.like-ico').addClass('l-active');
+              obj.closest('li').find('.like-ceng').show();
+              $("#likeico").removeClass('unliked').addClass('like-big').addClass('demo1');
+              parent.css('display','block');
+          } else {
+              // un like success
+              parent.attr('lks',1);
+              obj.find('i.like-ico').removeClass('l-active');
+              $("#likeico").removeClass('l-active').addClass('unliked').removeClass('demo1');
+              obj.closest('li').find('.like-ceng').hide();
+              parent.css('display','');
+          }
+      }
+
+
+
+
+    $("a.my-like").bind('click', 
+    function() {
+        var pid = $(this).attr("lkid");
+        if (!$.ftxia.dialog.islogin()) return;
+  var obj = $(this);
+        var parent = obj;
+        var id = parent.attr('lkid');
+        var s = parent.attr('lks');
+        var gtype = parent.attr("gtype");
+
+        F_createEle(obj);
+        setTimeout(function(){$("#likeico").remove()}, 600);
+        if(s == 1) {
+            // like success
+            parent.attr('lks',0);
+            obj.find('i.like-ico').addClass('l-active');
+            obj.closest('li').find('.like-ceng').show();
+            $("#likeico").removeClass('unliked').addClass('like-big').addClass('demo1');
+            parent.css('display','block');
+        } else {
+            // un like success
+            parent.attr('lks',1);
+            obj.find('i.like-ico').removeClass('l-active');
+            $("#likeico").removeClass('l-active').addClass('unliked').removeClass('demo1');
+            obj.closest('li').find('.like-ceng').hide();
+            parent.css('display','');
+        }
+
+        $.ajax({
+            url: FTXIAER.root + '/index.php?m=ajax&a=like',
+            type: 'POST',
+            data: {
+                pid: pid
+            },
+            dataType: 'json',
+            success: function(result) {
+                if (result.status == 1) {
+                    $.ftxia.tip({
+                        content: result.msg,
+                        icon: 'success'
+                    });
+                } else if (result.status == 2) {
+                    $.ftxia.tip({
+                        content: result.msg,
+                        icon: 'error'
+                    });
+                } else {
+                    $.ftxia.tip({
+                        content: result.msg,
+                        icon: 'error'
+                    });
+                }
+            }
+        });
+    });
+});

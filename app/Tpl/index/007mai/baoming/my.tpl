@@ -55,8 +55,7 @@
 			</table>
 					<div class="tc f14 mt30 ml20">没有找到您要查询的信息哦，您可以先去<a href="{:U('baoming/index')}" style="color:#0289CD;">报名&gt;&gt;</a></div>
 					</notempty>
-
-							<div class="page"><div class="pageNav"> {$page_bar}</div></div> 
+			<include file="public:pagenav"/>
 		</div>
 		    		</div>
 	</div>

@@ -29,7 +29,7 @@ class goodsAction extends FirstendAction {
 			$this->assign('orig_list',$orig_list);
 			$this->assign('item',$item);
 			$this->_config_seo(array(
-				'title' => '宝贝修改	-	' . C('ftx_site_name'),
+				'title' => '宝贝修改',
 			));
 			$this->display();
 		}
@@ -40,7 +40,7 @@ class goodsAction extends FirstendAction {
 		$orig_list = M('items_orig')->where(array('pass'=>1))->select();
 		$this->assign('orig_list',$orig_list);
 		$this->_config_seo(array(
-			'title' => L('goods_add') . '	-	' . C('ftx_site_name'),
+			'title' => L('goods_add'),
 		));
 		$this->display();
 	}
@@ -84,7 +84,7 @@ class goodsAction extends FirstendAction {
 
 		$this->assign('type', $type);
 		$this->_config_seo(array(
-            'title' => L('my_goods') . '	-	' . C('ftx_site_name'),
+            'title' => L('my_goods'),
         ));
 		$this->display();
 	}
@@ -100,7 +100,7 @@ class goodsAction extends FirstendAction {
 
 		$this->assign('item', $item);
 		$this->_config_seo(array(
-            'title' => '报名管理	-	' . C('ftx_site_name'),
+            'title' => '报名管理',
         ));
 		$this->display();
 	}

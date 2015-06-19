@@ -35,9 +35,7 @@
 					</volist>
 				</ul>
 			</div>
-			<div class="page page2 tr mb10">
-				<div class="pageNav">{$page}</div>
-			</div>
+			<include file="public:pagenav"/>
 		</div>
 	</div>
 </div>

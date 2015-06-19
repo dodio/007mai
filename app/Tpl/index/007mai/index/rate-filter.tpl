@@ -19,7 +19,7 @@
       var all = "show-hover show-flypic show-normal";
       
       var cc = $.cookie("item_list_effect");
-      var e = $.isNumeric(e) ? e : 0;
+      var e = $.isNumeric(cc) ? cc : 0;
       var effect = effect_class[e];
       var btn = $('<a href="javascript:" class="toggle_effect"></a>');
       $("#rate-order").append(btn);

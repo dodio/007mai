@@ -26,9 +26,19 @@ class score_itemAction extends BackendAction
         $map = array();
         ($cate_id = $this->_request('cate_id', 'trim')) && $map['cate_id'] = array('eq', $cate_id);
         ($keyword = $this->_request('keyword', 'trim')) && $map['title'] = array('like', '%'.$keyword.'%');
+
+        ($start_time_min = $this->_request('start_time_min', 'trim')) && $map['start_time'][] = array('egt', strtotime($start_time_min));
+        ($start_time_max = $this->_request('start_time_max', 'trim')) && $map['start_time'][] = array('elt', strtotime($start_time_max)+(24*60*60-1));
+        ($end_time_min = $this->_request('end_time_min', 'trim')) && $map['end_time'][] = array('egt', strtotime($end_time_min));
+        ($end_time_max = $this->_request('end_time_max', 'trim')) && $map['end_time'][] = array('elt', strtotime($end_time_max)+(24*60*60-1));
+
         $this->assign('search', array(
             'keyword' => $keyword,
             'cate_id' => $cate_id,
+            'start_time_min'=>$start_time_min,
+            'start_time_max'=>$start_time_max,
+            'end_time_min'=>$end_time_min,
+            'end_time_max'=>$end_time_max
         ));
         return $map;
     }

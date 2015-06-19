@@ -53,9 +53,7 @@
 						<input type="submit" value="删除" onclick='return confirm("确定要删除?")' />
 					</div>
 				</form>
-				<div class="page page3">
-					<div class="pageNav">{$page_bar}</div>
-				</div>
+				<include file="public:pagenav"/>
 			</div>
 		</div>
 

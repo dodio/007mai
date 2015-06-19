@@ -39,13 +39,18 @@ class giftAction extends FirstendAction {
         }
 
         $cname = D('score_item_cate')->get_name($cid);
+        
         $where = array('status'=>'1');
+        // 已结束商品不显示
+        $where = array('end_time'=>array("egt",time()));
         $cid && $where['cate_id'] = $cid;
 
         $score_item = M('score_item');
         $count = $score_item->where($where)->count('id');
         $pager = $this->_pager($count, 20);
+        
         $item_list = $score_item->where($where)->order($sort_order)->limit($pager->firstRow.','.$pager->listRows)->select();
+
         $this->assign('item_list', $item_list);
         $this->assign('page_bar', $pager->fshow());
         $this->assign('cid', $cid);

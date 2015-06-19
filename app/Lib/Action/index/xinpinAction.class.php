@@ -110,7 +110,7 @@ class xinpinAction extends FirstendAction {
 		$this->assign('total_item',$count);
 		$this->assign('pager','index');
     	$this->assign('nav_curr', 'index');
-		$this->_config_seo(array('title' => '【今日新品】 —  ',));
+		$this->_config_seo(array('title' => '【今日新品】'));
 		$this->display('index');
     }
  

@@ -4,10 +4,12 @@
 <include file="public:head" />
 </head>
 <body>
+<include file="public:topbar" />
 <include file="public:header" />
 
+<block name="ad">
 {:R('advert/index', array(6), 'Widget')}
-
+</block>
 <include file="public:footer" />
 </body>
 </html>

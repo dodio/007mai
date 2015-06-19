@@ -3,7 +3,7 @@
 <head>
 <include file="public:head" />
 <ftx:load type="css" href="
-__STATIC__/assets/pc/css/good.css,
+__STATIC__/assets/pc/css/qingbao.css,
 __STATIC__/assets/pc/css/gift.css
 "/>
 <ftx:load type="css" href="
@@ -21,21 +21,9 @@ __STATIC__/ftxia/new/css/pg-try.css
 <include file="public:topbar" />
 <include file="public:header" />
 
+<include file="jifennav"/>
 <include file="public:sidenav"/>
-<div class="jiu-nav-main">
-	<div class="jiu-nav page007mai">
-		<div class="nav-item fl">
-			<div class="item-list">
-				<ul>
-					<li><a href="{:U('gift/index')}" <if condition="$cid eq ''">class="active"</if>>热门兑换</a></li>
-					<volist name="cate_list" id="cate">
-					<li><a href="{:U('gift/cate',array('cid'=>$cate['id']))}" title="{$cate.name}" <if condition="$cid eq $cate['id']">class="active"</if>>{$cate.name}</a></li>
-					</volist>
-				</ul>
-			</div>
-		</div>
-	</div>
-</div>
+
 
 <div class="main container group">
 	<div class="huan-left">
@@ -103,13 +91,13 @@ __STATIC__/ftxia/new/css/pg-try.css
               <a class="userinfo-img" href="{:U('user/index')}"><img src="{:avatar($info['id'], 100)}" width="80" height="80" /></a>
             </div>
             <div class="user-personal">
-              <span class="name"><a href="{:U('user/index')}"><i class="org_2">{$info.username}</i></a></span><br>
+              <span class="name"><a href="{:U('user/index')}" target="_blank"><i class="org_2">{$info.username}</i></a></span><br>
               <span class="jfb">情报：<i class="green_3">{$info.score}</i> </span><br>
             </div>     
           </div>
 					<div class="user-manage group">
-						<a href="{:U('user/gift')}" class="ml10">兑换记录</a>
-						<a href="{:U('user/mingxi')}" class="ml25">收入明细</a>
+						<a href="{:U('user/gift')}" target="_blank" class="ml10">兑换记录</a>
+						<a href="{:U('user/mingxi')}" target="_blank" class="ml25">收入明细</a>
 					</div>
 				</div>
 			</div>

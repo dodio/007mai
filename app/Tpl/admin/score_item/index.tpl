@@ -20,6 +20,15 @@
                          </option>
                          </volist>
                 </select>&nbsp;
+                {:L('ad_start_time')}：
+                <input type="text" name="start_time_min" id="start_time_min" class="date" size="12" value="{$search.start_time_min}">
+                -
+                <input type="text" name="start_time_max" id="start_time_max" class="date mr10" size="12" value="{$search.start_time_max}">
+                {:L('ad_end_time')}：
+                <input type="text" name="end_time_min" id="end_time_min" class="date" size="12" value="{$search.end_time_min}">
+                -
+                <input type="text" name="end_time_max" id="end_time_max" class="date" size="12" value="{$search.end_time_max}">
+                <div class="bk3"></div>
                 关键字 :
                 <input name="keyword" type="text" class="input-text" size="25" value="{$search.keyword}" />
                 <input type="submit" name="search" class="btn" value="搜索" />
@@ -38,6 +47,7 @@
                 <th width="40"><span tdtype="order_by" fieldname="id">ID</span></th>
 				<th width="50" align="center">缩略图</th>
                 <th align="left"><span data-tdtype="order_by" data-field="title">商品名称</span></th>
+                <th align="left">兑换时间</th>
                 <th width="80" align="left"><span data-tdtype="order_by" data-field="score">所需情报</span></th>
                 <th width="80" align="left"><span data-tdtype="order_by" data-field="stock">库存</span></th>
                 <th width="70" align="left"><span data-tdtype="order_by" data-field="user_num">每人限兑</span></th>
@@ -59,6 +69,7 @@
                 </notempty>
 				</td>
                 <td align="left"><span data-tdtype="edit" data-field="name" data-id="{$val.id}" class="tdedit">{$val.title}</span></td>
+                <td align="left">{$val.start_time|date='Y-m-d h:m',###} / {$val.end_time|date='Y-m-d h:m',###}</td>
                 <td align="left"><span data-tdtype="edit" data-field="score" data-id="{$val.id}" class="tdedit">{$val.score}</span></td>
                 <td align="left"><span data-tdtype="edit" data-field="stock" data-id="{$val.id}" class="tdedit">{$val.stock}</span></td>
                 <td align="left"><span data-tdtype="edit" data-field="user_num" data-id="{$val.id}" class="tdedit">{$val.user_num}</span></td>
@@ -80,5 +91,33 @@
     </div>
 </div>
 <include file="public:footer" />
+<link rel="stylesheet" type="text/css" href="__STATIC__/js/calendar/calendar-blue.css"/>
+<script type="text/javascript" src="__STATIC__/js/calendar/calendar.js"></script>
+<script>    
+Calendar.setup({
+    inputField : "start_time_min",
+    ifFormat   : "%Y-%m-%d %H:%M",
+    showsTime  : false,
+    timeFormat : "24"
+});
+Calendar.setup({
+    inputField : "start_time_max",
+    ifFormat   : "%Y-%m-%d %H:%M",
+    showsTime  : false,
+    timeFormat : "24"
+});
+Calendar.setup({
+    inputField : "end_time_min",
+    ifFormat   : "%Y-%m-%d %H:%M",
+    showsTime  : false,
+    timeFormat : "24"
+});
+Calendar.setup({
+    inputField : "end_time_max",
+    ifFormat   : "%Y-%m-%d %H:%M",
+    showsTime  : false,
+    timeFormat : "24"
+});
+</script>
 </body>
 </html>

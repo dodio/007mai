@@ -14,7 +14,7 @@ class ju_reportsAction extends FirstendAction {
     	
     	
     	$this->_config_seo(array(
-            'title' =>  '举报纠错	-	' . C('ftx_site_name'),
+            'title' =>  '举报纠错',
         ));
     	$this->assign('item', $item);
       $this->display('index');

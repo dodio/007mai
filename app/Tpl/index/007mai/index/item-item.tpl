@@ -19,13 +19,21 @@
   </div>
   <div class="item-shop">
     <if condition="$item.shop_type eq 'C' ">
-    <i class="icon-taobao icon"></i>淘宝：<a data-type="1" biz-sellerid="{$item['sellerId']}" data-tmpl="140x190" data-tmplid="3" data-rd="2" data-style="1" data-border="1" href="#">{$item.nick}</a>
+    <i class="icon-taobao icon"></i>淘宝：<a data-type="1" biz-sellerid="{$item['sellerId']}" data-tmpl="140x190" data-tmplid="3" data-rd="2" data-style="1" data-border="1" href="javascript:">{$item.nick}</a>
     <elseif condition="$item.shop_type eq 'B' " />
-    <i class="icon-tmall icon"></i>天猫：<a data-type="1" biz-sellerid="{$item['sellerId']}" data-tmpl="140x190" data-tmplid="3" data-rd="2" data-style="1" data-border="1" href="#">{$item.nick}</a>
+    <i class="icon-tmall icon"></i>天猫：<a data-type="1" biz-sellerid="{$item['sellerId']}" data-tmpl="140x190" data-tmplid="3" data-rd="2" data-style="1" data-border="1" href="javascript:">{$item.nick}</a>
     <elseif condition="$item.shop_type eq 'D' " />
     <a href="{$item.click_url}" target="_blank" rel="nofollow"><span>京东</span></a>
     <else />
     <a href="" biz-itemid="{$item['num_iid']}" isconvert=1 target="_blank" rel="nofollow"><span>去抢购</span></a>
     </if>
   </div>
+
+  <!-- like -->
+    <if condition="$nav_curr eq 'like'">
+    <a class="my-like" lkid="{$item.id}" gtype="1" lks="0" title="取消收藏"><i class="like-ico l-active"><span class="heart_left"></span><span class="heart_right"></span></i></a>
+    <else/>
+    <a class="my-like" lkid="{$item.id}" gtype="1" lks="1" title="加入收藏"><i class="like-ico "><span class="heart_left"></span><span class="heart_right"></span></i></a>
+    </if>
+    <!-- end like -->
 </div>

@@ -34,6 +34,6 @@ return array(
     ),
 
   'TITLE_BAN_WORDS' => require(CONF_PATH."title_ban_words.php"),
-  'score_action' => require(CONF_PATH."score_action.php")
-
+  'score_action' => require(CONF_PATH."score_action.php"),
+  'TAO_DIAN_JIN' => require(CONF_PATH."taodianjin.php")
 );

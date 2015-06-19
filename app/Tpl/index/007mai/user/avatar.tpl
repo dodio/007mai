@@ -43,8 +43,8 @@
 				<h2>头像展示：</h2>
 				<div>
 					<img class="J_avatar" src="{:avatar($info['id'], 200)}" title="100*100" width="100px" height="100px"/>
-					<img class="J_avatar" src="{:avatar($info['id'], 100)}" title="64*64"  width="64px" height="64px"/>
-					<img class="J_avatar" src="{:avatar($info['id'], 100)}" title="32*32"  width="32px" height="32px"/>
+					<img class="J_avatar" src="{:avatar($info['id'], 64)}" title="64*64"  width="64px" height="64px"/>
+					<img class="J_avatar" src="{:avatar($info['id'], 32)}" title="32*32"  width="32px" height="32px"/>
 				</div>
 			</div>
 			<!-- /展示头像 -->

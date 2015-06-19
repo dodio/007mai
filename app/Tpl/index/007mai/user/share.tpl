@@ -64,7 +64,7 @@ __STATIC__/ftxia/new/css/pg-zone.css
 								</volist>
 								</notempty>
 							</ul>
-							<div class="page"><div class="pageNav">{$page}</div></div>
+							<include file="public:pagenav"/>
 						</div>
 						
 

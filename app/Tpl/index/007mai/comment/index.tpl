@@ -57,7 +57,7 @@
 					</volist>
 
 				</ul>
-				<div class="page"><div class="pageNav"> {$page_bar}</div></div> 			
+				<include file="public:pagenav"/>
 				</div>
 
 

@@ -29,8 +29,10 @@ class searchAction extends ItemlistAction {
 
     $item_mod = M('items');
     $items_list = $item_mod->where($where)->order($order)->limit($start . ',' . $page_size)->select();
-    
-    if(empty($items_list)){
+    $goaitao = I("aitao","","trim");
+    if($goaitao != "" || empty($items_list) || count($items_list)< 8){
+      //内部跳转搜索 pid
+      $this->assign("pid",'mm_108982726_9740782_33494184');
       $this->display("ai_search");
       exit();
     }

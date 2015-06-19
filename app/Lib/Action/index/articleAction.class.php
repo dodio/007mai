@@ -23,7 +23,7 @@ class articleAction extends FirstendAction {
 			$title = $this->cats_list[$cid]['name'];
 			$cat = $this->cats_mod->find($cid);
         }else{
-			$cat['name'] = '文章中心 ——  ';
+			$cat['name'] = '文章中心';
 		}
 		$page_size = 20;
 		$start = $page_size * ($p - 1) ;

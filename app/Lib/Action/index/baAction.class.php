@@ -102,7 +102,7 @@ class baAction extends ItemlistAction {
 		$this->assign('total_item',$count);
     $this->assign('nav_curr', 'ba');
     $this->_config_seo(C('ftx_seo_config.cate'), array(
-      'cate_name' => '【'.$cinfo['name'].'专区】 — ',
+      'cate_name' => '【'.$cinfo['name'].'专区】',
       'seo_title' => $cinfo['seo_title'],
 			'seo_keywords' => $cinfo['seo_keys'],
 			'seo_description' => $cinfo['seo_desc'],

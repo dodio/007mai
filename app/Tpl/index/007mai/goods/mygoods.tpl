@@ -83,7 +83,7 @@
 					</li>
  
 					</volist>
-					 <div class="page"><div class="pageNav"> {$page_bar}</div></div> 
+					<include file="public:pagenav"/>
 					<else/>
 					<li class="no_goods"><div class="without_goods">您该状态下暂无任何信息哦，可以先到<a href="{:U('goods/goods_add')}">报名新宝贝</a>去报名~</div></li>
 					</notempty>

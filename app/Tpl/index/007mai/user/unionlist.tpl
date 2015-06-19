@@ -5,6 +5,7 @@
 <link rel=stylesheet type=text/css href="__STATIC__/assets/pc/css/user.css" />
 </head>
 <body>
+<include file="public:topbar" />
 <include file="public:header" />
 <div class="main mb20 container group">
 	<div class="user_main">
@@ -50,9 +51,8 @@
 						</td></tr>
 					</notempty>
 				</table>
-				<div class="page page3">
-					<div class="pageNav">{$page}</div>
-				</div>
+				
+				<include file="public:pagenav"/>
 			</div>
 
 		</div>

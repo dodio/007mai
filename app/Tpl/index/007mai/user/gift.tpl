@@ -53,9 +53,7 @@
 					</tr>
 					</notempty>
 				</table>
-				<div class="page page3">
-					<div class="pageNav">{$page}</div>
-				</div>
+				<include file="public:pagenav"/>
 			</div>
 
 		</div>

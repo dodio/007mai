@@ -37,7 +37,7 @@ class brandAction extends FirstendAction {
         $this->assign('page', $pager->kshow());
         $this->assign('nav_curr', 'brand');
         $this->_config_seo(array(
-			'title' => ' 【品牌折扣】 —' ,
+			'title' => '【品牌折扣】' ,
 		));
 		$this->display('index');
 	}
@@ -61,13 +61,17 @@ class brandAction extends FirstendAction {
       if($value["shop_name"] =="" || $value["shop_icon"] == ""){
         unset($brandlist['brand'][$key]);
       }
+      if($value['uid'] == $uid){
+        $shop_name = $value["shop_name"];
+      }
     }
 
 		$this->assign('brands',$brandlist['brand']);
 		$this->assign('lists',$brandlist['list']);
         $this->assign('nav_curr', 'brand');
         $this->_config_seo(array(
-			'title' => ' 【品牌折扣】' ,
+			'title' => $shop_name.'-【品牌折扣】' ,
+            'keywords' => $shop_name
 		));
 		$this->display('dlist');
 	}

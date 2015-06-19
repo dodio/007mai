@@ -2,12 +2,22 @@
 	<div class="fix-right-layer" id="fix-right-layer" style="right: 0px;">
 	    <div class="fix-right-body">
 	        <div class="fix-right-middle" style="overflow: visible; display: block;">
-	            <div class="img-span">
-			<a href="{:U('user/index')}" target="_blank" class="mark" title="会员中心">
-	                    <img src="__STATIC__/assets/pc/images/layout/my.png">
-	                </a>
-                    <div class="tab-bar tab-bar-js" style="display:none;">会员中心<div class="tab-tip-arr">◆</div></div>
-                </div>
+	            
+                <notempty name="visitor">
+                    <div class="avatar">
+                        <a href="{:U('user/index')}" target="_blank">
+                        <img src="{:avatar($info['id'], 32)}" alt="">
+                        </a>
+                    </div>
+                  <div class="fix-uinfo mt20">现有<br><em>{$visitor.score}</em><br>情报</div>
+                <else/>
+                <div class="img-span">
+                        <a href="{:U('user/index')}" target="_blank" class="mark" title="会员中心">
+                            <img src="__STATIC__/assets/pc/images/layout/my.png">
+                        </a>
+                        <div class="tab-bar tab-bar-js" style="display:none;">登录<div class="tab-tip-arr">◆</div></div>
+                    </div>
+                </notempty>
 
 	        </div>
             <div class="fix-right-bottom">

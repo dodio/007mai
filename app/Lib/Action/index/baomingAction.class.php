@@ -19,7 +19,7 @@ class baomingAction extends FirstendAction {
 	public function index(){
 
 		$this->_config_seo(array(
-            'title' => '卖家报名中心 — ' ,
+            'title' => '卖家报名中心' ,
         ));
 		$this->assign('nav_currr', 'index');
 		$this->display();
@@ -32,7 +32,7 @@ class baomingAction extends FirstendAction {
 		$orig_list = M('items_orig')->where(array('pass'=>1))->select();
 		$this->assign('orig_list',$orig_list);
 		$this->_config_seo(array(
-            'title' => '活动报名 — ' ,
+            'title' => '活动报名' ,
         ));
 		$this->assign('nav_currr', 'index');
 		$this->display();
@@ -51,7 +51,7 @@ class baomingAction extends FirstendAction {
 			$this->assign('orig_list',$orig_list);
 			$this->assign('item',$item);
 			$this->_config_seo(array(
-				'title' => '宝贝修改 — ' ,
+				'title' => '宝贝修改' ,
 			));
 			$this->display();
 		}
@@ -156,7 +156,7 @@ class baomingAction extends FirstendAction {
 
 		$this->assign('type', $type);
 		$this->_config_seo(array(
-            'title' => L('my_goods') . '	-	' . C('ftx_site_name'),
+            'title' => L('my_goods'),
         ));
 		$this->assign('nav_currr', 'my');
 		$this->display();
@@ -164,7 +164,7 @@ class baomingAction extends FirstendAction {
 
 	public function yaoqiu(){
 		$this->_config_seo(array(
-            'title' => '活动要求 — ' ,
+            'title' => '活动要求' ,
         ));
 		$this->assign('nav_currr', 'yaoqiu');
 		$this->display();
@@ -172,7 +172,7 @@ class baomingAction extends FirstendAction {
 
 	public function shenhe(){
 		$this->_config_seo(array(
-            'title' => '审核说明 — ' ,
+            'title' => '审核说明' ,
         ));
 		$this->assign('nav_currr', 'shenhe');
 		$this->display();
@@ -190,7 +190,7 @@ class baomingAction extends FirstendAction {
 
 		$this->assign('item', $item);
 		$this->_config_seo(array(
-            'title' => '报名管理	-	' . C('ftx_site_name'),
+            'title' => '报名管理',
         ));
 		$this->display();
 	}

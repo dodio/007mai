@@ -46,13 +46,13 @@ class forgetAction extends FirstendAction {
 
 				$this->assign('msg',$msg);
 				$this->_config_seo(array(
-					'title' => ' 找回密码	-	' . C('ftx_site_name'),
+					'title' => '找回密码',
 				));
 				$this->display();
 			}
         } else {
             $this->_config_seo(array(
-				'title' => ' 找回密码	-	' . C('ftx_site_name'),
+				'title' => '找回密码',
 			));
             $this->display();
         }
@@ -66,13 +66,13 @@ class forgetAction extends FirstendAction {
         $username	= $_GET['username'];
         $activation = I('activation','', 'trim');
         $t			= I('t','', 'intval');
-		$st = time()-$t;
+		    $st = time()-$t;
         if (!$username || !$activation || !$t) {
-           // $this->redirect('index/index');
+           $this->redirect('/');
         }
 
 		//验证用户
-	     $user = M('user')->field('id,reg_time,password')->where(array('username'=>$username))->find();
+        $user = M('user')->field('id,reg_time,password')->where(array('username'=>$username))->find();
         !$user && $this->error(L('username').L('not_exist'), U('index/index'));
 
         if (IS_POST) {
@@ -103,7 +103,7 @@ class forgetAction extends FirstendAction {
 			}
 
             $this->_config_seo(array(
-					'title' => ' 重置密码	-	' . C('ftx_site_name'),
+					'title' => '重置密码',
 				));
             $this->display();
         }

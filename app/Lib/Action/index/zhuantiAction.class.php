@@ -29,7 +29,7 @@ class zhuantiAction extends FirstendAction {
 				$this->assign('zc_cate',$zc_cate);
 				$this->assign('zc',$zc);
 				$this->_config_seo(array(
-						'title' => '【'.$zc['name'].'】	- 	' . C('ftx_site_name' ).'专场活动',
+						'title' => '【'.$zc['name'].'】	- ' . C('ftx_site_name' ).'专场活动',
 						'keywords' => $zc['name'].',专场活动',
 						'description' => '【'.$zc['name'].'】!	' . C('ftx_site_name' ).'专场活动',
 					));
@@ -78,7 +78,7 @@ class zhuantiAction extends FirstendAction {
 				$this->assign('pagecount', $pagecount);
 				$this->assign('items_list',$items['item_list']);
 				$this->_config_seo(array(
-						'title' => '【'.$zc['name'].'】	- 	' . C('ftx_site_name' ).'专场活动',
+						'title' => '【'.$zc['name'].'】- ' . C('ftx_site_name' ).'专场活动',
 						'keywords' => $zc['name'].',专场活动',
 						'description' => '【'.$zc['name'].'】!	' . C('ftx_site_name' ).'专场活动',
 					));

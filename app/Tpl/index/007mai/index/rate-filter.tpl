@@ -9,16 +9,17 @@
   $(function(){
     if($.browser.webkit){
       var effect_class = [
-        ['正常',"show-flypic"],
+        ['正常',"show-normal"],
+        ['飞旋',"show-flypic"],
+        ['正常飞旋',"show-normal show-flypic"],
         ['缩放',"show-hover"],
         ['魔幻',"show-hover show-flypic"]
       ];
 
-      var all = "show-hover show-flypic";
+      var all = "show-hover show-flypic show-normal";
       
       var cc = $.cookie("item_list_effect");
       var e = $.isNumeric(e) ? e : 0;
-
       var effect = effect_class[e];
       var btn = $('<a href="javascript:" class="toggle_effect"></a>');
       $("#rate-order").append(btn);

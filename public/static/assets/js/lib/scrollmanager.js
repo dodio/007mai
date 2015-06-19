@@ -1,7 +1,7 @@
 ;(function($){
 
     var calls = [];
-
+    var name_calls = {}; //带名字的
     // var call_obj = {
     //     height:300, //检测的值（只在越过的时候检测）
     //     up:$.noop, 
@@ -19,8 +19,13 @@
         if(st === ot)
             return;
         $.each(calls,function(i,o){
-            dealCalls(o,st,ot)
+            dealCalls(o,st,ot);
         });
+        for(var i in name_calls){
+            if(name_calls.hasOwnProperty(i)){
+                dealCalls(name_calls[i],st,ot);
+            }
+        }
         ot = st;
     }
 
@@ -78,7 +83,7 @@
         clear:function(){
             calls = [];
         },
-        add:function(obj){
+        add:function(obj,name){
             obj = $.extend({
                 up:$.noop, 
                 down:$.noop,
@@ -89,12 +94,21 @@
 
             dealCalls(obj,st,ot,true);
 
-            calls.push(obj);
+            if(typeof name === "string" && name != ""){
+                name_calls[name] = obj; 
+            }else{
+                calls.push(obj);
+            }
+            return true;
         },
         remove:function(obj){
-            for(var i in calls){
-                if(calls[i] === obj){
-                    return calls.slice(i,1);
+            if(typeof obj === "string" && obj != ""){
+                return delete name_calls[obj];
+            }else{
+                for(var i in calls){
+                    if(calls[i] === obj){
+                        return calls.slice(i,1);
+                    }
                 }
             }
         }

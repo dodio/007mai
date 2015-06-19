@@ -150,6 +150,14 @@ class indexAction extends ItemlistAction {
 		$cid	=	I('cid','', 'intval');
 		$sort	=	I('sort', 'default', 'trim'); //排序
 		$order	=	'ordid asc ';
+		if(!$cid){
+			$name = I("cname","","trim");
+			$cinfo = $this->_cate_mod->cate_info_byname($name);
+			if($cinfo){
+				$cid = $cinfo['id'];
+			}
+		}
+
 		if(!$cid) redirect(U('index/index'));
  		$this->_common($cid);
  		$this->assign("nav_curr","cate");

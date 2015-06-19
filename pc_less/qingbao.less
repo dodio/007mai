@@ -1,0 +1,41 @@
+@import "./common/var.less";
+@import "./lib/funclib.less";
+
+@import "./mixin/show-item.less";
+@import "./mixin/item-item.less";
+
+@import "./inc/roote_cates.less";
+.itemlist{
+  ul li{
+    width: 266px;
+    float: left;
+    margin-right: 12px;
+    margin-bottom: 20px;
+    height: 350px;
+  }
+  .item-item(266px);
+}
+.title_bar{
+  border-bottom: 1px solid #e0e0e0;
+  .vm(40px);
+  h2{
+    font-size: 30px;
+    float: left;
+    color: #323232;
+    width: 128px;
+    border-bottom: 2px solid #c80000;
+  }
+  .more{
+    display: block;
+    float: right;
+    font-size: 16px;
+    color: #656565;
+    height: 40px;
+    padding: 0 10px;
+    background-color: #e0e0e0;
+    &:hover{
+      color: #fff;
+      background-color: #000;
+    }
+  }
+}

@@ -179,6 +179,22 @@ class items_cateModel extends Model
     }
 
     /**
+     * 通过 分类名字获取cinfo
+     */
+    public function cate_info_byname($name){
+        if(C('ftx_site_cache')){
+            $file = 'cinfo_'.$name;
+            if(false === $cinfo = S($file)){
+                $cinfo = $this->where(array('name'=>$name))->find();
+                S($file,$cinfo);
+            }
+        }else{
+            $cinfo = $this->where(array('name'=>$name))->find();
+        }
+        return $cinfo;
+    }
+
+    /**
      * 分类关系读取写入缓存
      */
     public function relate_cache() {

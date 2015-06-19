@@ -69,8 +69,9 @@ __STATIC__/assets/pc/css/cate.css
     <block name="ratefilter">
       <include file="index:rate-filter"/>
     </block>
-
-    <include file="index:item-list" />
+    <div id="itemlist">
+      <include file="index:item-list" />
+    </div>
     <include file="public:pagenav"/>
 
   </div>

@@ -6,8 +6,12 @@
       $parents_id = explode('|', $cate['spid']);
       $rootid = $parents_id[0];
     }
-    $erji = $cate_list['s'][$rootid];
+    if($cate_data[$rootid]){
+      $erji = $cate_list['s'][$rootid];
+    }
  ?>
+
+<notempty name="erji">
 <div class="subcates group">
   <div class="label fl">类型：</div>
   <div class="fl ml15">
@@ -26,3 +30,4 @@
     </volist>
   </div>
 </div>
+</notempty>

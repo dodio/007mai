@@ -63,7 +63,7 @@
 	</form>
 </div>
 </div>
-<script type="text/javascript" src="__STATIC__/jky/js/jquery.validate.js"></script>
+<script type="text/javascript" src="__STATIC__/assets/js/jquery/jquery.validate.js"></script>
 <script>
 $(function(){
 	$('.smt_close').click(function(){

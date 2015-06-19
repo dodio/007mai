@@ -174,7 +174,7 @@ class ajaxAction extends FirstendAction {
 			$map['status'] = 0;
 			$count = $msg_mod->where($map)->order('id DESC')->count('id');
 			if($count){
-				$result['user']['msgsrc']  = '<img src="'.CDN_ROOT.'/assets/pc/images/msg.gif" border="0" alt="有新短消息" />';
+				$result['user']['msgsrc']  = '<img src="'.CDN_ROOT.'/assets/pc/images/msg0.gif" border="0" alt="有新短消息" />';
 			}else{
 				$result['user']['msgsrc']  = '<img src="'.CDN_ROOT.'/assets/pc/images/msg1.gif" border="0" alt="短消息" />';
 			}

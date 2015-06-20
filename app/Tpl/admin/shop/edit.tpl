@@ -23,9 +23,9 @@
             </tr>
 
        <tr>
-            <th>商家userId：</th>
+            <th>sellerId：</th>
                 <td>
-                    <input type="text" name="num_iid" size="10" class="input-text" value="{$info.num_iid}" />
+                    <input type="text" name="sellerId" size="10" class="input-text" value="{$info.sellerId}" />
                     <span class="gray ml10">淘宝或者天猫的店铺商家旺旺id，填写方便淘点金</span>
                 </td>
             </tr>

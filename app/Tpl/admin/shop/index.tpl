@@ -45,7 +45,7 @@
             <th align="center"><span data-tdtype="order_by" data-field="shop_type">店铺类型</span></th>
             <th width="200" align="left">推荐理由</th>
             <th align="left"><span data-tdtype="order_by" data-field="average_price">平均价格</span></th>
-            <th>商家userId：</span></th>
+            <th>sellerId：</span></th>
             <th width="150">有效时间</th>
             <th width="60"><span data-tdtype="order_by" data-field="ordid">{:L('sort_order')}</span></th>
             <th width="60"><span data-tdtype="order_by" data-field="status">{:L('status')}</span></th>
@@ -63,7 +63,7 @@
             <td align="center">{$val.shop_type}</td>
             <td align="left"><span data-tdtype="edit" data-field="reason" data-id="{$val.reason}" class="tdedit">{$val.reason}</span></td>
             <td align="left"><span data-tdtype="edit" data-field="average_price" data-id="{$val.average_price}" class="tdedit">{$val.average_price}</span></td>
-            <td align="center">{$val.num_iid}</td>
+            <td align="center">{$val.sellerId}</td>
             <td align="center">{$val.start_time|date='Y-m-d',###} / {$val.end_time|date='Y-m-d',###}</td>
             <td align="center"><span data-tdtype="edit" data-field="ordid" data-id="{$val.id}" class="tdedit">{$val.ordid}</span></td>
             <td align="center"><img data-tdtype="toggle" data-id="{$val.id}" data-field="status" data-value="{$val.status}" src="__STATIC__/images/admin/toggle_<if condition="$val.status eq 0">disabled<else/>enabled</if>.gif" /></td>

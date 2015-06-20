@@ -36,6 +36,12 @@
 				<td> {:L('data_cache')}</td>
 				<td><span class="gray mr10">{:L('data_cache_desc')}</span><span id="data_ifm"></span></td>
 			</tr>
+      <tr>
+        <td><label><input type="checkbox" value="shop" name="type" class="mr5" data-uri="{:U('cache/clear', array('type'=>'shop'))}"></label></td>
+        <td><img src="/static/images/admin/folde.gif" width="16" height="14"> data/runtime/Data/shop </td>
+        <td>店铺数据缓存</td>
+        <td><span class="gray mr10">添加或者删除过店铺数据清除后更新</span><span id="shop_ifm"></span></td>
+      </tr>
 			<tr>
 				<td><label><input type="checkbox" value="runtime" name="type" class="mr5" data-uri="{:U('cache/clear', array('type'=>'runtime'))}"> </label></td>
 				<td><img src="/static/images/admin/folde.gif" width="16" height="14"> data/runtime/~runtime.php </td>
@@ -56,12 +62,12 @@
 			</tr>
 
       <tr>
-        <td><label><input type="checkbox" value="css" name="type" class="mr5" data-uri="{:U('cache/clear', array('type'=>'js'))}"> </label></td>
+        <td><label><input type="checkbox" value="css" name="type" class="mr5" data-uri="{:U('cache/clear', array('type'=>'css'))}"> </label></td>
         <td><notempty name="combile_css_dirs">
             <volist name="combile_css_dirs" id="dir"><img src="/static/images/admin/folde.gif" width="16" height="14">{$dir}/dist_css<br></volist>
           </notempty></td>
         <td>CSS缓存文件</td>
-        <td><span class="gray mr10">修改过CSS文件需要清除缓存才会生效</span><span id="js_ifm"></span></td>
+        <td><span class="gray mr10">修改过CSS文件需要清除缓存才会生效</span><span id="css_ifm"></span></td>
       </tr>
 
 			<tr>

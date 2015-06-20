@@ -25,6 +25,9 @@ class cacheAction extends BackendAction
                 is_dir(DATA_PATH) && $obj_dir->del(DATA_PATH);
                 is_dir(TEMP_PATH) && $obj_dir->delDir(TEMP_PATH);
                 break;
+            case 'shop':
+                is_dir(DATA_PATH . '/shop/') && $obj_dir->del(DATA_PATH . '/shop/');
+                break;
             case 'runtime':
                 @unlink(RUNTIME_FILE);
                 break;
@@ -52,6 +55,7 @@ class cacheAction extends BackendAction
         is_dir(DATA_PATH . '_fields/') && $obj_dir->del(DATA_PATH . '_fields/');
         is_dir(CACHE_PATH) && $obj_dir->delDir(CACHE_PATH);
         is_dir(DATA_PATH) && $obj_dir->del(DATA_PATH);
+        is_dir(DATA_PATH . '/shop/') && $obj_dir->del(DATA_PATH . '/shop/');
         is_dir(TEMP_PATH) && $obj_dir->delDir(TEMP_PATH);
 		is_dir(RUNTIME_PATH . '/FtxiaAPI/') && $obj_dir->delDir(RUNTIME_PATH . '/FtxiaAPI/');
 		is_dir(RUNTIME_PATH . '/TaobaoAPI/') && $obj_dir->delDir(RUNTIME_PATH . '/TaobaoAPI/');

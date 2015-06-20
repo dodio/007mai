@@ -3,7 +3,7 @@
       <div id="sidenav" class="sidenav">
         <div class="sidenav-nav-wrap">
           <div class="sidenav-nav">
-            <a href="/mall/haitao" class="sidenav-item">品牌折扣</a>
+            <a href="/brand" class="sidenav-item">品牌折扣</a>
             <a href="/mall" class="sidenav-item">特卖商城</a>
             <a href="/ba" class="sidenav-item">八块八</a>
             <a href="/shiba" class="sidenav-item">十八块八</a>
@@ -17,7 +17,7 @@
             <a target="_blank" href="/index/cate/cid/3" class="sidenav-item ui-tabmenu"><span class="cateicon sdcn-jujia"></span><span class="hover_bg"></span><span class="hover_text">居家</span></a>
             <a target="_blank" href="/index/cate/cid/5" class="sidenav-item ui-tabmenu"><span class="cateicon sdcn-peishi"></span><span class="hover_bg"></span><span class="hover_text">配饰</span></a>
             <a target="_blank" href="/index/cate/cid/9" class="sidenav-item ui-tabmenu"><span class="cateicon sdcn-meizhuang"></span><span class="hover_bg"></span><span class="hover_text">美妆</span></a>
-            <a target="_blank" href="/index/cate/cid/9" class="sidenav-item"><span class="cateicon sdcn-muying"></span><span class="hover_bg"></span><span class="hover_text">母婴</span></a>
+            <a target="_blank" href="/index/cate/cid/481" class="sidenav-item ui-tabmenu"><span class="cateicon sdcn-muying"></span><span class="hover_bg"></span><span class="hover_text">母婴</span></a>
             <div class="search">
               <a href="javascript:" class="sidenav-item btn_search"><i class="icon-search icon"></i></a>
               <div class="search_box">

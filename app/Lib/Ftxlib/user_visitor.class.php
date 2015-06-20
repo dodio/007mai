@@ -18,16 +18,17 @@ class user_visitor {
             $user_info = M('user')->field('id,username,sign_time,score')->where(array('id'=>$user_info['id'], 'password'=>$user_info['password']))->find();
 			//查询是否签到
 			$sign_mod = D('sign');
-			$sign_date=$sign_mod->where(array('uid' => $uid))->find();
+			$sign_date=$sign_mod->where(array('uid' => $user_info['id']))->find();
 			$data['last_date']=strtotime(date('Y-m-d'));
 			if($sign_date['last_date']==$data['last_date']){
 				$user_info['sign'] = 'sign_in';
 			}else{
 				$user_info['sign'] = 'sign_out';
 			}
-
             if ($user_info) {
                 //记住登陆状态
+                $this->_add_right($user_info);
+
                 $this->assign_info($user_info);
                 $this->is_login = true;
             }
@@ -43,7 +44,49 @@ class user_visitor {
         session('user_info', $user_info);
         $this->info = $user_info;
     }
+    /**
+     * 在session中更新用户信息 $val为空则删除
+     * 只能处理一维
+     * @param  [type] $key [description]
+     * @param  [type] $val [description]
+     * @return [type]      [description]
+     */
+    public function update_info($key,$val){
+        if($key == ""){
+            return false;
+        }
+        $user_info = $this->info;
+        if(is_null($val)){
+            unset($user_info[$key]);
+        }else{
+            $user_info[$key] = $val;
+        }
+        $this->assign_info($user_info);
+    }
 
+/**
+ * 根据设置增加权限项
+ * @param [type] $user_info [description]
+ */
+    private function _add_right(&$user_info){
+        $user_info['rights'] = array();
+        $admins = explode(",", C("ftx_index_admin"));
+        if(in_array($user_info['username'], $admins)){
+            $user_info['rights']['admin_item'] = true;
+        };
+    }
+    /**
+     * 检测权限
+     * @param  [type] $right [description]
+     * @return [type]        [description]
+     */
+    public function right($right){
+        if(!$this->is_login){
+            return false;
+        }
+        $user_info = $this->info;
+        return isset($user_info['rights']) && isset($user_info['rights'][$right]) && $user_info['rights'][$right];
+    }
     /**
      * 记住密码
      */

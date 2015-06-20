@@ -121,6 +121,7 @@ $(function(){
 $(function(){
     var side_nav = $("#sidenav");
     var side_sub_nav = $("div.side_sub_nav",side_nav);
+    
     side_nav.mouseleave(function() {
       side_sub_nav.fadeOut(200);
       $('.ui-tabmenu',side_nav).removeClass('cur');
@@ -132,6 +133,23 @@ $(function(){
         side_sub_nav.hide();
       }
     });
+
+    var search_btn = $(".btn_search",side_nav);
+    var txt = $("input[name=key]",side_nav);
+    var form = $("form",side_nav);
+    search_btn.click(function(){
+      form.submit();
+    }).mouseenter(function(){
+      txt.focus();
+    });
+
+    form.submit(function(){
+      var k = txt.val();
+       if($.trim(k) == ""){
+        return false;
+      }
+    });
+
 });
 
 $(function(){
@@ -153,13 +171,18 @@ $(function(){
 
     $.scrollManager.add({
       up:function(st,ot){
-        if(st<headh)
+        if(st<headh){
+          sidenav.removeClass("affix");
           return;
+        }
         sidenav.show();
-        sidenav.stop(true).animate({width:sidenav_width},200);
+        sidenav.stop(true).animate({width:sidenav_width},200,function(){
+          sidenav.css("overflow","visibale");
+        });
       },
       down:function(st,ot){
         if(st<headh){
+          sidenav.removeClass("affix");
           return;
         }
         sidenav.stop(true).animate({width:0},200,function(){

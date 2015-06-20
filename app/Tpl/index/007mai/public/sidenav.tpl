@@ -7,18 +7,27 @@
             <a href="/mall" class="sidenav-item">特卖商城</a>
             <a href="/ba" class="sidenav-item">八块八</a>
             <a href="/shiba" class="sidenav-item">十八块八</a>
-            <a href="/meili" class="sidenav-item">美丽说</a>
             <a href="/#shopping-index" class="sidenav-item">购物大全</a>
           </div>
           <div class="sidenav-catenav">
             <a target="_blank" href="/index/cate/cid/1" class="sidenav-item ui-tabmenu"><span class="cateicon sdcn-nv"></span><span class="hover_bg"></span><span class="hover_text">女装</span></a>
             <a target="_blank" href="/index/cate/cid/236" class="sidenav-item ui-tabmenu"><span class="cateicon sdcn-nei"></span><span class="hover_bg"></span><span class="hover_text">内衣</span></a>
             <a target="_blank" href="/index/cate/cid/381" class="sidenav-item ui-tabmenu"><span class="cateicon sdcn-nan"></span><span class="hover_bg"></span><span class="hover_text">男装</span></a>
-            <a target="_blank" href="/index/cate/cid/234" class="sidenav-item ui-tabmenu"><span class="cateicon sdcn-xiezi"></span><span class="hover_bg"></span><span class="hover_text">鞋子</span></a>
+            <a target="_blank" href="/index/cate/cid/234" class="sidenav-item ui-tabmenu"><span class="cateicon sdcn-xiezi"></span><span class="hover_bg"></span><span class="hover_text">鞋包</span></a>
             <a target="_blank" href="/index/cate/cid/3" class="sidenav-item ui-tabmenu"><span class="cateicon sdcn-jujia"></span><span class="hover_bg"></span><span class="hover_text">居家</span></a>
             <a target="_blank" href="/index/cate/cid/5" class="sidenav-item ui-tabmenu"><span class="cateicon sdcn-peishi"></span><span class="hover_bg"></span><span class="hover_text">配饰</span></a>
             <a target="_blank" href="/index/cate/cid/9" class="sidenav-item ui-tabmenu"><span class="cateicon sdcn-meizhuang"></span><span class="hover_bg"></span><span class="hover_text">美妆</span></a>
             <a target="_blank" href="/index/cate/cid/9" class="sidenav-item"><span class="cateicon sdcn-muying"></span><span class="hover_bg"></span><span class="hover_text">母婴</span></a>
+            <div class="search">
+              <a href="javascript:" class="sidenav-item btn_search"><i class="icon-search icon"></i></a>
+              <div class="search_box">
+                <form action="index.php" method="get" target="_blank">
+                  <input type="hidden" name="m" value="search">
+                <input type="hidden" name="a" value="index">
+                <input type="text" name="key" value="短裤">
+                </form>
+              </div>
+            </div>
           </div>
 
             <div class="side_sub_nav">
@@ -165,22 +174,18 @@
         <li><a href="/index/cate/cid/307" target="_blank">斜挎包</a></li>
         <li><a href="/index/cate/cid/308" target="_blank">双肩包</a></li>
         <li><a href="/index/cate/cid/309" target="_blank">手提包</a></li>
-        <li><a href="/index/cate/cid/310" target="_blank">旅行箱</a></li>
         <li><a href="/index/cate/cid/311" target="_blank">钱包</a></li>
         <li><a href="/index/cate/cid/312" target="_blank">手拿包</a></li>
         <li><a href="/index/cate/cid/313" target="_blank">化妆包</a></li>
         <li><a href="/index/cate/cid/314" target="_blank">零钱包</a></li>
         <li><a href="/index/cate/cid/315" target="_blank">腰包</a></li>
-        <li><a href="/index/cate/cid/316" target="_blank">旅行包</a></li>
         <li><a href="/index/cate/cid/317" target="_blank">电脑包</a></li>
         <li><a href="/index/cate/cid/318" target="_blank">帆布包</a></li>
       </ul>
       <ul class="group">
-        <li><a href="/index/cate/cid/330" target="_blank">果冻包</a></li>
         <li><a href="/index/cate/cid/331" target="_blank">蝙蝠包</a></li>
+        <li><a href="/index/cate/cid/330" target="_blank">果冻包</a></li>
         <li><a href="/index/cate/cid/329" target="_blank">印花包</a></li>
-        <li><a href="/index/cate/cid/328" target="_blank">机车包</a></li>
-        <li><a href="/index/cate/cid/327" target="_blank">子母包</a></li>
         <li><a href="/index/cate/cid/319" target="_blank">贝壳包</a></li>
         <li><a href="/index/cate/cid/320" target="_blank">方形包</a></li>
         <li><a href="/index/cate/cid/321" target="_blank">链条包</a></li>
@@ -189,6 +194,8 @@
         <li><a href="/index/cate/cid/324" target="_blank">卡通包</a></li>
         <li><a href="/index/cate/cid/325" target="_blank">铆钉包</a></li>
         <li><a href="/index/cate/cid/326" target="_blank">邮差包</a></li>
+        <li><a href="/index/cate/cid/327" target="_blank">子母包</a></li>
+        <li><a href="/index/cate/cid/328" target="_blank">机车包</a></li>
       </ul>
 
       <h3 class="cate-title cate-nvx"><a href="/index/cate/cid/234" target="_blank">鞋子区</a></h3>

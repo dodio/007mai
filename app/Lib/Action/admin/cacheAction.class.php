@@ -33,6 +33,8 @@ class cacheAction extends BackendAction
                 break;
             case 'js':
                 is_dir(ROOT_PATH . '/static/dist_js/') && $obj_dir->del(ROOT_PATH . '/static/dist_js/');
+                break;
+            case 'css':
                 $this->_clear_dist_css($obj_dir);
                 break;
 			case 'api':

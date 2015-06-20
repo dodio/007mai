@@ -50,14 +50,19 @@
 			</tr>
 			<tr>
 				<td><label><input type="checkbox" value="js" name="type" class="mr5" data-uri="{:U('cache/clear', array('type'=>'js'))}"> </label></td>
-				<td><img src="/static/images/admin/folde.gif" width="16" height="14">public/static/dist_js
-          <notempty name="combile_css_dirs">
-            <volist name="combile_css_dirs" id="dir"><br><img src="/static/images/admin/folde.gif" width="16" height="14">{$dir}/dist_css</volist>
-          </notempty>
-        </td>
-				<td>JS/CSS缓存文件</td>
-				<td><span class="gray mr10">修改过JS/CSS文件需要更新才会生效</span><span id="js_ifm"></span></td>
+				<td><img src="/static/images/admin/folde.gif" width="16" height="14">public/static/dist_js</td>
+				<td>JS缓存文件</td>
+				<td><span class="gray mr10">修改过JS文件需要清除缓存才会生效</span><span id="js_ifm"></span></td>
 			</tr>
+
+      <tr>
+        <td><label><input type="checkbox" value="css" name="type" class="mr5" data-uri="{:U('cache/clear', array('type'=>'js'))}"> </label></td>
+        <td><notempty name="combile_css_dirs">
+            <volist name="combile_css_dirs" id="dir"><img src="/static/images/admin/folde.gif" width="16" height="14">{$dir}/dist_css<br></volist>
+          </notempty></td>
+        <td>CSS缓存文件</td>
+        <td><span class="gray mr10">修改过CSS文件需要清除缓存才会生效</span><span id="js_ifm"></span></td>
+      </tr>
 
 			<tr>
 				<td><label><input type="checkbox" value="api" name="type" class="mr5" data-uri="{:U('cache/clear', array('type'=>'api'))}"> </label></td>

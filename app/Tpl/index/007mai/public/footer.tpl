@@ -1,5 +1,4 @@
 <notempty name="visitor">
-    <?php dump($visitor); ?>
 <if condition="$visitor['rights']['admin_item'] eq true">
 <script type="text/javascript">
     $(function(){

@@ -1,5 +1,6 @@
 <notempty name="visitor">
-<if condition="$visitor['username'] eq C('ftx_index_admin')">
+    <?php dump($visitor); ?>
+<if condition="$visitor['rights']['admin_item'] eq true">
 <script type="text/javascript">
     $(function(){
         $('.item').append('<a href="javascript:" class="btn_hide">隐藏该宝贝</a>');

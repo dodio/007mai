@@ -1,4 +1,4 @@
-<div class="show-item item {$item.class}" id="nid_{$item.num_iid}">
+<div class="show-item item {$item.class}" data-nid="{$item.num_iid}" id="nid_{$item.num_iid}">
   <div class="show-pic">
     <a biz-itemid="{$item['num_iid']}" isconvert=1 href="" target="_blank">
       <?php if($i < 12 ) { ?>

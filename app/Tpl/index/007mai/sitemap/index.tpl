@@ -1,4 +1,5 @@
 <html>
+<head>
 <include file='public:head'/>
 </head>
 <body data-version="0">

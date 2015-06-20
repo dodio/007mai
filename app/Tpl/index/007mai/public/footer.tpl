@@ -1,48 +1,35 @@
 <notempty name="visitor">
 <if condition="$visitor['username'] eq C('ftx_index_admin')">
 <script type="text/javascript">
-	function noshow(id){
-		if(!$.ftxia.dialog.islogin()) return ;
-		$(this).html('<img src="__STATIC__/ftxia/images/loading.gif" />');
-		$.ajax({
-			url: FTXIAER.root + '/?m=item&a=noshow',
-				type: 'POST',
-				data: {
-					id: id
-				},
-			dataType: 'json',
-			success: function(result){
-				if(result.status == 1){
-					$.ftxia.tip({content:result.msg, icon:'success'});
-				}else{
-					$.ftxia.tip({content:result.msg, icon:'error'});
-				}
-			}
-		});
-	}
-
-	$(".show a").click(function() {
-		id = $(this).attr("data-id");
-		if(!$.ftxia.dialog.islogin()) return ;
-		$(this).html('<img src="__STATIC__/ftxia/images/loading.gif" />');
-		$.ajax({
-			url: FTXIAER.root + '/?m=item&a=noshow',
-				type: 'POST',
-				data: {
-					id: id
-				},
-			dataType: 'json',
-			success: function(result){
-				if(result.status == 1){
-					$(this).html('成功');
-					$.ftxia.tip({content:result.msg, icon:'success'});
-				}else{
-					$(this).html('已取消');
-					$.ftxia.tip({content:result.msg, icon:'error'});
-				}
-			}
-		});
-	});  
+    $(function(){
+        $('.item').append('<a href="javascript:" class="btn_hide">隐藏该宝贝</a>');
+        $(".itemlist").on("click",'.btn_hide',function(){
+            var _self = $(this);
+            id =_self.parent('.item').attr("data-nid");
+            if(!$.ftxia.dialog.islogin()) return ;
+            _self.html('<img src="__STATIC__/assets/images/loading.gif" />');
+            $.ajax({
+                url: FTXIAER.root + '/?m=ajax&a=noshow',
+                    type: 'POST',
+                    data: {
+                        id: id
+                    },
+                dataType: 'json',
+                success: function(result){
+                    if(result.status == 1){
+                        if(result.msg.isshow){
+                            _self.html('已取消');
+                        }else{
+                            _self.html('缓存到期后隐藏');
+                        }
+                    }else{
+                        _self.html('操作失败');
+                        $.ftxia.tip({content:result.msg, icon:'error'});
+                    }
+                }
+            });
+        });
+    });
 </script>
 </if>
 </notempty>

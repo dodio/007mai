@@ -323,6 +323,31 @@ class ajaxAction extends FirstendAction {
 			$this->ajaxReturn(1, $item);
 		}
 	}
+	/**
+	 * 隐藏宝贝
+	 * @return [type] [description]
+	 */
+	public function noshow(){
+		$id = I('id');
+		if(!$this->visitor->is_login){
+			$this->ajaxReturn(0,L('就不告诉你原因'));
+			exit();
+		}
+		$username = $this->visitor->info['username'];
+		$admins = explode(",", C('ftx_index_admin'));
+		if(!in_array($username, $admins)){
+			$this->ajaxReturn(0,'越权！');
+		}
+		$mod = M('items');
+		$where = array('num_iid'=>$id);
+		$isshow = $mod->where($where)->getField('isshow');
+		$data = array("isshow"=>($isshow == 1 ? 0 : 1) );
+		if($mod->where($where)->save($data)){
+			$this->ajaxReturn(1, $data);
+		}else{
+			$this->ajaxReturn(0, $this->_mod->getError());
+		}
+	}
 
 	/**
 	 * 获取短消息

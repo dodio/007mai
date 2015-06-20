@@ -76,7 +76,7 @@
     </div>
     <div class="container mt30 copyright">
     	<p class="f_miibeian tac page007mai"><a href="http://www.miibeian.gov.cn/" rel="nofollow" target="_blank">{:C('ftx_site_icp')}</a> © 2010-2015 007mai.com all Rights Reserved
-		{:C('ftx_statistics_code')}
+		{:C('ftx_statistics_code')} <a href="/sitemap" target="_blank">网站地图</a>
 		</p>
     </div>
   </div>

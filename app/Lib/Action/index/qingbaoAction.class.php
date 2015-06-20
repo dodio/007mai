@@ -55,12 +55,27 @@
 
       $cate_list = $this->_cate_mod->cate_cache(true);
 
-      $list =  $this->_mod->where($map)->order($order)->select();
-      $items = $this->_deal_item_list($list);
-      $item_groups = array();
-      foreach ($items['item_list'] as $value) {
-        $item_groups[$value['cate_id']][] = $value;
-      };
+      if(C('ftx_site_cache')){
+        $md_id = md5($chanel_id);
+        $file = 'channel_'.$md_id;
+        if(false === $item_groups = S($file)){
+          $list =  $this->_mod->where($map)->order($order)->select();
+          $items = $this->_deal_item_list($list);
+          $item_groups = array();
+          foreach ($items['item_list'] as $value) {
+            $item_groups[$value['cate_id']][] = $value;
+          };
+          S($file,$item_groups);
+        }
+      }else{
+        $list =  $this->_mod->where($map)->order($order)->select();
+        $items = $this->_deal_item_list($list);
+        $item_groups = array();
+        foreach ($items['item_list'] as $value) {
+          $item_groups[$value['cate_id']][] = $value;
+        };
+      }
+      
       $this->assign('item_groups',$item_groups);
       $this->assign("chanel_id",$chanel_id);
       $subnav = $cate_list['s'][$chanel_id];

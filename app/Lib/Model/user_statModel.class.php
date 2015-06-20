@@ -31,7 +31,6 @@ class user_statModel extends Model
             $this->create(array('uid'=>$uid, 'action'=>$action));
             $this->add();
         }
-        dump($stat);
         $new_num = $stat['num'] + 1;
         $data_update_stat = array();
         $cycle_time = $act_arr['cycle'];

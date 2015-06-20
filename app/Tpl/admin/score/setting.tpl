@@ -45,7 +45,7 @@
         <tr>
             <td>下载快捷方式 :</td>
             <td><input type="text" name="score_rule[download_shortcut]" class="input-text" size="10" value="{:C('ftx_score_rule.download_shortcut')}"></td>
-            <td>每月 <input type="text" name="score_rule[download_shortcut_nums]" class="input-text" size="2" value="{:C('ftx_score_rule.download_shortcut_nums')}"> 次</td>
+            <td>每月{:C('ftx_score_rule.download_shortcut_nums')}次<input type="hidden" name="score_rule[download_shortcut_nums]" value="1"> </td>
         </tr>
         <tr>
             <td>快捷方式打开 :</td>

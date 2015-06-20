@@ -329,13 +329,7 @@ class ajaxAction extends FirstendAction {
 	 */
 	public function noshow(){
 		$id = I('id');
-		if(!$this->visitor->is_login){
-			$this->ajaxReturn(0,L('就不告诉你原因'));
-			exit();
-		}
-		$username = $this->visitor->info['username'];
-		$admins = explode(",", C('ftx_index_admin'));
-		if(!in_array($username, $admins)){
+		if(!$this->visitor->right('admin_item')){
 			$this->ajaxReturn(0,'越权！');
 		}
 		$mod = M('items');

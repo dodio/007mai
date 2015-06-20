@@ -57,8 +57,9 @@ class signAction extends UsersAction {
 				$data['table']=$cl->sign_calender();
 				$data['point']=$point_score;
 				$data['tmr_point']=$point_score ;
-				$this->ajaxReturn(1, L('sign_system'), $data);
 
+				$this->visitor->update_info('sign','sign_in');
+				$this->ajaxReturn(1, L('sign_system'), $data);
 			}else if($sign_date['last_date']+86400==$last_date){
 				//今天未签到昨天签到过
 				/*积分奖励算法*/
@@ -121,6 +122,7 @@ class signAction extends UsersAction {
 				$data['tmr_point']=$point_score + C('ftx_score_rule.sign_add');
 			}
 		}
+		$this->visitor->update_info('sign','sign_in');
 		$this->ajaxReturn(1, L('sign_system'), $data);
 	}
 

@@ -62,6 +62,13 @@
           </td>
         </tr>
 
+        <tr id="follows">  
+          <th>关注人数：</th>
+          <td>
+            <input type="text" name="level" size="20" value="{$info.level}" class="input-text">
+          </td>
+        </tr>
+
           <tr>
             <th>店铺图片：</th>
             <td>
@@ -156,14 +163,21 @@ $(function(){
     });
 
     
+    var level = $("#level").html();
+    var follows = $("#follows").html();
     $("#shop_type").change(function(){
         var type = $(this).val();
         if(type == "C"){
-            $("#level").show();
+            follows = $("#follows").html();
+            $("#follows").html('');
+            $("#level").html(level);
         }else{
-            $("#level").hide();
+            level = $("#level").html();
+            $("#level").html('');
+            $("#follows").html(follows);
         }
     }).change();
+
 });
 </script>
 </body>

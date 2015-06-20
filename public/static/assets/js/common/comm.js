@@ -105,7 +105,9 @@ $(function(){
       }
     },
     up:function(st,ot){
-      root_cates.css({top:-height}).addClass("affix").show().animate({top:0},300);
+      if(st>top_height){
+        root_cates.css({top:-height}).addClass("affix").show().animate({top:0},300);
+      }
     }
   },"hide_root_cate");
 

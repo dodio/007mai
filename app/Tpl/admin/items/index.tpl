@@ -76,7 +76,7 @@
                 <td align="right">
                     <div class="img_border"><a href="http://detail.tmall.com/item.htm?id={$val.num_iid}" target="_blank"><img src="{:attach(get_thumb($val['pic_url'], '_s'), 'item')}" width="96" width="96" class="J_preview" data-bimg="{:attach(get_thumb($val['pic_url'],'_m'), 'item')}"></a></div>
                 </td>
-                <td align="left"><span data-tdtype="edit" data-field="title" data-id="{$val.id}" class="tdedit" style="color:{$val.colors};">{$val.title}</span></td>
+                <td align="left"><span data-tdtype="edit" data-field="title" data-id="{$val.id}" class="tdedit">{$val.title}</span></td>
                 <td align="center"><b>{$cate_list[$val['cate_id']]}</b></td>
 		<td align="center"><b>{$zc_cate[$val['zc_id']]}</b></td>
 		<td align="center"><span data-tdtype="edit" data-field="zc_id" data-id="{$val.id}" class="tdedit">{$val.zc_id}</span></td>

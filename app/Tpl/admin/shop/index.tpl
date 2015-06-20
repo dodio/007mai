@@ -33,12 +33,12 @@
     </table>
     </form>
     
-    <div class="J_tablelist table_list" data-acturi="{:U('ad/ajax_edit')}">
+    <div class="J_tablelist table_list" data-acturi="{:U('shop/ajax_edit')}">
     <table width="100%" cellspacing="0">
         <thead>
           <tr>
             <th width="25"><input type="checkbox" name="checkall" class="J_checkall"></th>
-            <th>ID</th>
+            <th><span data-tdtype="order_by" data-field="id">ID</span></th>
             <th align="left">店铺名称</th>
             <th align="left">图片</th>
             <th align="center"><span data-tdtype="order_by" data-field="cate_id">分类</span></th>
@@ -57,7 +57,7 @@
           <tr>
             <td align="center"><input type="checkbox" class="J_checkitem" value="{$val.id}"></td>
             <td align="center">{$val.id}</td>
-            <td><span data-tdtype="edit" data-field="name" data-id="{$val.name}" class="tdedit">{$val.name}</span></td>
+            <td><span data-tdtype="edit" data-field="name" data-id="{$val.id}" class="tdedit">{$val.name}</span></td>
             <td><img src="{:attach($val['img'],'images')}" width="96px" height="96px" alt=""></td>
             <td align="center"><?php echo $cate_data[$val['cate_id']]['name']; ?></td>
             <td align="center">{$val.shop_type}</td>

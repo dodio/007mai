@@ -151,6 +151,7 @@ class indexAction extends ItemlistAction {
 		$sort	=	I('sort', 'default', 'trim'); //排序
 		$order	=	'ordid asc ';
 		if(!$cid){
+			// 可以通过分类名字进入分类
 			$name = I("cname","","trim");
 			$cinfo = $this->_cate_mod->cate_info_byname($name);
 			if($cinfo){
@@ -159,8 +160,13 @@ class indexAction extends ItemlistAction {
 		}
 
 		if(!$cid) redirect(U('index/index'));
- 		$this->_common($cid);
+
+ 		$total = $this->_common($cid);
  		$this->assign("nav_curr","cate");
+ 		//一行4个宝贝，尽量让店铺高度与宝贝列表高度一致
+ 		$shop_amount = ceil( $total/4 );
+		$shops = $this->cate_shop($cid,$shop_amount);
+		$this->assign("shops",$shops);
 		$this->display();
 	}
 

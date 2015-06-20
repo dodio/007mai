@@ -51,15 +51,23 @@
           </select>
         </td>
     </tr>
+
         <tr id="level">  
           <th>店铺等级：</th>
           <td>
-            <select name="level">
+            <select id="taobao_select" name="level">
               <option value="">选择</option>
               <volist name="levels" id="name" key="val">
                <option value="{$val}" <if condition="$info.level eq $val">selected</if>>{$name}</option>
               </volist>
             </select>
+          </td>
+        </tr>
+
+        <tr id="follows">  
+          <th>关注人数：</th>
+          <td>
+            <input type="text" name="level" size="20" value="{$info.level}" class="input-text">
           </td>
         </tr>
  
@@ -161,13 +169,19 @@ $(function(){
             }
         }
     });
-
+    
+    var level = $("#level").html();
+    var follows = $("#follows").html();
     $("#shop_type").change(function(){
         var type = $(this).val();
         if(type == "C"){
-            $("#level").show();
+            follows = $("#follows").html();
+            $("#follows").html('');
+            $("#level").html(level);
         }else{
-            $("#level").hide();
+            level = $("#level").html();
+            $("#level").html('');
+            $("#follows").html(follows);
         }
     }).change();
 

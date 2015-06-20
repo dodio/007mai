@@ -4,6 +4,7 @@ class ItemlistAction extends FirstendAction {
         parent::_initialize();
         $this->_mod = D('items');
         $this->_cate_mod = D('items_cate');
+        $this->_shop_mod = D('shop');
     }
     /**
      * 显示分类下的商品，通用方法
@@ -71,7 +72,6 @@ class ItemlistAction extends FirstendAction {
 
       $this->assign('items_list', $items['item_list']);
       $this->assign('seller_arr',$items['seller_arr']);
-      
       $this->assign('list_info',$list_info);
 
       if(C('ftx_site_cache')){
@@ -92,15 +92,13 @@ class ItemlistAction extends FirstendAction {
       $this->assign('page', $pager->kshow());
       $this->assign('total_item',$count);
 
-
-
       $this->_config_seo(C('ftx_seo_config.cate'), array(
         'cate_name' => $cinfo['name'],
         'seo_title' => $cinfo['seo_title'],
         'seo_keywords' => $cinfo['seo_keys'],
         'seo_description' => $cinfo['seo_desc'],
       ));
-
+      return $items['total'];
     }
 
     /**
@@ -120,6 +118,7 @@ class ItemlistAction extends FirstendAction {
         $items = array();
         $seller_arr = array();
         $cate_data = $this->_cate_mod->cate_data_cache();
+        $total = 0;
         foreach($items_list as $key=>$val){
           $items['item_list'][$key]     = $val;
           $items['item_list'][$key]['class']  = $this->_mod->status($val['status'],$val['coupon_start_time'],$val['coupon_end_time']);
@@ -141,15 +140,78 @@ class ItemlistAction extends FirstendAction {
           $items['item_list'][$key]['urltitle'] = urlencode($val['title']);
           $items['item_list'][$key]['price'] = number_format($val['price'],1);
           $items['item_list'][$key]['coupon_price'] = number_format($val['coupon_price'],1);
+          $total++;
           if($val['sellerId']){
             $seller_arr[$val['sellerId']] = true;
           }
         }
-
+        $items['total'] = $total;
         $items['seller_arr'] = array_keys($seller_arr);
         return $items;
     }
 
+    /**
+     * 获取该分类数据，如果不够则获取父分类充数，直到足够
+     * @param  [type]  $cid    [description]
+     * @param  integer $amount [description]
+     * @return [type]          [description]
+     */
+    protected function cate_shop($cid,$amount = 18){
+      $order = "ordid asc , id desc ";
+      if(C('ftx_site_cache')){
+        $md_id = md5( $cid . "_" . $amount . "_" .$order);
+        $file = 'shop/'.$md_id;
+        if(false === $shops = F($file)){
+
+          $cinfo = $this->_cate_mod->cate_info($cid);
+          $map = array("status" => 1);
+          if($cinfo['spid'] == 0){
+            $parents = array($cid);
+          }else{
+            $parents = array_reverse(explode('|', trim($cinfo['spid'], '|')));
+            array_unshift($parents, $cid);
+          }
+          $pre = 0 ;
+          $shops = array();
+          foreach ($parents as $cate_id) {
+            if($pre >= $amount){
+              break;
+            }
+            $size = $amount - $pre;
+            $map['cate_id'] = $cate_id;
+            $temp_shop = $this->_shop_mod->where($map)->order($order)->limit(0,$size)->select();
+            $count = count($temp_shop);
+            $pre+=$count;
+            $shops[$cate_id] = $temp_shop;            
+          }
+          F($file,$shops);
+        }
+      }else{
+        $cinfo = $this->_cate_mod->cate_info($cid);
+          $map = array("status" => 1);
+          if($cinfo['spid'] == 0){
+            $parents = array($cid);
+          }else{
+            $parents = array_reverse(explode('|', trim($cinfo['spid'], '|')));
+            array_unshift($parents, $cid);
+          }
+          $pre = 0 ;
+          $shops = array();
+          foreach ($parents as $cate_id) {
+            if($pre >= $amount){
+              break;
+            }
+            $size = $amount - $pre;
+            $map[$cate_id] = $cate_id;
+            $temp_shop = $this->_shop_mod->where($map)->order($order)->limit(0,$size)->select();
+            $count = count($temp_shop);
+            $pre+=$count;
+            $shops[$cate_id] = $temp_shop;            
+          }
+      }
+
+      return $shops;
+    }
 }
 
  ?>

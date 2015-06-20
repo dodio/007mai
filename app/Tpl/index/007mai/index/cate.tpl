@@ -23,32 +23,12 @@ __STATIC__/assets/pc/css/cate.css
   <div class="shop_promote fl">
     <div class="sp-title mb10">优秀店铺</div>
     
-
-    <for start="0" end="9">
-    <div class="show-item shop mb20">
-      <div class="show-pic">
-        <a href="" target="_blank"><img src="http://img01.taobaocdn.com/bao/uploaded/i3/TB1yrEKHFXXXXaEXVXXXXXXXXXX_!!0-item_pic.jpg_310x310.jpg" alt=""></a>
-      </div>
-      <div class="show-name"><a href="" target="_blank">夏天的我2003</a></div>
-      <div class="show-info group">
-        <div class="taobao fl"><i class="icon icon-taobao"></i>淘宝</div>
-        <div class="fr"><div class="taobaorank rank-r20"></div></div>
-      </div>
-      <a href="" target="_blank" class="shop-go mt10">进店逛逛</a>
-    </div>
-
-    <div class="show-item shop mb20">
-      <div class="show-pic">
-        <a href="" target="_blank"><img src="http://img01.taobaocdn.com/bao/uploaded/i4/T19ufyFOBXXXXXXXXX_!!0-item_pic.jpg_310x310.jpg" alt=""></a>
-      </div>
-      <div class="show-name"><a href="" target="_blank">郑人鞋类专营店</a></div>
-      <div class="show-info group">
-        <div class="taobao fl"><i class="icon icon-tmall"></i>天猫</div>
-        <div class="fr"><i class="heart1-icon icon"></i>2311人关注</div>
-      </div>
-      <a href="" target="_blank" class="shop-go mt10">进店逛逛</a>
-    </div>
-    </for>
+    <volist name="shops" id="val">
+      <volist name="val" id="shop">
+        <include file="shop-item"/>
+      </volist>
+    </volist>
+    
     <div class="mt20 mai007-w206x100">
       {:R('advert/index', array(8), 'Widget')}
     </div>

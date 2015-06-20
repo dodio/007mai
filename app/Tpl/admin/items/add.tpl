@@ -44,20 +44,22 @@
 					<input type="text" name="tags" id="J_tags" class="input-text" size="30" >
 					<input type="button" value="{:L('auto_get')}" id="J_gettags" name="tags_btn" class="btn">
 				</td>
-				<th>商品来源 :</th>
-				<td>
-					<select name="shop_type" id="shop_type">
-					<volist name="orig_list" id="val">
-					<option value="{$val.type}">{$val.name}</option>
-					</volist>
-            				</select>
-				</td>
+				<th>卖家sellerId</th>
+				<td><input type="text" name="sellerId" id="J_sellerid" class="input-text" size="20" value="{$info.sellerid}"></td>
 			</tr>
 			<tr>
 				<th width="80">商品价格 :</th>
 				<td width="30%"><input type="text" name="price" id="J_price"size="10" class="input-text" > 元</td>
 				<th>秒杀价格 :</th>
 				<td><input type="text" name="coupon_price" id="coupon_price" size="10" class="input-text" > 元</td>
+				<th>商品来源 :</th>
+				<td>
+					<select name="shop_type" id="shop_type">
+						<volist name="orig_list" id="val">
+						<option value="{$val.type}">{$val.name}</option>
+						</volist>
+          </select>
+				</td>
 			</tr>
 			<tr>
 				<th>30天销量 :</th>
@@ -281,41 +283,6 @@ $(function() {
 
 
 	var collect_url = "{:U('items/ajaxgetid')}";
-	$("#good_link").focusout(function() {
-		var link = $("#good_link").val();
-		if (link != '') {
-			$.getJSON(collect_url, {url:link}, function(result){
-				if(result.status == 1){
-					$('#J_num_iid').val(result.data.item.num_iid);
-					$('#J_click_url').val(result.data.click_url);
-					$('#J_title').val(result.data.item.title);
-					$('#J_intro').val(result.data.item.title);
-					$('#J_price').val(result.data.item.price);
-					$('#ems').val(result.data.item.ems);
-					$('#J_nick').val(result.data.item.nick);
-					$('#J_pic_url').val(result.data.item.pic_url);
-					$('#J_pic_url_img').attr('src',result.data.item.pic_url);
-					$('#volume').val(result.data.item.volume);
-					$('#coupon_price').val(result.data.item.coupon_price);
-					$('#coupon_start_time').val(result.data.item.coupon_start_time);
-					$('#coupon_end_time').val(result.data.item.coupon_end_time);
-					$('#shop_type').val(result.data.item.tmall);
-					$('#good_link_error').hide();
-					$.getJSON('{:U("items/ajax_gettags")}', {title:result.data.item.title}, function(result){
-						if(result.status == 1){
-							$('#J_tags').val(result.data);
-						}else{
-							$.ftxia.tip({content:result.msg});
-						}
-					});
-
-
-				}else if(result.status == 0){
-					$('#good_link_error').show().html(result.msg);
-				}
-			});
-		}
-	});
 
 	$('#J_get_info').live('click', function() {
 		var link = $("#good_link").val();
@@ -334,6 +301,7 @@ $(function() {
 					$('#coupon_price').val(result.data.item.coupon_price);
 					$('#coupon_start_time').val(result.data.item.coupon_start_time);
 					$('#coupon_end_time').val(result.data.item.coupon_end_time);
+					$("#J_sellerid").val(result.data.item.sellerid);
 					$('#good_link_error').hide();
 				}else if(result.status == 0){
 					$('#good_link_error').show().html(result.msg);

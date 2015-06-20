@@ -45,13 +45,13 @@
                 <td align="center"><input type="checkbox" class="J_checkitem" value="{$val.id}"></td>
                 <td align="center">{$val.id}</td>
                 <td align="center"><img src="{:avatar($val['id'], 32)}" /></td>
-                <td align="left"><span data-tdtype="edit" data-field="username" data-id="{$val.id}" class="tdedit">{$val.username}</span></td>
-                <td align="left"><span data-tdtype="edit" data-field="email" data-id="{$val.id}" class="tdedit">{$val.email}</span></td>
+                <td align="left">{$val.username}</td>
+                <td align="left">{$val.email}</td>
                 <td align="center">
                   <if condition="$val['gender'] eq '1'">男</if>
                   <if condition="$val['gender'] eq '0'">女</if>
                 </td>
-                <td align="right"><span data-tdtype="edit" data-field="score" data-id="{$val.id}" class="tdedit">{$val.score}</span></td>
+                <td align="right">{$val.score}</td>
                 <td align="center">{$val.reg_time|frienddate}</td>
                 <td align="center">{$val.last_time|frienddate}</td>
                 <td align="center">{$val.last_ip}</td>

@@ -622,10 +622,11 @@ class itemsAction extends BackendAction {
         $itemcollect = new itemcollect();
         $itemcollect->url_parse($url);
         $item = $itemcollect->fetch_tb();
-        if ($item = $itemcollect->fetch_tb()){
+        if ($item){
 			$this->ajaxReturn(1, L('operation_success'), $item['click_url']);
-		}
-        $this->ajaxReturn(0, L('operation_failure'));
+		}else{
+            $this->ajaxReturn(0, L('operation_failure'));
+        }
     }
  
 	public function http($url){

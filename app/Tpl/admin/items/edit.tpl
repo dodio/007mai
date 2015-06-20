@@ -25,14 +25,8 @@
 				<td><input type="text" name="title" id="J_title" class="input-text" size="40" value="{$info.title}"></td>
 				<th>商品标签 :</th>
 				<td><input type="text" name="tags" id="J_tags" class="input-text" size="30" value="{$info.tags}"><input type="button" value="{:L('auto_get')}" id="J_gettags" name="tags_btn" class="btn"></td>
-				<th>商品来源 :</th>
-				<td>
-					<select name="shop_type" id="shop_type">
-						<volist name="orig_list" id="val">
-						<option value="{$val.type}" <if condition="$info['shop_type'] eq $val['type']">selected="selected"</if>>{$val.name}</option>
-						</volist>
-					</select>
-				</td>
+				<th>卖家sellerId</th>
+				<td><input type="text" name="sellerId" id="J_sellerid" class="input-text" size="20" value="{$info.sellerId}"></td>
 			</tr>
 			<tr>
 				<th width="80">商品价格 :</th>
@@ -106,8 +100,16 @@
 			</tr>
 			<tr>
 				<th>推广链接 :</th>
-				<td colspan="6">
-                			<input type="text" name="click_url" id="J_click_url" class="input-text" size="100" value="{$info.click_url}">
+				<td colspan="3">
+                			<input type="text" name="click_url" id="J_click_url" class="input-text" size="100" value="{$info.click_url}"><!-- <input type="button" id="J_getclick_url" value="获取" class="btn"> -->
+				</td>
+				<th>商品来源 :</th>
+				<td>
+					<select name="shop_type" id="shop_type">
+						<volist name="orig_list" id="val">
+						<option value="{$val.type}" <if condition="$info['shop_type'] eq $val['type']">selected="selected"</if>>{$val.name}</option>
+						</volist>
+					</select>
 				</td>
 			</tr>
 			<tr>

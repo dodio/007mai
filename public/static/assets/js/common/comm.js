@@ -87,7 +87,7 @@ $(function(){
       content: score_change.action +":　情报 +" + score_change.score,
       time: 3000
     });
-    $.removeCookie('score_change');
+    $.removeCookie('score_change',{path:"/"});
   }
 });
 

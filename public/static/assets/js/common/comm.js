@@ -165,9 +165,11 @@ $(function(){
       height:headh,
       up:function(st){
         sidenav.removeClass("affix");
+        show();
       },
       down:function(st){
         sidenav.addClass('affix');
+        hide();
       }
     });
 
@@ -175,23 +177,29 @@ $(function(){
       up:function(st,ot){
         if(st<headh){
           sidenav.removeClass("affix");
-          return;
         }
-        sidenav.show();
-        sidenav.stop(true).animate({width:sidenav_width},200,function(){
-          sidenav.css("overflow","visibale");
-        });
+        show();
       },
       down:function(st,ot){
         if(st<headh){
           sidenav.removeClass("affix");
           return;
         }
-        sidenav.stop(true).animate({width:0},200,function(){
-          sidenav.hide();
-        });
+        hide();
       }
     });
+    function show(){
+      sidenav.show();
+      sidenav.stop(true).animate({width:sidenav_width},200,function(){
+        sidenav[0].style.overflow="visible";       
+      });
+    };
+
+    function hide(){
+      sidenav.stop(true).animate({width:0},200,function(){
+        sidenav.hide();
+      });
+    }
 });
 
 

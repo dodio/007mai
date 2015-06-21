@@ -62,8 +62,7 @@
       </div>
     </div>
     <div class="container mt30 copyright">
-    	<p class="f_miibeian tac page007mai"><a href="http://www.miibeian.gov.cn/" rel="nofollow" target="_blank">{:C('ftx_site_icp')}</a> © 2010-2015 007mai.com all Rights Reserved
-		{:C('ftx_statistics_code')} <a href="/sitemap" target="_blank">网站地图</a>
+    	<p class="f_miibeian tac page007mai"><a href="http://www.miibeian.gov.cn/" rel="nofollow" target="_blank">蜀ICP备15011882号</a> © 2010-2015 007mai.com all Rights Reserved <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1255103351'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1255103351' type='text/javascript'%3E%3C/script%3E"));</script> <a href="/sitemap" target="_blank">网站地图</a>
 		</p>
     </div>
   </div>

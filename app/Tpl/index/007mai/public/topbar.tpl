@@ -17,9 +17,11 @@
         <a href="/user/login" target="_blank">登录</a>
         <a href="/user/register" target="_blank">免费注册</a>
       </div>
-      <div class="other-show fl">
-        <a href="{:C('ftx_kefu_html')}" target="_blank" class="mr0">在线客服</a>
-      </div>
+      <?php if (C('ftx_kefu_html') != ""): ?>
+        <div class="other-show fl">
+          <a href="{:C('ftx_kefu_html')}" target="_blank" class="mr0">在线客服</a>
+        </div>
+      <?php endif ?>
     </div>
   </div>
 </div>

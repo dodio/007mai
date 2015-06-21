@@ -34,6 +34,7 @@
       if(_self.data("ad_007mai_loaded")){
         return;
       }
+      _self.data("ad_007mai_loaded",true);
       var t = _self.attr("data-ajax-ad");
       // 只能通过这两种方式中的一种获取广告
       if(!t || (t != "id" && t!= "tracker") ){
@@ -45,7 +46,6 @@
       }
       _self.load("/index.php?m=advert&a=get&"+ t + "=" + val,function(){
         if($.isFunction(callback)){
-          _self.data("ad_007mai_loaded",true);
           callback.call(_self[0]);
         }
       });

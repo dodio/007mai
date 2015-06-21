@@ -57,7 +57,7 @@ class indexAction extends ItemlistAction {
 		$this->assign("cate_items",$cate_items);
 
 		//情报精选
-		$jingxuan_id = 264;
+		$jingxuan_id = 25;
 		$this->assign('jingxuan_list', $this->cate_item($jingxuan_id,10));
     
  		$shops = $this->cate_shop(1,8);

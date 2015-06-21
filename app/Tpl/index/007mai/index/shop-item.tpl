@@ -1,4 +1,4 @@
-<div id="shop_{shop.sellerId}" class="show-item shop mb20">
+<div id="shop_{$shop.sellerId}" class="show-item shop mb20">
   <div class="show-pic">
     <a data-type="1" biz-sellerid="{$shop['sellerId']}" isconvert=1 href="{$shop.url}" target="_blank"><img src="{$shop.img}" alt=""></a>
   </div>

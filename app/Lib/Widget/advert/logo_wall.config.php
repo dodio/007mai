@@ -1,6 +1,6 @@
 <?php
 return array(
   'name' => '品牌logo墙',
-  'option' => true,
+  'option' => 100,
   'allow_type' => array('image'),
 );

@@ -1,5 +1,5 @@
 <ul class="bk-list group">
-    <volist name="items_list" id="item" key="i" offset="0" length="10" mod="5">
+    <volist name="jingxuan_list" id="item" key="i" offset="0" length="10" mod="5">
         <li <eq name="mod" value="4">class="mr0"</eq> >
           <div class="baokuan-item" id="nid_{$item.num_iid}">
             <div class="bk-pic">

@@ -116,6 +116,8 @@ class indexAction extends ItemlistAction {
 		$this->assign('page', $pager->kshow());
 		$this->assign('total_item',$count);
  		$this->assign('brands',$brandlist['brand']);
+ 		$shops = $this->cate_shop(1,8);
+ 		$this->assign("shops",$shops);
   	$this->assign('nav_curr', 'index');
   	$this->_config_seo(C('ftx_seo_config.index'));
 		$this->display();

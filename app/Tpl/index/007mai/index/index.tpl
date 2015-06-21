@@ -25,7 +25,7 @@ __STATIC__/assets/pc/css/index.css
 <div class="container">
     <div class="baokuan">
       <div class="bk-top group">
-        <h2>十件爆款</h2>
+        <h2>情报精选</h2>
         <div class="bk-label"></div>
         <div class="bk-nav">
           <a href="/ba" target="_blank">八块八</a>
@@ -36,7 +36,28 @@ __STATIC__/assets/pc/css/index.css
    </div>
 </div>
 
-
+<div class="container mt20">
+  <div class="baokuan">
+    <div class="bk-top group">
+      <h2>情报店铺</h2>
+      <div class="bk-nav">
+        <a href="http://s.click.taobao.com/t?e=m%3D2%26s%3DF1zIB0VV1A4cQipKwQzePCperVdZeJviEViQ0P1Vf2kguMN8XjClAuSP2sR3JAkEijNJEVZuO8ASAQtu4hYZUK%2FcS5yixJ%2FffI1UR37r6pJ9h2dzyPuHmlW00662PG2K8Cm%2FwUl4ESHcHtRpEUy6RLSgd9R%2Fv5WktY4Qt2cZ1lVeY%2By0blbhscYl7w3%2FA2kb" target="_blank">聚划算</a>
+      </div>
+    </div>
+  </div>
+  <?php $si = 0 ; ?>
+  <ul class="wide-shoplist">
+    <volist name="shops" id="val">
+      <volist name="val" id="shop">
+        <?php $mod = ($si++)%4; ?>
+        <li <eq name="mod" value="3">class="mr0"</eq>>
+          <include file="shop-item"/>
+        </li>
+      </volist>
+    </volist>
+  </ul>
+  
+</div>
   <div class="mt20 container group">
     <!-- 100高度广告位 -->
     <div class="mai007-w100x100">

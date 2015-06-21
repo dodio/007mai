@@ -21,8 +21,8 @@
   .sidenav-nav{
     float: left;
     .sidenav-item{
-      border-right: 1px solid #350559;
-      border-bottom: 1px solid #350559;
+      border-right: 1px solid #767676;
+      border-bottom: 1px solid #767676;
       &:last-child{
         border-bottom: none;
       }
@@ -126,16 +126,16 @@
           display: block;
           width: 100px;
           right: 50px;
+          border: 2px solid @color_red;
+          border-right: none;
         }
       }
       .search_box{
         position: absolute;
         right: 0px;
-        width: 50px;
+        width: 0px;
         height: 46px;
         background-color: #fff;
-        border: 2px solid @color_red;
-        border-right: none;
         top: 0;
         -webkit-transition: all 300ms;
         -moz-transition: all 300ms;
@@ -163,12 +163,13 @@
     width: 30px;
     text-align: center;
     .lines(15px,2);
-    background-color: #000;
+    background-color: #393939;
+    .opac(0.8);
     color: #fff;
     font-size: 14px;
     &:hover{
       text-decoration: none;
-      background-color: #323232;
+      background-color: #000;
     }
   }
   &.affix{
@@ -184,7 +185,7 @@
   display: none;
   left: 101px;
   top: 0;
-  width: 410px;
+  width: 510px;
   background-color: rgba(76, 76, 76, 0.93);
   background-color: #000\9;
   border: 1px solid #E2E2E2;
@@ -237,7 +238,7 @@
   float: left;
   width: auto;
   margin-right: 10px;
-  line-height: 18px;
+  line-height: 26px;
 }
 .sidenav .side_sub_nav_i ul.bdb{
   border-bottom:1px dashed #B8B8B8;

@@ -43,7 +43,7 @@
                     <a href="{:C('ftx_kefu_html')}" target="_blank" rel="nofollow">
                         <img src="__STATIC__/assets/pc/images/layout/qq.png">
                     </a>
-                    <div class="tab-bar tab-bar-js" style="display:none;">联系客服<div class="tab-tip-arr">◆</div></div>
+                    <div class="tab-bar tab-bar-js" style="display:none;"><a href="http://tieba.baidu.com/f?kw=007%E4%B9%B0" target="_blank">官方贴吧</a></div>
                 </div>
                 <div class="img-span">
                     <div id="gotop" class="gotop" style="display: block;">

@@ -71,14 +71,7 @@ __STATIC__/assets/pc/css/index.css
 
 <div class="mt20 container group">
   <!-- 100高度广告位 -->
-  <div class="mai007-w100x100">
-    <!-- 图片广告 -->
-    <div class="mai007-picad">
-      <a href="" target="_blank">
-        <img src="http://d05.res.meilishuo.net/pic/_o/fd/45/d45975bbf155ec6fb4e474e1421c_1200_120.ch.jpg" alt="">
-      </a>
-    </div>
-  </div>
+  <div class="mai007-w100x100" data-ajax-ad="tracker" data-ad-tracker="index_middle" data-auto="1"></div>
 </div>
 
   <include file="public:shopping_index"/>

@@ -20,13 +20,7 @@
         <a href="javascript:" class="spi-cate">海外商家</a>
         <a href="javascript:" class="spi-cate">其他商家</a>
       </div>
-      <div class="mai007-w100x240">
-        <div class="mai007-picad">
-          <a href="" target="_blank">
-            <img src="http://l1.51fanli.net/event/attach/image/2015/06/557fb72256566.jpg" alt="">
-          </a>
-        </div>
-      </div>
+      <div class="mai007-w100x240" data-ajax-ad="tracker" data-ad-tracker="shopping_index" data-auto="1"></div>
       <div class="spi-content">
         <div class="carousel">
             <div class="wrap group">

@@ -29,8 +29,7 @@ __STATIC__/assets/pc/css/cate.css
       </volist>
     </volist>
     
-    <div class="mt20 mai007-w206x100">
-      {:R('advert/index', array('cate_shop_bottom'), 'Widget')}
+    <div class="mt20 mai007-w206x100" data-ajax-ad="tracker" data-ad-tracker="cate_shop_bottom" data-auto="1">
     </div>
   </div>
   <!-- 左边end -->

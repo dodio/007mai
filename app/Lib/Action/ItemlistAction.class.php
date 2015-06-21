@@ -212,6 +212,32 @@ class ItemlistAction extends FirstendAction {
 
       return $shops;
     }
+
+
+    protected function cate_item($cid,$amount = 8,$map = null , $order = "ordid asc , id desc "){
+      if(is_null($map)){
+        $map = array(
+          "cate_id"=> $cid
+        );
+      }else{
+        $map['cate_id'] = $cid;
+      }
+      if(C('ftx_site_cache')){
+        $md_id = md5("items_" . dump($map,false) . $amount);
+        $file = 'items_'.$md_id;
+        if(false === $items = S($file)){
+          $items_list = $this->_mod->where($map)->order($order)->limit(0,$amount)->select();
+          $tmp = $this->_deal_item_list($items_list);
+          $items = $tmp['item_list'];
+          S($file,$items);
+        }
+      }else{
+        $items_list = $this->_mod->where($map)->limit(0,$amount)->select();
+        $tmp = $this->_deal_item_list($items_list);
+        $items = $tmp['items_list'];
+      }
+      return $items;
+    }
 }
 
  ?>

@@ -46,3 +46,33 @@
 @import "./inc/baokuan-item.less";
 @import "./inc/shopping-index.less";
 @import "./inc/brand.less";
+
+@import "./mixin/show-item.less";
+@import "./mixin/shop-item.less";
+.wide_shoplist,.itemlist{
+  margin-top: 20px;
+  li{
+    width: 266px;
+    float: left;
+    margin-right: 12px;
+    margin-bottom: 30px;
+  }
+}
+.wide_shoplist{
+  li{
+    height: 370px;
+  }
+  .shop-item(266px);
+}
+@import "./mixin/item-item.less";
+.itemlist{
+  li{
+    height: 350px;
+  }
+  .item-item(266px);
+}
+
+.index-promote{
+  margin-top: 30px;
+  border-top: 2px solid #000;
+}

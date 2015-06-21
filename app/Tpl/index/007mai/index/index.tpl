@@ -16,11 +16,6 @@ __STATIC__/assets/pc/css/index.css
   {:R('advert/index', array(1), 'Widget')}
 </div>
 
- <div class="container mt20">
-    <div class="chao-title"><div class="chao-title-text">热门品牌</div></div>
-    <include file="brand:brand-list"/>
-  </div>
-
 
 <div class="container">
     <div class="baokuan">
@@ -32,7 +27,7 @@ __STATIC__/assets/pc/css/index.css
           <a href="/shiba" target="_blank">十八块八</a>
         </div>
       </div>
-      <include file="public:baokuan_list" />
+      <include file="baokuan_list" />
    </div>
 </div>
 
@@ -46,7 +41,7 @@ __STATIC__/assets/pc/css/index.css
     </div>
   </div>
   <?php $si = 0 ; ?>
-  <ul class="wide-shoplist">
+  <ul class="wide_shoplist group">
     <volist name="shops" id="val">
       <volist name="val" id="shop">
         <?php $mod = ($si++)%4; ?>
@@ -56,22 +51,43 @@ __STATIC__/assets/pc/css/index.css
       </volist>
     </volist>
   </ul>
-  
 </div>
-  <div class="mt20 container group">
-    <!-- 100高度广告位 -->
-    <div class="mai007-w100x100">
-      <!-- 图片广告 -->
-      <div class="mai007-picad">
-        <a href="" target="_blank">
-          <img src="http://d05.res.meilishuo.net/pic/_o/fd/45/d45975bbf155ec6fb4e474e1421c_1200_120.ch.jpg" alt="">
-        </a>
+
+
+<?php foreach ($cate_items as $cid => $items_list): ?>
+  <?php $cate = $cate_data[$cid]; ?>
+  <div class="container index-promote">
+    <div class="baokuan">
+      <div class="bk-top group">
+        <h2>{$cate.name}</h2>
+        <div class="bk-nav">
+          <a href="/index/cate/cid/{$cate.id}" target="_blank">更多</a>
+        </div>
       </div>
     </div>
+    <include file="item-list"/>
   </div>
+<?php endforeach ?>
+
+<div class="mt20 container group">
+  <!-- 100高度广告位 -->
+  <div class="mai007-w100x100">
+    <!-- 图片广告 -->
+    <div class="mai007-picad">
+      <a href="" target="_blank">
+        <img src="http://d05.res.meilishuo.net/pic/_o/fd/45/d45975bbf155ec6fb4e474e1421c_1200_120.ch.jpg" alt="">
+      </a>
+    </div>
+  </div>
+</div>
 
   <include file="public:shopping_index"/>
 
 <include file="public:footer" />
+<script>
+  $(function(){
+    $('.item').addClass("show-normal");
+  });
+</script>
 </body>
 </html>

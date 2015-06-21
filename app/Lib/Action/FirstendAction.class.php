@@ -18,7 +18,7 @@ class FirstendAction extends TopAction {
         $this->_assign_oauth();
         $this->assign('nav_curr', '');
         $mod_cate  = D('items_cate');
-        $this->assign('cate_data', $mod_cate->cate_data_cache());
+        $this->assign('cate_data', $mod_cate->cate_data_cache(true));
         $this->assign('cate_list', $mod_cate->cate_cache());
 
         if(!IS_AJAX){

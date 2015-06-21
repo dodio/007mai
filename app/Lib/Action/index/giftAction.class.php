@@ -70,6 +70,7 @@ class giftAction extends FirstendAction {
         !$id && $this->_404();
         $item_mod = M('score_item');
         $item = $item_mod->field('id,title,img,score,stock,user_num,price,coupon_price,num_iid,start_time,end_time,buy_num,desc,info')->find($id);
+        !$item && $this->_404();
         $this->assign('item', $item);
         $this->_config_seo(C('ftx_seo_config.gift_item'), array(
             'title' => $item['title'],

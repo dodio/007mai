@@ -112,5 +112,13 @@ class FirstendAction extends TopAction {
         $pager->setConfig('theme', '%upPage% %first% %linkPage% %end% %downPage%');
         return $pager;
     }
+
+    //使用自己的404
+    protected function _404(){
+        header('HTTP/1.1 404 Not Found');
+        header("status: 404 Not Found");
+        $this->display("error:404");
+        exit();
+    }
 }
 ?>

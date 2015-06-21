@@ -26,5 +26,6 @@
       </div>
     </div>
   </if>
+  <block name="reason"></block>
   <a data-type="1" biz-sellerid="{$shop['sellerId']}" isconvert=1 href="{$shop.url}" target="_blank" class="shop-go mt10">进店逛逛</a>
 </div>

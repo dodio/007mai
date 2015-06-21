@@ -46,7 +46,7 @@ __STATIC__/assets/pc/css/index.css
       <volist name="val" id="shop">
         <?php $mod = ($si++)%6; ?>
         <li <eq name="mod" value="5">class="mr0"</eq>>
-          <include file="shop-item"/>
+          <include file="shop-item-reason"/>
         </li>
       </volist>
     </volist>

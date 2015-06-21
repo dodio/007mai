@@ -23,9 +23,9 @@
             <div class="fix-right-bottom">
                 <div class="img-span">
                     <a href="javascript:void(0);" class="sign sign_btn">
-                        <img src="__STATIC__/assets/pc/images/layout/sign.gif" style="margin-left: 5px;">
+                        <img src="__STATIC__/assets/pc/images/layout/sign.gif" style="margin-left: 10px;">
                     </a>
-                    <div class="tab-bar tab-bar-js" style="right: 35px; display: none;">签到得情报<div class="tab-tip-arr">◆</div></div>
+                    <div class="tab-bar tab-bar-js" style="display: none;">签到得情报<div class="tab-tip-arr">◆</div></div>
                 </div>
                 
                 <if condition="C('ftx_site_browser') neq ''">
@@ -33,7 +33,7 @@
                         <a href="javascript:void(0);">
                             <img src="__STATIC__/assets/pc/images/layout/qrcode.png">
                         </a>
-                        <div class="qrcode-tab-bar tab-bar-js" style="right: 35px; display: none;">
+                        <div class="qrcode-tab-bar tab-bar-js" style="display: none;">
                             <img src="{:C('ftx_site_browser')}" width="140px">
                         </div>
                     </div>
@@ -80,7 +80,7 @@
         /* 右侧浮动层*/
         $('.img-span',rightbar).hover(function(){
             var bar = $(this).find(".tab-bar-js");
-            bar.css('right','60px').show().animate({right:"35px"},1000);
+            bar.css('right','90px').show().animate({right:"50px"},500);
         },function(){
            $(this).find(".tab-bar-js").hide();
         });

@@ -9,19 +9,16 @@
     </a>
   </div>
   <div class="show-name"><a target="_blank" href="{:U('gift/detail', array('id'=>$item['id']))}">{$item.title}</a></div>
-  <div class="time-info group">
-    <?php if ($start_time > time()): ?>
-        <em class="time_count fl" data-time="{$item.start_time}">
-          
-        </em><span class="label fr start">开始</span>
-    <?php else: ?>
-      <em class="time_count fl" data-time="{$item.end_time}">
-          <span class="d">1</span>天
-          <span class="h">20</span>小时
-          <span class="mm">30</span>分
-          <span class="ss">30</span>秒
-        </em><div class="fl tip">之后</div><span class="label fr end">结束</span>
-    <?php endif ?>
+  <div class="time-info mt20 group">
+  <?php if ($item['start_time'] > time()): ?>
+      <em class="time_count fl" data-time="{$item.start_time}"></em>
+      <div class="fl tip">之后</div>
+      <span class="label fr start">开始</span>
+  <?php else: ?>
+    <em class="time_count fl" data-time="{$item.end_time}"></em>
+    <div class="fl tip">之后</div>
+    <span class="label fr end">结束</span>
+  <?php endif ?>
   </div>
 
   <div class="item-info group">
@@ -30,7 +27,12 @@
     </div>
     <div class="fr">
       <div class="kucun">库存:{$item.stock}</div>
-      <a class="btn-exchange" target="_blank" href="{:U('gift/detail', array('id'=>$item['id']))}">兑换</a>
+      <?php if ($item['stock'] < 1): ?>
+        <a class="btn-exchange disable" target="_blank" href="{:U('gift/detail', array('id'=>$item['id']))}">已兑光</a>
+      <?php else: ?>
+        <a class="btn-exchange" target="_blank" href="{:U('gift/detail', array('id'=>$item['id']))}"><?php if ($item['start_time'] > time()): ?>查看 <?php else: ?>兑换 <?php endif ?> </a>
+      <?php endif ?>
+      
     </div>
   </div>
 </div>

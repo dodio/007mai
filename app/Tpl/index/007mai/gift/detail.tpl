@@ -33,10 +33,35 @@ __STATIC__/ftxia/new/css/pg-try.css
 				<h3>{$item.title}</h3>
 				<p class="price">所需情报：<span class="jd-current">{$item.score}</span> <em class="unit">个</em></p>
 				<p>库存：<em class="org_2">{$item.stock}</em> 份</p>
-				<p>兑换时间：{$item.start_time|date="y年m月d日 H时s分",###} - {$item.end_time|date="y年m月d日 H时s分",###}</p>
-				<p>每名会员限兑换<em class="org_2">{$item.user_num}</em></span>次</p>
-				<p class="bady-btn"><a href="javascript:;"   class="btn fl mr15 J_gift_btn" data-id="{$item.id}" data-num="#J_num_{$item.id}">兑换</a></p>
+
+        <div class="time-info mt20 group">
+        <?php if ($item['start_time'] > time()): ?>
+            <em class="time_count fl" data-time="{$item.start_time}"></em>
+            <div class="fl tip">之后</div>
+            <span class="label fr start">开始</span>
+        <?php else: ?>
+          <em class="time_count fl" data-time="{$item.end_time}"></em>
+          <div class="fl tip">之后</div>
+          <span class="label fr end">结束</span>
+        <?php endif ?>
+        </div>
+        
+				<p class="mt10 group">每名会员限兑换<em class="org_2">{$item.user_num}</em></span>次</p>
+
+        <?php if ($item['stock'] < 1): ?>
+          <p class="bady-btn disable"><a href="javascript:" class="btn fl mr15">已兑光</a><span>已经被别的用户兑换走了</span></p>
+        <?php elseif ($start_time > time()): ?>
+
+          <p class="bady-btn"><a href="javascript:;"   class="btn fl mr15" data-num="#J_num_{$item.id}">还未开始</a></p>
+
+          <?php else: ?>
+
+          <p class="bady-btn"><a href="javascript:;"   class="btn fl mr15 J_gift_btn" data-id="{$item.id}" data-num="#J_num_{$item.id}">兑换</a></p>
+
+        <?php endif ?>
+				
 			</div>
+      <include file="timerjs"/>
 		</div>
 		<div class="bady-part group">
 			<div class="bady-tab">

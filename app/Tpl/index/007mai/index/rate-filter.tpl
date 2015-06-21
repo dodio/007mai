@@ -9,10 +9,10 @@
   $(function(){
     if($.browser.webkit){
       var effect_class = [
-        ['正常',"show-normal"],
-        ['飞旋',"show-flypic"],
-        ['正常飞旋',"show-normal show-flypic"],
         ['缩放',"show-hover"],
+        ['普通',"show-normal"],
+        ['飞旋',"show-flypic"],
+        ['普通飞旋',"show-normal show-flypic"],
         ['魔幻',"show-hover show-flypic"]
       ];
 

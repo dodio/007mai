@@ -60,7 +60,7 @@ class indexAction extends ItemlistAction {
 		$jingxuan_id = 25;
 		$this->assign('jingxuan_list', $this->cate_item($jingxuan_id,10));
     
- 		$shops = $this->cate_shop(1,8);
+ 		$shops = $this->cate_shop(1,12);
  		$this->assign("shops",$shops);
   	$this->assign('nav_curr', 'index');
 

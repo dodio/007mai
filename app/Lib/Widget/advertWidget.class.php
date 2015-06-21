@@ -5,7 +5,7 @@
  */
 class advertWidget extends Action {
 
-    public function index($id) {
+    public function index($id,$fetch = false) {
         if(is_numeric($id)){
             $bmap['id'] = $id;
         }elseif(is_string($id)){
@@ -52,6 +52,10 @@ class advertWidget extends Action {
         }
         $this->assign('board_info', $board_info);
         $this->assign('ad_list', $ad_list);
+        if($fetch){
+            $ad_content = $this->fetch(dirname(__FILE__).'/advert/'.$board_info['tpl'].'.tpl');
+            return $ad_content;
+        }
         $this->display(dirname(__FILE__).'/advert/'.$board_info['tpl'].'.tpl');
     }
 

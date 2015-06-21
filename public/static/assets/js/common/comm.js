@@ -27,6 +27,83 @@
     }});
 })(jQuery);
 
+(function($){
+  $.fn.mai007ad = function(callback){
+    return this.each(function(){
+      var _self = $(this);
+      if(_self.data("ad_007mai_loaded")){
+        return;
+      }
+      var t = _self.attr("data-ajax-ad");
+      // 只能通过这两种方式中的一种获取广告
+      if(!t || (t != "id" && t!= "tracker") ){
+        return;
+      }
+      var val = _self.attr("data-ad-"+t);
+      if(!val){
+        return;
+      }
+      _self.load("/index.php?m=advert&a=get&"+ t + "=" + val,function(){
+        if($.isFunction(callback)){
+          _self.data("ad_007mai_loaded",true);
+          callback.call(_self[0]);
+        }
+      });
+    });
+  };
+
+  $(function(){
+    $.MAI007.util.delay(function(){
+      var wh = $(window).height();
+      $("[data-ajax-ad]").each(function(){
+        var _self = $(this);
+        if(_self.attr("data-auto") != 1){
+          return;
+        };
+        if(_self.data("ad_007mai_loaded")){
+          return;
+        }
+        var t = _self.attr("data-ajax-ad");
+        // 只能通过这两种方式中的一种获取广告
+        if(!t || (t != "id" && t!= "tracker") ){
+          return;
+        }
+        var val = _self.attr("data-ad-"+t);
+        if(!val){
+          return;
+        }
+        var objname_down = "mai007ad"+t+val+"down";
+        var objname_up = "mai007ad"+t+val+"up";
+        var h = _self.height();
+        var offset = _self.offset();
+        var top = offset.top - wh;
+        var bottom = offset.top + h + wh;
+        $.scrollManager.add({
+          height:top,
+          down:function(st){
+            if(st < bottom){
+              _self.mai007ad(function(){
+                $.scrollManager.remove(objname_down);
+              });
+            }
+          }
+        },objname_down);
+
+        $.scrollManager.add({
+          height:bottom,
+          up:function(st){
+            if(st > top){
+              _self.mai007ad(function(){
+                $.scrollManager.remove(objname_up);
+              });
+            }
+          }
+        },objname_up);
+      });      
+    },2000);
+  });
+})(jQuery);
+
 $(function() {
   /**
    * 签到按钮的划出框

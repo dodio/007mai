@@ -8,7 +8,7 @@ class searchAction extends ItemlistAction {
 	public function index() {
 		$sort	= I('sort', 'new', 'trim'); //排序
 		$k		= I('key');
-		$order	= 'ordid asc ,id desc';
+		$order	= 'ordid asc ,volume desc';
     if(!$k){
       $this->redirect("/","请输入查询条件.",2);
       exit();
@@ -38,7 +38,6 @@ class searchAction extends ItemlistAction {
     }
 
 		$items = $this->_deal_item_list($items_list);
-
 		$this->assign('items_list', $items['item_list']);
 		$this->assign('list_info',$list_info);
 

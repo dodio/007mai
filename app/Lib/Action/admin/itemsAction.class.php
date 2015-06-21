@@ -575,9 +575,9 @@ class itemsAction extends BackendAction {
         $req->setNumiid($iid);
         $resp = $tb_top->execute($req);
         $content = object_to_array($resp);
+        $scws = getSCWS();
+        $content['item']['title'] = shortenStr($scws,$content['item']['title']);
 		$this->ajaxReturn(1,'',$content);
-
-
     }
 
 	public function get_id($url) {

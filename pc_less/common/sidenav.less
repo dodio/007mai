@@ -14,6 +14,7 @@
 .sidenav{
   float: left;
   width: 105px;
+  overflow: visible;
   .sidenav-nav-wrap{
 
   }
@@ -36,13 +37,21 @@
         border-bottom: none;
       }
       &:hover,&.cur{
-        .hover_bg,.hover_text{
+        .hover_bg{
           top: 0;
+          z-index: 1;
+        }
+        .hover_text{
+          display: none;
+        }
+        .cateicon{
+          top: 0;
+          z-index: 2;
+          top: 12px;
         }
       }
-      .hover_bg,.hover_text{
+      .hover_bg,.cateicon,.hover_text{
         position: absolute;
-        left: 0;
         width: 50px;
         height: 50px;
         .trans(300ms);
@@ -50,51 +59,53 @@
       .hover_bg{
         background-color: @color_blue;
         top: -50px;
-        z-index: 1;
+        left: 0;
       }
       .hover_text{
+        display: block;
         color: #fff;
-        z-index: 2;
-        top: 50px;
+        left: 0;
+        top: 0;
         line-height: 50px;
         text-align: center;
         font-size: 16px;
       }
+      .cateicon{
+        width: 26px;
+        height: 26px;
+        left: 12px;
+        top: 50px;
+        background:url("../images/cate_icons.png?v=1") 0 0 no-repeat;
+      }
+      .sdcn-nv{
+        background-position: -12px -6px;
+      }
+      .sdcn-nan{
+        background-position: -54px -6px;
+      }
+      .sdcn-jujia{
+        background-position: -98px -6px;
+      }
+      .sdcn-meizhuang{
+        background-position: -138px -6px;
+      }
+      .sdcn-nei{
+        background-position: -12px -48px;
+      }
+      .sdcn-xiezi{
+        background-position: -54px -48px;
+      }
+      .sdcn-peishi{
+        background-position: -98px -48px;
+      }
+      .sdcn-muying{
+        background-position: -138px -49px;
+      }
+      .sdcn-meishi{
+        background-position: -12px -88px;
+      }
     }
-    .cateicon{
-      width: 26px;
-      height: 26px;
-      display: block;
-      background:url("../images/cate_icons.png") 0 0 no-repeat;
-    }
-    .sdcn-nv{
-      background-position: -12px -6px;
-    }
-    .sdcn-nan{
-      background-position: -54px -6px;
-    }
-    .sdcn-jujia{
-      background-position: -98px -6px;
-    }
-    .sdcn-meizhuang{
-      background-position: -138px -6px;
-    }
-    .sdcn-nei{
-      background-position: -12px -48px;
-    }
-    .sdcn-xiezi{
-      background-position: -54px -48px;
-    }
-    .sdcn-peishi{
-      background-position: -98px -48px;
-    }
-    .sdcn-muying{
-      background-position: -138px -49px;
-    }
-    .sdcn-meishi{
-      background-position: -12px -88px;
-    }
-
+    
     .search{
       position: relative;
       overflow: hidden;
@@ -203,6 +214,7 @@
   display: block;
   width: 130px;
   height: 20px;
+  font-size: 16px;
   line-height: 20px;
   padding-top: 17px;
   padding-left: 20px;
@@ -225,13 +237,14 @@
   float: left;
   width: auto;
   margin-right: 10px;
+  line-height: 18px;
 }
 .sidenav .side_sub_nav_i ul.bdb{
   border-bottom:1px dashed #B8B8B8;
   padding-bottom: 10px;
 }
 .sidenav .side_sub_nav_i ul li a{
-  font-size: 12px;
+  font-size: 15px;
   color: #EFEFEF;
 }
 .sidenav .side_sub_nav_i ul li a:hover{

@@ -6,6 +6,10 @@
         <th width="80">广告位名称 :</th>
         <td><input type="text" name="name" id="name" class="input-text" size="30" value="{$info.name}"></td>
     </tr>
+    <tr> 
+        <th width="80">广告位位置 :</th>
+        <td><input type="text" name="tracker" value="{$info.tracker}" id="tracker" class="input-text" size="30"></td>
+    </tr>
     <tr>
         <th width="80">广告位类型 :</th>
         <td><select name="tpl">

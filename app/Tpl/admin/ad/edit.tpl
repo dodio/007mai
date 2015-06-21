@@ -62,6 +62,12 @@
           <if condition="$info.type eq 'image'"><notempty name="info['extimg']"><span class="attachment_icon J_attachment_icon" file-type="image" file-rel="{:attach($info['extimg'],'images')}"><img src="__STATIC__/images/filetype/image_s.gif" /></span></notempty></if>
       </td>
     </tr>
+    <tr id="ad_extval">
+      <th>扩展值 :</th>
+      <td>
+          <input type="text" name="extval" id="J_extval" class="input-text fl mr10" size="30" value="{$info.extval}">
+      </td>
+    </tr>
     <tr>
         <th>{:L('enabled')} :</th>
         <td>

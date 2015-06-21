@@ -66,6 +66,12 @@
           <div id="J_upload_extimg" class="upload_btn"><span>{:L('upload')}</span></div>
       </td>
     </tr>
+    <tr id="ad_extval">
+      <th>扩展值 :</th>
+      <td>
+          <input type="text" name="extval" id="J_extval" class="input-text fl mr10" size="30">
+      </td>
+    </tr>
     <tr>
         <th>{:L('enabled')} :</th>
         <td>

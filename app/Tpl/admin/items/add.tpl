@@ -292,7 +292,7 @@ $(function() {
 					$('#J_num_iid').val(result.data.item.num_iid);
 					$('#J_click_url').val(result.data.click_url);
 					$('#J_title').val(result.data.item.title);
-					$('#J_intro').val(result.data.item.title);
+					$('#J_intro').val(result.data.item.desc);
 					$('#J_price').val(result.data.item.price);
 					$('#J_nick').val(result.data.item.nick);
 					$('#J_pic_url').val(result.data.item.pic_url);

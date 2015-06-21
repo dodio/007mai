@@ -576,7 +576,9 @@ class itemsAction extends BackendAction {
         $resp = $tb_top->execute($req);
         $content = object_to_array($resp);
         $scws = getSCWS();
-        $content['item']['title'] = shortenStr($scws,$content['item']['title']);
+        $title = $content['item']['title'];
+        $content['item']['title'] = shortenStr($scws,$title);
+        $content['item']['desc'] = $title;
 		$this->ajaxReturn(1,'',$content);
     }
 

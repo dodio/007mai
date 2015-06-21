@@ -6,6 +6,9 @@
         $(".itemlist").on("click",'.btn_hide',function(){
             var _self = $(this);
             id =_self.parent('.item').attr("data-nid");
+            if(!id){
+                return;
+            }
             if(!$.ftxia.dialog.islogin()) return ;
             _self.html('<img src="__STATIC__/assets/images/loading.gif" />');
             $.ajax({
@@ -28,6 +31,13 @@
                     }
                 }
             });
+        });
+  
+
+        var hide_btn = $('<a href="javascript:" class="hide_all_btn" style="position: absolute;left: 0;top: 0;color:#fff;z-index:1;">隐藏管理按钮</a>');
+        $("#fix-right-layer").prepend(hide_btn);
+        hide_btn.click(function(){
+            $(".btn_hide").fadeToggle();
         });
     });
 </script>

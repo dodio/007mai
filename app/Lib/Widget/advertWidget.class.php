@@ -6,8 +6,11 @@
 class advertWidget extends Action {
 
     public function index($id) {
-        $id = intval($id);
-		$bmap['id'] = $id;
+        if(is_numeric($id)){
+            $bmap['id'] = $id;
+        }elseif(is_string($id)){
+            $bmap['tracker'] = $id;
+        }
 		$bmap['status'] = 1;
 
 		if(C('ftx_site_cache')){
@@ -26,12 +29,11 @@ class advertWidget extends Action {
         }
         $tpl_cfg = include dirname(__FILE__).'/advert/'.$board_info['tpl'].'.config.php';
         $time_now = time();
-        $map['board_id'] = $id;
+        $map['board_id'] = $board_info['id'];
         $map['start_time'] = array('elt', $time_now);
         $map['end_time'] = array('egt', $time_now);
         $map['status'] = '1';
-        $limit = $tpl_cfg['option'] ? '' : '1';
-
+        $limit = is_numeric($tpl_cfg['option']) ? $tpl_cfg['option'] : '';
 		if(C('ftx_site_cache')){
 			$amap = $map;
 			$amap['limit'] = $limit;

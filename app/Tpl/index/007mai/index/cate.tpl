@@ -30,7 +30,7 @@ __STATIC__/assets/pc/css/cate.css
     </volist>
     
     <div class="mt20 mai007-w206x100">
-      {:R('advert/index', array(8), 'Widget')}
+      {:R('advert/index', array('cate_shop_bottom'), 'Widget')}
     </div>
   </div>
   <!-- 左边end -->

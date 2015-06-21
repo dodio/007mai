@@ -53,7 +53,14 @@
     }
     return html;
 
-  }
-
+  };
+  
+  util.delay = function(call,time){
+    $(function(){
+      setTimeout(function(){
+        $.isFunction(call) && call();
+      },time);
+    });
+  };
 
 })(jQuery);

@@ -1,6 +1,6 @@
 <?php
 return array(
-  'name' => 'WAP版首页轮播',
-  'option' => 10,
+  'name' => '网站大全列表',
+  'option' => 100,
   'allow_type' => array('image'),
 );

@@ -19,6 +19,9 @@
         font-size: 12px;
         margin-top: 3px;
       }
+      .item-zk{
+        margin-left: 10px;
+      }
     }
     .item-shop{
       margin-top: 10px;
@@ -26,14 +29,16 @@
         margin-right: 5px;
       }
       a{
-        color: #646464;
+        color: #8a8a8a;
       }
     }
 
 
-    &:hover .my-like {
-      display: block;
-      border-radius: 15px;
+    &:hover{ 
+      .my-like {
+        display: block;
+        border-radius: 15px;
+      }
     }
     .my-like {
       display: none;
@@ -366,10 +371,15 @@
   animation: unlike_heartbreak_right 0.6s ease-out;
 }
 }
-
   .show-hover:hover{
-    .item-info .item-price{
-      color: #18F2FA;
+    .item-info{
+      .item-zk{
+        margin-left: 5px;
+      }
+      .item-price{
+        color: #18F2FA;
+        font-size: 16px;
+      }
     }
     .item-shop{
       color: #aaa;

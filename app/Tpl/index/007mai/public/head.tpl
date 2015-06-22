@@ -6,6 +6,11 @@
 <meta name="MSSmartTagsPreventParsing" content="True" />
 <meta http-equiv="MSThemeCompatible" content="Yes" />
 <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1">
+<meta http-equiv="x-dns-prefetch-control" content="on" />
+<link rel="dns-prefetch" href="http://img.007mai.com" />
+<link rel="dns-prefetch" href="http://cdn.007mai.com" />
+<link rel="dns-prefetch" href="http://s11.cnzz.com" />
+<link rel="dns-prefetch" href="http://a.alimama.cn" />
 <!-- <script type="text/javascript" src="__STATIC__/assets/js/common/uaredirect.js"></script> -->
 <script type="text/javascript">
   // uaredirect("http://m.007mai.com");

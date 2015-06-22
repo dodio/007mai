@@ -1,6 +1,6 @@
 <div id="shop_{$shop.sellerId}" class="show-item shop mb20">
   <div class="show-pic">
-    <a data-type="1" biz-sellerid="{$shop['sellerId']}" isconvert=1 href="{$shop.url}" target="_blank"><img src="{$shop.img}" alt=""></a>
+    <a data-type="1" biz-sellerid="{$shop['sellerId']}" isconvert=1 href="{$shop.url}" target="_blank"><img src="{:attach($shop['img'],"images")}" alt=""></a>
   </div>
   <div class="show-name group">
     <a data-type="1" biz-sellerid="{$shop['sellerId']}" isconvert=1 href="{$shop.url}" target="_blank" class="fl">{$shop.name}</a>

@@ -12,7 +12,7 @@
           <div class="sidenav-catenav">
             <a target="_blank" href="/index/cate/cid/1" class="sidenav-item ui-tabmenu"><span class="cateicon sdcn-nv"></span><span class="hover_bg"></span><span class="hover_text">女装</span></a>
             <a target="_blank" href="/index/cate/cid/236" class="sidenav-item ui-tabmenu"><span class="cateicon sdcn-nei"></span><span class="hover_bg"></span><span class="hover_text">内衣</span></a>
-            <a target="_blank" href="/index/cate/cid/381" class="sidenav-item ui-tabmenu"><span class="cateicon sdcn-nan"></span><span class="hover_bg"></span><span class="hover_text">男士</span></a>
+            <a target="_blank" href="/index/cate/cid/381" class="sidenav-item ui-tabmenu"><span class="cateicon sdcn-nan"></span><span class="hover_bg"></span><span class="hover_text">男友</span></a>
             <a target="_blank" href="/index/cate/cid/234" class="sidenav-item ui-tabmenu"><span class="cateicon sdcn-xiezi"></span><span class="hover_bg"></span><span class="hover_text">鞋包</span></a>
             <a target="_blank" href="/index/cate/cid/3" class="sidenav-item ui-tabmenu"><span class="cateicon sdcn-jujia"></span><span class="hover_bg"></span><span class="hover_text">居家</span></a>
             <a target="_blank" href="/index/cate/cid/5" class="sidenav-item ui-tabmenu"><span class="cateicon sdcn-peishi"></span><span class="hover_bg"></span><span class="hover_text">配饰</span></a>

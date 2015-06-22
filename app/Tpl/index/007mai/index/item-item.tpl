@@ -1,7 +1,7 @@
 <div class="show-item item {$item.class}" data-nid="{$item.num_iid}" id="nid_{$item.num_iid}">
   <div class="show-pic">
     <a biz-itemid="{$item['num_iid']}" isconvert=1 href="" target="_blank">
-      <?php if($i < 12 ) { ?>
+      <?php if(isset($lazy_item_num) && $i < $lazy_item_num) { ?>
       <img src='{:attach(get_thumb($item['pic_url'], '_b'),'item')}' alt="{$item.title}"  />
       <?php }else{ ?>
       <img src='__STATIC__/assets/images/blank.gif' data-original='{:attach(get_thumb($item['pic_url'], '_b'),'item')}' alt="{$item.title}" class="lazy"   />

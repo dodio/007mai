@@ -10,7 +10,10 @@ __STATIC__/assets/pc/css/cate.css
 <?php $action = __ACTION__; ?>
 <include file="public:topbar" />
 <include file="public:header" />
-
+<?php 
+$lazy_item_num =12;
+$lazy_shop_num =5;
+?>
 
 <include file="public:sidenav" />
 

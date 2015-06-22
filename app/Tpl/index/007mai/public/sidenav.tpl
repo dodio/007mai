@@ -5,6 +5,7 @@
           <div class="sidenav-nav">
             <a href="/brand" class="sidenav-item">品牌折扣</a>
             <a href="/mall" class="sidenav-item">特卖商城</a>
+            <a href="/mall/haitao" class="sidenav-item">环球外贸</a>
             <a href="/ba" class="sidenav-item">八块八</a>
             <a href="/shiba" class="sidenav-item">十八块八</a>
             <a href="/#shopping-index" class="sidenav-item">购物大全</a>

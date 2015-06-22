@@ -15,7 +15,7 @@
       <span>¥{$item.coupon_price}</span>
     </div>
     <div class="item-sell fr">
-      <if condition="$item.volume gt 0 "><span class="sold">已售<em>{$item.volume}</em></span><else/><span>新品上架</span></if><span class="ml10">({$item.zk}折)</span></div>
+      <if condition="$item.volume gt 0 "><span class="sold">已售<em>{:friend_number($item['volume'])}件</em></span><else/><span>新品上架</span></if><span class="item-zk">({$item.zk}折)</span></div>
   </div>
   <div class="item-shop">
     <if condition="$item.shop_type eq 'C' ">

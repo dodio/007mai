@@ -59,8 +59,9 @@
 
       <div class="help-group">
         <div class="help-icon icon"></div>
-        <div class="help-topic">商家合作</div>
+        <div class="help-topic">007服务</div>
         <div class="help-item"><a href="/help/seller" target="_blank">商家合作</a></div>
+        <div class="help-item"><a href="/article" target="_blank">购物文章</a></div>
       </div>
 
       <div class="help-group">

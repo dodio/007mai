@@ -60,8 +60,24 @@ class articleAction extends BackendAction
         $this->assign('first_cate',$first_cate);
 
     }
- 
 
+    public function _before_insert($data){
+        return $this->_seo_keys($data);
+    }
+    public function _before_update($data){
+        return $this->_seo_keys($data);
+    }
+ 
+    private function _seo_keys($data){
+        $keywords = I("seo_keys","","trim");
+        if($keywords != ""){
+            return $data;
+        }
+        $scws = getSCWS();
+        $k = getTags($scws,I('info_text',''),10);
+        $data['seo_keys'] = implode(",", $k);
+        return $data;
+    }
 
     public function _before_edit(){
         $id = $this->_get('id','intval');

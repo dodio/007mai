@@ -18,8 +18,8 @@
 						<th>{:L('article_title')} :</th>
 						<td>
 		                    <input type="text" name="title" id="J_title" rel="title_color" class="input-text iColorPicker" size="60" value="{$info.title}" style="color:{$info.colors}">
-		                    <input type="hidden" value="{$info.colors}" name="colors" id="title_color">
-					        <a href="javascript:;" class="color_picker_btn"><img class="J_color_picker" data-it="J_title" data-ic="J_color" src="__STATIC__/images/color.png"></a>
+		                    <input type="hidden" value="{$info.colors}" name="colors" id="J_color">
+					        <a href="javascript:;" class="color_picker_btn"><img class="J_color_picker" data-it="J_title" data-ic="J_color" src="__STATIC__/images/color.png"><span></span></a>
 		                </td>
 					</tr>
 		            <tr>
@@ -61,6 +61,7 @@
 </div>
 <input type="hidden" name="menuid"  value="{$menuid}"/>
 <input type="hidden" name="id" id="id" value="{$info.id}" />
+<textarea name="info_text" id="info_text" style="display: none;"></textarea>
 </form>
 <include file="public:footer" />
 <script src="__STATIC__/js/jquery/plugins/iColorPicker.js"></script>
@@ -75,7 +76,12 @@ $(function() {
 		allowFileManager : true
 	});
 	$('ul.J_tabs').tabs('div.J_panes > div');
-	
+	$("#info_form").submit(function(){
+		var info_text = $.trim($($("#info").val()).text().replace(new RegExp( String.fromCharCode(160) ,"g"),"").replace(/\t|\f|\v| /g,"").replace(/\n+|\r+/g,"\n"));
+		var seo_desc = info_text.substr(0,info_text.indexOf("\n"));
+		$("#info_text").val(info_text);
+		$("#seo_desc").val(seo_desc);
+	});
 	//颜色选择器
 	$('.J_color_picker').colorpicker();
 	//自动获取标签

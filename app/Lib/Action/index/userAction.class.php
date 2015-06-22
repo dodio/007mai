@@ -269,11 +269,7 @@ class userAction extends UsersAction {
             $avatar_size = explode(',', C('ftx_avatar_size'));
             //回去会员头像保存文件夹
             $uid = abs(intval($this->visitor->info['id']));
-            $suid = sprintf("%09d", $uid);
-            $dir1 = substr($suid, 0, 3);
-            $dir2 = substr($suid, 3, 2);
-            $dir3 = substr($suid, 5, 2);
-            $avatar_dir = $dir1.'/'.$dir2.'/'.$dir3.'/';
+            $avatar_dir = avatar_dir($uid);
             //上传头像
             $suffix = '';
             foreach ($avatar_size as $size) {
@@ -289,7 +285,7 @@ class userAction extends UsersAction {
             if ($result['error']) {
                 $this->ajaxReturn(0, $result['info']);
             } else {
-                $data = CDN_ROOT.'/upload/avatar/'.$avatar_dir.md5($uid).'_'.$size.'.jpg?'.time();
+                $data = avatar($uid,$size).'?'.time();
                 $this->ajaxReturn(1, L('upload_success'), $data);
             }
         } else {

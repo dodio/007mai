@@ -80,7 +80,7 @@ class linkAction extends BackendAction
     private function _get_imgdir() {
         static $dir = null;
         if ($dir === null) {
-            $dir = './static/upload/flink/';
+            $dir = upload_dir('flink/');
         }
         return $dir;
     }

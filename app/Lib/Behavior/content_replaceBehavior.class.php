@@ -16,7 +16,7 @@ class content_replaceBehavior extends Behavior {
         $replace['__STATIC__'] = CDN_ROOT;
 
         //附件地址
-        $replace['__UPLOAD__'] = CDN_ROOT.'/upload';
+        $replace['__UPLOAD__'] = IMG_ROOT;
         $content = str_replace(array_keys($replace),array_values($replace),$content);
         return $content;
     }

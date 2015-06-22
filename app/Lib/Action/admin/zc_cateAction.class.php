@@ -27,7 +27,7 @@ class zc_cateAction extends BackendAction {
                 <td align='center'>\$id</td>
                 <td align='left'>\$spacer<span data-tdtype='edit' data-field='name' data-id='\$id' class='tdedit'  style='color:\$fcolor'>\$name</span></td>
                 <td align='center'><span data-tdtype='edit' data-field='ename' data-id='\$id' class='tdedit'  style='color:\$fcolor'>\$ename</span></td>
-				<td align='center'><img src='/static/upload/zc/\$banner_pic' height='30px' /></td>
+				<td align='center'><img src='".attach($banner_pic,"zc")."' height='30px' /></td>
                 <td align='center'><span data-tdtype='edit' data-field='ordid' data-id='\$id' class='tdedit'>\$ordid</span></td>
                 <td align='center'>\$str_status</td>
 				<td align='center'>\$str_bm_xs</td>
@@ -159,8 +159,8 @@ class zc_cateAction extends BackendAction {
 	public function _before_delete(){
 		$id=I('id');
 		$zc=D('zc_cate')->where(array('id'=>$id))->find();
-		$pic_path1="./static/upload/zc/".$zc['pic_url'];
-		$pic_path2="./static/upload/zc/".$zc['banner_pic'];
+		$pic_path1=upload_dir("zc/".$zc['pic_url']);
+		$pic_path2=upload_dir("zc/".$zc['banner_pic']);
 		@unlink($pic_path1);
 		@unlink($pic_path2);
 

@@ -241,10 +241,10 @@ function avatar($uid, $size) {
     $size = in_array($size, $avatar_size) ? $size : '100';
     $avatar_dir = avatar_dir($uid);
     $avatar_file = $avatar_dir . md5($uid) . "_{$size}.jpg";
-    if (!is_file(C('ftx_attach_path') . 'avatar/' . $avatar_file)) {
+    if (!is_file(UPLOAD_DIR . 'avatar/' . $avatar_file)) {
         $avatar_file = "default_{$size}.jpg";
     }
-    return CDN_ROOT . '/upload/' . 'avatar/' . $avatar_file;
+    return upload_url('/avatar/' . $avatar_file);
 }
 
 function avatar_dir($uid) {
@@ -284,12 +284,28 @@ function utf8( $string, $code = "" ){
 	return mb_convert_encoding( $string, "UTF-8", $code );
 }
 
-function attach($attach, $type) {
+function upload_dir($dir){
+    if(!is_string($dir) || $dir == ""){
+        $dir = "default/";
+    }
+    return UPLOAD_DIR.$dir;
+}
+function upload_url($dir){
+    if(!is_string($dir) || $dir == ""){
+        $dir = "/default";
+    }
+    return IMG_ROOT.$dir;
+}
+function attach($attach, $dir) {
+    if(!$attach){
+        return upload_dir("/missing.jpg");
+    }
     if (false === strpos($attach, 'http://')) {
         //本地附件
-        return CDN_ROOT . '/upload/'. $type . '/' . $attach;
-        //远程附件
-        //todo...
+        if(!is_string($dir) || $dir == ""){
+            $dir = "default";
+        }
+        return upload_url('/'. $dir . '/' . $attach);
     } else {
         //URL链接
         return $attach;

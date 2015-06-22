@@ -67,7 +67,7 @@ class advertWidget extends Action {
         switch ($ad['type']) {
             case 'image':
                 $html  = '<a title="'.$ad['name'].'" href="'.U('advert/tgo',array('id'=>$ad['id'])).'" target="_blank">';
-                $html .= '<img alt="'.$ad['name'].'" src="'.CDN_ROOT.'/upload/images/'.$ad['content'].'" '.$size_html.'>';
+                $html .= '<img alt="'.$ad['name'].'" src="'.attach($ad['content'],"images").'" '.$size_html.'>';
                 $html .= '</a>';
                 break;
         }

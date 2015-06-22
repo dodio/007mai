@@ -41,7 +41,7 @@ class adAction extends BackendAction {
             'height' => '350',
         );
         $this->assign('big_menu', $big_menu);
-		$this->assign('img_dir', '/static/upload/images/');
+		$this->assign('img_dir', upload_url('/images/'));
 
         $res = $this->_adboard_mod->field('id,name')->select();
         $board_list = array();

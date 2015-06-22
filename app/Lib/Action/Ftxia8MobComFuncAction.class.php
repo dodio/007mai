@@ -156,7 +156,7 @@ class Ftxia8MobComFuncAction extends Action{
     protected function _upload($file, $dir = '', $thumb = array(), $save_rule='uniqid') {
         $upload = new UploadFile();
         if ($dir) {
-            $upload_path = C('ftx_attach_path') . $dir . '/';
+            $upload_path = upload_dir($dir . '/');
             $upload->savePath = $upload_path;
         }
         if ($thumb) {

@@ -56,19 +56,6 @@ function fftime($time){
 	}
 }
 
-//秒数转换时间
-function changeTimeType($seconds){
-	if ($seconds>3600){
-		$hours = intval($seconds/3600);
-		$minutes = $seconds600;
-		$time = $hours."时".gmstrftime('%M分%S秒', $minutes);
-	}else{
-		$time = gmstrftime('%H时%M分%S秒', $seconds);
-	}
-	return $time;
-}
-
-
 
 function addslashes_deep($value) {
     $value = is_array($value) ? array_map('addslashes_deep', $value) : addslashes($value);
@@ -214,6 +201,14 @@ function fdate($time) {
         }
     }
     return $fdate;
+}
+
+function friend_number($number,$format = 1){
+    $number = intval($number);
+    if($number > 10000){
+        return number_format($number/10000,$format)."万";
+    }
+    return $number;
 }
 
 function utf_substr($str, $len) {
@@ -427,59 +422,6 @@ function get_url(){
 	{$Url=$Url.'?'.$QueryString  ;}
 	$GetLocationURL=$Url ;
 	return $GetLocationURL;
-}
-
-
-function Ftxiacom($name,$value=null,$expire=null) {
-	$temp = C('DATA_CACHE_PATH');
-	
-		//$name	=	md5($name);
-        if(C('DATA_CACHE_SUBDIR')) {
-            // 使用子目录
-            $dir   ='';
-			if(strpos($name,'_')){
-				$dirarr = explode("_",$name);
-					$dir    .= $dirarr[0].'/';
-			}
-            if(!is_dir($temp.$dir)) {
-                mkdir($temp.$dir,0755,true);
-            }
-            $filename	=	$dir.$name.'.ftxia';
-        }else{
-            $filename	=	$name.'.ftxia';
-        }
-        $path =  $temp.$filename;
-		if(!$value){
-			if (!is_file($path)) {
-			   return false;
-			}
-			$content    =   file_get_contents($path);
-			if( false !== $content) {
-				$expire  =  (int)substr($content,8, 12);
-				if($expire != 0 && time() > filemtime($path) + $expire) {
-					//缓存过期删除缓存文件
-					unlink($path);
-					return false;
-				}
-				$content    =   unserialize($content);
-				return $content;
-			}
-			else {
-				return false;
-			}
-		}else{
-			if(!$expire){
-				$expire = C('DATA_CACHE_TIME');
-			}
-			$data   =   serialize($value);
-			$data    = "<?php\n//".sprintf('%012d',$expire).$data."\n?>";
-			$result  =   file_put_contents($path,$data);
-			if($result){
-				return true;
-			}else {
-				return false;
-			}
-		}
 }
 
 

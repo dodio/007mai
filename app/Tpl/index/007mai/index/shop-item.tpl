@@ -10,9 +10,9 @@
   </div>
   <div class="show-name group">
     <a data-type="1" biz-sellerid="{$shop['sellerId']}" isconvert=1 href="{$shop.url}" target="_blank" class="fl">{$shop.name}</a>
-    <notempty name="shop.average_price">
+    <if condition="$shop['average_price'] neq '0.00'">
       <span class="fr shop-price">均价: <em>{$shop.average_price}</em></span>
-    </notempty>
+    </if>
   </div>
   
   <if condition="$shop.shop_type eq 'C'">
@@ -25,7 +25,7 @@
       <div class="taobao fl"><i class="icon icon-tmall"></i>天猫</div>
       <div class="fr">
         <notempty name="shop.level">
-          <i class="heart1-icon icon"></i>{$shop.level}人关注
+          <i class="heart1-icon icon"></i>{:friend_number($shop['level'])}人关注
         <else/>
           <i class="icon heart3-icon"></i>
         </notempty>

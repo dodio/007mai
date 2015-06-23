@@ -275,94 +275,14 @@
 }
 
 
-
+@import "./mixin/score-item.less";
 .itemlist{
   li{
     height: 410px;
   }
-  .item{
-    .show-name{
-      font-size: 16px;
-      margin-top: 10px;
-    }
-
-    .item-info{
-      margin-top: 10px;
-      .item-score{
-        font-size: 16px;
-        color: #777;
-        width: 160px;
-        text-indent: 10px;
-        margin-top: 15px;
-        em{
-          font-size: 32px;
-          margin-right: 5px;
-          color: #00cf96;
-        }
-        span{
-          vertical-align: 3px;
-          font-family: "黑体";
-        }
-      }
-      .kucun{
-        color: #777;
-        text-align: right;
-      }
-      .btn-exchange{
-        display: block;
-        width: 80px;
-        margin-top: 10px;
-        text-align: center;
-        height: 30px;
-        line-height: 30px;
-        color: #fff;
-        background-color: #00cf96;
-        -webkit-border-radius: 6px;
-        -moz-border-radius: 6px;
-        border-radius: 6px;
-        &:hover{
-          text-decoration: none;
-          background-color: #07A378;
-        }
-      }
-    }
-  }
+  .score-item(266px);
 }
+
 .time-info{
   margin-top: 10px;
-  font-size: 16px;
-  height: 30px;
-  .y,.m,.d,.h,.mm,.ss{
-    font-size: 20px;
-    color:#E43A3A;
-  }
-  .d{
-    font-size: 24px;
-  }
-  .h{
-    font-size: 22px;
-  }
-  .ss{
-    font-size: 18px;
-  }
-  .label{
-    display: inline-block;
-    height: 24px;
-    margin-top: 6px;
-    line-height: 24px;
-    color: #fff;
-    padding: 0 10px;
-    font-family: "黑体";
-  }
-  .tip{
-    font-size: 12px;
-    margin-top: 12px;
-    color: #aaa;
-  }
-  .end{
-    background-color: #aaa;
-  }
-  .start{
-    background-color:#32836C;
-  }
 }

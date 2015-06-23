@@ -16,7 +16,7 @@ __STATIC__/assets/pc/css/gift.css
 <include file="public:sidenav"/>
 
 <div class="main container group">
-	
+	 <?php $lazy_score_num =16; ?>
 		<ul class="itemlist group">
 			<volist name="item_list" id="item" mod="4">
 				<li <eq name="mod" value="3"> class="mr0"</eq>>

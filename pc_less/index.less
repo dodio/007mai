@@ -49,7 +49,7 @@
 
 @import "./mixin/show-item.less";
 @import "./mixin/shop-item.less";
-.wide_shoplist,.itemlist{
+.wide_shoplist,.itemlist,.scoreitem-list{
   margin-top: 20px;
   li{
     width: 266px;
@@ -84,4 +84,60 @@
 .index-promote{
   margin-top: 30px;
   border-top: 2px solid #000;
+}
+@import "./mixin/score-item.less";
+.scoreitem-list{
+  li{
+    width: 210px;
+    height: 340px;
+  }
+  .show-item(210px);
+  .score-item(210px);
+  .score-item {
+    .time-info{
+      margin-top: 5px;
+    }
+    .show-name{
+      font-size: 12px;
+    }
+    .tip{
+      margin-top: 5px;
+    }
+    .label{
+      .vm(18px);
+      font-size: 12px;
+      margin-top: 2px;
+    }
+    .item-info{
+      .item-score{
+        font-size: 16px;
+        margin-top: 0;
+        width: auto;
+        em{
+          font-size: 18px;
+        }
+      }
+      .btn-exchange{
+        position: relative;
+        left: -59px;
+      }
+    }
+  }
+  .time-info{
+    font-size: 12px;
+    .d{
+      font-size: 18px;
+    }
+    .h{
+      font-size: 16px;
+    }
+    .ss,.mm{
+      font-size: 14px;
+    }
+  }
+  .show-normal{
+    &:hover{
+      outline-color: @color_red;
+    }
+  }
 }

@@ -60,8 +60,17 @@ class indexAction extends ItemlistAction {
 		$jingxuan_id = 25;
 		$this->assign('jingxuan_list', $this->cate_item($jingxuan_id,10));
     
- 		$shops = $this->cate_shop(1,12);
+ 		$shops = $this->cate_shop($jingxuan_id,12);
  		$this->assign("shops",$shops);
+
+ 		$where = array('status'=>'1');
+        // 已结束商品不显示
+    $where['end_time'] = array("egt",time());
+    $where['cate_id'] = 2;//定义首页商品分类
+    $score_item = M('score_item');
+    $scoreitems = $score_item->where($where)->order("ordid ASC , id desc")->limit(5)->select();
+    $this->assign('scoreitems',$scoreitems);
+
   	$this->assign('nav_curr', 'index');
 
   	$this->_config_seo(C('ftx_seo_config.index'));

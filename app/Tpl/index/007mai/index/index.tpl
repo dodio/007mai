@@ -52,7 +52,24 @@ __STATIC__/assets/pc/css/index.css
     </volist>
   </ul>
 </div>
-
+<div class="container mt20">
+  <div class="baokuan">
+    <div class="bk-top group">
+      <h2>免费兑换</h2>
+      <div class="bk-nav">
+        <a href="/gift" target="_blank">情报商城</a>
+      </div>
+    </div>
+  </div>
+  <ul class="scoreitem-list group">
+    <volist name="scoreitems" id="item" mod="5">
+      <li <eq name="mod" value="4"> class="mr0"</eq>>
+        <include file="gift:score-item"/>
+      </li>
+    </volist>
+  </ul>
+  <include file="gift:timerjs"/>
+</div>
 
 <?php foreach ($cate_items as $cid => $items_list): ?>
   <?php $cate = $cate_data[$cid]; ?>

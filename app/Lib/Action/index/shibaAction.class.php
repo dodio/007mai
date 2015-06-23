@@ -5,7 +5,7 @@ class shibaAction extends ItemlistAction {
 		$sort	=	I('sort', 'default', 'trim'); //排序
 		$status =	I('status', 'all', 'trim'); //排序
 		$order	=	'ordid asc ';
-		$tag	=	I('cid');
+		$tag	=	I('cid',1,'intval');
 
 		$cinfo = $this->_cate_mod->cate_info($cid);
 		$order .= getSort($sort,$cinfo['sort']);
@@ -34,9 +34,7 @@ class shibaAction extends ItemlistAction {
 		}else{
 			$tag_list = $cate_list['p'];
 		}
-		if(!$tag){
-			$tag=1;
-		}
+
 		$list_info['cid']=$tag;
 		$this->assign('tag',$tag);
 		$this->assign('cid',$tag);
@@ -92,6 +90,26 @@ class shibaAction extends ItemlistAction {
 		}else{
 			$count = $this->_mod->where($map)->count();
 		}
+
+		$root_id = get_root_cate_id($taginfo['spid'],$tag);
+		$map['cate_id'] = array("IN",$this->_cate_mod->get_child_ids($root_id));
+		if(C('ftx_site_cache')){
+		  $md_id = md5("root_" . $root_id);
+		  $file = 'shiba_group_'.$md_id;
+		  if(false === $cate_count = S($file)){
+				$cate_count = $this->_mod->field("cate_id,count(cate_id)")->where($map)->group('cate_id')->select();
+		    S($file,$cate_count);
+		  }
+		}else{
+			$cate_count = $this->_mod->field("cate_id,count(cate_id)")->where($map)->group('cate_id')->select();
+		}
+		$this->assign("cate_count",$cate_count);
+		
+		$total = $items['total'];
+ 		$shop_amount = ceil( $total/4 );
+		$shops = $this->cate_shop($tag,$shop_amount);
+		$this->assign("shops",$shops);
+
  
 		$pager = $this->_pager($count, $page_size);
 		$this->assign('page', $pager->kshow());

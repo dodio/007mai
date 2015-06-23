@@ -25,10 +25,9 @@ $lazy_shop_num =5;
 <div class="container mt20 group">
   <div class="shop_promote fl">
     <div class="sp-title mb10">优秀店铺</div>
-    
     <volist name="shops" id="val">
       <volist name="val" id="shop">
-        <include file="shop-item"/>
+        <include file="index:shop-item"/>
       </volist>
     </volist>
     

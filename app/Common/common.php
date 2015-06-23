@@ -4,7 +4,13 @@ function p($arr){
 	dump($arr);
     exit;
 }
- 
+function get_root_cate_id($spid,$id){
+    if($spid==0){
+        return $id;
+    }
+    $arr = explode('|', trim($spid, '|'));
+    return $arr[0];
+} 
 function objtoarr($obj){
 	$ret = array();
 	foreach($obj as $key =>$value){

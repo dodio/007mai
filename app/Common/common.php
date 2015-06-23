@@ -203,10 +203,10 @@ function fdate($time) {
     return $fdate;
 }
 
-function friend_number($number,$format = 1){
+function friend_number($number){
     $number = intval($number);
     if($number > 10000){
-        return number_format($number/10000,$format)."万";
+        return str_replace(".0","",number_format($number/10000,1)."万");
     }
     return $number;
 }

@@ -14,7 +14,7 @@
                 </td>
             </tr>
             <tr>
-                <th>店铺地址：</th>
+                <th>推广链接：</th>
                 <td>
                     <input name="url" type="text" class="input-text" size="20" />
                     <span class="gray ml10">填写阿里妈妈转换后的地址。</span>

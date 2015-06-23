@@ -126,6 +126,30 @@ class shopAction extends BackendAction {
         $this->ajaxReturn(0,"没有成功");
     }
   }
+
+  public function move() {
+    if (IS_POST) {
+      $move=I('move', 'intval');
+      $ids = $this->_post('ids');
+      if($move ==1){
+        $zc_id = $this->_post('cate_id', 'intval');
+        
+        $this->_mod->where(array('id' => array('in', $ids)))->save(array('zc_id'=>$zc_id));
+      }else if($move == 2){
+        $cate = $this->_post('cate_id','intval');
+        $this->_mod->where(array('id' => array('in', $ids)))->save(array('cate_id'=>$cate));
+      }
+      echo "<script>location.replace(document.referrer);</script>";
+    } else {
+      $move=I('move');
+      $this->assign('move',$move);
+      $ids = trim($this->_request('id'), ',');
+      $this->assign('ids', $ids);
+      $resp = $this->fetch();
+      $this->ajaxReturn(1, '', $resp);
+    }
+  }
+
 }
 
  ?>

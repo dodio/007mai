@@ -77,6 +77,8 @@
       <div class="btn_wrap_fixed">
         <label class="select_all"><input type="checkbox" name="checkall" class="J_checkall">{:L('select_all')}/{:L('cancel')}</label>
             <input type="button" class="btn" data-tdtype="batch_action" data-acttype="ajax" data-uri="{:U('shop/delete')}" data-name="id" data-msg="{:L('confirm_delete')}" value="{:L('delete')}" />
+            <input type="button" class="btn btn_submit" data-tdtype="batch_action" data-acttype="ajax_form" data-id="move" data-uri="{:U('shop/move',array('move'=>2))}" data-name="id" data-title="批量分类" value="批量分类" /> 
+  <!-- <input type="button" class="btn btn_submit" data-tdtype="batch_action" data-acttype="ajax_form" data-id="move" data-uri="{:U('shop/move',array('move'=>1))}" data-name="id" data-title="批量加入专场" value="批量专场" />  -->
             <input type="button" class="btn" id="setTime" value="设置时间">
             <input type="text" id="all_start_time" class="date" size="12"> - 
             <input type="text" id="all_end_time" class="date" size="12">

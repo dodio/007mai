@@ -85,7 +85,7 @@ class oauth {
             if ($user['keyavatar_big']) {
                 //下载原始头像到本地临时储存  用日期文件夹分类  方便清理
                 $user['temp_avatar'] = '';
-                $avatar_temp_root = C('ftx_attach_path') . 'avatar/temp/';
+                $avatar_temp_root = upload_dir('avatar/temp/');
                 $temp_dir = date('ymd', time()) . '/';
                 $file_name = date('ymdhis' . mt_rand(1000, 9999)) . '.jpg';
 

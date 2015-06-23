@@ -168,7 +168,8 @@ class user_visitor {
 				cookie('user_info', null);
             }
 		//}
-
+        //检查权限
+        $this->_add_right($user_info);
         //保持状态
         $this->assign_info($user_info);
         $this->remember($user_info, $remember);

@@ -69,7 +69,21 @@ class shopAction extends BackendAction {
     $cate_data = D("items_cate")->cate_data_cache();
     $this->assign("cate_data",$cate_data);
   }
-
+  public function _before_add_show(){
+    $cid = I("cid",'','intval');
+    if($cid){
+      $mod = D("items_cate");
+      $cinfo = $mod->cate_info($cid);
+      $spid = $cinfo['spid'];
+      if( $spid==0 ){
+          $spid = $cid;
+      }else{
+          $spid .= $cid;
+      }
+      $this->assign("selected_ids",$spid);
+      $this->assign("cid",$cid);
+    }
+  }
   public function _before_edit_show($info){
     $mod = D("items_cate");
     $cate_id = $info['cate_id'];

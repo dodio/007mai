@@ -31,7 +31,7 @@
       <tr>
         <th width="120">所属分类：</th>
                 <td>
-          <select class="J_cate_select mr10" data-pid="0" data-uri="{:U('items_cate/ajax_getchilds', array('type'=>0))}" data-selected=""></select><input type="hidden" name="cate_id" id="J_cate_id" value="" />
+          <select class="J_cate_select mr10" data-pid="0" data-uri="{:U('items_cate/ajax_getchilds', array('type'=>0))}" data-selected="{$selected_ids}"></select><input type="hidden" name="cate_id" id="J_cate_id" value="{$cid}" />
         </td>
       </tr>
             <tr>
@@ -91,7 +91,7 @@
                     开始时间:
                     <input type="text" id="start_time" name="start_time" size="12" class="date input-text" value=""/>
                     结束时间
-                    <input type="text" id="end_time" name="end_time" size="12" class="date input-text" value=""/>
+                    <input type="text" id="end_time" name="end_time" size="12" class="date input-text" value="<?php echo date('Y-m-d') ?>"/>
                 </td>
             </tr>
 

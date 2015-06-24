@@ -75,6 +75,9 @@ class BackendAction extends TopAction
             }
         } else {
             $this->assign('open_validator', true);
+            if(method_exists($this, "_before_add_show")){
+                $this->_before_add_show();
+            }
             if (IS_AJAX) {
                 $response = $this->fetch();
                 $this->ajaxReturn(1, '', $response);

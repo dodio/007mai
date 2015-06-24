@@ -26,6 +26,7 @@
                 店名 :
                 <input name="name" type="text" class="input-text mr10" size="25" value="{$search.name}" />
                 <input type="submit" name="search" class="btn" value="搜索" />
+                <input type="button" id="add_items_cate" class="btn" value="添加到选择分类" />
           </div>
             </td>
             </tr>
@@ -150,6 +151,11 @@ $("#setTime").click(function(){
             $.dialog.alert(rsp.msg);
         }
     });
+});
+
+$("#add_items_cate").click(function(){
+  var cate_id = $("#J_cate_id").val();
+  window.open("{:U('shop/add',array('cid'=>'"+cate_id+"'))}");
 })
 </script>
 </body>

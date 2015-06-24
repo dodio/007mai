@@ -299,7 +299,7 @@ function upload_url($dir){
 }
 function attach($attach, $dir) {
     if(!$attach){
-        return upload_dir("/missing.jpg");
+        return upload_url("/missing.jpg");
     }
     if (false === strpos($attach, 'http://')) {
         //本地附件

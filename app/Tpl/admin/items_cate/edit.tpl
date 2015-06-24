@@ -162,7 +162,7 @@ $(function(){
 		if(result.status == 1){
 			$.dialog.get(result.dialog).close();
 			$.ftxia.tip({content:result.msg});
-			window.location.reload();
+			// window.location.reload();
 		}else{
 			$.ftxia.tip({content:result.msg, icon:'alert'});
 		}

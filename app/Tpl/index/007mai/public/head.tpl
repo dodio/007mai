@@ -1,5 +1,5 @@
 <meta charset="utf-8" />
-<title>{$page_seo.title} - 007买</title>
+<title>{$page_seo.title}——007买</title>
 <meta name="keywords" content="{$page_seo.keywords}" />
 <meta name="description" content="{$page_seo.description}" />
 <meta name="renderer" content="webkit">

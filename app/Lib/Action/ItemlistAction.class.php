@@ -92,10 +92,15 @@ class ItemlistAction extends FirstendAction {
       $this->assign('page', $pager->kshow());
       $this->assign('total_item',$count);
 
+      $seo_keywords = explode(",", $cinfo['seo_keys']);
+      if(count($seo_keywords)<3){
+        $seo_keywords = explode(" ", $cinfo['seo_keys']);
+      }
+      array_filter($seo_keywords);
       $this->_config_seo(C('ftx_seo_config.cate'), array(
         'cate_name' => $cinfo['name'],
-        'seo_title' => $cinfo['seo_title'],
-        'seo_keywords' => $cinfo['seo_keys'],
+        'seo_title' => $cinfo['seo_title'].implode("、", $seo_keywords),
+        'seo_keywords' => implode(",", $seo_keywords),
         'seo_description' => $cinfo['seo_desc'],
       ));
       return $items['total'];

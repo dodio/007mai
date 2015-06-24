@@ -64,6 +64,19 @@ class adAction extends BackendAction {
         $this->assign('ad_type_arr', $this->_ad_type);
     }
 
+    protected function _before_add_show(){
+        if($copy_id = I("clone_id",'','intval')){
+            $mod = D("ad");
+            $info = $mod->find($copy_id);
+            $this->assign("info",$info);
+            $this->ajaxReturn(1,'',$this->fetch("copy_add"));
+            exit();
+        }else{
+            $board_id = I("board_id",'','intval');
+            $this->assign("board_id",$board_id);
+        }
+    }
+
     protected function _before_insert($data) {
         //判断开始时间和结束时间是否合法
         $data['start_time'] = strtotime($data['start_time']);

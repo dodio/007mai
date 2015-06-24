@@ -57,7 +57,7 @@
             <th width="150">有效时间</th>
             <th width="60"><span data-tdtype="order_by" data-field="ordid">{:L('sort_order')}</span></th>
             <th width="60"><span data-tdtype="order_by" data-field="status">{:L('status')}</span></th>
-            <th width="80">{:L('operations_manage')}</th>
+            <th width="100">{:L('operations_manage')}</th>
           </tr>
         </thead>
         <tbody>
@@ -66,13 +66,14 @@
             <td align="center"><input type="checkbox" class="J_checkitem" value="{$val.id}"></td>
             <td align="center">{$val.id}</td>
             <td><span data-tdtype="edit" data-field="name" data-id="{$val.id}" class="tdedit">{$val.name}</span></td>
-            <td style="max-width:400px;overflow: hidden;"><span data-tdtype="edit" data-field="url" data-id="{$val.id}" class="tdedit">{$val.url}</span></td>
+            <td style="max-width:350px;overflow: hidden;"><a href="{$val.url}" target="_blank">看</a>&nbsp;&nbsp;<span data-tdtype="edit" data-field="url" data-id="{$val.id}" class="tdedit">{$val.url}</span></td>
             <td align="center">{$ad_type_arr[$val['type']]}<if condition="$val.type eq 'image'"><notempty name="val['content']"><span class="attachment_icon J_attachment_icon" file-type="image" file-rel="{:attach($val['content'],'images')}"><img src="__STATIC__/images/filetype/image_s.gif" /></span></notempty></if></td>
             <td align="center"><em class="red">(id:{$val.board_id})</em>{$val.adbord.name}</td>
             <td align="center">{$val.start_time|date='Y-m-d',###} / {$val.end_time|date='Y-m-d',###}</td>
             <td align="center"><span data-tdtype="edit" data-field="ordid" data-id="{$val.id}" class="tdedit">{$val.ordid}</span></td>
             <td align="center"><img data-tdtype="toggle" data-id="{$val.id}" data-field="status" data-value="{$val.status}" src="__STATIC__/images/admin/toggle_<if condition="$val.status eq 0">disabled<else/>enabled</if>.gif" /></td>
             <td align="center">
+                <a href="javascript:void(0);" class="J_showdialog" data-uri="{:U('ad/add', array('clone_id'=>$val['id']))}" data-title="复制 - {$val.name}" data-id="add" data-width="520" data-height="350">复制</a> | 
             	<a href="javascript:void(0);" class="J_showdialog" data-uri="{:U('ad/edit', array('id'=>$val['id']))}" data-title="{:L('edit')} - {$val.name}" data-id="edit" data-width="520" data-height="350">{:L('edit')}</a> | 
                 <a href="javascript:void(0);" class="J_confirmurl" data-acttype="ajax" data-uri="{:u('ad/delete', array('id'=>$val['id']))}" data-msg="{:sprintf(L('confirm_delete_one'),$val['name'])}">{:L('delete')}</a></td>
           </tr>

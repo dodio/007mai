@@ -18,7 +18,18 @@ class adboardAction extends BackendAction {
         $this->assign('big_menu', $big_menu);
     }
 
-    public function _before_add() {
+    protected function _search(){
+        $map = array();
+        ($keyword = I("keyword","","trim")) && $map['name'] = array('like',"%" .$keyword."%");
+        ($board_type = I("board_type","","trim")) && $map['tpl'] = $board_type;
+        $this->assign("search",array(
+            "keyword"=>$keyword,
+            "board_type"=>$board_type,
+            ));
+        return $map;
+    }
+
+    protected function _before_add() {
         $tpl_list = $this->_mod->get_tpl_list();
         $this->assign('tpl_list', $tpl_list);
     }
@@ -29,7 +40,7 @@ class adboardAction extends BackendAction {
         }
     }
 
-    public function _before_edit() {
+    protected function _before_edit() {
         $tpl_list = $this->_mod->get_tpl_list();
         $this->assign('tpl_list', $tpl_list);
     }

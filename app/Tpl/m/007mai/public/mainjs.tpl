@@ -158,9 +158,9 @@
     });
     
 </script>
-<script type="text/javascript" src="__STATIC__/m_8mob_jp/js/mjp.min.js"></script>
-<script type="text/javascript" src="__STATIC__/m_8mob_jp/js/swipeSlide.min.js"></script>
-<script type="text/javascript" src="__STATIC__/m_8mob_jp/js/jp.common.js"></script>
+<script type="text/javascript" src="__STATIC__/assets/mobile/js/mjp.min.js"></script>
+<script type="text/javascript" src="__STATIC__/assets/mobile/js/swipeSlide.min.js"></script>
+<script type="text/javascript" src="__STATIC__/assets/mobile/js/jp.common.js"></script>
 <script type="text/javascript">
             $(function(){
             function hideMenu() {

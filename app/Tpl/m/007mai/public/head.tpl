@@ -13,11 +13,11 @@
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
         <meta name="format-detection" content="telephone=no">
         <meta name="format-detection" content="address=no">
-        <link href="__STATIC__/m_8mob_jp/css/style_v3.css" rel="stylesheet" type="text/css" />
-	<link href="__STATIC__/m_8mob_jp/css/main.css" rel="stylesheet" type="text/css" />
+        <link href="__STATIC__/assets/mobile/css/style_v3.css" rel="stylesheet" type="text/css" />
+	<link href="__STATIC__/assets/mobile/css/main.css" rel="stylesheet" type="text/css" />
         <title>{$page_seo.title}  {:C('ftx_site_name')} </title>
         <meta content="{$page_seo.keywords}" name="keywords">
 	<meta content="{$page_seo.description}" name="description">
-	<script src="__STATIC__/m_8mob_jp/js/zepto.min.js"></script>
-	<script src="__STATIC__/m_8mob_jp/js/underscore.js"></script>
+	<script src="__STATIC__/assets/mobile/js/zepto.min.js"></script>
+	<script src="__STATIC__/assets/js/lib/underscore.js"></script>
 	<style type="text/css">.num {float: none;}</style>

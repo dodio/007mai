@@ -5,7 +5,7 @@
 <load href="__STATIC__/assets/pc/css/help.css" />
 </head>
 <body>
-<include file="public:topbar" />
+
 <include file="public:header" />
 
 <include file="public:sidenav"/>

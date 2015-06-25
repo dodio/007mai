@@ -4,7 +4,7 @@
 <include file="public:head" />
 </head>
 <body>
-<include file="public:topbar" />
+
 <include file="public:header" />
 
 <block name="ad">

@@ -3,7 +3,7 @@
 <include file='public:head'/>
 </head>
 <body data-version="0">
-<include file="public:topbar" />
+
 <include file='public:header'/> 
 <style>
   h1{

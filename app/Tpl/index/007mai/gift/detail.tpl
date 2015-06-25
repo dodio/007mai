@@ -18,7 +18,7 @@ __STATIC__/ftxia/new/css/pg-try.css
 </style>
 </head>
 <body>
-<include file="public:topbar" />
+
 <include file="public:header" />
 
 <include file="jifennav"/>

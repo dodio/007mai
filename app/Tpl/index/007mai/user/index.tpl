@@ -9,7 +9,7 @@
 </style>
 </head>
 <body>
-<include file="public:topbar" />
+
 <include file="public:header" />
 <div class="main mb20 container group">
 

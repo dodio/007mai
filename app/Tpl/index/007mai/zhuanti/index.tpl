@@ -21,7 +21,6 @@ line-height: 40px;
 </style>
 </head>
 <body>
-<include file="public:topbar" />
 <include file="public:header" />
 
 <notempty name="zc.banner_pic">

@@ -6,7 +6,7 @@
 <css file="__STATIC__/css/ftxia/comment.css" />
 </head>
 <body>
-<include file="public:topbar" />
+
 <include file="public:header" />
 <!--商品详细-->
 

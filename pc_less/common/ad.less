@@ -83,6 +83,7 @@
 }
 // 图片广告
 .mai007-picad{
+  font-size: 0;
   .imgwraper(100%,100%);
 }
 
@@ -195,4 +196,62 @@
 .l-floor li.l-f-shop img:hover{
     border-color: #f61d4b;
     outline: #f61d4b solid 2px
+}
+
+.mai007-w100x150bg{
+  margin-top: 50px;
+  padding-top: 50px;
+  .mai007-inner{
+    height: 150px;
+    background:url("/assets/images/bg/confectionary.png");
+    overflow: hidden;
+  }
+}
+
+.cate_list{
+  margin-top: 50px;
+  padding-bottom: 30px;
+  border-bottom: 1px dashed #d6d6d6;
+  .cate_group{
+    float: left;
+    padding: 0 25px;
+    border-right: 1px dashed #d6d6d6;
+    .wholetitle{
+    }
+  }
+}
+
+#big_slide_down{
+  width: 100%;
+  overflow: hidden;
+  .btn_close{
+    display: block;
+    width: 100%;
+    .vm(24px);
+    background-color: #555;
+    color:#fff;
+    text-align: center;
+    font-weight: 700;
+    .trans(1s);
+    &:hover{
+      text-decoration: none;
+      background-color: #000;
+    }
+  }
+  .standby{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 30px;
+    .vm(30px);
+    overflow: hidden;
+    background-color: #aaa;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+  }
+  img{
+    width: auto;
+    height: auto;
+  }
 }

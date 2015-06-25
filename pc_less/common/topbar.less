@@ -1,14 +1,17 @@
 .topbar {
   @topbar_height: 36px;
   height: @topbar_height;
-  background-color: #000;
 
   .topnav, .login-show, .other-show {
     line-height: @topbar_height;
-
-  a{
-      color: @color_blue;
+    a{
+      color: #132124;
       margin-right: 20px;
+    }
+  }
+  .other-show{
+    a:last-child{
+      margin-right: 0;
     }
   }
   img {

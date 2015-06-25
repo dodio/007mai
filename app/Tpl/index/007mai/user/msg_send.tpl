@@ -5,7 +5,7 @@
 <link rel=stylesheet type=text/css href="__STATIC__/assets/pc/css/user.css" />
 </head>
 <body>
-<include file="public:topbar" />
+
 <include file="public:header" />
 <div class="main mb20 container group">
 	

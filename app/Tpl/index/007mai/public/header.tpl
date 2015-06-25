@@ -1,7 +1,7 @@
 
 
   <div class="header">
-    <div class="container group">
+    <div class="container head group">
       <div class="logo">
         <a href="/"><img src="__STATIC__/assets/pc/images/logo.png" alt=""></a>
       </div>
@@ -10,12 +10,15 @@
           <span class="search-area fl">
             <input type="hidden" name="m" value="search">
             <input type="hidden" name="a" value="index">
-            <input x-webkit-speech="" name="key" placeholder="京东618,超级女装" value="" class="text">
+            <input x-webkit-speech="" name="key" onfocus="if(this.value =='暑假就该洒脱~')this.value='';" onblur="if($.trim(this.value) =='')this.value='暑假就该洒脱~';" value="暑假就该洒脱~" class="text">
           </span>
           <input type="submit" value="" class="smt fl btn">
         </form>
       </div>
+      <div class="fr">
+        <include file="public:topbar"/>
 
+      </div>
       <div class="sign-area">
         <a href="javascript:" class="signIn_btn signIn"><i class="sign-icon icon"></i>签到领取情报</a>
       </div>
@@ -36,5 +39,3 @@
       </div>
     </div>
   </div>
-
- 

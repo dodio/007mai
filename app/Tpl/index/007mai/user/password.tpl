@@ -5,7 +5,7 @@
 <link rel=stylesheet type=text/css href="__STATIC__/assets/pc/css/user.css" />
 </head>
 <body>
-<include file="public:topbar" />
+
 <include file="public:header" />
 <script charset="utf-8" type="text/javascript" src="__STATIC__/jky/js/jquery.validate.js" ></script>
 <script>

@@ -4,7 +4,7 @@
 <include file="public:head" />
 </head>
 <body>
-<include file="public:topbar" /> 
+ 
 <include file="public:header" /> 
 <div class="about container">
 	<div class="about_menu fl">

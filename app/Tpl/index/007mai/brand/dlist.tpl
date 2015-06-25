@@ -8,7 +8,7 @@ __STATIC__/assets/pc/css/brand.css
 "/>
 </head>
 <body>
-<include file="public:topbar" />
+
 <include file="public:header" />
 
 <div style="<notempty name="lists.shop.big_img">background:url({$lists['shop']['big_img']}) no-repeat;<else/>background-color:rgb(240, 240, 240);border:1px solid #CBCBCB;</notempty>" class="brand-banner">

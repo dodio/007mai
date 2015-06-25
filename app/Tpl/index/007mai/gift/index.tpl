@@ -8,7 +8,7 @@ __STATIC__/assets/pc/css/gift.css
 "/>
 </head>
 <body>
-<include file="public:topbar" />
+
 <include file="public:header" />
 
 <include file="jifennav"/>

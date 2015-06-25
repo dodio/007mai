@@ -5,7 +5,7 @@
 <css file="__STATIC__/assets/pc/css/forget.css" />
 </head>
 <body>
-<include file="public:topbar" />
+
 <include file="public:header" />
 <div class="container">
 	<div class="white_top"><div class="white_top_left"></div><div class="white_top_middle"></div><div class="white_top_right"></div></div>

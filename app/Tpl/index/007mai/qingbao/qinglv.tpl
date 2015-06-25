@@ -14,7 +14,7 @@ __STATIC__/assets/pc/css/qingbao.css
 </block>
 </head>
 <body>
-<include file="public:topbar" />
+
 <include file="public:header" />
 
 

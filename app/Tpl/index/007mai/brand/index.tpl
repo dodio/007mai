@@ -8,7 +8,7 @@ __STATIC__/assets/pc/css/brand.css
 "/>
 </head>
 <body>
-<include file="public:topbar" />
+
 <include file="public:header" />
 
 <include file="public:sidenav" />

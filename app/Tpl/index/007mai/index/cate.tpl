@@ -8,7 +8,7 @@ __STATIC__/assets/pc/css/cate.css
 </head>
 <body>
 <?php $action = __ACTION__; ?>
-<include file="public:topbar" />
+
 <include file="public:header" />
 <?php 
 $lazy_item_num =12;

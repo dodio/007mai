@@ -11,9 +11,9 @@
 <link rel="dns-prefetch" href="http://cdn.007mai.com" />
 <link rel="dns-prefetch" href="http://s11.cnzz.com" />
 <link rel="dns-prefetch" href="http://a.alimama.cn" />
-<!-- <script type="text/javascript" src="__STATIC__/assets/js/common/uaredirect.js"></script> -->
+<script type="text/javascript" src="__STATIC__/assets/js/common/uaredirect.js"></script>
 <script type="text/javascript">
-  // uaredirect("http://m.007mai.com");
+  uaredirect("http://m.007mai.com");
 	SITEURL="{:C('ftx_site_url')}";
 	CURURL="{:C('ftx_site_url')}";
 	WEBNICK="{:C('ftx_site_name')}";

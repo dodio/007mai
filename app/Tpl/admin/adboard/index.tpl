@@ -52,8 +52,8 @@
 				<td align="center">{$val.tracker}</td>
                 <td align="center"><img data-tdtype="toggle" data-id="{$val.id}" data-field="status" data-value="{$val.status}" src="__STATIC__/images/admin/toggle_<if condition="$val.status eq 0">disabled<else/>enabled</if>.gif" /></td>
                 <td align="center">
-                  <a href="{:U('ad/index',array('board_id'=>$val['id'],'menuid'=>11))}">查看广告</a>
-                  <a href="javascript:void(0);" class="J_showdialog" data-uri="?m=ad&a=add&board_id={$val.id}" data-title="添加广告-{$val.name}" data-id="add" data-width="520" data-height="350">添加广告</a>
+                  <a href="{:U('ad/index',array('board_id'=>$val['id'],'menuid'=>11))}">查看广告</a> | 
+                  <a href="javascript:void(0);" class="J_showdialog" data-uri="?m=ad&a=add&board_id={$val.id}" data-title="添加广告-{$val.name}" data-id="add" data-width="520" data-height="350">添加广告</a> | 
                 	<a href="javascript:void(0);" class="J_showdialog" data-uri="{:U('adboard/edit', array('id'=>$val['id']))}" dtitle="{:L('edit')} - {$val.name}" data-id="edit" data-width="500" data-height="280">{:L('edit')}</a> | 
                     <a href="javascript:void(0);" class="J_confirmurl" data-acttype="ajax" data-uri="{:u('adboard/delete', array('id'=>$val['id']))}" data-msg="{:sprintf(L('confirm_delete_one'), $val['name'])}">{:L('delete')}</a></td>
 			</tr>

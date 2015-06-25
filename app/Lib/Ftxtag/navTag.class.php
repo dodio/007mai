@@ -39,7 +39,7 @@ class navTag {
 				case 'cate':
                     $data[$key]['link'] = U('index/cate');
                     break;
-        case 'gift':
+                case 'gift':
                     $data[$key]['link'] = U('gift/index');
                     break;
 				case 'article':
@@ -48,7 +48,7 @@ class navTag {
 				case 'help':
                     $data[$key]['link'] = U('help/index');
                     break;
-        case 'paipai':
+                case 'paipai':
                     $data[$key]['link'] = U('paipai/index');
                     break;
             }

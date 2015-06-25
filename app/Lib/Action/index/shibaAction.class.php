@@ -114,7 +114,7 @@ class shibaAction extends ItemlistAction {
 		$pager = $this->_pager($count, $page_size);
 		$this->assign('page', $pager->kshow());
 		$this->assign('total_item',$count);
-    $this->assign('nav_curr', 'shiba');
+    $this->assign('nav_curr', 'mai');
     $this->_config_seo(C('ftx_seo_config.cate'), array(
       'cate_name' => '【'.$cinfo['name'].'专区】',
       'seo_title' => $cinfo['seo_title'],

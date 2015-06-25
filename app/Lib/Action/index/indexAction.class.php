@@ -123,6 +123,7 @@ class indexAction extends ItemlistAction {
  		$shop_amount = ceil( $total/4 );
 		$shops = $this->cate_shop($cid,$shop_amount);
 		$this->assign("shops",$shops);
+    $this->assign("nav_curr","mai");
 		$this->display();
 	}
 

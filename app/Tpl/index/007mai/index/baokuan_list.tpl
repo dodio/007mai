@@ -15,8 +15,8 @@
             <div class="mt15">
               <s class="bk-price">¥{$item.price}</s>
               <span class="bk-coupon">¥{$item.coupon_price}</span>
-              <span class="bk-sell ml10">已售:{$item.volume}</span>
-              <span class="bk-zk ml10">{$item.zk}折</span>
+              <span class="bk-sell ml5">已售:{:friend_number($item['volume'])}</span>
+              <span class="bk-zk">{$item.zk}折</span>
             </div>
             <div class="bk-reason mt15">
               推荐理由：<i class="icon heart3-icon"></i>

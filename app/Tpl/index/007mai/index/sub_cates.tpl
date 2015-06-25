@@ -17,13 +17,13 @@
   <div class="fl ml15">
     <volist name="erji" id="er">
     <div class="erji-box group">
-      <a href="{:U(__ACTION__,array("cid"=>$er['id']))}#root_cates" class="erji <if condition="$cid eq $er['id']">cur</if>">{$er.name}</a>
+      <a href="{:U(__ACTION__,array("cid"=>$er['id']))}#itemlist" class="erji <if condition="$cid eq $er['id']">cur</if>">{$er.name}</a>
       <div class="sanji">
         <?php 
           $sanji = $cate_list['s'][$er['id']];
          ?>
         <volist name="sanji" id="san">
-        <a href="{:U(__ACTION__,array("cid"=>$san['id']))}#root_cates" <if condition="$cid eq $san['id']">class="cur"</if>>{$san.name}</a>
+        <a href="{:U(__ACTION__,array("cid"=>$san['id']))}#itemlist" <if condition="$cid eq $san['id']">class="cur"</if>>{$san.name}</a>
         </volist>
       </div>
     </div>

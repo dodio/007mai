@@ -8,13 +8,13 @@
             <form id="search-form" action="/index.php" method="get">
                 <div class="box-search">
                     <input type="text" id="keyword" name="keyword" x-webkit-speech="" placeholder="搜索商品" autocomplete="off" value="">
-                    <a href="javascript:;" class="del"><img src="__STATIC__/m_8mob_jp/images/del.png"></a>
+                    <a href="javascript:;" class="del"><img src="__STATIC__/assets/mobile/images/del.png"></a>
                 </div>
 		<input type="hidden" id="g" name="g" value="m">
 		<input type="hidden" id="m" name="m" value="index">
 		<input type="hidden" id="a" name="a" value="index">
                 <button id="search-submit" type="submit">
-                    <img src="__STATIC__/m_8mob_jp/images/icon/search.png">
+                    <img src="__STATIC__/assets/mobile/images/icon/search.png">
                 </button>
             </form>
         </div>

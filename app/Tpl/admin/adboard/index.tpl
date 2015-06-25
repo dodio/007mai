@@ -67,6 +67,8 @@
 		</div>
 	</div>
 </div>
+<link rel="stylesheet" type="text/css" href="__STATIC__/js/calendar/calendar-blue.css"/>
+<script type="text/javascript" src="__STATIC__/js/calendar/calendar.js"></script>
 <include file="public:footer" />
 </body>
 </html>

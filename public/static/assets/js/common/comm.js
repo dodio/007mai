@@ -33,10 +33,11 @@ $(function(){
     return;
   }
   $("#big_slide_down").slideDown();
-  setTimeout(function(){
+  var t = setTimeout(function(){
     $("#big_slide_down").find(".btn_close").click();
   },5000);
   $("#big_slide_down").find(".btn_close").click(function(){
+    clearTimeout(t);
     $(this).prev(":visible").slideUp(function(){
       $("#big_slide_down").find(".btn_close").toggleClass("standby");
     });

@@ -9,7 +9,7 @@ __STATIC__/assets/pc/css/index.css
 <body>
 <div id="big_slide_down">
   <div class="big_ad">
-    {:R('advert/index', array('index_slidedown'), 'Widget')}
+    {:R('advert/index', array('big_slide_down'), 'Widget')}
   </div>
   <a href="javascritp:" class="btn_close">点击拉回</a>
 </div>

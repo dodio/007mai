@@ -682,6 +682,9 @@ function getPriceRange($str,&$map){
 }
 
 function background($code,$dir = "",$repeat = true){
+    if($code == ""){
+        return ;
+    }
     //如果是颜色代码
     if(strpos($code,"#") === 0 || strpos($code, "rgb") === 0){
         return "background-color:".$code.";";

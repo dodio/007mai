@@ -1,6 +1,6 @@
 <div id="shop_{$shop.sellerId}" class="show-item shop mb20">
   <div class="show-pic">
-    <a data-type="1" biz-sellerid="{$shop['sellerId']}" isconvert=1 href="{$shop.url}" target="_blank">
+    <a data-type="1" biz-sellerid="{$shop['sellerId']}" isconvert=1 href="{$shop.url}" target="_blank" rel="nofollow">
       <?php if(isset($lazy_shop_num) && $i < $lazy_shop_num) { ?>
       <img src="{:attach($shop['img'],"images")}" alt="{$shop.name}">
       <?php }else{ ?>
@@ -9,7 +9,7 @@
     </a>
   </div>
   <div class="show-name group">
-    <a data-type="1" biz-sellerid="{$shop['sellerId']}" isconvert=1 href="{$shop.url}" target="_blank" class="fl">{$shop.name}</a>
+    <a data-type="1" biz-sellerid="{$shop['sellerId']}" isconvert=1 href="{$shop.url}" target="_blank" class="fl" rel="nofollow">{$shop.name}</a>
     <if condition="$shop['average_price'] neq '0.00'">
       <span class="fr shop-price">均价: <em>{$shop.average_price}</em></span>
     </if>
@@ -33,5 +33,5 @@
     </div>
   </if>
   <block name="reason"></block>
-  <a data-type="1" biz-sellerid="{$shop['sellerId']}" isconvert=1 href="{$shop.url}" target="_blank" class="shop-go mt10">进店逛逛</a>
+  <a data-type="1" biz-sellerid="{$shop['sellerId']}" isconvert=1 href="{$shop.url}" target="_blank" class="shop-go mt10" rel="nofollow">进店逛逛</a>
 </div>

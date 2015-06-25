@@ -19,7 +19,7 @@
     <div class="container mod_mid group">
       <ul class="mod_mid_wrap">
         <volist name="top_cates" id="bcate">
-            <li class="mod_mid_item"><a <if condition="($rootid eq $bcate['id'])">class="cur"</if> href="{:U(__ACTION__,array("cid"=>$bcate['id']))}#root_cates" title="{$bcate.name}">{$bcate.name}</a></li> 
+            <li class="mod_mid_item"><a <if condition="($rootid eq $bcate['id'])">class="cur"</if> href="{:U(__ACTION__,array("cid"=>$bcate['id']))}#root_cates" title="{$bcate.name}" rel="nofollow">{$bcate.name}</a></li> 
           </volist>
       </ul>
     </div>

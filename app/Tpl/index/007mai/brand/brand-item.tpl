@@ -1,6 +1,6 @@
 <div class="show-item show-normal item {$item.class}" id="nid_{$item.num_iid}">
   <div class="show-pic">
-    <a biz-itemid="{$item['num_iid']}" isconvert=1 href="" target="_blank">
+    <a biz-itemid="{$item['num_iid']}" isconvert=1 href="" target="_blank" rel="nofollow">
       <?php if($i < 12 ) { ?>
       <img src='{:attach(get_thumb($item['pic_url'], '_b'),'item')}' alt="{$item.title}"  />
       <?php }else{ ?>
@@ -8,7 +8,7 @@
       <?php } ?>
     </a>
   </div>
-  <div class="show-name"><a biz-itemid="{$item['num_iid']}" isconvert=1 target="_blank" href="">{$item.title}</a></div>
+  <div class="show-name"><a biz-itemid="{$item['num_iid']}" isconvert=1 target="_blank" href="" rel="nofollow">{$item.title}</a></div>
   <div class="item-info group">
     <div class="item-price fl">
       <s>¥{$item.price}</s>

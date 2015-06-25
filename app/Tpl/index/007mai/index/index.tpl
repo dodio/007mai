@@ -7,7 +7,12 @@ __STATIC__/assets/pc/css/index.css
 "/>
 </head>
 <body>
-<include file="public:topbar" />
+<div id="big_slide_down">
+  <div class="big_ad">
+    {:R('advert/index', array('index_slidedown'), 'Widget')}
+  </div>
+  <a href="javascritp:" class="btn_close">点击拉回</a>
+</div>
 <include file="public:header" />
 
 <include file="public:sidenav"/>
@@ -16,6 +21,17 @@ __STATIC__/assets/pc/css/index.css
   {:R('advert/index', array(1), 'Widget')}
 </div>
 
+<!-- <div class="cate_list group">
+  
+</div> -->
+
+<div class="mai007-w100x150bg group">
+  <div class="mai007-inner">
+    <div class="container">
+      {:R('advert/index', array('hot_cates'), 'Widget')}
+    </div>
+  </div>
+</div>
 
 <div class="container">
     <div class="baokuan">

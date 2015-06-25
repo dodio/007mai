@@ -26,6 +26,25 @@
       });
     }});
 })(jQuery);
+//大幅下拉广告的js
+$(function(){
+  if($("#big_slide_down").find(".big_ad:empty").length == 1) {
+    $("#big_slide_down").remove();
+    return;
+  }
+  $("#big_slide_down").slideDown();
+  setTimeout(function(){
+    $("#big_slide_down").find(".btn_close").click();
+  },5000);
+  $("#big_slide_down").find(".btn_close").click(function(){
+    $(this).prev(":visible").slideUp(function(){
+      $("#big_slide_down").find(".btn_close").toggleClass("standby");
+    });
+    $(this).prev(":hidden").slideDown(function(){
+      $("#big_slide_down").find(".btn_close").toggleClass("standby");
+    });
+  });
+});
 
 (function($){
   $.fn.mai007ad = function(callback){

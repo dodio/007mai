@@ -23,6 +23,7 @@
                 分类 :
                 <select class="J_cate_select mr10" data-pid="0" data-uri="{:U('items_cate/ajax_getchilds', array('type'=>0))}" data-selected="{$search.selected_ids}"></select>
                 <input type="hidden" name="cate_id" id="J_cate_id" value="{$search.cate_id}" />
+                本类&nbsp;<input type="checkbox" name="this_cate" value="1" <eq name="search.this_cate" value="1">checked</eq>/>&nbsp;
                 店名 :
                 <input name="name" type="text" class="input-text mr10" size="25" value="{$search.name}" />
                 <input type="submit" name="search" class="btn" value="搜索" />

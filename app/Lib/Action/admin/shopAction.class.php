@@ -50,7 +50,12 @@ class shopAction extends BackendAction {
       }else{
           $spid .= $cate_id;
       }
-      $map["cate_id"] = array("IN",$items_cate_mod->get_child_ids($cate_id,true));
+      $this_cate = I("this_cate",0,"intval");
+      if($this_cate){
+        $map["cate_id"] = $cate_id;
+      }else{
+        $map["cate_id"] = array("IN",$items_cate_mod->get_child_ids($cate_id,true));
+      }
     }
     // dump($map);
     $this->assign('search', array(
@@ -60,7 +65,8 @@ class shopAction extends BackendAction {
         'end_time_max' => $end_time_max,
         "selected_ids"=>$spid,
         "cate_id"=>$cate_id,
-        'name' => $name
+        'name' => $name,
+        'this_cate'=>$this_cate
     ));
     return $map;
   }

@@ -12,8 +12,10 @@
     <div class="fr">
       <div id="login-show" class="login-show fl">
         <volist name="oauth_list" id="val">
-          <a href="{:U('oauth/index', array('mod'=>$val['code']))}">{$val.name}</a>
-        </volist>　|
+          <a href="{:U('oauth/index', array('mod'=>$val['code']))}" target="_blank"><?php if ($val['code']=="qq"): ?>
+            <img src="__STATIC__/assets/images/icon_qqlogin.png" alt="">
+          <?php endif ?></a>
+        </volist>
         <a href="/user/login" target="_blank">登录</a>
         <a href="/user/register" target="_blank">免费注册</a>
       </div>

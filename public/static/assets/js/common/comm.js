@@ -32,13 +32,22 @@ $(function(){
     $("#big_slide_down").remove();
     return;
   }
-  $("#big_slide_down").slideDown();
-  var t = setTimeout(function(){
-    $("#big_slide_down").find(".btn_close").click();
-  },5000);
+  // 读取是否已看过
+  if(!$.cookie("big_slide_down")){
+    $("#big_slide_down").slideDown();
+    var t = setTimeout(function(){
+      $("#big_slide_down").find(".btn_close").click();
+    },5000);
+  }else{
+    $("#big_slide_down").find(".btn_close").toggleClass("standby");
+  }
+  
   $("#big_slide_down").find(".btn_close").click(function(){
     clearTimeout(t);
     $(this).prev(":visible").slideUp(function(){
+      //一天的到明日凌晨，再次自动展开
+      $.cookie("big_slide_down",true,{expires:$.MAI007.util.zeroDate(1,true)});
+
       $("#big_slide_down").find(".btn_close").toggleClass("standby");
     });
     $(this).prev(":hidden").slideDown(function(){

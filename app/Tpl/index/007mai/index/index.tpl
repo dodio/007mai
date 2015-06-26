@@ -18,12 +18,95 @@ __STATIC__/assets/pc/css/index.css
 <include file="public:sidenav"/>
 
 <div class="big_banner group">
-  {:R('advert/index', array(1), 'Widget')}
+  {:R('advert/index', array('big_banner'), 'Widget')}
 </div>
 
-<!-- <div class="cate_list group">
-  
-</div> -->
+<div class="container group mt30">
+  <div class="fl promote_cate_list group">
+    {:R('advert/index', array('promote_cate_list1'), 'Widget')}
+    {:R('advert/index', array('promote_cate_list2'), 'Widget')}
+    {:R('advert/index', array('promote_cate_list3'), 'Widget')}
+    {:R('advert/index', array('promote_cate_list4'), 'Widget')}
+  </div>
+  <div class="fr">
+    <notempty name="visitor">
+      <div class="qingbao_box">
+        <div class="title"><a href="/gift/index" target="_blank">你的情报，你的商城</a></div>
+        <div id="qiandaobox" class="mt10 content group">
+          <div class="userinfo group">
+            <div class="avatar">
+              <a href="/user/index">
+                <img src="{:avatar($visitor['id'],48)}" alt="">
+              </a>
+            </div>
+            <div class="info fl ml10">
+              <div class="username"><a href="" target="/user/index">{$visitor.username}</a></div>
+              <div class="text group">
+                <span class="score">情报：<em>{$visitor.score}</em></span>
+                <a target="_blank" class="fr" href="/user/mingxi">明细</a>
+              </div>
+            </div>
+          </div>
+          <div id="closest_duihuan" class="mt10 group">
+            
+          </div>
+        </div>
+<script>
+  $(function(){
+    $.MAI007.data.getUserinfo().done(function(data){
+      if(data.s == 1){
+        //登录获取最接近的礼物商品
+        var user = data.user;
+        $.MAI007.data.getCloseScoreItem().done(function(data){
+          if(data.status == 1 && data.msg){
+            var html= "<div class=\"fl mt5\">"
++ "              <div class=\"text\"><a href=\"/help/qingbao\" target=\"_blank\">快速获得情报!</a></div>"
++ "              <div class=\"text\">"
++ "                <span class=\"score\">还差<em class=\"ml5\"><literal>{$distance_score}</literal></em></span>&nbsp;情报"
++ "              </div>"
++ "              <div class=\"text\">就可以兑换：<a href=\"/gift/detail/id/<literal>{$id}</literal>\" class=\"item_ex\" target=\"_blank\"><literal>{$title}</literal></a></div>"
++ "            </div>"
++ "            <div class=\"q_item\">"
++ "              <a href=\"/gift/detail/id/<literal>{$id}</literal>\" target=\"_blank\">"
++ "                <img src=\"<literal>{$img}</literal>\" alt=\"\">"
++ "              </a>"
++ "            </div>";
+            var tpl = _.template(html);
+            var item = data.data;
+            item.distance_score = item.score-user.jifen;
+            console.log(tpl.toString());
+            $("#closest_duihuan").html( tpl(item) );
+          }else{
+            var html = "您已经收集了很多情报，快去情报商城兑换吧！";
+            $("#closest_duihuan").html(html);
+          }
+        })
+        //未登录
+      }else{
+        html = "登录以后可以看到，您可以马上兑换什么礼物。";
+        $("#closest_duihuan").html(html);
+      }
+    });
+    
+  });
+</script>
+    </div>
+    </notempty>
+    
+    <empty name="visitor">
+      <div class="qingbao_box group">
+        <div class="title"><a href="/gift/index" target="_blank">你的情报，你的商城</a></div>
+        <div id="qiandaobox" class="mt10 content group">
+          <a href="{:U('oauth/index', array('mod'=>'qq'))}" target="_blank"><img src="__STATIC__/assets/images/Connect_logo_5.png" alt=""></a>
+        </div>
+      </div>
+      <div class="ad_qb">
+        {:R('advert/index', array('qingbao_ad'), 'Widget')}
+      </div>
+    </empty>
+    
+  </div>
+</div>
 
 <div class="mai007-w100x150bg group">
   <div class="mai007-inner">

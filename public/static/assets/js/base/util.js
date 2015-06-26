@@ -62,5 +62,26 @@
       },time);
     });
   };
-
+  util.zeroDate = function(days,utc){
+    if(days instanceof Date){
+      var t = days;
+    }else{
+      var t = new Date();
+      if(typeof days == "number"){
+        t.setTime(+t + days * 864e+5);
+      }
+    }
+    if(!utc){
+      t.setHours(0);
+      t.setMinutes(0);
+      t.setSeconds(0);
+      t.setMilliseconds(0);
+    }else{
+      t.setUTCHours(0);
+      t.setUTCMinutes(0);
+      t.setUTCSeconds(0);
+      t.setUTCMilliseconds(0);
+    }
+    return t;
+  }
 })(jQuery);

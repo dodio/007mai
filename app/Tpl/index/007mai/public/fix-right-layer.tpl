@@ -6,7 +6,7 @@
                 <notempty name="visitor">
                     <div class="avatar">
                         <a href="{:U('user/index')}" target="_blank">
-                        <img src="{:avatar($info['id'], 32)}" alt="">
+                        <img src="{:avatar($visitor['id'], 32)}" alt="">
                         </a>
                     </div>
                   <div class="fix-uinfo mt20">现有<br><em>{$visitor.score}</em><br>情报</div>

@@ -316,11 +316,13 @@ class ajaxAction extends FirstendAction {
 			$score = $this->visitor->get("score");
 			$where = array(
 				"end_time"=>array("GT" , time() ),
-				"start_time" => array("LT" , time() ),
 				"score" => array("GT" , $score)
 				);
 			$item = $score_item->where($where)->find();
-			$this->ajaxReturn(1, $item);
+			if($item){
+				$item['img'] = attach($item['img'],'score_item');
+			}
+			$this->ajaxReturn(1,"最接近的宝贝", $item);
 		}
 	}
 	/**

@@ -1,7 +1,55 @@
 @import "./lib/funclib.less";
 @import "./common/var.less";
 
-
+.qingbao_box{
+  width: 250px;
+  padding: 10px;
+  font-size: 12px;
+  box-sizing: border-box;
+  border: 1px solid #ebebeb;
+  .title{
+    text-align: right;
+    color: #777;
+  }
+  .avatar{
+    float: left;
+    .imgwraper(48px,48px);
+  }
+  .username{
+    height: 24px;
+    line-height: 1.1em;
+  }
+  .info{
+    width: 168px;
+  }
+  .score{
+    color: #aaa;
+    em{
+      color:@color_red;
+    }
+  }
+  .q_item{
+    float: right;
+    padding: 2px;
+    border: 1px solid #e0e0e0;
+    .imgwraper(80px,80px);
+  }
+  .text{
+    color: #aaa;
+    margin-bottom: 10px;
+  }
+  .item_ex{
+    color: #777;
+  }
+  #closest_duihuan .text{
+    width: 133px;
+  }
+}
+.ad_qb{
+  height: 80px;
+  width: 270px;
+  margin-top: 20px;
+}
 .baokuan{
   margin-top: 25px;
   .bk-top{

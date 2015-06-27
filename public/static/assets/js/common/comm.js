@@ -32,9 +32,9 @@ $(function(){
     $("#big_slide_down").remove();
     return;
   }
-  // 读取是否已看过
   if(!$.cookie("big_slide_down")){
-    $("#big_slide_down").slideDown();
+    //今日还未看过
+    $("#big_slide_down").find('.big_ad').slideDown();
     var t = setTimeout(function(){
       $("#big_slide_down").find(".btn_close").click();
     },5000);

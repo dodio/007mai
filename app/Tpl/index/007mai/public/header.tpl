@@ -17,11 +17,11 @@
       </div>
       <div class="fr">
         <include file="public:topbar"/>
-
+        <div class="sign-area">
+          <a href="javascript:" class="signIn_btn signIn"><i class="sign-icon icon"></i>签到领取情报</a>
+        </div>
       </div>
-      <div class="sign-area">
-        <a href="javascript:" class="signIn_btn signIn"><i class="sign-icon icon"></i>签到领取情报</a>
-      </div>
+      
     </div>
 
     <div class="mainNav group">

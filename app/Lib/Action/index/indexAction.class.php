@@ -58,7 +58,10 @@ class indexAction extends ItemlistAction {
 
 		//情报精选
 		$jingxuan_id = 25;
-		$this->assign('jingxuan_list', $this->cate_item($jingxuan_id,10));
+    $jinfo = $this->_cate_mod->cate_info($jingxuan_id);
+    $jmap = array();
+    mapCinfo($jinfo,$jmap);
+		$this->assign('jingxuan_list', $this->cate_item($jingxuan_id,10,$jmap));
     
  		$shops = $this->cate_shop($jingxuan_id,12);
  		$this->assign("shops",$shops);

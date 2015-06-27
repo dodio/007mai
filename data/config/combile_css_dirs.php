@@ -1,1 +1,0 @@
-<?php	return array ( 0 => '/static/assets/pc', );?>

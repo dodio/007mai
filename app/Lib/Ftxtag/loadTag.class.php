@@ -78,14 +78,14 @@ class loadTag {
             mkdir(dirname($path));
         }
         //缓存一下css编译目录，方便通过后台清理
-        $css_dirs = F("combile_css_dirs",'',CONF_PATH);
+        $css_dirs = F("combile_css_dirs",'',RUNTIME_PATH);
         if($css_dirs === false){
             $css_dirs = array();
         }
         if(!in_array($dir, $css_dirs)){
             $css_dirs[] = $dir;
         }
-        F("combile_css_dirs",$css_dirs,CONF_PATH);
+        F("combile_css_dirs",$css_dirs,RUNTIME_PATH);
         
         $content = '';
         foreach ($files as $value) {
@@ -100,11 +100,11 @@ class loadTag {
 
     private function _tag_css($src){
         $src = str_replace("/static", CDN_ROOT, $src);
-        return '<link rel="stylesheet" type="text/css" href="' . __ROOT__ . $src . '?v='.THIS_IS_IT.'" />';
+        return '<link rel="stylesheet" type="text/css" href="' . __ROOT__ . $src . '?v='.F('clear_time_css','',RUNTIME_PATH).'" />';
     }
     private function _tag_js($src){
         $src = str_replace("/static", CDN_ROOT, $src);
-        return ( '<script type="text/javascript" src="' . __ROOT__ . $src . '?v='.THIS_IS_IT.'"></script>');
+        return ( '<script type="text/javascript" src="' . __ROOT__ . $src . '?v='.F('clear_time_js','',RUNTIME_PATH).'"></script>');
     }
 
     private function minifyCss($fc){

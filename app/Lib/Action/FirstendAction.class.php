@@ -114,7 +114,7 @@ class FirstendAction extends TopAction {
     }
 
     //使用自己的404
-    protected function _404(){
+    protected function _404($url){
         header('HTTP/1.1 404 Not Found');
         header("status: 404 Not Found");
         $this->display("error:404");

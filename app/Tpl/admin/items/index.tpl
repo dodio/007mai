@@ -20,6 +20,7 @@
 			<select class="J_cate_select mr10" data-pid="0" data-uri="{:U('items_cate/ajax_getchilds', array('type'=>0))}" data-selected="{$search.selected_ids}"></select>
 			<input type="hidden" name="cate_id" id="J_cate_id" value="{$search.cate_id}" />
             &nbsp;&nbsp;<label>隐藏: <input type="checkbox" name="ishidden" value="1" <if condition="$search.ishidden eq 1">checked</if> /></label>
+            &nbsp;&nbsp;<label>过期: <input type="checkbox" name="isouttime" value="1" <if condition="$search.isouttime eq 1">checked</if> /></label>
 			<div class="bk8"></div>
 			价格区间 :
 			<input type="text" name="price_min" class="input-text" size="5" value="{$search.price_min}" />
@@ -34,7 +35,6 @@
 			&nbsp;&nbsp;关键字 :
 			<input name="keyword" type="text" class="input-text" size="25" value="{$search.keyword}" />
 			<input type="submit" name="search" class="btn" value="搜索" />
-            <input type="submit" name="delete" class="btn" value="删除" data-uri="{:u('items/delete', array('id'=>$val['id']))}" data-acttype="ajax" />	
                 </div>
                 </td>
             </tr>

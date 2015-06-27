@@ -41,7 +41,7 @@ class itemsAction extends BackendAction {
         $cate_id = $this->_request('cate_id', 'intval');
         $map['isshow'] = 1;
         ($ishidden = I("ishidden",0,"intval")) && $map['isshow'] = 0;
-        
+        ($isouttime = I("isouttime",0,"intval")) && $map['coupon_end_time'] = array('lt',time());
         if ($cate_id) {
             $id_arr = $this->_cate_mod->get_child_ids($cate_id, true);
             $map['cate_id'] = array('IN', $id_arr);
@@ -66,6 +66,7 @@ class itemsAction extends BackendAction {
             'selected_ids' => $spid,
             'cate_id' => $cate_id,
             'keyword' => $keyword,
+            'isouttime' => $isouttime,
             'ishidden' => $ishidden
         ));
         return $map;

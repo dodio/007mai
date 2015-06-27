@@ -62,6 +62,7 @@
 		<th width="60"><span data-tdtype="order_by" data-field="totalnum">推广量</span></th>
 		<th width="60"><span data-tdtype="order_by" data-field="volume">销量</span></th>
                 <th width="40"><span data-tdtype="order_by" data-field="ordid">{:L('sort_order')}</span></th>
+                <th width="120">有效时间</th>
                 <th width="120"><span data-tdtype="order_by" data-field="add_time">发布时间</span></th>
                 <th width="40"><span data-tdtype="order_by" data-field="pass">{:L('pass')}</span></th>
                 <th width="120"><span data-tdtype="order_by" data-field="isshow">显示</span></th>
@@ -88,6 +89,7 @@
 		<td align="center"><span data-tdtype="edit" data-field="totalnum" data-id="{$val.id}" class="tdedit">{$val.totalnum}</span></td>
 		<td align="center"><span data-tdtype="edit" data-field="volume" data-id="{$val.id}" class="tdedit">{$val.volume}</span></td>
                 <td align="center"><span data-tdtype="edit" data-field="ordid" data-id="{$val.id}" class="tdedit">{$val.ordid}</span></td>
+                <td align="center">{$val.coupon_start_time|date='Y-m-d',###} <br> {$val.coupon_end_time|date='Y-m-d',###}</td>
                 <td align="center">{$val.add_time|frienddate}</td>
                 <td align="center"><img data-tdtype="toggle" data-id="{$val.id}" data-field="pass" data-value="{$val.pass}" src="__STATIC__/images/admin/toggle_<if condition="$val.pass eq 0">disabled<else/>enabled</if>.gif" /></td>
                 <td align="center"><img data-tdtype="toggle" data-id="{$val.id}" data-field="isshow" data-value="{$val.isshow}" src="__STATIC__/images/admin/toggle_<if condition="$val.isshow eq 0">disabled<else/>enabled</if>.gif" /></td>
@@ -108,6 +110,9 @@
 	<input type="button" class="btn btn_submit" data-tdtype="batch_action" data-acttype="ajax_form" data-id="move" data-uri="{:U('items/move',array('move'=>2))}" data-name="id" data-title="批量分类" value="批量分类" /> 
 	<input type="button" class="btn btn_submit" data-tdtype="batch_action" data-acttype="ajax_form" data-id="move" data-uri="{:U('items/move',array('move'=>1))}" data-name="id" data-title="批量加入专场" value="批量专场" /> 
         <input type="button" class="btn" data-tdtype="batch_action" data-acttype="ajax" data-uri="{:U('items/delete')}" data-name="id" data-msg="{:L('confirm_delete')}" value="{:L('delete')}" />
+        <input type="button" class="btn" id="setTime" value="设置时间">
+        <input type="text" id="all_start_time" class="date" size="12"> - 
+        <input type="text" id="all_end_time" class="date" size="12">
         <div id="pages">{$page}</div>
     </div>
 </div>
@@ -127,9 +132,46 @@ Calendar.setup({
 	showsTime  : false,
 	timeFormat : "24"
 });
+Calendar.setup({
+    inputField : "all_start_time",
+    ifFormat   : "%Y-%m-%d",
+    showsTime  : false,
+    timeFormat : "24"
+});
+Calendar.setup({
+    inputField : "all_end_time",
+    ifFormat   : "%Y-%m-%d",
+    showsTime  : false,
+    timeFormat : "24"
+});
 $('.J_preview').preview(); //查看大图
 $('.J_cate_select').cate_select({top_option:lang.all}); //分类联动
 $('.J_tooltip[title]').tooltip({offset:[10, 2], effect:'slide'}).dynamic({bottom:{direction:'down', bounce:true}});
+
+$(function(){
+  $("#setTime").click(function(){
+        var ids = $(".J_checkitem:checked").map(function(){
+            return $(this).val();
+        }).get().join(",");
+
+        var start_time = $("#all_start_time").val();
+        var end_time = $("#all_end_time").val();
+        var url = "{:U('items/set_time')}";
+        var data = {
+            start_time:start_time,
+            end_time:end_time,
+            ids:ids
+        }
+
+        $.getJSON(url,data,function(rsp){
+            if(rsp.status){
+                window.location.reload();
+            }else{
+                $.dialog.alert(rsp.msg);
+            }
+        });
+    });
+});
 </script>
 </body>
 </html>

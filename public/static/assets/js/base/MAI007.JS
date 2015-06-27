@@ -1,3 +1,10 @@
+(function(window){
+  if(!Date.now){
+    Date.now = function(){
+      return new Date().getTime();
+    }
+  }
+})(window);
 (function($){
   var MAI007 = $.MAI007 = $.MAI007 || {};
 

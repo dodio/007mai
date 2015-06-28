@@ -121,10 +121,10 @@
 						if(today_dou == tomorrow_dou){
 							var dou_calender=dou_calender_tpl.replace(/{HEADER}/,signed);
 						}else{
+                            _czc.push(﻿["_trackEvent","积分","签到",result.data.sign_count,today_dou]);
 							var dou_calender=dou_calender_tpl.replace(/{HEADER}/,not_sign);
 							var totaldou_obj=$('p.all_juandou').eq(0);
 							var total_dou=totaldou_obj.text().match(/\d+/);totaldou_obj.text(totaldou_obj.text().replace(/\d+/,parseInt(total_dou)+parseInt(today_dou)));
-							//$('div.juan_btn a.signIn_btn').text('已签到 +'+today_dou);
 						}
 						dou_calender=dou_calender.replace(/{TODAY_DOU}/i,today_dou).replace(/{TOMORROW_DOU}/i,tomorrow_dou).replace(/{TABLE}/i,result.data.table);
 						$.dialog({id:'sign_success', title:result.msg, content:dou_calender, width:450, padding:'', fixed:true, lock:true});

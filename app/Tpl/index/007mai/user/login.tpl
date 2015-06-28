@@ -13,8 +13,8 @@ __STATIC__/assets/pc/css/global.css,
 __STATIC__/assets/pc/css/login.css
 "/>
 <ftx:load type="js" href="
-__STATIC__/assets/js/jquery.js,
-__STATIC__/assets/js/jquery.cookie.js,
+__STATIC__/assets/js/jquery/jquery.js,
+__STATIC__/assets/js/jquery/jquery.cookie.js,
 __STATIC__/assets/js/lib/funs.js,
 __STATIC__/assets/js/data/error.js,
 __STATIC__/assets/js/data/noWordArr.js
@@ -86,8 +86,10 @@ __STATIC__/assets/js/data/noWordArr.js
 	</div>
 </div>
 <!-- /主体 -->
-<script charset="utf-8" type="text/javascript" src="__STATIC__/jky/js/jquery.validate.js" ></script>
-<script type="text/javascript" src="__STATIC__/jky/js/placeholder.js"></script> 
+<ftx:load type="js" href="
+__STATIC__/assets/js/jquery/jquery.validate.js,
+__STATIC__/assets/js/lib/placeholder.js
+"/>
 <script type="text/javascript">
 $(function(){
 	//获取焦点事件

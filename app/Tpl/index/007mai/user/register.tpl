@@ -13,8 +13,8 @@ __STATIC__/assets/pc/css/global.css,
 __STATIC__/assets/pc/css/login.css
 "/>
 <ftx:load type="js" href="
-__STATIC__/assets/js/jquery.js,
-__STATIC__/assets/js/jquery.cookie.js,
+__STATIC__/assets/js/jquery/jquery.js,
+__STATIC__/assets/js/jquery/jquery.cookie.js,
 __STATIC__/assets/js/lib/funs.js,
 __STATIC__/assets/js/data/error.js,
 __STATIC__/assets/js/data/noWordArr.js
@@ -27,10 +27,8 @@ __STATIC__/assets/js/data/noWordArr.js
 		<div class="login-content">
 		<div class="top">
 			<if condition="C('ftx_site_logo') neq ''">
-				<div class="logo_show"><a href="{:C('ftx_site_url')}" title="{:C('ftx_site_name')}" class="jky"><img src="{:C('ftx_site_logo')}" width="240" height="50" /></a></div>
-			<else />
-				<div class="logo_show"><a href="{:C('ftx_site_url')}" title="{:C('ftx_site_name')}" class="jky"><img src="__STATIC__/jky/images/logo3.png" width="240" height="50" /></a></div>
-			</if>
+        <div class="logo_show"><a href="{:C('ftx_site_url')}" title="{:C('ftx_site_name')}" class="jky"><img src="{:C('ftx_site_logo')}" /></a></div>
+      </if>
 		</div>
 		<div class="user-login">
 			<div class="login-top">
@@ -117,9 +115,9 @@ __STATIC__/assets/js/data/noWordArr.js
 </div>
 <!-- /主体 -->
 <ftx:load type="js" href="
-__STATIC__/jky/js/jquery.validate.js,
-__STATIC__/jky/js/placeholder.js,
-__STATIC__/jky/js/jquery.emailmatch.js
+__STATIC__/assets/js/jquery/jquery.validate.js,
+__STATIC__/assets/js/lib/placeholder.js,
+__STATIC__/assets/js/jquery/jquery.emailmatch.js
 "/>
 
 <script type="text/javascript">

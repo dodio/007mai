@@ -68,7 +68,11 @@
     }else{
       var t = new Date();
       if(typeof days == "number"){
-        t.setTime(+t + days * 864e+5);
+        if(days<1000000){
+          t.setTime(+t + days * 864e+5);
+        }else{
+          t.setTime(days);
+        }
       }
     }
     if(!utc){

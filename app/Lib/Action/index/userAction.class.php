@@ -332,7 +332,7 @@ class userAction extends UsersAction {
 
 	public function union(){
 		$info					= $this->visitor->get();
-		$union_url				= C('ftx_site_url').U('inval/index',array('id'=>$info['id']));
+		$union_url				= trim(C('ftx_site_url'),"/").U('inval/index',array('id'=>$info['id']));
 		//exit($union_url);
 		$share_url = "{'url':'".$union_url."'}";
 		$union['per_visit']		= C('ftx_score_rule.union_visit');

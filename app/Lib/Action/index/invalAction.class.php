@@ -4,16 +4,18 @@ class invalAction extends FirstendAction {
  
     public function index() {
 		$id = I('id','', 'intval');
-        !$id && $this->_404();
+    !$id && redirect(C('ftx_site_url'));
 
 		$union_mod = D('union');
 		$user_mod = D('user');
 		$user = $user_mod->where(array('id' => $id))->find();
-
+    if(!$user){
+      redirect(C('ftx_site_url'));
+    }
 		$date['uid']		= $user['id'];
 		$date['username']	= $user['username'];
 		$date['score']		= C('ftx_score_rule.union_visit');
-
+    cookie("from_invital",$date,array('expire'=>60,"path"=>"/"));
 		if (false === $data = $union_mod->create($date)) {
             $this->error($union_mod->getError());
         }
@@ -28,7 +30,7 @@ class invalAction extends FirstendAction {
 			D('score_log')->create($score_log_data);
 			D('score_log')->add();
 			$union_mod->add();
-        } 
+    } 
 		redirect(C('ftx_site_url'));
     }
 }

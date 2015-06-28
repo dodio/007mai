@@ -116,6 +116,7 @@ class signAction extends UsersAction {
 		$data['table']=$cl->sign_calender();
 		$data['point']=$point_score;
 		if($sign_info = $this->_sign_mod->field('id,username,last_date,sign_count')->where(array('uid'=>$this->visitor->info['id']))->find()){
+			$data['sign_count']=$sign_info['sign_count'];
 			if($sign_info['sign_count']>= C('ftx_score_rule.sign_day')){
 				$data['tmr_point']=$point_score;
 			}else{

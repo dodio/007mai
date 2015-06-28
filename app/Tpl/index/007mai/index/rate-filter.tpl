@@ -29,7 +29,7 @@
         effect = effect_class[e];
         setEffect(effect);
 
-        $.cookie("item_list_effect",e,{expires:365});
+        $.cookie("item_list_effect",e,{expires:365,path:"/"});
       });
 
       btn.hover(function(){

@@ -40,7 +40,8 @@ __STATIC__/assets/js/lib/underscore.js,
 __STATIC__/assets/js/base/settings.js,
 __STATIC__/assets/js/base/MAI007.js,
 __STATIC__/assets/js/base/util.js,
-__STATIC__/assets/js/lib/carousel.js
+__STATIC__/assets/js/lib/carousel.js,
+__STATIC__/assets/js/common/stat.js
 "/>
 {:C('ftx_header_html')}
 <script language="javascript">window.onerror = function(){return true;}</script>

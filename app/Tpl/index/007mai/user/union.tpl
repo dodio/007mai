@@ -74,7 +74,7 @@
 
 	</div>
 </div>
-<script src="__STATIC__/jky/js/ZeroClipboard.js" type="text/javascript"></script>
+<script src="__STATIC__/assets/js/lib/ZeroClipboard.js" type="text/javascript"></script>
 <script language="JavaScript">
 $(document).ready(function(){
 	$('.invite_way .get').hover(

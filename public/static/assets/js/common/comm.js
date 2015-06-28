@@ -391,16 +391,19 @@ $(function() {
             dataType: 'json',
             success: function(result) {
                 if (result.status == 1) {
+                    _czc.push(["_trackEvent","宝贝","收藏",pid,"成功"]);
                     $.ftxia.tip({
                         content: result.msg,
                         icon: 'success'
                     });
                 } else if (result.status == 2) {
+                    _czc.push(["_trackEvent","宝贝","收藏",pid,"失败"]);
                     $.ftxia.tip({
                         content: result.msg,
                         icon: 'error'
                     });
                 } else {
+                    _czc.push(["_trackEvent","宝贝","收藏",pid,"失败"]);
                     $.ftxia.tip({
                         content: result.msg,
                         icon: 'error'

@@ -36,7 +36,7 @@ $lazy_shop_num =5;
   </div>
   <!-- 左边end -->
 
-  <div class="fr cate-right">
+  <div id="subates_nav" class="fr cate-right">
     <div class="box">
       <block name="subcates">
         <include file="index:sub_cates"/>

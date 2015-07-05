@@ -9,7 +9,7 @@
 })(jQuery);
 //统计客户端来访
 (function($){
-  if(location.search.indexOf("f=short_cut")){
+  if(location.search.indexOf("f=short_cut")!== -1){
     _czc.push(["_setCustomVar","来站类型","客户端",2]);
   }
 })(jQuery);

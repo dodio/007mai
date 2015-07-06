@@ -51,6 +51,7 @@ $lazy_shop_num =5;
       <include file="index:rate-filter"/>
     </block>
     <div id="itemlist">
+      <?php $__mod = 3; ?>
       <include file="index:item-list" />
     </div>
     <include file="public:pagenav"/>

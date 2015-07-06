@@ -28,7 +28,7 @@
 })(jQuery);
 //大幅下拉广告的js
 $(function(){
-  if($("#big_slide_down").find(".big_ad:empty").length == 1) {
+  if($("#big_slide_down").find(".mai007-picad").length == 0) {
     $("#big_slide_down").remove();
     return;
   }

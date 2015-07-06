@@ -4,35 +4,65 @@
   .item{
     display: block;
     position: relative;
-    .item-info{
-      margin-top: 5px;
-      .item-price{
-        font-size: 20px;
-        color: #FF4E4E;
-        s{
-          font-size: 12px;
-          color: #969696;
-        }
-      }
-      .item-sell{
-        color: #0dbed8;
-        font-size: 12px;
-        margin-top: 3px;
-      }
-      .item-zk{
-        margin-left: 10px;
+    
+    .item-coupron_price{
+      font-size: 18px;
+      color: #FF4E4E;
+      strong{
+        font-size: 30px;
+        font-weight: bold;
       }
     }
+    .item-price{
+      font-size: 12px;
+      color: #969696;
+    }
+    .item-sell{
+      color: #0dbed8;
+      font-size: 12px;
+    }
+    .item-zk{
+      width: 50px;
+      text-align: center;
+      .lines(16px,1);
+      font-size: 12px;
+      color: #fff;
+      background-color: @color_red;
+    }
     .item-shop{
-      margin-top: 10px;
+      position: relative;
       .icon{
         margin-right: 5px;
       }
       a{
         color: #8a8a8a;
       }
+      .btn_go{
+        display: none;
+        width: 70px;
+        .lines(30px,1);
+        text-align: center;
+        color: #fff;
+        background-color: #E63955;
+        &:hover{
+          text-decoration: none;
+          background-color: lighten(#E63955, 10%);
+        }
+      }
     }
-
+  .show-name{
+    margin-top: 0;
+  }
+  &:hover{
+    .item-shop{
+      a{
+        display: none;
+      }
+      .btn_go{
+        display: block;
+      }
+    }
+  }
   .my-like();
 }
 

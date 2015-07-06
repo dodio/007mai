@@ -8,25 +8,31 @@
       <?php } ?>
     </a>
   </div>
-  <div class="show-name"><a biz-itemid="{$item['num_iid']}" isconvert=1 target="_blank" href="" rel="nofollow">{$item.title}</a></div>
-  <div class="item-info group">
-    <div class="item-price fl">
-      <s>¥{$item.price}</s>
-      <span>¥{$item.coupon_price}</span>
-    </div>
+  <div class="group mt10">
+    <div class="show-name fl"><a biz-itemid="{$item['num_iid']}" isconvert=1 target="_blank" href="" rel="nofollow">{$item.title}</a></div>
     <div class="item-sell fr">
-      <if condition="$item.volume gt 0 "><span class="sold">已售<em>{:friend_number($item['volume'])}件</em></span><else/><span>新品上架</span></if><span class="item-zk">({$item.zk}折)</span></div>
+      <if condition="$item.volume gt 0 "><span class="sold">已售<em>{:friend_number($item['volume'])}件</em></span><else/><span>新品上架</span></if>
+    </div>
   </div>
-  <div class="item-shop">
-    <if condition="$item.shop_type eq 'C' ">
-    <i class="icon-taobao icon"></i>淘宝：<a data-type="1" biz-sellerid="{$item['sellerId']}" data-tmpl="140x190" data-tmplid="3" data-rd="2" data-style="1" data-border="1" href="javascript:">{$item.nick}</a>
-    <elseif condition="$item.shop_type eq 'B' " />
-    <i class="icon-tmall icon"></i>天猫：<a data-type="1" biz-sellerid="{$item['sellerId']}" data-tmpl="140x190" data-tmplid="3" data-rd="2" data-style="1" data-border="1" href="javascript:">{$item.nick}</a>
-    <elseif condition="$item.shop_type eq 'D' " />
-    <a href="{$item.click_url}" target="_blank" rel="nofollow"><span>京东</span></a>
-    <else />
-    <a href="" biz-itemid="{$item['num_iid']}" isconvert=1 target="_blank" rel="nofollow"><span>去抢购</span></a>
-    </if>
+  
+  <div class="mt10 group">
+    <div class="item-coupron_price fl ml10">¥<strong>{$item.coupon_price}</strong></div>
+      <div class="fl ml10">
+        <div class="item-price mt5">
+          <s>原价:¥{$item.price}</s>
+        </div>
+        <div class="item-zk">{$item.zk}折</div>
+      </div>
+
+      <div class="item-shop mt10 fr">
+        <if condition="$item.shop_type eq 'C' ">
+        <a biz-itemid="{$item['num_iid']}" isconvert=1 href="" target="_blank" rel="nofollow">
+        <i class="icon-taobao icon"></i>淘宝</a>
+        <elseif condition="$item.shop_type eq 'B' " /><a biz-itemid="{$item['num_iid']}" isconvert=1 href="" target="_blank" rel="nofollow">
+        <i class="icon-tmall icon"></i>天猫</a>
+        </if>
+        <a class="btn_go" biz-itemid="{$item['num_iid']}" isconvert=1 href="" target="_blank" rel="nofollow">去看看</a>
+      </div>
   </div>
 
   <!-- like -->

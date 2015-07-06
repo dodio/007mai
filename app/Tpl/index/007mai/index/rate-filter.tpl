@@ -8,44 +8,19 @@
 <script>
   $(function(){
     if($.browser.webkit){
-      var effect_class = [
-        ['缩放',"show-hover"],
-        ['普通',"show-normal"],
-        ['飞旋',"show-flypic"],
-        ['普通飞旋',"show-normal show-flypic"],
-        ['魔幻',"show-hover show-flypic"]
-      ];
-
-      var all = "show-hover show-flypic show-normal";
-      
-      var cc = $.cookie("item_list_effect");
-      var e = $.isNumeric(cc) ? cc : 0;
-      var effect = effect_class[e];
-      var btn = $('<a href="javascript:" class="toggle_effect"></a>');
+      var pre = $.MAI007.ui.itemEffect.cookieEffect();
+      var btn = $('<a href="javascript:" class="toggle_effect">'+ pre +'</a>');
       $("#rate-order").append(btn);
-
       btn.click(function(){
-        e = ++e % effect_class.length;
-        effect = effect_class[e];
-        setEffect(effect);
-
-        $.cookie("item_list_effect",e,{expires:365,path:"/"});
+        pre = $.MAI007.ui.itemEffect.cookieEffect(true);
       });
-
       btn.hover(function(){
         btn.html("换");
       },function(){
-        btn.html(effect[0]);
+        btn.html(pre);
       });
-
-      setEffect(effect);
-      function setEffect(effect){
-          if(!effect)
-            return;
-          $("#itemlist .item").removeClass(all);
-          $("#itemlist .item").addClass(effect[1]);
-          btn.html(effect[0]);
-      }
+    }else{
+      $.MAI007.ui.itemEffect.setEffect("普通");
     }
   });
 </script>

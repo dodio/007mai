@@ -194,7 +194,7 @@ __STATIC__/assets/pc/css/index.css
 <include file="public:footer" />
 <script>
   $(function(){
-    $('.item').addClass("show-normal");
+    $.MAI007.ui.itemEffect.setEffect('普通');
   });
 </script>
 </body>

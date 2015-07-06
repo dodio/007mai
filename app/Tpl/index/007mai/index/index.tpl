@@ -169,18 +169,28 @@ __STATIC__/assets/pc/css/index.css
   <include file="gift:timerjs"/>
 </div>
 
-<?php foreach ($cate_items as $cid => $items_list): ?>
+<?php foreach ($cate_items as $cid => $list): ?>
   <?php $cate = $cate_data[$cid]; ?>
   <div class="container index-promote">
     <div class="baokuan">
       <div class="bk-top group">
         <h2>{$cate.name}</h2>
         <div class="bk-nav">
-          <a href="/index/cate/cid/{$cate.id}" target="_blank">更多</a>
+          <a href="/index/cate/cid/{$cate.id}#subates_nav" target="_blank">更多</a>
         </div>
       </div>
     </div>
-    <include file="item-list"/>
+
+    <ul class="cate_itemlist group">
+      <volist name="list.item_list" offset="0" length="8" id="item" mod="4">
+        <li <eq name="mod" value="3">class="mr0"</eq>>
+          <a href="/index/cate/cid/{$item.cate_id}#subates_nav" target="_blank">
+            <img src='{:attach(get_thumb($item['pic_url'], '_b'),'item')}' alt="{$item.title}"  />
+            <span class="name">{$item.title}</span>
+          </a>
+        </li>
+      </volist>
+    </ul>
   </div>
 <?php endforeach ?>
 
@@ -192,10 +202,6 @@ __STATIC__/assets/pc/css/index.css
   <include file="public:shopping_index"/>
 
 <include file="public:footer" />
-<script>
-  $(function(){
-    $.MAI007.ui.itemEffect.setEffect('普通');
-  });
-</script>
+
 </body>
 </html>

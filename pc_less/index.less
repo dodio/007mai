@@ -123,18 +123,7 @@
     }
   }
 }
-@import "./mixin/item-item.less";
-.itemlist{
-  li{
-    height: 350px;
-  }
-  .item-item(266px);
-}
 
-.index-promote{
-  margin-top: 30px;
-  border-top: 2px solid #000;
-}
 @import "./mixin/score-item.less";
 .scoreitem-list{
   li{
@@ -188,6 +177,36 @@
   .show-normal{
     &:hover{
       outline-color: @color_red;
+    }
+  }
+}
+
+
+.cate_itemlist{
+  margin-top: 20px;
+  @width : 260px;
+  li{
+    position: relative;
+    margin-right: 20px;
+    float: left;
+    margin-bottom: 20px;
+    width: @width;
+    height:@width;
+    .imgwraper(@width,@width);
+    .name{
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 20px;
+      background:url("../images/bar_bg.png") 0 bottom repeat-x;
+      color: #bbb;
+      text-align: center;
+      font-size: 12px;
+      padding-top: 14px;
+    }
+    a:hover{
+      text-decoration: none;
     }
   }
 }

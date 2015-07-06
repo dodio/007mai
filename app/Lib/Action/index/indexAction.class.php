@@ -12,39 +12,8 @@ class indexAction extends ItemlistAction {
 	 ** 首页（全部）
 	 **/
     public function index() {
-    // 首页选到列表id
-		$where = array();
-		if(C('ftx_index_not_text')){
-			$not_arr = explode(",",C('ftx_index_not_text'));
-			$arrs =array();
-			foreach($not_arr as $key =>$value){
-				$arrs[] = '%'.$value.'%';
-			}
-			$where['title'] =array('notlike',$arrs,'AND');
-		}
-		if(C('ftx_wait_time') == '1'){
-			$where['coupon_start_time'] = array('egt',time());
-		}elseif(C('ftx_wait_time') =='2'){
-			$where['coupon_start_time'] = array('elt',time());
-		}
-		if(C('ftx_end_time') == '1'){
-			$where['coupon_end_time'] = array('egt',time());
-		}
-		if(C('ftx_index_ems') == '1'){
-			$where['ems'] = '1';
-		}
-		if(C('ftx_index_shop_type')){$where['shop_type'] = C('ftx_index_shop_type');}
-		if(C('ftx_index_mix_price')>0){$where['coupon_price'] = array('egt',C('ftx_index_mix_price'));}
-		if(C('ftx_index_max_price')>0){$where['coupon_price'] = array('elt',C('ftx_index_max_price'));}
-		if(C('ftx_index_mix_price')>0 && C('ftx_index_max_price')>0){$where['coupon_price'] = array(array('egt',C('ftx_index_mix_price')),array('elt',C('ftx_index_max_price')),'and');}
-		if(C('ftx_index_mix_volume')>0){$where['volume'] = array('egt',C('ftx_index_mix_volume'));}
-		if(C('ftx_index_max_volume')>0){$where['volume'] = array('elt',C('ftx_index_max_volume'));}
-		if(C('ftx_index_mix_volume')>0 && C('ftx_index_max_volume')>0){$where['volume'] = array(array('egt',C('ftx_index_mix_volume')),array('elt',C('ftx_index_max_volume')),'and');}
-		$where['pass'] = '1';
-		$where['isshow'] = '1';
-		$page_size = 8;
-		
-		// 首页分类展示
+
+		// 首页展示分类top one
 		if(C('ftx_index_cids')){
 			$index_cates = C('ftx_index_cids');
 		}else{
@@ -52,8 +21,9 @@ class indexAction extends ItemlistAction {
 		}
 		$cate_items = array();
 		foreach ($index_cates as $cid) {
-			$cate_items[$cid] = $this->cate_item($cid,$page_size,$where);
+			$cate_items[$cid] = $this->subcate_topOne($cid);
 		}
+
 		$this->assign("cate_items",$cate_items);
 
 		//情报精选
@@ -150,5 +120,41 @@ class indexAction extends ItemlistAction {
       $top->appkey = $this->_tbconfig['app_key'];
       $top->secretKey = $this->_tbconfig['app_secret'];
       return $top;
+  }
+
+
+  private function subcate_topOne($cid){
+    $order = "ordid asc ";
+    if(C('ftx_site_cache')){
+      $md_id = $cid;
+      $file = 'subcate_topOne_'.$md_id;
+      if(false === $items = S($file)){
+
+        $where = array();
+        $cinfo = $this->_cate_mod->cate_info($cid);
+        $order .= getSort("default", $cinfo['sort'] );
+        mapCinfo($cinfo,$where);
+        $where['cate_id'] = array("IN",$this->_cate_mod->get_child_ids($cid));
+
+        $subSql = $this->_mod->where($where)->order($order)->select(false);
+        $items_list = $this->_mod->table( $subSql . " as a")->group("cate_id")->select();
+
+        $items = $this->_deal_item_list($items_list);
+        S($file,$items);
+      }
+    }else{
+
+      $where = array();
+      $cinfo = $this->_cate_mod->cate_info($cid);
+      $order .= getSort("default", $cinfo['sort'] );
+      mapCinfo($cinfo,$where);
+      $where['cate_id'] = array("IN",$this->_cate_mod->get_child_ids($cid));
+      
+      $subSql = $this->_mod->where($where)->order($order)->select(false);
+      $items_list = $this->_mod->table( $subSql . " as a")->group("cate_id")->select();
+
+      $items = $this->_deal_item_list($items_list);
+    }
+    return $items;
   }
 }

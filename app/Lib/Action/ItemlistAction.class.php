@@ -17,7 +17,7 @@ class ItemlistAction extends FirstendAction {
       $order  = 'ordid asc ';
       $order .= getSort( $sort, $cinfo['sort'] );
 
-
+      $map = array();
       mapCinfo($cinfo,$map);
 
       $price_range = I("price","","trim");

@@ -4,6 +4,10 @@ function p($arr){
 	dump($arr);
     exit;
 }
+function redirct_301($url){
+    Header("HTTP/1.1 301 Moved Permanently");
+    Header("Location: ".$url);
+}
 function get_root_cate_id($spid,$id){
     if($spid==0){
         return $id;

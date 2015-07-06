@@ -170,4 +170,32 @@ class score_itemAction extends BackendAction
         }
         return $data;
     }
+
+    public function set_time(){
+        $ids = I("ids","","trim");
+        $start_time = I("start_time","","trim");
+        $end_time = I("end_time","","trim");
+        if($ids == ""){
+            $this->ajaxReturn(0,"ID 错误");
+        }
+        if($start_time == "" && $end_time == ""){
+            $this->ajaxReturn(0,"没有时间参数");
+        }
+
+        $ids = explode(",", $ids);
+        $data = array();
+        $data["id"] = array("IN",$ids);
+        if($start_time!=""){
+            $data['start_time'] = strtotime($start_time);
+        }
+        if($end_time!=""){
+            $data['end_time'] = strtotime($end_time);
+        }
+
+        if(false !== $this->_mod->save($data)){
+            $this->ajaxReturn(1,"设置成功");
+        }else{
+            $this->ajaxReturn(0,"没有成功");
+        }
+    }
 }

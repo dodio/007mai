@@ -87,6 +87,9 @@
 	<div class="btn_wrap_fixed">
     	<label><input type="checkbox" name="checkall" class="J_checkall">{:L('select_all')}/{:L('cancel')}</label>
     	<input type="button" class="btn" data-tdtype="batch_action" data-acttype="ajax" data-uri="{:U('score_item/delete')}" data-name="id" data-msg="{:L('confirm_delete')}" value="{:L('delete')}" />
+        <input type="button" class="btn" id="setTime" value="设置时间">
+        <input type="text" id="all_start_time" class="date" size="12"> - 
+        <input type="text" id="all_end_time" class="date" size="12">
     	<div id="pages">{$page}</div>
     </div>
 </div>
@@ -118,6 +121,40 @@ Calendar.setup({
     showsTime  : false,
     timeFormat : "24"
 });
+Calendar.setup({
+    inputField : "all_start_time",
+    ifFormat   : "%Y-%m-%d",
+    showsTime  : false,
+    timeFormat : "24"
+});
+Calendar.setup({
+    inputField : "all_end_time",
+    ifFormat   : "%Y-%m-%d",
+    showsTime  : false,
+    timeFormat : "24"
+});
+$("#setTime").click(function(){
+    var ids = $(".J_checkitem:checked").map(function(){
+        return $(this).val();
+    }).get().join(",");
+
+    var start_time = $("#all_start_time").val();
+    var end_time = $("#all_end_time").val();
+    var url = "{:U('score_item/set_time')}";
+    var data = {
+        start_time:start_time,
+        end_time:end_time,
+        ids:ids
+    }
+
+    $.getJSON(url,data,function(rsp){
+        if(rsp.status){
+            window.location.reload();
+        }else{
+            $.dialog.alert(rsp.msg);
+        }
+    });
+})
 </script>
 </body>
 </html>

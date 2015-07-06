@@ -1,5 +1,5 @@
 <?php
-class tagAction extends FirstendAction {
+class tagAction extends ItemlistAction {
 	public function _initialize() {
         parent::_initialize();
         $this->_mod = D('items');
@@ -7,7 +7,26 @@ class tagAction extends FirstendAction {
     }
 
 	public function _empty($name){
+    $tag_mod = D("tag");
 		if($name){
+      $tag = $tag_mod ->where(array(
+        "name"=>$name
+        ))->find();
+
+      if($tag){
+        $page_seo = array(
+          'title' => !empty($tag['seo_title']) ? $tag['seo_title'] :  $tag['name'] ,
+          'keywords' => $tag['seo_keys'],
+          'description'=>$tag['seo_desc']
+        );
+      }else{
+         $page_seo=array(
+          'title' => $k.'什么牌子好,'.$k.'哪里有卖 - '.C('ftx_site_name')
+        );
+      }
+      $this->assign('page_seo', $page_seo);
+      $this->assign('tag',$tag);
+      $this->assign('name',$name);
 			$this->so($name);
 		}else{
 			$this->_404();
@@ -18,29 +37,8 @@ class tagAction extends FirstendAction {
     if(!$k){
       $this->redirect("/");
     }
-		$sort	= I('sort', 'hot', 'trim'); //排序
-		$status = I('status', 'all', 'trim'); //排序
-		$cid	= I('cid','', 'intval');
-		$order	= 'ordid asc ,id desc';
-		switch ($sort) {
-            case 'new':
-                $order.= ', coupon_start_time DESC';
-                break;
-            case 'price':
-                $order.= ', price DESC';
-                break;
-        }
-		switch ($status) {
-            case 'all':
-                $where['status']="underway";
-                break;
-            case 'underway':
-                $where['status']="underway";
-                break;
-			case 'sellout':
-				$where['status']="sellout";
-				break;
-        }
+		$order	= 'ordid asc ,id desc , coupon_rate desc';
+		
 		if($k){
 			$where['title'] = array('like', '%' . $k . '%');
 			$this->assign('k',$k);
@@ -48,54 +46,13 @@ class tagAction extends FirstendAction {
 
 		$where['pass'] = '1';
 		$where['isshow'] = '1';
-		$index_info['sort']=$sort;
-		$index_info['status']=$status;
-		$page_size = 120;
-        $p = I('p',1, 'intval'); //页码
-		$index_info['p']=$p;
-        $start = $page_size * ($p - 1) ;
-        $item_mod = M('items');
-        $items_list = $item_mod->where($where)->order($order)->limit($start . ',' . $page_size)->select();
-		$items = array();
-		$seller_arr = array();
-		$sellers = '';
-		foreach($items_list as $key=>$val){
-			$items[$key]			= $val;
-			$items[$key]['class']	= $this->_mod->status($val['status'],$val['coupon_start_time'],$val['coupon_end_time']);
-			$items[$key]['zk']		= round(($val['coupon_price']/$val['price'])*10, 2); 
-			if(!$val['click_url']){
-				$items[$key]['click_url']	=U('jump/index',array('id'=>$val['id']));
-			}
-			if($val['coupon_start_time']>time()){
-				$items[$key]['click_url']	=U('item/index',array('id'=>$val['id']));
-			}
-			if($val['sellerId']){
-				$seller_arr[] = $val['sellerId'];
-			}
-		}
-		$seller_arr = array_unique($seller_arr);
-		$sellers = implode(",",$seller_arr);
-		$this->assign('sellers', $sellers);
-		$this->assign('items_list', $items);
-		$this->assign('index_info',$index_info);
-		$count = $item_mod->where($where)->count();
-    $pager = $this->_pager($count, $page_size);
-    $this->assign('page', $pager->kshow());
-		$this->assign('total_item',$count);
+    $item_mod = M('items');
+    $tmp = $item_mod->where($where)->order($order)->limit(48)->select();
+    $items = $this->_deal_item_list($tmp);
 
-		if (false === $cate_list = F('cate_list')) {
-            $cate_list = D('items_cate')->cate_cache();
-        }
-		$this->assign('cate_list', $cate_list); //分类
-
-
-        $this->assign('nav_curr', 'index');
-    
-		$page_seo=array(
-			'title' => $k.'什么牌子好,'.$k.'哪里有卖 - '.C('ftx_site_name'),
-      'keywords' => implode("," , array($k,"品牌") )
-    );
-		$this->assign('page_seo', $page_seo);
-        $this->display('index');
-    }
+		$this->assign('sellers', $items['seller_arr']);
+		$this->assign('items_list', $items['item_list']);
+    $this->assign('nav_curr', 'index');
+    $this->display('index');
+  }
 }

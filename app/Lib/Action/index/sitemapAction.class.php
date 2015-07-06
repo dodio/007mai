@@ -14,7 +14,7 @@ class sitemapAction extends FirstendAction {
 //网站标题
    protected $title                  = '网站地图';
 //网站关键词
-   protected $keywords               = '网站地图';
+   protected $keywords               = '007买网站地图';
 //网站描述
    protected $description            = '网站地图';
 //xml页面参数设置
@@ -40,14 +40,42 @@ class sitemapAction extends FirstendAction {
     }
     public function index()
     {
-       $this->sitemap = $this->_mod->getcate();
-       $this->article = $this->_mod->article($this->article_html_show);
-        $this->page_seo = array(
-          'title' => $this->title,
-          'keywords' => $this->keywords,
-          'description' => $this->description,
-        );
-       $this->display();
+      $this->sitemap = $this->_mod->getcate();
+      $this->article = $this->_mod->article($this->article_html_show);
+      $this->page_seo = array(
+        'title' => $this->title,
+        'keywords' => $this->keywords,
+        'description' => $this->description,
+      );
+
+      // 标签
+      $tag_mod = D("tag");
+      $page_size = 30;
+      $p = I('p',1,'intval'); //页码
+      $start = $page_size * ($p-1);
+
+      $where = array("status"=>1);
+
+      $count = $tag_mod->where($where)->count();
+      $pager = $this->_pager($count, $page_size);
+      $this->assign('page', $pager->kshow());
+
+      $tags = $tag_mod->where($where)->limit($start,$page_size)->select();
+
+      $this->assign("tags",$tags);
+
+            // 文章链接
+      $article_mod = D("article");
+      $a_size = 20;
+      $start = $a_size * ($p-1);
+      
+      $count = $article_mod->where($where)->count();
+      $a_pager = $this->_pager($count, $a_size);
+
+      $this->assign('a_page', $a_pager->kshow());
+      $this->assign('arc_list' , $article_mod->field('id,title')->where($where)->limit($start,$a_size)->select());
+
+      $this->display();
     }
     public function xml()
     {

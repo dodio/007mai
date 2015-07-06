@@ -44,7 +44,9 @@
 			// If we can't parse the cookie, ignore it, it's unusable.
 			s = decodeURIComponent(s.replace(pluses, ' '));
 			return config.json ? JSON.parse(s) : s;
-		} catch(e) {}
+		} catch(e) {
+			return s;
+		}
 	}
 
 	function read(s, converter) {
@@ -101,7 +103,7 @@
 
 		return result;
 	};
-
+	config.json = true;
 	config.defaults = {};
 
 	$.removeCookie = function (key, options) {

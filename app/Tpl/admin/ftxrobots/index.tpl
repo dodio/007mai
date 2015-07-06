@@ -26,7 +26,8 @@
             <input type="hidden" name="cate_id" id="J_cate_id" value="{$search.cate_id}" />
             &nbsp;&nbsp;关键字 :
             <input name="keyword" type="text" class="input-text" size="25" value="{$search.keyword}" />
-            <input type="submit" name="search" class="btn" value="搜索" />        
+            &nbsp;<label>游离采集器：<input type="checkbox" name="nocate" value="1" <if condition="$search.nocate eq 1">checked</if>></label>&nbsp;
+            <input type="submit" name="search" class="btn" value="搜索" />         
                 </div>
                 </td>
             </tr>
@@ -72,11 +73,38 @@
     <div class="btn_wrap_fixed">
         <label class="select_all mr10"><input type="checkbox" name="checkall" class="J_checkall">{:L('select_all')}/{:L('cancel')}</label>
         <input type="button" class="btn" data-tdtype="batch_action" data-acttype="ajax" data-uri="{:U('ftxrobots/delete')}" data-name="id" data-msg="{:L('confirm_delete')}" value="{:L('delete')}" />
+        <input type="text" id="input_pages" class="input-text" size="5">
+        <input type="button" class="btn" id="setpages" value="设置页数" />
         <div id="pages">{$page}</div>
     </div>
 </div>
 <include file="public:footer" />
 <script>
+    $(function(){
+      $("#setpages").click(function(){
+        var p = parseInt($("#input_pages").val());
+        var ids = $(".J_checkitem:checked").map(function(){
+            return $(this).val();
+        }).get().join(",");
+        
+        console.log(p,ids);
+        var url = "{:U('ftxrobots/set_page')}"; 
+        var data = {
+            page:p,
+            ids:ids
+        }
+        if(p){
+            $.getJSON(url,data,function(rsp){
+                if(rsp.status){
+                    window.location.reload();
+                }else{
+                    $.dialog.alert(rsp.msg);
+                }
+            });
+        }
+      });
+    });
+
     var collect_url = "{:U('ftxrobots/collect')}";
     var id = 0;
 	var p = 1;

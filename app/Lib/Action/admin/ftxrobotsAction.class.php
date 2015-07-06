@@ -18,8 +18,8 @@ class ftxrobotsAction extends BackendAction {
             $cate_list[$val['id']] = $val['name'];
         }
         $this->assign('cate_list', $cate_list);
-		$ftxrobots_collect_data = F('ftxrobots_collect_data');
-		$this->assign('ftxrobots_collect_data', $ftxrobots_collect_data);
+    		$ftxrobots_collect_data = F('ftxrobots_collect_data');
+    		$this->assign('ftxrobots_collect_data', $ftxrobots_collect_data);
         $this->sort = 'ordid ASC,';
         $this->order ='last_time DESC';
     }
@@ -27,7 +27,10 @@ class ftxrobotsAction extends BackendAction {
   protected function _search(){
     $map = array();
     $cate_id = $this->_request('cate_id', 'intval');
-    if ($cate_id) {
+    $nocate = I("nocate",0,'intval');
+    if($nocate == 1){
+      $map['cate_id'] = array("NOT IN", array_keys( $this->_cate_mod->cate_data_cache(true) ) );
+    }elseif ($cate_id) {
         $id_arr = $this->_cate_mod->get_child_ids($cate_id, true);
         $map['cate_id'] = array('IN', $id_arr);
         $spid = $this->_cate_mod->where(array('id'=>$cate_id))->getField('spid');
@@ -41,11 +44,33 @@ class ftxrobotsAction extends BackendAction {
     $this->assign('search', array(
         'selected_ids' => $spid,
         'cate_id' => $cate_id,
-        'keyword' => $keyword
+        'keyword' => $keyword,
+        'nocate' => $nocate
     ));
     return $map;
   }
+  public function set_page(){
+    $ids = I("ids","","trim");
+    $page = I("page","","trim");
+    if($ids == ""){
+        $this->ajaxReturn(0,"ID 错误");
+    }
+    if($page == ""){
+        $this->ajaxReturn(0,"没有页数参数");
+    }
 
+    $ids = explode(",", $ids);
+    $data = array(
+      "page"=>$page
+      );
+    $data["id"] = array("IN",$ids);
+
+    if(false !== $this->_mod->save($data)){
+        $this->ajaxReturn(1,"设置成功");
+    }else{
+        $this->ajaxReturn(0,"没有成功");
+    }
+  }
 	public function add(){
 		if (IS_POST) {
 			$name					= I('name','', 'trim');

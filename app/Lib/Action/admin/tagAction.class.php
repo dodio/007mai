@@ -13,7 +13,7 @@ class tagAction extends BackendAction
             'title' => L('添加标签'),
             'iframe' => U('tag/add'),
             'id' => 'add',
-            'width' => '400',
+            'width' => '500',
             'height' => '50'
         );
         $this->assign('big_menu', $big_menu);
@@ -21,6 +21,7 @@ class tagAction extends BackendAction
         $p = $this->_get('p','intval',1);
         $this->assign('p',$p);
     }
+
 
     protected function _search() {
         $map = array();
@@ -31,13 +32,4 @@ class tagAction extends BackendAction
         return $map;
     }
 
-    public function ajax_check_name() {
-        $name = $this->_get('name', 'trim');
-        $id = $this->_get('id', 'intval');
-        if (D('tag')->name_exists($name, $id)) {
-            $this->ajaxReturn(0, L('标签已存在'));
-        } else {
-            $this->ajaxReturn(1);
-        }
-    }
 }

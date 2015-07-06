@@ -2,17 +2,21 @@
 <if condition="$visitor['rights']['admin_item'] eq true">
 <script type="text/javascript">
     $(function(){
-        $('.item').append('<a href="javascript:" class="btn_hide">隐藏该宝贝</a>');
+        var admin = $('<div class="admin-layer"></div>');
+        admin.append('<a href="javascript:" class="btn_hide">隐藏该宝贝</a>');
+        admin.append('<a href="javascript:" class="btn_digtop">置顶该宝贝</a>');
+        $('.item').append(admin);
+
         $(".itemlist").on("click",'.btn_hide',function(){
             var _self = $(this);
-            id =_self.parent('.item').attr("data-nid");
+            id =_self.parents('.item').attr("data-nid");
             if(!id){
                 return;
             }
             if(!$.ftxia.dialog.islogin()) return ;
             _self.html('<img src="__STATIC__/assets/images/loading.gif" />');
             $.ajax({
-                url: FTXIAER.root + '/?m=ajax&a=noshow',
+                url: FTXIAER.root + '/?m=admin&a=noshow',
                     type: 'POST',
                     data: {
                         id: id
@@ -20,14 +24,47 @@
                 dataType: 'json',
                 success: function(result){
                     if(result.status == 1){
-                        if(result.msg.isshow){
-                            _self.html('已取消');
+                        if(result.data.isshow){
+                            _self.html('点击隐藏');
                         }else{
-                            _self.html('缓存到期后隐藏');
+                            _self.html('取消隐藏');
+                        }
+                        $.ftxia.tip({content:result.msg+"，缓存到期后生效", icon:'success'});
+                    }else{
+                        $.ftxia.tip({content:result.msg, icon:'error'});
+                    }
+                }
+            });
+        });
+
+
+        $(".itemlist").on("click",'.btn_digtop',function(){
+            var _self = $(this);
+            id =_self.parents('.item').attr("data-nid");
+            if(!id){
+                return;
+            }
+            if(!$.ftxia.dialog.islogin()) return ;
+            _self.html('<img src="__STATIC__/assets/images/loading.gif" />');
+            $.ajax({
+                url: FTXIAER.root + '/?m=admin&a=topitem',
+                    type: 'POST',
+                    data: {
+                        id: id
+                    },
+                dataType: 'json',
+                success: function(result){
+                    if(result.status == 1){
+                        if(result.data.ordid == 9999){
+                            _self.html('点击置顶');
+                            $.ftxia.tip({content:"已取消置顶，缓存到期后生效", icon:'success'});
+                        }else{
+                            _self.html('取消置顶');
+                            $.ftxia.tip({content:"已置顶成功，缓存到期后生效", icon:'success'});
                         }
                     }else{
                         _self.html('操作失败');
-                        $.ftxia.tip({content:result.msg, icon:'error'});
+                        $.ftxia.tip({content:result.msg+"，缓存到期后隐藏", icon:'error'});
                     }
                 }
             });
@@ -37,7 +74,7 @@
         var hide_btn = $('<a href="javascript:" class="hide_all_btn" style="position: absolute;left: 0;top: 0;color:#fff;z-index:1;">隐藏管理按钮</a>');
         $("#fix-right-layer").prepend(hide_btn);
         hide_btn.click(function(){
-            $(".btn_hide").fadeToggle();
+            $(".admin-layer").fadeToggle();
         });
     });
 </script>

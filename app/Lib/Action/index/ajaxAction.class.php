@@ -325,25 +325,6 @@ class ajaxAction extends FirstendAction {
 			$this->ajaxReturn(1,"最接近的宝贝", $item);
 		}
 	}
-	/**
-	 * 隐藏宝贝
-	 * @return [type] [description]
-	 */
-	public function noshow(){
-		$id = I('id');
-		if(!$this->visitor->right('admin_item')){
-			$this->ajaxReturn(0,'越权！');
-		}
-		$mod = M('items');
-		$where = array('num_iid'=>$id);
-		$isshow = $mod->where($where)->getField('isshow');
-		$data = array("isshow"=>($isshow == 1 ? 0 : 1) );
-		if($mod->where($where)->save($data)){
-			$this->ajaxReturn(1, $data);
-		}else{
-			$this->ajaxReturn(0, $this->_mod->getError());
-		}
-	}
 
 	/**
 	 * 获取短消息

@@ -81,9 +81,9 @@ class default_passport
      */
     public function auth($username, $password) {
 		if(strpos($username,'@')!==false){
-			$uid = M('user')->where(array('email'=>$username, 'password'=>md5($password)))->getField('id');
+			$uid = M('user')->where(array('email'=>$username, 'password'=>md5($password),'status'=> 1 ))->getField('id');
 		}else{
-			$uid = M('user')->where(array('username'=>$username, 'password'=>md5($password)))->getField('id');
+			$uid = M('user')->where(array('username'=>$username, 'password'=>md5($password),'status'=> 1 ))->getField('id');
 		}
         if ($uid) {
             return $uid;

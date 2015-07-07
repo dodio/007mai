@@ -40,6 +40,11 @@
       $chanel_id = 286;
       $this->_item_group($chanel_id);
       $this->assign('nav_curr', 'yuehui');
+      $ip = get_client_ip();
+      $ip = "182.140.101.250";
+      $ipinfo = object_to_array(getIpInfo($ip));
+
+      $this->assign("ipinfo",$ipinfo['data']);
       $this->display();
     }
 

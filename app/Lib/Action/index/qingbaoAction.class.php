@@ -41,7 +41,6 @@
       $this->_item_group($chanel_id);
       $this->assign('nav_curr', 'yuehui');
       $ip = get_client_ip();
-      $ip = "182.140.101.250";
       $ipinfo = object_to_array(getIpInfo($ip));
 
       $this->assign("ipinfo",$ipinfo['data']);
@@ -59,7 +58,7 @@
 
       $map['cate_id'] = array('IN',$this->_cate_mod->get_child_ids($chanel_id));
 
-      $cate_list = $this->_cate_mod->cate_cache(true);
+      $cate_list = $this->_cate_mod->cate_cache();
 
       if(C('ftx_site_cache')){
         $md_id = md5($chanel_id);

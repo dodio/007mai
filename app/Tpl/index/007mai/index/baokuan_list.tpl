@@ -13,15 +13,15 @@
             </div>
             <div class="bk-name"><a rel="nofollow" biz-itemid="{$item['num_iid']}" isconvert=1 href="" target="_blank">{$item.title}</a></div>
             <div class="mt15">
-              <s class="bk-price">¥{$item.price}</s>
+              <!-- <s class="bk-price">¥{$item.price}</s> -->
               <span class="bk-coupon">¥{$item.coupon_price}</span>
               <span class="bk-sell ml5">已售:{:friend_number($item['volume'])}</span>
-              <span class="bk-zk ml5">{$item.zk}折</span>
+              <!-- <span class="bk-zk ml5">{$item.zk}折</span> -->
             </div>
-            <div class="bk-reason mt15">
+            <!-- <div class="bk-reason mt15">
               推荐理由：<i class="icon heart3-icon"></i>
             </div>
-            <div class="bk-reason mt10">{$item.intro}</div>
+            <div class="bk-reason mt10">{$item.intro}</div> -->
             <div class="bk-mask">
               <a rel="nofollow" href="" biz-itemid="{$item['num_iid']}" isconvert=1 target="_blank" class="bk-link">
                 <div class="bk-maimaimai">立即购买</div>

@@ -141,6 +141,9 @@ class userAction extends UsersAction {
             }
             $username = $this->_post('username', 'trim');
             $email = $this->_post('email','trim');
+            if(!is_email($email)){
+                $this->error(L('邮箱非法!')); //确认密码
+            }
             $password = $this->_post('password', 'trim');
             $repassword = $this->_post('repassword', 'trim');
             if ($password != $repassword) {

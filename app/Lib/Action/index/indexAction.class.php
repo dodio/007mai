@@ -39,7 +39,6 @@ class indexAction extends ItemlistAction {
  		$where = array('status'=>'1');
         // 已结束商品不显示
     $where['end_time'] = array("egt",time());
-    $where['cate_id'] = 2;//定义首页商品分类
     $score_item = M('score_item');
     $scoreitems = $score_item->where($where)->order("ordid ASC , id desc")->limit(5)->select();
     $this->assign('scoreitems',$scoreitems);

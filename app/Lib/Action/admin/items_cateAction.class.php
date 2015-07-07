@@ -14,6 +14,7 @@ class items_cateAction extends BackendAction {
         $result = $this->_mod->order($sort . ' ' . $order)->select();
         $array = array();
         foreach($result as $r) {
+            $r['str_ishot'] = '<img data-tdtype="toggle" data-id="'.$r['id'].'" data-field="ishot" data-value="'.$r['ishot'].'" src="__STATIC__/images/admin/toggle_' . ($r['ishot'] == 0 ? 'disabled' : 'enabled') . '.gif" />';
             $r['str_status'] = '<img data-tdtype="toggle" data-id="'.$r['id'].'" data-field="status" data-value="'.$r['status'].'" src="__STATIC__/images/admin/toggle_' . ($r['status'] == 0 ? 'disabled' : 'enabled') . '.gif" />';
             $r['str_manage'] = '<a href="javascript:;" class="J_showdialog" data-uri="'.U('items_cate/add',array('pid'=>$r['id'])).'" data-title="'.L('add_item_cate').'" data-id="add" data-width="520" data-height="20">'.L('add_item_subcate').'</a> |
                                 <a href="javascript:;" class="J_showdialog" data-uri="'.U('items_cate/edit',array('id'=>$r['id'])).'" data-title="'.L('edit').' - '. $r['name'] .'" data-id="edit" data-width="500" data-height="20">'.L('edit').'</a> |
@@ -27,6 +28,7 @@ class items_cateAction extends BackendAction {
                 <td align='center'>\$id</td>
                 <td>\$spacer<span data-tdtype='edit' data-field='name' data-id='\$id' class='tdedit'  style='color:\$fcolor'>\$name</span></td>
                 <td align='center'><span data-tdtype='edit' data-field='ordid' data-id='\$id' class='tdedit'>\$ordid</span></td>
+                <td align='center'>\$str_ishot</td>
                 <td align='center'>\$str_status</td>
                 <td align='center'>\$str_manage</td>
                 </tr>";

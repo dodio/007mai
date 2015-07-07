@@ -44,7 +44,7 @@
       <div class="sanji">
         <volist name="sanji" id="san">
           <?php if ($counts[$san['id']]): ?>
-            <a href="{:U(__ACTION__,array("cid"=>$san['id']))}#root_cates" class="<eq name="san.ishot" value="1">highlight</eq> <if condition="$cid eq $san['id']">class="cur"</if>>{$san.name}({$counts[$san['id']]})</a>
+            <a href="{:U(__ACTION__,array("cid"=>$san['id']))}#root_cates" class="<eq name="san.ishot" value="1">highlight</eq> <if condition="$cid eq $san['id']">cur</if>">{$san.name}({$counts[$san['id']]})</a>
           <?php endif; ?>
         </volist>
       </div>

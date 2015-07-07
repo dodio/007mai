@@ -45,7 +45,7 @@ __STATIC__/assets/pc/css/qingbao.css
 
   <script>
     $(function(){
-      $(".item").addClass('show-hover show-flypic');
+      $.MAI007.ui.itemEffect.setEffect("缩放");
     });
   </script>
 </div>

@@ -20,7 +20,7 @@ __STATIC__/assets/pc/css/qingbao.css
 </div>
 <script>
     $(function(){
-      $(".item").addClass('show-normal');
+      $.MAI007.ui.itemEffect.setEffect("缩放");
     });
 </script>
 <include file="public:footer" />

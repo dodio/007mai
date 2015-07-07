@@ -39,12 +39,12 @@
   <div class="fl ml15">
     <volist name="erji" id="er">
     <div class="erji-box group">
-      <a href="{:U(__ACTION__,array("cid"=>$er['id']))}#root_cates" class="erji <if condition="$cid eq $er['id']">cur</if>">{$er.name}</a>
+      <a href="{:U(__ACTION__,array("cid"=>$er['id']))}#root_cates" class="erji <eq name="er.ishot" value="1">highlight</eq> <if condition="$cid eq $er['id']">cur</if>">{$er.name}</a>
       <?php $sanji = $cate_list['s'][$er['id']]; ?>
       <div class="sanji">
         <volist name="sanji" id="san">
           <?php if ($counts[$san['id']]): ?>
-            <a href="{:U(__ACTION__,array("cid"=>$san['id']))}#root_cates" <if condition="$cid eq $san['id']">class="cur"</if>>{$san.name}({$counts[$san['id']]})</a>
+            <a href="{:U(__ACTION__,array("cid"=>$san['id']))}#root_cates" class="<eq name="san.ishot" value="1">highlight</eq> <if condition="$cid eq $san['id']">class="cur"</if>>{$san.name}({$counts[$san['id']]})</a>
           <?php endif; ?>
         </volist>
       </div>

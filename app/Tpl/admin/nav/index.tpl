@@ -8,7 +8,7 @@
                 <th width="40"><input type="checkbox" name="checkall" class="J_checkall"></th>
       			<th>{:L('nav_name')}</th>
                 <th>{:L('alias')}</th>
-                <th>{:L('nav_link')}</th>
+                <th width="400px">{:L('nav_link')}</th>
                 <th><span data-tdtype="order_by" data-field="ordid">{:L('sort_order')}</span></th>
                 <th><span data-tdtype="order_by" data-field="target">{:L('nav_target')}</span></th>
                 <th>{:L('enabled')}</th>

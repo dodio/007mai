@@ -15,7 +15,7 @@ class user_visitor {
             $this->info = session('user_info');
             $this->is_login = true;
         } elseif ($user_info = (array)cookie('user_info')) {
-            $user_info = M('user')->field('id,username,sign_time,score')->where(array('id'=>$user_info['id'], 'password'=>$user_info['password']))->find();
+            $user_info = M('user')->field('id,username,sign_time,score')->where(array('id'=>$user_info['id'], 'password'=>$user_info['password'] , 'status' => 1 ))->find();
 			//查询是否签到
 			$sign_mod = D('sign');
 			$sign_date=$sign_mod->where(array('uid' => $user_info['id']))->find();

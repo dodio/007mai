@@ -28,6 +28,7 @@ class giftAction extends FirstendAction {
     }
 
 	public function lists($cid){
+        $this->visited_page();//访问页面任务
 		$sort = I('sort', 'hot', 'trim');
         switch ($sort) {
             case 'hot':
@@ -66,6 +67,7 @@ class giftAction extends FirstendAction {
      * 积分商品详细页
      */
     public function detail() {
+        $this->visited_page();//访问页面任务
         $id = I('id','', 'intval');
         !$id && $this->_404();
         $item_mod = M('score_item');

@@ -4,6 +4,7 @@ class indexAction extends ItemlistAction {
 		parent::_initialize();
     $api_config = M('items_site')->where(array('code' => 'ftxia'))->getField('config');
     $this->_tbconfig = unserialize($api_config);
+    $this->visited_page();//访问页面任务
 	}
 	public function _empty(){
     	$this->index();

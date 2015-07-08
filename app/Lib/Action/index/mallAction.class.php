@@ -2,6 +2,7 @@
 class mallAction extends FirstendAction {
   public function _initialize() {
         parent::_initialize();
+        $this->visited_page();//访问页面任务
   }
 
   public function index(){

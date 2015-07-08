@@ -4,6 +4,7 @@ class tagAction extends ItemlistAction {
         parent::_initialize();
         $this->_mod = D('items');
         $this->_cate_mod = D('items_cate');
+        $this->visited_page();//访问页面任务
     }
 
 	public function _empty($name){

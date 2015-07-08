@@ -4,7 +4,8 @@ class zhuantiAction extends FirstendAction {
 			parent::_initialize();
 	    $this->_mod = D('items');
 	    $this->_cate_mod = D('zc_cate');
-		$this->assign('nav_curr', 'index');
+			$this->assign('nav_curr', 'index');
+    	$this->visited_page();//访问页面任务
 	  }
     
     public function _empty($name){

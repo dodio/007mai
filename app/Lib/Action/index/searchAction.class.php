@@ -1,6 +1,11 @@
 <?php
 class searchAction extends ItemlistAction {
 
+  public function _initialize() {
+    parent::_initialize();
+    $this->visited_page();//访问页面任务
+  }
+    
 	public function _empty(){
 		$this->index();
 	}

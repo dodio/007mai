@@ -10,6 +10,14 @@
                         </a>
                     </div>
                   <div class="fix-uinfo mt20">现有<br><em>{$visitor.score}</em><br>情报</div>
+                  <?php $visited_page =$visitor['visited_page']; ?>
+                  <notempty name="visited_page">
+                    <?php if ($visited_page['num'] < 50 ): ?>
+                        <div class="fix-uinfo mt20">已访问<br><em>{$visited_page['num'] + 1 }个</em><br>页面</div>
+                    <?php else: ?>
+                        <div class="fix-uinfo mt20">已访问<br><em>50个</em><br>页面</div>
+                    <?php endif; ?>
+                  </notempty>
                 <else/>
                 <div class="img-span">
                         <a href="{:U('user/index')}" target="_blank" class="mark" title="会员中心">

@@ -2,6 +2,7 @@
   //3600 //一个小时
   //86400 //一天
   //604800 //一周
+  //1209600 //两周
   //2592000 //30天
   return array(
     //登录
@@ -61,6 +62,12 @@
       "action"=>"read_page50",
       "lang"=>"日常:浏览50个页面",
       "cycle" => 86400 ,
+      "type" => "reset"
+    ),
+    'advice_007mai' => array(
+      'action' =>"advice_007mai",
+      "lang"=>"给007买提建议",
+      "cycle" =>  1209600,
       "type" => "reset"
     )
   );

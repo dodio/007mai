@@ -78,7 +78,6 @@ class user_statModel extends Model
                         if("cooldown" == $type || "cooldown_no_refesh" == $type){
                             $data_update_stat['last_time'] = $time_function();
                         }
-
                     }else{
                         //操作已满的情况下，冷却型一样记录该次操作时间，也就是会延长操作时间
                         $return = false;

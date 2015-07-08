@@ -120,5 +120,77 @@ class FirstendAction extends TopAction {
         $this->display("error:404");
         exit();
     }
+    protected function visited_page(){
+        // 未登录不记录
+        if(!$this->visitor->is_login){
+            return;
+        }
+        $delay = 30; //访问页面间隔秒数
+        $userinfo = $this->visitor->info;
+        $stat_mod = D("user_stat");
+
+        // 用于stat 检测天数的action
+        $action_page = array(
+            'action' => 'visited_page',
+            'type' => 'cooldown_no_refesh',
+            'cycle' => 86400
+        );
+
+
+        if($userinfo['visited_page']){
+            // session 内有访问次数
+            $visited_page = $userinfo['visited_page'];
+        }else{
+            //获取今天内的访问次数
+            $where = array(
+                "uid"=>$userinfo[id],
+                "action"=>$action_page['action'],
+                'lasttime'=>array("GT",todaytime()) 
+                );
+            if( $num = $stat_mod->field('num')->where($where)->find() ){
+                // 今天以内，无session前访问过也算
+                $visited_page = array(
+                    "num"=>$num,
+                    "time"=>time() - ($delay+60) //时间提前60秒让这次访问也能被记录
+                );
+            }else{
+                // 今天以内还没有访问过
+                $visited_page = array(
+                    "num"=>0,
+                    "time"=>time() - ($delay+60) //时间提前60秒让这次访问也能被记录
+                );
+            }
+        }
+
+
+        if( (time() - $visited_page['time']) < $delay ){
+            // 访问间隔时间未到，不计算
+            return;
+        }
+        
+        $score_action = array(
+            "uid"=>$userinfo['id'],
+            'uname'=> $userinfo['username']
+            );
+        $pgae_10 = 10;
+        $pgae_50 = 50;
+        if($visited_page['num'] <= $pgae_10 ){
+            // 阅读页面小于十页，去检测并记录 10 页的任务
+            if(!$stat_mod->check_num($userinfo['id'],$action_page,$pgae_10)){
+                // 足够10页面
+                $score_action['action'] = 'read_page10';
+                tag("read_page10",$score_action);
+            }
+        }else if($visited_page['num'] <= $pgae_50){
+            // 大于10小于50的，就去检测 50 页的任务
+            if(!$stat_mod->check_num($userinfo['id'],$action_page,$pgae_50)){
+                // 足够10页面
+                $score_action['action'] = 'read_page50';
+                tag("read_page50",$score_action);
+            }
+        }
+        $visited_page['num']+=1;
+        $this->visitor->update_info("visited_page",$visited_page);
+    }
 }
 ?>

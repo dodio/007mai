@@ -45,7 +45,7 @@ class user_visitor {
         $this->info = $user_info;
     }
     /**
-     * 在session中更新用户信息 $val为空则删除
+     * 在session中更新用户信息 $val为null则删除
      * 只能处理一维
      * @param  [type] $key [description]
      * @param  [type] $val [description]

@@ -132,7 +132,7 @@ var ad = '<div class="group pdl15 pdr15 mb20">'+
 						if(today_dou == tomorrow_dou){
 							var dou_calender=dou_calender_tpl.replace(/{HEADER}/,signed);
 						}else{
-                            _czc.push(﻿["_trackEvent","积分","签到",result.data.sign_count,today_dou]);
+                            _czc.push(["_trackEvent","积分","签到",result.data.sign_count,today_dou]);
 							var dou_calender=dou_calender_tpl.replace(/{HEADER}/,not_sign);
 						}
 						dou_calender=dou_calender.replace(/{TODAY_DOU}/i,today_dou).replace(/{TOMORROW_DOU}/i,tomorrow_dou).replace(/{TABLE}/i,result.data.table);

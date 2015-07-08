@@ -43,16 +43,21 @@
       html+='<span class="d">'+obj.d+'</span>天';
     }
     if(obj.h){
-      html+='<span class="d">'+obj.h+'</span>小时';
+      html+='<span class="h">'+obj.h+'</span>小时';
+    }else if(obj.d){
+      html+='<span class="h">0</span>小时';
     }
     if(obj.mm){
-      html+='<span class="d">'+obj.mm+'</span>分';
+      html+='<span class="mm">'+obj.mm+'</span>分';
+    }else{
+      html+='<span class="mm">00</span>分';
     }
     if(obj.ss){
-      html+='<span class="d">'+obj.ss+'</span>秒';
+      html+='<span class="ss">'+obj.ss+'</span>秒';
+    }else{
+      html+='<span class="ss">00</span>秒';
     }
     return html;
-
   };
   
   util.delay = function(call,time){

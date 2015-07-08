@@ -269,5 +269,34 @@ class BackendAction extends TopAction
             return false;
         }
     }
+
+    // 批量设置数据
+    public function setAll(){
+        $mod = D($this->_name);
+        $pk = $mod->getPk();
+        $ids = trim($this->_request($pk), ',');
+        if ($ids) {
+            $data = $this->_get();
+            unset($data[$pk]);
+            $data = $mod->create($data);
+            $data['id'] = array("IN",$ids);
+            if (method_exists($this, '_before_update')) {
+                $data = $this->_before_update($data);
+            }
+            if (false !== $mod->save($data)) {
+                if( method_exists($this, '_after_update')){
+                    $this->_after_update($ids);
+                }
+                IS_AJAX && $this->ajaxReturn(1, L('operation_success'), '', 'edit');
+                $this->success(L('operation_success'));
+            } else {
+                IS_AJAX && $this->ajaxReturn(0, L('operation_failure'));
+                // $this->error(L('operation_failure'));
+            }
+        }else{
+            IS_AJAX && $this->ajaxReturn(0, L('illegal_parameters'));
+            $this->error(L('illegal_parameters'));
+        }
+    }
 }
 ?>

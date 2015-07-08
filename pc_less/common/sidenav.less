@@ -171,6 +171,12 @@
       text-decoration: none;
       background-color: #000;
     }
+    &.hg{
+      background-color: @color_red;
+      &:hover{
+        background-color: darken(@color_red, 10%);
+      }
+    }
   }
   &.affix{
     position: fixed;

@@ -167,7 +167,6 @@ class FirstendAction extends TopAction {
             // 访问间隔时间未到，不计算
             return;
         }
-        
         $score_action = array(
             "uid"=>$userinfo['id'],
             'uname'=> $userinfo['username']
@@ -190,6 +189,7 @@ class FirstendAction extends TopAction {
             }
         }
         $visited_page['num']+=1;
+        $visited_page['time'] = time();
         $this->visitor->update_info("visited_page",$visited_page);
     }
 }

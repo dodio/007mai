@@ -112,10 +112,21 @@
 											+'</div>'
 											+'<table width="100%" cellspacing="2" cellpadding="0" border="0">'
 											+'<tbody>{TABLE}</tbody>'
-											+'</table></div>';
+											+'</table>{AD}</div>';
 						var not_sign='<p class="tips">恭喜您，成功获得<span class="num">{TODAY_DOU}</span>份情报！</p>'
 									+'<p class="tom_tips">明天再来，就可以领到 {TOMORROW_DOU} 份情报，别忘记哦~</p>';
 						var signed='<p class="tips">您今天已经签过到了，明天再来，就可以获得{TOMORROW_DOU}份情报！</p>';
+var ad = '<div class="group pdl15 pdr15 mb20">'+
+  '<div class="fl advice">'+
+    '<strong>情报建议</strong>'+
+    '<p><a href="/user/msg/do/send" target="_blank">给007买提建议获得情报，采纳后可获得丰厚情报！</a></p>'+
+    '<p><a href="/help/qingbao" target="_blank">更多情报获取方式点这里!</a></p>'+
+    '<p><a href="/gift" target="_blank">去情报商城!</a></p>'+
+  '</div>'+
+  '<div class="fr">'+
+    '<div class="sign_ad" data-ajax-ad="tracker" data-ad-tracker="sign_ad"></div>'+
+  '</div>'+
+'</div>';               dou_calender_tpl = dou_calender_tpl.replace(/{AD}/,ad);
 						var today_dou=result.data.point;
 						var tomorrow_dou=result.data.tmr_point;
 						if(today_dou == tomorrow_dou){
@@ -123,11 +134,12 @@
 						}else{
                             _czc.push(﻿["_trackEvent","积分","签到",result.data.sign_count,today_dou]);
 							var dou_calender=dou_calender_tpl.replace(/{HEADER}/,not_sign);
-							var totaldou_obj=$('p.all_juandou').eq(0);
-							var total_dou=totaldou_obj.text().match(/\d+/);totaldou_obj.text(totaldou_obj.text().replace(/\d+/,parseInt(total_dou)+parseInt(today_dou)));
 						}
 						dou_calender=dou_calender.replace(/{TODAY_DOU}/i,today_dou).replace(/{TOMORROW_DOU}/i,tomorrow_dou).replace(/{TABLE}/i,result.data.table);
 						$.dialog({id:'sign_success', title:result.msg, content:dou_calender, width:450, padding:'', fixed:true, lock:true});
+                        $.MAI007.util.delay(function(){
+                            $(".sign_ad").mai007ad();
+                        },200);
 					}else{
 						$.ftxia.tip({content:result.msg, icon:'error'});
 					}

@@ -80,7 +80,7 @@ $(function(){
       });
     });
   };
-
+// 自动加载页面的广告
   $(function(){
     $.MAI007.util.delay(function(){
       var wh = $(window).height();

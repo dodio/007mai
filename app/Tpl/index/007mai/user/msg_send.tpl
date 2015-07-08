@@ -33,7 +33,7 @@
 						<li>
 							<div class="user">
 								<label>内　容：</label>
-								<textarea type="text" class="ddinput" style="width:350px;height:100px;" name="content" id="content" onblur="checkcontent(document.getElementById('content').value);"></textarea>
+								<textarea type="text" class="ddinput" style="width:350px;height:100px;" name="content" id="content"></textarea>
 							</div>
 						</li>
 						<li>

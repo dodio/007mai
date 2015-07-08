@@ -53,6 +53,11 @@
             <td>每日 {:C('ftx_score_rule.from_client_nums')} 次 <input type="text" name="score_rule[from_client_nums]" class="input-text" size="2" value="1" style="display: none;"></td>
         </tr>
         <tr>
+            <td>给网站提建议 :</td>
+            <td><input type="text" name="score_rule[advice_007mai]" class="input-text" size="10" value="{:C('ftx_score_rule.advice_007mai')}"></td>
+            <td>每两周{:C('ftx_score_rule.advice_007mai_nums')}次<input type="hidden" name="score_rule[advice_007mai_nums]" value="1"> </td>
+        </tr>
+        <tr>
             <td>日常 :浏览10个页面</td>
             <td><input type="text" name="score_rule[read_page10]" class="input-text" size="10" value="{:C('ftx_score_rule.read_page10')}"></td>
             <td>每日 {:C('ftx_score_rule.read_page10_nums')} 次 <input type="text" name="score_rule[read_page10_nums]" class="input-text" size="2" value="1" style="display: none;"></td>

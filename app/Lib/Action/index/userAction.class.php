@@ -566,6 +566,12 @@ class userAction extends UsersAction {
 			$data['status'] = 0;
 			$data['add_time'] = time();
 			$msg_mod->add($data);
+            $score_action = array(
+                'action'=>'advice_007mai',
+                'uid' => $this->visitor->info['id'],
+                'uname' => $this->visitor->info['username']
+                );
+            tag("advice_007mai",$score_action);
 			$this->redirect('user/msg');
 		}else if('del' == $do){
 			$ids = I('ids');

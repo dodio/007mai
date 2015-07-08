@@ -63,7 +63,9 @@ return array(
     'read_page50' => array(
         'alter_score', // 积分
     ),
-
+    'advice_007mai' => array(
+        'alter_score', // 积分
+    ),
     //积分数量变更
     'score_change' => array(
         'score_change'

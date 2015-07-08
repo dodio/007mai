@@ -147,10 +147,11 @@ class FirstendAction extends TopAction {
                 "action"=>$action_page['action'],
                 'lasttime'=>array("GT",todaytime()) 
                 );
+            
             if( $num = $stat_mod->field('num')->where($where)->find() ){
                 // 今天以内，无session前访问过也算
                 $visited_page = array(
-                    "num"=>$num,
+                    "num"=>$num['num'],
                     "time"=>time() - ($delay+60) //时间提前60秒让这次访问也能被记录
                 );
             }else{

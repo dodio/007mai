@@ -43,6 +43,8 @@
                 <th><span data-tdtype="order_by" data-field="id">ID</span></th>
                 <th align="left"><span data-tdtype="order_by" data-field="name">商品名称</span></th>
                 <th width="80"><span data-tdtype="order_by" data-field="cate_id">分类</span></th>
+                <th width="80"><span data-tdtype="order_by" data-field="start_price">最低价格</span></th>
+                <th width="80"><span data-tdtype="order_by" data-field="end_price">最高价格</span></th>
 				<th width="70"><span data-tdtype="order_by" data-field="page">采集页数</span></th>
 				<th width="100"><span data-tdtype="order_by" data-field="last_page">上次采集页数</span></th>
                 <th width="40"><span data-tdtype="order_by" data-field="ordid">{:L('sort_order')}</span></th>
@@ -58,6 +60,8 @@
                 <td align="center">{$val.id}</td>
                 <td align="left"><span data-tdtype="edit" data-field="name" data-id="{$val.id}" class="tdedit"  >{$val.name}</span></td>
                 <td align="center"><b>{$cate_list[$val['cate_id']]}</b></td>
+                <td align="center" class="red"><span data-tdtype="edit" data-field="start_price" data-id="{$val.id}" class="tdedit">{$val.start_price}</span></td> 
+                <td align="center" class="red"><span data-tdtype="edit" data-field="end_price" data-id="{$val.id}" class="tdedit">{$val.end_price}</span></td> 
 				<td align="center" class="red"><span data-tdtype="edit" data-field="page" data-id="{$val.id}" class="tdedit">{$val.page}</span></td> 
 				<td align="center" class="red">{$val.last_page}</td> 
                 <td align="center"><span data-tdtype="edit" data-field="ordid" data-id="{$val.id}" class="tdedit">{$val.ordid}</span></td>
@@ -73,8 +77,10 @@
     <div class="btn_wrap_fixed">
         <label class="select_all mr10"><input type="checkbox" name="checkall" class="J_checkall">{:L('select_all')}/{:L('cancel')}</label>
         <input type="button" class="btn" data-tdtype="batch_action" data-acttype="ajax" data-uri="{:U('ftxrobots/delete')}" data-name="id" data-msg="{:L('confirm_delete')}" value="{:L('delete')}" />
-        <input type="text" id="input_pages" class="input-text" size="5">
-        <input type="button" class="btn" id="setpages" value="设置页数" />
+        <input type="text" id="input_pages" class="input-text" placeholder="页数" size="5">
+        <input type="text" id="input_start_price" class="input-text" placeholder="最小价格" size="10">
+        <input type="text" id="input_end_price" class="input-text" placeholder="最大价格" size="10">
+        <input type="button" class="btn" id="setpages" value="统一设置" />
         <div id="pages">{$page}</div>
     </div>
 </div>
@@ -83,17 +89,26 @@
     $(function(){
       $("#setpages").click(function(){
         var p = parseInt($("#input_pages").val());
+        var start_price = parseInt($("#input_start_price").val());
+        var end_price = parseInt($("#input_end_price").val());
         var ids = $(".J_checkitem:checked").map(function(){
             return $(this).val();
         }).get().join(",");
         
-        console.log(p,ids);
-        var url = "{:U('ftxrobots/set_page')}"; 
+        var url = "{:U('ftxrobots/setAll')}"; 
         var data = {
-            page:p,
-            ids:ids
+            id:ids
         }
         if(p){
+            data.page = p;
+        }
+        if(start_price){
+            data.start_price = start_price;
+        }
+        if(end_price){
+            data.end_price = end_price;
+        }
+        if(p || start_price || end_price){
             $.getJSON(url,data,function(rsp){
                 if(rsp.status){
                     window.location.reload();

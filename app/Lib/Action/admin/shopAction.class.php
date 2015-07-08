@@ -147,6 +147,27 @@ class shopAction extends BackendAction {
     }
   }
 
+  public function set_age(){
+    $ids = I("ids","","trim");
+    $age = I("age","","trim");
+    if($ids == ""){
+        $this->ajaxReturn(0,"ID 错误");
+    }
+    if($age == -1 ){
+        $this->ajaxReturn(0,"年龄");
+    }
+
+    $ids = explode(",", $ids);
+    $data = array();
+    $data["id"] = array("IN",$ids);
+    $data['age'] = $age;
+    if(false !== $this->_mod->save($data)){
+        $this->ajaxReturn(1,"设置成功");
+    }else{
+        $this->ajaxReturn(0,"没有成功");
+    }
+  }
+
   public function move() {
     if (IS_POST) {
       $move=I('move', 'intval');

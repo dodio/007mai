@@ -125,7 +125,7 @@ class FirstendAction extends TopAction {
         if(!$this->visitor->is_login){
             return;
         }
-        $delay = 30; //访问页面间隔秒数
+        $delay = 60; //访问页面间隔秒数
         $userinfo = $this->visitor->info;
         $stat_mod = D("user_stat");
 

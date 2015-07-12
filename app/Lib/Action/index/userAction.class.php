@@ -8,6 +8,26 @@ class userAction extends UsersAction {
         //打码
         $this->_hideInfo($info);
         $this->assign('info', $info);
+
+        //获取已经绑定列表
+        $bind_list = M('user_bind')->field('type')->where(array('uid'=>$this->visitor->info['id']))->select();
+        $binds = array();
+        if ($bind_list) {
+            foreach ($bind_list as $val) {
+                $binds[] = $val['type'];
+            }
+        }
+        
+        //获取网站支持列表
+        $oauth_list = $this->oauth_list;
+        foreach ($oauth_list as $type => $_oauth) {
+            $oauth_list[$type]['isbind'] = '0';
+            if (in_array($type, $binds)) {
+                $oauth_list[$type]['isbind'] = '1';
+            }
+        }
+        $this->assign('oauth_list', $oauth_list);
+        
     }
 
 	public function info(){
@@ -422,24 +442,6 @@ class userAction extends UsersAction {
      * 帐号绑定
      */
     public function bind() {
-        //获取已经绑定列表
-        $bind_list = M('user_bind')->field('type')->where(array('uid'=>$this->visitor->info['id']))->select();
-        $binds = array();
-        if ($bind_list) {
-            foreach ($bind_list as $val) {
-                $binds[] = $val['type'];
-            }
-        }
-        
-        //获取网站支持列表
-        $oauth_list = $this->oauth_list;
-        foreach ($oauth_list as $type => $_oauth) {
-            $oauth_list[$type]['isbind'] = '0';
-            if (in_array($type, $binds)) {
-                $oauth_list[$type]['isbind'] = '1';
-            }
-        }
-        $this->assign('oauth_list', $oauth_list);
         $this->_config_seo(array(
             'title' => L('user_bind'),
         ));

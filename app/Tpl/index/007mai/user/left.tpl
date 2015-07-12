@@ -16,12 +16,12 @@
 					<a href="{:U('user/bind')}">
 						<volist name="oauth_list" id="val">
 							<if condition="$val.isbind eq 1">
-							<div title="绑定后可用{$val.name}{:C('ftx_site_name')}" class="ico {$val.code}_sync"></div>
+							<div title="已绑定，可用{$val.name}{:C('ftx_site_name')}" class="ico {$val.code}_sync"></div>
 							<else/>
-							<div title="绑定后可用{$val.name}{:C('ftx_site_name')}" class="ico {$val.code}_sync_no"></div>
+							<div title="未绑定，绑定后可用{$val.name}{:C('ftx_site_name')}" class="ico {$val.code}_sync_no"></div>
 							</if>
 						</volist>
-	                		</a>
+	        </a>
 				</div>
 			</notempty>
 	

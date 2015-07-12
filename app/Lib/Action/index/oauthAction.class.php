@@ -8,6 +8,7 @@ class oauthAction extends FirstendAction {
     	$type = $this->_get('type', 'trim', 'login');
     	!$mod && $this->_404();
         if ('unbind' == $type) {
+            exit();
             !$this->visitor->is_login && $this->redirect('user/login');
             M('user_bind')->where(array('uid'=>$this->visitor->info['id'], 'type'=>$mod))->delete();
             $this->redirect('user/bind');

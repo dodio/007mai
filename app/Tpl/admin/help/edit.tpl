@@ -45,7 +45,7 @@
 <input type="hidden" name="id" value="{$info.id}" />
 </form>
 <include file="public:footer" />
-<script src="__STATIC__/js/kindeditor/kindeditor-min.js"></script>
+<script src="/static/js/kindeditor/kindeditor-min.js"></script>
 <script>
 $(function() {
 	KindEditor.create('#info', {

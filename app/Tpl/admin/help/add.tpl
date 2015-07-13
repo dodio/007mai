@@ -45,7 +45,7 @@
 </form>
 <include file="public:footer" />
 <script src="__STATIC__/js/jquery/plugins/colorpicker.js"></script>
-<script src="__STATIC__/js/kindeditor/kindeditor.js"></script>
+<script src="/static/js/kindeditor/kindeditor.js"></script>
 <script>
 $(function() {
 	KindEditor.create('#info', {

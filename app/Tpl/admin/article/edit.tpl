@@ -66,7 +66,7 @@
 <include file="public:footer" />
 <script src="__STATIC__/js/jquery/plugins/iColorPicker.js"></script>
 <script src="__STATIC__/js/jquery/plugins/colorpicker.js"></script>
-<script src="__STATIC__/js/kindeditor/kindeditor-min.js"></script>
+<script src="/static/js/kindeditor/kindeditor-min.js"></script>
 <script>
 $('.J_cate_select').cate_select('请选择');
 $(function() {

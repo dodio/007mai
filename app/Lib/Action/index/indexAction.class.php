@@ -69,8 +69,7 @@ class indexAction extends ItemlistAction {
 				);
 			tag("download_shortcut",$arg);
     }
-    redirect_301("http://img.007mai.com/007mai.exe");
-		// echo $Shortcut; 
+		echo $Shortcut; 
 	}
 
   /**

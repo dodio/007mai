@@ -239,7 +239,7 @@ class ItemlistAction extends FirstendAction {
       }else{
         $items_list = $this->_mod->where($map)->limit(0,$amount)->select();
         $tmp = $this->_deal_item_list($items_list);
-        $items = $tmp['item_list'];
+        $items = $tmp['items_list'];
       }
       return $items;
     }

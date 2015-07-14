@@ -23,7 +23,7 @@
           $sanji = $cate_list['s'][$er['id']];
          ?>
         <volist name="sanji" id="san">
-        <a href="{:U(__ACTION__,array("cid"=>$san['id']))}#subates_nav" class="<eq name="san.ishot" value="1">highlight</eq><if condition="$cid eq $san['id']"> cur</if>" >{$san.name}</a>
+        <a href="{:U(__ACTION__,array("cid"=>$san['id']))}#subates_nav" class="<eq name="san.ishot" value="1">highlight </eq><if condition="$cid eq $san['id']">cur</if>" >{$san.name}</a>
         </volist>
       </div>
     </div>

@@ -9,7 +9,7 @@ function getIpInfo($ip){
     $remode_ipinfo = json_decode(file_get_contents($api));
     return $remode_ipinfo;
 }
-function redirct_301($url){
+function redirect_301($url){
     Header("HTTP/1.1 301 Moved Permanently");
     Header("Location: ".$url);
 }

@@ -4,38 +4,6 @@ class jumpAction extends FirstendAction {
         parent::_initialize();
 		$this->_mod = D('items');
     }
-	public function _empty($iid){
-		$date = I('date');
-		$dt = '1';
-		if($date){
-			$dt = '2';
-		}
-		$tpl = 'index';
-		$item['num_iid'] = $iid;	
-		if(C('ftx_click_ai')){
-			$tpl = 'taobao';
-			if(!is_mobile()){
-				if( $item['click_url'] && 0 < strpos( $item['click_url'], "s.click" ) ){
-					$this->jump_hidden_referer( $item['click_url'] );
-				}else if ( 0 < strpos( $item['click_url'], "redirect.simba.taobao.com" ) ){
-					$this->jump_hidden_referer( $item['click_url'] );
-				}
-			}
-		}
-		if($item['shop_type'] == "D"){
-			$this->jump_hidden_referer( $item['click_url'] );
-		}
-		$taodianjin = C('ftx_taojindian_html');
-		if(strpos($taodianjin,'text/javascript')){
-			$pid = get_word($taodianjin,'pid: "','"');
-		}else{
-			$pid = $taodianjin;
-		}
-		$this->assign('pid', $pid);
-		$this->assign('date', $dt);
-		$this->assign('item', $item);
-        $this->display($tpl);
-	}
 
     /**
      * 淘宝跳转
@@ -86,34 +54,25 @@ class jumpAction extends FirstendAction {
 		if($item['shop_type'] == "D"){
 			$this->jump_hidden_referer( $item['click_url'] );
 		}
+    
+    if(isset($_SERVER['HTTP_REFERER'])){
 
-		$taodianjin = C('ftx_taojindian_html');
-		if(strpos($taodianjin,'text/javascript')){
-			$pid = get_word($taodianjin,'pid: "','"');
-		}else{
-			$pid = $taodianjin;
-		}
+      $refer_url = parse_url($_SERVER['HTTP_REFERER']);
+      if("www.007mai.com" === $refer_url['host'] ){
+        if($refer_url['path'] === "/"){
+          $pid = get_pid("/index/index");
+        }else{
+          $pid = get_pid($refer_url['path']);
+        }
+      }
+    }else{
+      $pid = get_pid("");
+    }
+
 		$this->assign('pid', $pid);
 		$this->assign('date', $dt);
 		$this->assign('item', $item);
         $this->display($tpl);
     }
 
-
-	public function jump_hidden_referer( $url, $wait = 0 )
-    {
-        $s = "<script language=\"javascript\">var iurl=\"".$url."\";document.write(\"<meta http-equiv=\\\"refresh\\\" content=\\\"0;url=\"+iurl+\"\\\" />\");</script>";
-        if ( strpos( $_SERVER['HTTP_USER_AGENT'], "AppleWebKit" ) )
-        {
-            $s = "<script language=\"javascript\">var iurl=\"data:text/html;base64,".base64_encode( $s )."\";document.write(\"<meta http-equiv=\\\"refresh\\\" content=\\\"".$wait.";url=\"+iurl+\"\\\" />\");</script>";
-        }
-        else
-        {
-            $s = str_replace( "\"0;", "\"".$wait.";", $s );
-        }
-        echo $s;
-		exit();
-		//header("Content-type: text/html; charset=utf-8"); 
-        //exit($url);
-    }
 }

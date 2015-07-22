@@ -207,4 +207,17 @@ class Ftxia8MobComFuncAction extends Action{
     	header('Content-Type:application/json; charset=utf-8');
     	exit(json_encode($data));
     }
+
+
+
+    protected function jump_hidden_referer( $url, $wait = 0 ){
+
+        $base_url = base64_encode('<script language="javascript">var iurl="'.$url.'";document.write("<meta http-equiv=\"refresh\" content=\"0;url="+iurl+"\" />");</script>');
+        $script_url = '<script language="javascript">var iurl="data:text/html;base64,'.$base_url.'";document.write("<meta http-equiv=\"refresh\" content=\"0;url="+iurl+"\" />");</script>';
+        
+        $script_url = str_replace( "\"0;", "\"".$wait.";", $script_url );
+        
+        echo $script_url;
+        exit();
+    }
 }

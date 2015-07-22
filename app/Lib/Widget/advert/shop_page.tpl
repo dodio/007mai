@@ -54,7 +54,7 @@
          foreach ($group as $ad) {
           ?>
          <li class="l-f-shop" title="{$ad.description}"> 
-           <a href="{$ad.url}" target="_blank"> <img class="brand-pic" src="{:attach($ad['content'],'images')}" />
+           <a href="/advert/tgo/id/{$ad.id}" target="_blank"> <img class="brand-pic" src="{:attach($ad['content'],'images')}" />
            </a> 
           </li> 
           <?php

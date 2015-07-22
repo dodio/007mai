@@ -23,22 +23,7 @@ class FirstendAction extends TopAction {
 
         if(!IS_AJAX){
             //不是ajax 才布置淘点金
-            $action = explode("/", __ACTION__);
-            $m =  $action[1];
-            $a = $action[2];
-            $dianjin = C("TAO_DIAN_JIN");
-            if(!isset($dianjin[$m])){
-                $pid = $dianjin['default'];
-
-            }else{
-                if(isset($dianjin[$m][$a])){
-                    $pid = $dianjin[$m][$a];
-                }elseif(isset($dianjin[$m]['default'])){
-                    $pid = $dianjin[$m]['default'];
-                }else{
-                    $pid = $dianjin['default'];
-                }
-            }
+            $pid = get_pid(__ACTION__);
             $this->assign('taodianjin_pid',$pid);
         }
     }

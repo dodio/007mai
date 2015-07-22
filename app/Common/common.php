@@ -130,6 +130,24 @@ function get_word($html,$star,$end){
 	}
 	return $wd;
 }
+function get_pid($act){
+    $action = explode("/", $act);
+    $m =  $action[1];
+    $a = $action[2];
+    $dianjin = C("TAO_DIAN_JIN");
+    if(!isset($dianjin[$m])){
+        $pid = $dianjin['default'];
+    }else{
+        if(isset($dianjin[$m][$a])){
+            $pid = $dianjin[$m][$a];
+        }elseif(isset($dianjin[$m]['default'])){
+            $pid = $dianjin[$m]['default'];
+        }else{
+            $pid = $dianjin['default'];
+        }
+    }
+    return $pid;
+}
 
 /**
  * 友好时间

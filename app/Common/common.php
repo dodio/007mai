@@ -148,6 +148,23 @@ function get_pid($act){
     }
     return $pid;
 }
+function get_refer_pid($domain = "www.007mai.com"){
+    if(isset($_SERVER['HTTP_REFERER'])){
+      $refer_url = parse_url($_SERVER['HTTP_REFERER']);
+      if( $domain === $refer_url['host'] ){
+        if($refer_url['path'] === "/"){
+          $pid = get_pid("/index/index");
+        }else{
+          $pid = get_pid($refer_url['path']);
+        }
+      }else{
+        $pid = get_pid("");
+      }
+    }else{
+      $pid = get_pid("");
+    }
+    return $pid;
+}
 
 /**
  * 友好时间

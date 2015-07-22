@@ -55,19 +55,7 @@ class jumpAction extends FirstendAction {
 			$this->jump_hidden_referer( $item['click_url'] );
 		}
     
-    if(isset($_SERVER['HTTP_REFERER'])){
-
-      $refer_url = parse_url($_SERVER['HTTP_REFERER']);
-      if("www.007mai.com" === $refer_url['host'] ){
-        if($refer_url['path'] === "/"){
-          $pid = get_pid("/index/index");
-        }else{
-          $pid = get_pid($refer_url['path']);
-        }
-      }
-    }else{
-      $pid = get_pid("");
-    }
+    $pid = get_refer_pid();
 
 		$this->assign('pid', $pid);
 		$this->assign('date', $dt);

@@ -212,9 +212,12 @@ class Ftxia8MobComFuncAction extends Action{
 
     protected function jump_hidden_referer( $url, $wait = 0 ){
 
-        $base_url = base64_encode('<script language="javascript">var iurl="'.$url.'";document.write("<meta http-equiv=\"refresh\" content=\"0;url="+iurl+"\" />");</script>');
-        $script_url = '<script language="javascript">var iurl="data:text/html;base64,'.$base_url.'";document.write("<meta http-equiv=\"refresh\" content=\"0;url="+iurl+"\" />");</script>';
-        
+        $base_url = '<script language="javascript">var iurl="'.$url.'";document.write("<meta http-equiv=\"refresh\" content=\"0;url="+iurl+"\" />");</script>';
+        if( false !== strpos("Gecko", $_SERVER["HTTP_USER_AGENT"]) || false !== strpos("WebKit", $_SERVER["HTTP_USER_AGENT"]) ){
+            $script_url = '<script language="javascript">var iurl="data:text/html;base64,'.base64_encode($base_url).'";document.write("<meta http-equiv=\"refresh\" content=\"0;url="+iurl+"\" />");</script>';
+        }else{
+            $script_url = $base_url;
+        }
         $script_url = str_replace( "\"0;", "\"".$wait.";", $script_url );
         
         echo $script_url;

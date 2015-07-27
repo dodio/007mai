@@ -2,6 +2,15 @@
 <html>
 <head>
 <include file="public:head" />
+<script>
+  if($(window).width()>=1600){
+    $("html").addClass("widescreen");
+    $(function(){
+      $(".itemlist li").removeClass("mr0").each(function(i){
+      });
+    });
+  }
+</script>
 <ftx:load type="css" href="
 __STATIC__/assets/pc/css/cate.css
 "/>

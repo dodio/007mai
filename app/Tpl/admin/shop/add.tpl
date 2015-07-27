@@ -96,6 +96,14 @@
             </tr>
 
             <tr>
+                <th>{:L('seo_keys')} :</th>
+                <td><input type="text" name="seo_keys" class="input-text" style="width:300px;"></td>
+            </tr>
+            <tr>
+                <th>{:L('seo_desc')} :</th>
+                <td><textarea name="seo_desc" style="width:295px; height:50px;"></textarea></td>
+            </tr>
+            <tr>
                 <th></th>
                 <td>
                     <input type="submit" class="smt  mr10" value="{:L('submit')}" />

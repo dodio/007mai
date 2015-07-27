@@ -12,7 +12,8 @@ class shopAction extends FirstendAction {
 		}
 		$this->_config_seo(array(
 			"title" => $shop['name'],
-			"keywords" => $shop['name']
+      "keywords" => $shop['seo_keys'],
+			"description" => $shop['seo_desc'],
 		));
 
 		// $top = $this->getTbTop();

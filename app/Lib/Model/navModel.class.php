@@ -8,7 +8,7 @@ class navModel extends Model
      */
     public function nav_cache() {
         $nav_list = array();
-        $nav_data = $this->field('type,name,alias,link,target')->where('status=1')->order('ordid')->select();
+        $nav_data = $this->field('type,name,alias,link,target,hot')->where('status=1')->order('ordid')->select();
         foreach ($nav_data as $val) {
             switch ($val['type']) {
                 case 'main':

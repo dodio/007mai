@@ -32,7 +32,7 @@
               <a href="{:C('ftx_site_url')}">{:L('index_page')}</a>
             </li>
             <volist name="data" id="val">
-            <li <if condition="$nav_curr eq $val['alias']">class="cur"</if> ><a href="{$val.link}" <if condition="$val.target eq 1">target="_blank"</if>>{$val.name}</a></li>
+            <li <if condition="$nav_curr eq $val['alias']">class="cur"</if> ><a href="{$val.link}" <if condition="$val.target eq 1">target="_blank"</if>>{$val.name} <if condition="'1' eq $val['hot']"><span class="hot_icon">HOT</span></if></a></li>
             </volist>
           </ftx:nav>
         </ul>

@@ -11,6 +11,7 @@
                 <th width="400px">{:L('nav_link')}</th>
                 <th><span data-tdtype="order_by" data-field="ordid">{:L('sort_order')}</span></th>
                 <th><span data-tdtype="order_by" data-field="target">{:L('nav_target')}</span></th>
+                <th>是否热门</th>
                 <th>{:L('enabled')}</th>
                 <th width="160">{:L('operations_manage')}</th>
             </tr>
@@ -22,10 +23,13 @@
                 <td align="center"><input type="checkbox" class="J_checkitem" value="{$val.id}"></td>
                 <td><span data-tdtype="edit" data-field="name" data-id="{$val.id}" class="tdedit">{$val.name}</span></td>
                 <td><span data-tdtype="edit" data-field="alias" data-id="{$val.id}" class="tdedit">{$val.alias}</span></td>
-                <td><span data-tdtype="edit" data-field="link" data-id="{$val.id}" class="tdedit">{$val.link}</span></td>
+                <td style="word-break:break-all;"><span data-tdtype="edit" data-field="link" data-id="{$val.id}" class="tdedit">{$val.link}</span></td>
                 <td align="center"><span data-tdtype="edit" data-field="ordid" data-id="{$val.id}" class="tdedit">{$val.ordid}</span></td>
                 <td align="center">
                     <img data-tdtype="toggle" data-field="target" data-id="{$val.id}" data-value="{$val.target}" src="__STATIC__/images/admin/toggle_<if condition="$val.target eq 0">disabled<else/>enabled</if>.gif" />
+                </td>
+                <td align="center">
+                    <img data-tdtype="toggle" data-field="hot" data-id="{$val.id}" data-value="{$val.hot}" src="__STATIC__/images/admin/toggle_<if condition="$val.hot eq 0">disabled<else/>enabled</if>.gif" />
                 </td>
                 <td align="center">
                     <img data-tdtype="toggle" data-field="status" data-id="{$val.id}" data-value="{$val.status}" src="__STATIC__/images/admin/toggle_<if condition="$val.status eq 0">disabled<else/>enabled</if>.gif" />
@@ -44,6 +48,9 @@
                 <td align="center"><span data-tdtype="edit" data-field="ordid" data-id="{$val.id}" class="tdedit">{$val.ordid}</span></td>
                 <td align="center">
                     <img data-tdtype="toggle" data-field="target" data-id="{$val.id}" data-value="{$val.target}" src="__STATIC__/images/admin/toggle_<if condition="$val.target eq 0">disabled<else/>enabled</if>.gif" />
+                </td>
+                <td align="center">
+                    <img data-tdtype="toggle" data-field="hot" data-id="{$val.id}" data-value="{$val.hot}" src="__STATIC__/images/admin/toggle_<if condition="$val.hot eq 0">disabled<else/>enabled</if>.gif" />
                 </td>
                 <td align="center">
                     <img data-tdtype="toggle" data-field="status" data-id="{$val.id}" data-value="{$val.status}" src="__STATIC__/images/admin/toggle_<if condition="$val.status eq 0">disabled<else/>enabled</if>.gif" />

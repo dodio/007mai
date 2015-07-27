@@ -6,7 +6,7 @@
             <a href="/brand" class="sidenav-item" target="_blank">品牌折扣</a>
             <a href="/mall/haitao" class="sidenav-item" target="_blank">环球外贸</a>
             <a href="/qingbao/ba" class="sidenav-item hg" target="_blank">八块八</a>
-            <a href="http://temai.taobao.com/cheap.htm?pt=1&pid=mm_108982726_9740782_33950503" class="sidenav-item hg" target="_blank">淘宝9.9</a>
+            <a href="http://temai.taobao.com/cheap.htm?pt=1&pid=mm_110720202_10278645_34486012" class="sidenav-item hg" target="_blank">淘宝9.9</a>
             <a href="/qingbao/shiba" class="sidenav-item hg" target="_blank">十八块八</a>
             <a href="/qingbao/san38" class="sidenav-item hg" target="_blank">38块八</a>
             <a href="/#shopping-index" class="sidenav-item" target="_blank">购物大全</a>

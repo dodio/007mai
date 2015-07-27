@@ -15,7 +15,7 @@
 
 			<tr>
 				<th width="150">前台管理员 :</th>
-				<td><input type="text" name="setting[index_admin]" size="10" class="input-text" value="{:C('ftx_index_admin')}" />&nbsp;&nbsp;&nbsp;&nbsp;<span class="gray">前台管理员</span></td>
+				<td><input type="text" name="setting[index_admin]" size="30" class="input-text" value="{:C('ftx_index_admin')}" />&nbsp;&nbsp;&nbsp;&nbsp;<span class="gray">前台管理员</span></td>
 			</tr>
 
 			<tr>

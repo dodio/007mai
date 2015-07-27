@@ -211,15 +211,25 @@ class Ftxia8MobComFuncAction extends Action{
 
 
     protected function jump_hidden_referer( $url, $wait = 0 ){
-
         $base_url = '<script language="javascript">var iurl="'.$url.'";document.write("<meta http-equiv=\"refresh\" content=\"0;url="+iurl+"\" />");</script>';
-        if( false !== strpos("Gecko", $_SERVER["HTTP_USER_AGENT"]) || false !== strpos("WebKit", $_SERVER["HTTP_USER_AGENT"]) ){
+        if(!isset($_SERVER['HTTP_REFERER']) || false === strpos("www.007mai.com", $_SERVER['HTTP_REFERER']) || false === strpos("m.007mai.com", $_SERVER['HTTP_REFERER']) || false !== strpos("Gecko", $_SERVER["HTTP_USER_AGENT"]) || false !== strpos("WebKit", $_SERVER["HTTP_USER_AGENT"]) ){
             $script_url = '<script language="javascript">var iurl="data:text/html;base64,'.base64_encode($base_url).'";document.write("<meta http-equiv=\"refresh\" content=\"0;url="+iurl+"\" />");</script>';
         }else{
             $script_url = $base_url;
         }
         $script_url = str_replace( "\"0;", "\"".$wait.";", $script_url );
         
+        echo $script_url;
+        exit();
+    }
+
+    protected function jump_no_spider($url){
+        $charcode = array();
+        for ($i=0; $i < strlen($url); $i++) { 
+            $charcode[]=ord($url[$i]);
+        }
+
+        $script_url = '<script>var url = String.fromCharCode('.implode(",", $charcode).');window.location.href= url;</script>';
         echo $script_url;
         exit();
     }

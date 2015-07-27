@@ -17,8 +17,10 @@ class advertAction extends FirstendAction {
           redirect_301($url);
           exit();
         }
-
-        $this->jump_hidden_referer($url);
+        if(get_spider()){
+          exit();
+        }
+        $this->jump_no_spider($url);
     }
 
     public function get(){

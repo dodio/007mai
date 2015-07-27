@@ -1,0 +1,85 @@
+@import "./lib/funclib.less";
+@import "./common/var.less";
+
+body {
+  background-color: #000;
+}
+.header .mainNav {
+  background-color: #292828;
+
+  .navigation {
+    margin-left: 30px;
+
+    li a {
+      color: #fff;
+    }
+  }
+}
+.mainbody {
+  min-height: 800px;
+}
+.bg1 {
+  background: url(../images/007bg/1.jpg) center center no-repeat;
+}
+.bg2 {
+  background: url(../images/007bg/2.jpg) center center no-repeat;
+}
+.bg3 {
+  background: url(../images/007bg/3.jpg) center center no-repeat;
+}
+.shop {
+  padding-top: 100px;
+
+  .shop-name {
+    background:url("../images/shop_name_bg.png") 0 bottom no-repeat;
+    width: 580px;
+    padding-bottom: 50px;
+    font-size: 60px;
+    a{
+      color: @color_red;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+  .pic{
+    margin-top: 100px;
+    text-align: center;
+    img{
+      width: 300px;
+      height: 300px;
+      padding: 20px;
+      border: 2px solid #fff;
+    }
+  }
+}
+.global-design {
+  background: @color_red;
+  padding: 6em 0;
+  width: 100%;
+}
+.idea-get {
+  background: @color_red;
+  text-align: center;
+  box-shadow: 10px 10px 10px 10px #981415;
+  float: left;
+  width: 28%;
+  margin: 0 5.4em 0 0;
+  padding: 3em 0;
+}
+.we-get-grid {
+  margin: 0;
+}
+.idea-get h4 {
+  color: #fff;
+  font-size: 1.5em;
+  margin: 0;
+  padding: 1em 0;
+}
+.idea-get p {
+  color: #fff;
+  font-size: 1em;
+  margin: 0 auto;
+  width: 68%;
+  line-height: 22px;
+}

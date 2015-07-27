@@ -3,12 +3,12 @@
  * TOP API: taobao.tbk.item.get request
  * 
  * @author auto create
- * @since 1.0, 2015.04.04
+ * @since 1.0, 2015.07.27
  */
 class TbkItemGetRequest
 {
 	/** 
-	 * 后台类目ID，用,分割，最大10个
+	 * 后台类目ID，用,分割，最大10个，该ID可以通过taobao.itemcats.get接口获取到
 	 **/
 	private $cat;
 	

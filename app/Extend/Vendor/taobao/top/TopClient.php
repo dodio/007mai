@@ -7,7 +7,7 @@ class TopClient
 
 	public $gatewayUrl = "http://gw.api.taobao.com/router/rest";
 
-	public $format = "json";
+	public $format = "xml";
 
 	public $connectTimeout;
 
@@ -21,10 +21,6 @@ class TopClient
 	protected $apiVersion = "2.0";
 
 	protected $sdkVersion = "top-sdk-php-20150308";
-
-	public $_CachePath = FTX_DATA_PATH;
-
-	public $_method = "";
 
 	protected function generateSign($params)
 	{
@@ -42,33 +38,6 @@ class TopClient
 		$stringToBeSigned .= $this->secretKey;
 
 		return strtoupper(md5($stringToBeSigned));
-	}
-
-	public function saveCacheData ($id,$result){
-		$idkey = substr($id,0,2);
-		if (!is_dir($this->_CachePath)) {
-			mkdir($this->_CachePath);
-		}
-		if (!is_dir($this->_CachePath .$this->_method)) {
-		  mkdir($this->_CachePath .$this->_method);
-		}
-		if (!is_dir($this->_CachePath .$this->_method.'/'.$idkey)) {
-		  mkdir($this->_CachePath .$this->_method.'/'.$idkey);
-		}
-		$filepath = $this->_CachePath .$this->_method.'/'.$idkey;
-		if (is_dir($filepath)) {
-		  $filename = $filepath .'/'.$id .'.cache';
-		  @file_put_contents($filename,$result);
-		}
-	}
-    
-	public function getCacheData ($id){
-		$idkey = substr($id,0,2);
-		$filename = $this->_CachePath .$this->_method .'/'.$idkey .'/'.$id .'.cache';
-		if(file_exists($filename)){
-			return @file_get_contents($filename);
-		}
-		return false;
 	}
 
 	public function curl($url, $postFields = null)
@@ -138,9 +107,8 @@ class TopClient
 	protected function logCommunicationError($apiName, $requestUrl, $errorCode, $responseTxt)
 	{
 		$localIp = isset($_SERVER["SERVER_ADDR"]) ? $_SERVER["SERVER_ADDR"] : "CLI";
-		//exit(rtrim(TOP_SDK_WORK_DIR, '\\/') . '/' . "logs/top_comm_err_" . $this->appkey . "_" . date("Y-m-d") . ".log");
 		$logger = new TopLogger;
-		$logger->conf["log_file"] = $this->_CachePath . "ftxia/top_comm_err_" . $this->appkey . "_" . date("Y-m-d") . ".log";
+		$logger->conf["log_file"] = rtrim(TOP_SDK_WORK_DIR, '\\/') . '/' . "logs/top_comm_err_" . $this->appkey . "_" . date("Y-m-d") . ".log";
 		$logger->conf["separator"] = "^_^";
 		$logData = array(
 		date("Y-m-d H:i:s"),
@@ -158,8 +126,6 @@ class TopClient
 
 	public function execute($request, $session = null)
 	{
-		$this->_method = $request->getApiMethodName();
-		$this->_CachePath = $this->_CachePath . "runtime/TaobaoAPI/";
 		$result =  new ResultSet(); 
 		if($this->checkRequest) {
 			try {
@@ -198,32 +164,19 @@ class TopClient
 		}
 		$requestUrl = substr($requestUrl, 0, -1);
 
-		$cacheid = md5($this->createStrParam($apiParams));
-		if (!$resp = $this->getCacheData($cacheid)) {
-			//发起HTTP请求
-			$logger = new TopLogger;
-			$logger->conf["log_file"] = $this->_CachePath . "ftxia_logs/logs_" . $this->appkey . "_" . date("Y-m-d") . ".log";
-			$logger->log(array(
-				$this->appkey,
-				$this->_method,
-				date("Y-m-d H:i:s")
-			));
-			try{
-				$resp = $this->curl($requestUrl, $apiParams);
-				if(strlen($resp)>150){
-					$this->saveCacheData($cacheid,$resp);
-				}
-			}catch (Exception $e){
-				$this->logCommunicationError($sysParams["method"],$requestUrl,"HTTP_ERROR_" . $e->getCode(),$e->getMessage());
-				$result->code = $e->getCode();
-				$result->msg = $e->getMessage();
-				return $result;
-			}
-		}else{
-			if(strlen($resp)>100){
-				$this->saveCacheData($cacheid,$resp);
-			}
+		//发起HTTP请求
+		try
+		{
+			$resp = $this->curl($requestUrl, $apiParams);
 		}
+		catch (Exception $e)
+		{
+			$this->logCommunicationError($sysParams["method"],$requestUrl,"HTTP_ERROR_" . $e->getCode(),$e->getMessage());
+			$result->code = $e->getCode();
+			$result->msg = $e->getMessage();
+			return $result;
+		}
+
 		//解析TOP返回结果
 		$respWellFormed = false;
 		if ("json" == $this->format)
@@ -260,23 +213,13 @@ class TopClient
 		if (isset($respObject->code))
 		{
 			$logger = new TopLogger;
-			$logger->conf["log_file"] = $this->_CachePath . "ftxia_logs/logs_" . $this->appkey . "_" . date("Y-m-d") . ".log";
+			$logger->conf["log_file"] = rtrim(TOP_SDK_WORK_DIR, '\\/') . '/' . "logs/top_biz_err_" . $this->appkey . "_" . date("Y-m-d") . ".log";
 			$logger->log(array(
 				date("Y-m-d H:i:s"),
 				$resp
 			));
 		}
 		return $respObject;
-	}
-
-	public function createStrParam ($paramArr){
-        $strParam = array();
-        foreach ($paramArr as $key =>$val) {
-            if ($key != ''&&$val != '') {
-                $strParam []= $key .'='.urlencode($val);
-            }
-        }
-        return implode('&',$strParam);
 	}
 
 	public function exec($paramsArray)
@@ -308,10 +251,6 @@ class TopClient
 			}
 		}
 		return $this->execute($req, $session);
-	}
-	public function load_api($api_name){
-		Vendor('taobao.request.'.$api_name);
-		return new $api_name;
 	}
 }
 

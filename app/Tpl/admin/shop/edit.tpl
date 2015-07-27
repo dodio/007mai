@@ -1,6 +1,6 @@
 <include file="public:header" />
 <div class="subnav">
-    <h1 class="title_2 line_x">添加店铺</h1>
+    <h1 class="title_2 line_x">编辑店铺</h1>
 </div>
 <div class="pad_lr_10" >
     <form id="info_form" action="{:U('shop/edit')}" method="post" >

@@ -26,6 +26,9 @@ return array(
     ),
   'tag' => array(
       'default' => 'mm_110720202_10278645_34382782'
+    ),
+  'shop'=>array(
+      'default' => 'mm_110720202_10278645_34500083'
     )
   );
 

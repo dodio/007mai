@@ -13,7 +13,7 @@ class adAction extends BackendAction {
         $map = array();
         ($start_time_min = $this->_request('start_time_min', 'trim')) && $map['start_time'][] = array('egt', strtotime($start_time_min));
         ($start_time_max = $this->_request('start_time_max', 'trim')) && $map['start_time'][] = array('elt', strtotime($start_time_max)+(24*60*60-1));
-        ($end_time_min = $this->_request('end_time_min', 'trim')) && $map['end_time'][] = array('egt', strtotime($end_time_min));
+        ($end_time_min = $this->_request('end_time_min', 'trim',date('Y-m-d h:i',todaytime()))) && $map['end_time'][] = array('egt', strtotime($end_time_min));
         ($end_time_max = $this->_request('end_time_max', 'trim')) && $map['end_time'][] = array('elt', strtotime($end_time_max)+(24*60*60-1));
         $board_id = $this->_get('board_id', 'intval');
         $board_id && $map['board_id'] = $board_id;

@@ -44,10 +44,7 @@ padding: 0 4px;
 </style>
 	<div class="rt">
     		<div class="cut_line admin_info tr">
-			<a href="http://bbs.8mob.com/license/" target="_blank"><img src="/static/images/admin/lockscreen.png"> 授权查询</a><span>|</span>
-			<a href="http://bbs.8mob.com" target="_blank">官方网站</a><span>|</span>
-			<a href="http://bbs.8mob.com" target="_blank">论坛支持</a><span>|</span>
-			<a href="http://bbs.8mob.com/forum.php?mod=forumdisplay&fid=51" target="_blank">帮助？</a>
+			<a href="http://wpa.qq.com/msgrd?v=3&uin=274983513&site=qq&menu=yes" target="_blank">问题反馈</a>
 		</div>
 		<div class="style_but"></div>
 	</div>

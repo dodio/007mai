@@ -38,4 +38,9 @@ class menuModel extends Model {
             }
         }
     }
+
+    public function getAllow($role_id){
+        $role_right = M("admin_auth_view")->where(array('role_id'=>$role_id))->select();
+        return $role_right;
+    }
 }

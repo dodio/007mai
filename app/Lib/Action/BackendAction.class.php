@@ -15,7 +15,6 @@ class BackendAction extends TopAction
         if ($this->menuid) {
             $sub_menu = D('menu')->sub_menu($this->menuid, $this->big_menu);
             $selected = '';
-
             if(is_array($sub_menu)){
                 foreach ($sub_menu as $key=>$val) {
                     $sub_menu[$key]['class'] = '';
@@ -37,6 +36,103 @@ class BackendAction extends TopAction
             $this->assign('sub_menu', $sub_menu);
         }
         $this->assign('menuid', $this->menuid);
+    }
+
+    // 权限检查
+    protected function check_modual() {
+        // 无需登录的模块 操作
+        $no_need_login = array("/index/login",'/index/verify_code');
+        if ( (!isset($_SESSION['admin']) || !$_SESSION['admin']) && !in_array(__ACTION__, $no_need_login) ) {
+            $this->redirect('index/login');
+        }
+
+        //不需权限的模块
+        $no_need_right = explode(',', 'attachment,index');
+        if (in_array( MODULE_NAME, $no_need_right)) {
+            return true;
+        }
+    
+        $r = $this->check_right(MODULE_NAME,ACTION_NAME,__SELF__);
+        if (!$r) {
+            if(IS_AJAX){
+                $this->ajaxReturn(0,"没有权限");
+            }else{
+                $this->error(L('_VALID_ACCESS_'),U('index/panel'));
+            }
+            exit();
+        }
+    }
+    /**
+     * 检查菜单权限
+     * @param  [type] $module_name [模块名] //传入数字则，直接比对是否具有指定menu_id 的菜单权限。
+     * @param  [type] $action_name [控制器名]
+     * @param  string $data        [检查的参数列表]
+     * @return [type]              [true/false]
+     */
+    protected function check_right($module_name,$action_name = "",$data = ""){
+        //超级管理员直接通过验证
+        if($_SESSION['admin']['role_id'] == 1) {
+            return true;
+        }
+        $rights = $_SESSION['admin']['rights'];
+        //如果传入的是menu_id
+        if(is_numeric($module_name)){
+            $menu_id = $module_name;
+            foreach ($rights as $val) {
+                if($val['menu_id'] == $menu_id){
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        $action_map = array(
+            "edit" => "ajax_edit",
+            "edit" => "setAll",
+            "edit" => "set_time",
+            "edit" => "ajax_upload_img",
+            "edit" => "ajax_upload_imgs",
+            "edit" => "ajax_check_name",
+            "edit" => 'set_age',
+            "edit" => 'move',
+            "edit" => 'ajax_check_email',
+            "index"=> "ajax_getchilds",
+            "index"=> "ajax_gettags",
+            "index"=> "user_thumb",
+            "index"=> "get_id",
+            "index"=> "getuzlist",
+            "index"=> "getUzCateList",
+            "add" => "ajaxgetid", //主要是添加商品使用
+            "delete"=> "uzhanDelete"
+            );
+        //传入的3个参数
+        foreach ($rights as $val) {
+            // 有权限的规则是：模块名一样，控制器名字一样  如果菜单带参数，那要能在参数列表内找到。
+            // 通用的
+            if( $module_name == $val['module_name']){
+                // 等价比较，主要用于通用方法的验证，这种，只要获取了module的权限，就算可以获取相对应的module通用权限
+                foreach ($action_map as $act => $map_act) {
+                    if($act == $val['action_name'] && $action_name == $map_act){
+                        return true;
+                    }
+                }
+                
+                if( $val['action_name'] == $action_name && (trim($val['data']) == "" || (strpos( $val['data'] , $data)) ) ){
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
+
+    protected function filter_menu($menus = array()){
+        foreach ($menus as $key => $value) {
+            if(!$this->check_right($value['id'])){
+                unset($menus[$key]);
+            }
+        }
+        return $menus;
     }
 
     /**
@@ -235,28 +331,6 @@ class BackendAction extends TopAction
         $this->assign('list_table', true);
     }
 
-    public function check_modual() {
-        if (MODULE_NAME == 'attachment') {
-            return true;
-        }
-        if ( (!isset($_SESSION['admin']) || !$_SESSION['admin']) && !in_array(ACTION_NAME, array('login','verify_code')) ) {
-            $this->redirect('index/login');
-        }
-        if($_SESSION['admin']['role_id'] == 1) {
-            return true;
-        }
-        if (in_array(MODULE_NAME, explode(',', 'index'))) {
-            return true;
-        }
-        $menu_mod = M('menu');
-        $menu_id = $menu_mod->where(array('module_name'=>MODULE_NAME, 'action_name'=>ACTION_NAME))->getField('id');
-        $priv_mod = D('admin_auth');
-        $r = $priv_mod->where(array('menu_id'=>$menu_id, 'role_id'=>$_SESSION['admin']['role_id']))->count();
-        if (!$r) {
-            $this->error(L('_VALID_ACCESS_'));
-        }
-    }
-    
     protected function update_config($new_config, $config_file = '') {
         !is_file($config_file) && $config_file = CONF_PATH . 'index/config.php';
         if (is_writable($config_file)) {

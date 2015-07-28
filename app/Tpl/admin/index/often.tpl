@@ -1,6 +1,6 @@
 <include file="public:header" />
 <div class="pad-10">
-	<form id="myform" name="myform" action="{:U('index/often_menu')}" method="post">
+	<form id="myform" name="myform" action="{:U('index/often')}" method="post">
     <table class="table_map">
         <volist name="list" id="val">
     	<tr>

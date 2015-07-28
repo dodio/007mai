@@ -11,6 +11,7 @@ class indexAction extends BackendAction {
 
     public function index() {
         $top_menus = $this->_mod->admin_menu(0);
+        $top_menus = $this->filter_menu($top_menus);
         $this->assign('top_menus', $top_menus);
         $my_admin = array('username'=>$_SESSION['admin']['username'], 'roleid'=>$_SESSION['admin']['role_id'], 'rolename'=>$_SESSION['admin']['role_name']);
         $this->assign('my_admin', $my_admin);
@@ -158,6 +159,7 @@ class indexAction extends BackendAction {
                 'role_id' => $admin['role_id'],
                 'role_name' => $admin_role['name'],
                 'username' => $admin['username'],
+                'rights' => D("menu")->getAllow($admin['role_id'])
             ));
             M('admin')->where(array('id'=>$admin['id']))->save(array('last_time'=>time(), 'last_ip'=>get_client_ip()));
             $this->success(L('login_success'), U('index/index'));
@@ -180,16 +182,18 @@ class indexAction extends BackendAction {
         $menuid = $this->_request('menuid', 'intval');
         if ($menuid) {
             $left_menu = $this->_mod->admin_menu($menuid);
+            $left_menu = $this->filter_menu($left_menu);
             foreach ($left_menu as $key=>$val) {
-                $left_menu[$key]['sub'] = $this->_mod->admin_menu($val['id']);
+                $left_menu[$key]['sub'] = $this->filter_menu( $this->_mod->admin_menu($val['id']) );
             }
         } else {
             $left_menu[0] = array('id'=>0,'name'=>L('common_menu'));
             $left_menu[0]['sub'] = array();
             if ($r = $this->_mod->where(array('often'=>1))->select()) {
+                $r = $this->filter_menu($r);
                 $left_menu[0]['sub'] = $r;
             }
-            array_unshift($left_menu[0]['sub'], array('id'=>0,'name'=>L('common_menu_set'),'module_name'=>'index','action_name'=>'often_menu'));
+            array_unshift($left_menu[0]['sub'], array('id'=>0,'name'=>L('common_menu_set'),'module_name'=>'index','action_name'=>'often'));
         }
         $this->assign('left_menu', $left_menu);
         $this->display();
@@ -203,27 +207,20 @@ class indexAction extends BackendAction {
             $this->_mod->where('id IN('.$id_str.')')->save(array('often'=>1));
             $this->success(L('operation_success'));
         } else {
-            $r = $this->_mod->admin_menu(0);
-            $list = array();
-            foreach ($r as $v) {
-                $v['sub'] = $this->_mod->admin_menu($v['id']);
-                foreach ($v['sub'] as $key=>$sv) {
-                    $v['sub'][$key]['sub'] = $this->_mod->admin_menu($sv['id']);
-                }
-                $list[] = $v;
-            }
-            $this->assign('list', $list);
-            $this->display();
+            $this->map();
         }
     }
 
+    // 功能地图
     public function map() {
-        $r = $this->_mod->admin_menu(0);
+        $r = $this->filter_menu( $this->_mod->admin_menu(0) );
         $list = array();
         foreach ($r as $v) {
-            $v['sub'] = $this->_mod->admin_menu($v['id']);
+
+            $v['sub'] = $this->filter_menu( $this->_mod->admin_menu($v['id']) );
+
             foreach ($v['sub'] as $key=>$sv) {
-                $v['sub'][$key]['sub'] = $this->_mod->admin_menu($sv['id']);
+                $v['sub'][$key]['sub'] = $this->filter_menu( $this->_mod->admin_menu($sv['id']) );
             }
             $list[] = $v;
         }

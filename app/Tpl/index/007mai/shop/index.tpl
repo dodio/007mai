@@ -29,7 +29,7 @@ __STATIC__/assets/pc/css/shop.css
 <div class="mainbody">
   <div class="container">
     <div class="shop">
-      <div class="shop-name"><a data-type="1" biz-sellerid="{$shop['sellerId']}" isconvert=1 href="{$shop.url}" target="_blank" rel="nofollow">{$shop.name}</a></div>
+      <div class="shop-name"><a data-type="1" biz-sellerid="{$shop['sellerId']}" isconvert=1 href="{$shop.url}" target="_blank" rel="nofollow">{$shop.name}</a><span class="click_in" style="margin-left: 50px;"><img src="__STATIC__/assets/pc/images/arrow_left.png" alt="">点击进入</span></div>
       <div class="group">
         <notempty name="shop.seo_desc">
           <div class="desc">
@@ -70,6 +70,22 @@ __STATIC__/assets/pc/css/shop.css
   $(function(){
     var bg = "bg1,bg2,bg3".split(",");
     $(".mainbody").addClass(_.sample(bg));
+  });
+  $(function(){
+    
+    var click_in = $(".click_in");
+
+    function ml(){
+      click_in.animate({marginLeft:20},500,function(){
+        setTimeout(mr,1000);
+      });
+    }
+    function mr(){
+      click_in.animate({marginLeft:50},200,function(){
+        ml();
+      });
+    }
+    ml();
   });
 </script>
 <include file="public:footer" />

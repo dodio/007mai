@@ -5,6 +5,11 @@
 <ftx:load type="css" href="
 __STATIC__/assets/pc/css/shop.css
 "/>
+<script>
+  $.MAI007.util.delay(function(){
+    $("#cafp").click();
+  },100);
+</script>
 </head>
 <body>
 <div class="header">
@@ -25,8 +30,18 @@ __STATIC__/assets/pc/css/shop.css
   <div class="container">
     <div class="shop">
       <div class="shop-name"><a data-type="1" biz-sellerid="{$shop['sellerId']}" isconvert=1 href="{$shop.url}" target="_blank" rel="nofollow">{$shop.name}</a></div>
-      <div class="pic">
-        <a data-type="1" biz-sellerid="{$shop['sellerId']}" isconvert=1 href="{$shop.url}" target="_blank" rel="nofollow"><img src="{:attach($shop['img'],"images")}" alt=""></a>
+      <div class="group">
+        <notempty name="shop.seo_desc">
+          <div class="desc">
+          <p>{$shop.seo_desc}</p>
+          <div class="tac mt20">
+            <a data-type="1" biz-sellerid="{$shop['sellerId']}" isconvert=1 href="{$shop.url}" target="_blank" rel="nofollow"><img src="http://img03.taobaocdn.com/imgextra/i3/648011753/TB2uqV3cpXXXXasXpXXXXXXXXXX-648011753.png" alt=""></a>
+          </div>
+        </div>
+        </notempty>
+        <div class="pic" <empty name="shop.seo_desc">style="float:none;margin-right:0;"</empty>>
+          <a data-type="1" biz-sellerid="{$shop['sellerId']}" isconvert=1 href="{$shop.url}" target="_blank" rel="nofollow"><img src="{:attach($shop['img'],"images")}" alt=""></a>
+        </div>
       </div>
     </div>
   </div>

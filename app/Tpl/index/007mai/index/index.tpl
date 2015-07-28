@@ -40,7 +40,7 @@ __STATIC__/assets/pc/css/index.css
               </a>
             </div>
             <div class="info fl ml10">
-              <div class="username"><a href="" target="/user/index">{$visitor.username}</a></div>
+              <div class="username"><a href="/user/index" target="_blank">{$visitor.username}</a></div>
               <div class="text group">
                 <span class="score">情报：<em>{$visitor.score}</em></span>
                 <a target="_blank" class="fr" href="/user/mingxi">明细</a>

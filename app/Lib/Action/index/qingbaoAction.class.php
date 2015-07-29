@@ -349,7 +349,7 @@
 
 
   public function san38(){
-    $cid  = "549";
+    $cid  = "551";
     $sort = I('sort', 'default', 'trim'); //排序
     $order  = 'ordid asc ';
     $tag  = I('cid',1,'intval');

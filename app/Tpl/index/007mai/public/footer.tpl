@@ -108,6 +108,21 @@
         <div class="help-item"><a href="/user/register" target="_blank">注册</a></div>
         <div class="help-item"><a href="/forget" target="_blank">找回密码</a></div>
       </div>
+      <div class="help-group ml0" >
+          <div class="help-topic">微博</div>
+          <div class="mt20">
+              <a href="http://weibo.com/007mai" target="_blank"><img width="150px" height="150px" src="{:C('ftx_site_navlogo')}" alt=""></a>
+          </div>
+      </div>
+
+      <div class="help-group mr0" style="margin-left:30px;">
+          <div class="help-topic">微信</div>
+          <div class="mt20">
+              <a href="http://weibo.com/007mai" target="_blank"><img width="150px" height="150px" src="{:C('ftx_site_weixin')}" alt=""></a>
+          </div>
+      </div>
+
+      
     </div>
     <div class="container mt30 copyright">
     	<p class="f_miibeian tac page007mai"><a href="http://www.miibeian.gov.cn/" rel="nofollow" target="_blank">蜀ICP备15011882号</a> © 2010-2015 007mai.com all Rights Reserved <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1255103351'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1255103351' type='text/javascript'%3E%3C/script%3E"));</script> <a href="/sitemap" target="_blank">网站地图</a>

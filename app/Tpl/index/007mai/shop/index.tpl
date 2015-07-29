@@ -29,7 +29,7 @@ __STATIC__/assets/pc/css/shop.css
 <div class="mainbody">
   <div class="container">
     <div class="shop">
-      <div class="shop-name"><a data-type="1" biz-sellerid="{$shop['sellerId']}" isconvert=1 href="{$shop.url}" target="_blank" rel="nofollow" onclick="_czc.push(['_trackEvent', '联盟点击', '店铺', '{$shop.name}',(new Date().getHours())]);">{$shop.name}</a><span class="click_in" style="margin-left: 50px;"><img src="__STATIC__/assets/pc/images/arrow_left.png" alt="">点击进入</span></div>
+      <div class="shop-name"><a data-type="1" biz-sellerid="{$shop['sellerId']}" isconvert=1 href="{$shop.url}" target="_blank" rel="nofollow" onclick="_czc.push(['_trackEvent', '联盟点击', '店铺', '{$shop.name}',(new Date().getHours())]);">{$shop.name}</a><span class="click_in" style="margin-left: 50px;"><img src="__STATIC__/assets/pc/images/arrow_left.png" alt="">点击逛店铺</span></div>
       <div class="group">
         <notempty name="shop.seo_desc">
           <div class="desc">

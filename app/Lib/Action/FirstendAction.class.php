@@ -23,7 +23,11 @@ class FirstendAction extends TopAction {
 
         if(!IS_AJAX){
             //不是ajax 才布置淘点金
-            $pid = get_pid(__ACTION__);
+            if($_SERVER['HTTP_HOST'] == "m.007mai.com"){
+                $pid = "mm_110720202_10278645_34548383";
+            }else{
+                $pid = get_pid(__ACTION__);
+            }
             $this->assign('taodianjin_pid',$pid);
         }
     }

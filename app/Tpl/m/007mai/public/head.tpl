@@ -21,3 +21,6 @@
 	<script src="__STATIC__/assets/mobile/js/zepto.min.js"></script>
 	<script src="__STATIC__/assets/js/lib/underscore.js"></script>
 	<style type="text/css">.num {float: none;}</style>
+        <script>
+                var _czc = _czc || [];
+        </script>

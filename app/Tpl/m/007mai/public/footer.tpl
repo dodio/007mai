@@ -2,7 +2,7 @@
 	<div class="tips"><div><img src="http://s.juancdn.com/webapp/images/images.png" width="100%;"></div></div>
             <div class="tips01"><div><img src="http://s.juancdn.com/webapp/images/images01.png" width="100%;"></div></div>
 	<div id="back_top" class="slide-box" style="display: none;">
-		<a href="#" class="back-top"><img src="__STATIC__/m_8mob_jp/images/icon/back-top.png"></a>      
+		<a href="#" class="back-top"><img src="__STATIC__/assets/mobile/images/icon/back-top.png"></a>      
 	</div>
 	<script type="text/javascript">
 
@@ -90,16 +90,35 @@
 	<style type="text/css">
 	#foot{height: 120px;}
 	</style>
-	{:C('ftx_taojindian_html')}
+	<script type="text/javascript">
+        (function(win,doc){
+            var s = doc.createElement("script"), h = doc.getElementsByTagName("head")[0];
+            if (!win.alimamatk_show) {
+                s.charset = "gbk";
+                s.async = true;
+                s.src = "http://a.alimama.cn/tkapi.js";
+                h.insertBefore(s, h.firstChild);
+            };
+            var o = {
+                pid: "{$taodianjin_pid}",/*推广单元ID，用于区分不同的推广渠道*/
+                appkey: "",/*通过TOP平台申请的appkey，设置后引导成交会关联appkey*/
+                unid: "",/*自定义统计字段*/
+                type: "click" /* click 组件的入口标志 （使用click组件必设）*/
+            };
+            win.alimamatk_onload = win.alimamatk_onload || [];
+            win.alimamatk_onload.push(o);
+        })(window,document);
+    </script>
+
 	<div id="foot">
 	    <div class="foot-nav">
-		<a href="{:C('ftx_site_url')}"><img src="__STATIC__/m_8mob_jp/images/icon/phone.png">电脑版</a>
-		<a href="{:U('index/index')}" class="_border"><img src="__STATIC__/m_8mob_jp/images/icon/home.png">返回首页</a>
+		<a href="{:C('ftx_site_url')}"><img src="__STATIC__/assets/mobile/images/icon/phone.png">电脑版</a>
+		<a href="{:U('index/index')}" class="_border"><img src="__STATIC__/assets/mobile/images/icon/home.png">返回首页</a>
 	    </div>
 	    <div class="foot-copyright"></div>
 	    <h2>copyright © 2015 {:C('ftx_site_name')}</h2>
 	</div>
 
     <div style="display: none;">
-        {:C('ftx_statistics_code')}</p>
+        <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1255103351'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1255103351' type='text/javascript'%3E%3C/script%3E"));</script>
     </div>

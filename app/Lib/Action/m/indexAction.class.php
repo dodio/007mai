@@ -8,8 +8,7 @@ class indexAction extends FirstendAction {
 		if (false === $cate_list = F('cate_list')) {
 			$cate_list = $this->_cate_mod->cate_cache();
 		}
-		//p($cate_list);
-		$this->assign('cate_list', $cate_list); //ио└Я
+		$this->assign('cate_list', $cate_list); 
 	}
 	
 	public function _empty(){
@@ -26,7 +25,8 @@ class indexAction extends FirstendAction {
 		if($cid){
 			$this->assign('cid',$cid);
 			$cinfo = $this->_cate_mod->where(array('id'=>$cid))->find();
-			if($cinfo['shop_type']){$where['shop_type'] = $cinfo['shop_type'];}
+			if($cinfo['shop_type']){
+				$where['shop_type'] = $cinfo['shop_type'];}
 				if($cinfo['mix_price']>0){$where['coupon_price'] = array('egt',$cinfo['mix_price']);}
 				if($cinfo['max_price']>0){$where['coupon_price'] = array('elt',$cinfo['max_price']);}
 				if($cinfo['max_price']>0 && $cinfo['mix_price']>0){$where['coupon_price'] = array(array('egt',$cinfo['mix_price']),array('elt',$cinfo['max_price']),'and');}
@@ -56,7 +56,9 @@ class indexAction extends FirstendAction {
 			$order.= ', '.$cinfo['sort'];
 		}else{
 			if(C('ftx_index_cids')){
-				$where['cate_id'] =  array('in',C('ftx_index_cids'));
+
+				$ids = $this->_cate_mod->get_child_ids(array_shift(C('ftx_index_cids')));
+				$where['cate_id'] =  array('in',implode(",", $ids));
 			}
 
 			if(C('ftx_wait_time') == '1'){
@@ -90,15 +92,15 @@ class indexAction extends FirstendAction {
 			}
 		}
 		 
-		$page_size = C('ftx_index_page_size');
-		$p = $this->_get('p','intval', 1); //м│┬в
-		$start = $page_size * ($p - 1) ;
-		$items_list = $this->_mod->where($where)->order($order)->limit($start . ',' . $page_size)->select();
-		$this->assign('items_list', $items_list);
-		$count = $this->_mod->where($where)->count();
-		$pager = $this->_pager($count, $page_size);
-		$this->assign('page', $pager->mshow());
-		$this->display('index');
+			$page_size = C('ftx_index_page_size');
+			$p = $this->_get('p','intval', 1);
+			$start = $page_size * ($p - 1) ;
+			$items_list = $this->_mod->where($where)->order($order)->limit($start . ',' . $page_size)->select();
+			$this->assign('items_list', $items_list);
+			$count = $this->_mod->where($where)->count();
+			$pager = $this->_pager($count, $page_size);
+			$this->assign('page', $pager->mshow());
+			$this->display('index');
 	  }
 
 }

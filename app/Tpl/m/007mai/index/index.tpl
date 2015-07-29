@@ -15,17 +15,8 @@
 			<span id="t-index">{:C('ftx_site_name')}</span>
 		</div>
 		</header>
-		{:R('advert/index', array(2), 'Widget')}
-		<div class="nav_box">
-			<nav class="nav" id="nav">
-				<ul class="">
-					<li><a class="active" href="{:U('index/index')}"><em class="icon icon-jz"></em><span>{:C('ftx_site_name')}</span><em class="line"></em></a></li>
-					<li><a href="{:U('jiu/index')}"><em class="icon icon-jk"></em><span>9.9包邮</span><em class="line"></em></a></li>
-					<li><a href="{:U('shijiu/index')}"><em class="icon icon-jk"></em><span>19.9包邮</span><em class="line"></em></a></li>
-					<li class="_border"><a href="{:U('meili/index')}"><em class="icon icon-jz"></em><span>美丽说</span><em class="line"></em></a></li>
-				</ul>
-			</nav>
-		</div>
+		{:R('advert/index', array("mobile_banner"), 'Widget')}
+		<include file="public:nav_box"/>
 		<include file="public:items_list" />
 		<include file="public:footer" />
 	</div>

@@ -29,18 +29,18 @@ __STATIC__/assets/pc/css/shop.css
 <div class="mainbody">
   <div class="container">
     <div class="shop">
-      <div class="shop-name"><a data-type="1" biz-sellerid="{$shop['sellerId']}" isconvert=1 href="{$shop.url}" target="_blank" rel="nofollow">{$shop.name}</a><span class="click_in" style="margin-left: 50px;"><img src="__STATIC__/assets/pc/images/arrow_left.png" alt="">点击进入</span></div>
+      <div class="shop-name"><a data-type="1" biz-sellerid="{$shop['sellerId']}" isconvert=1 href="{$shop.url}" target="_blank" rel="nofollow" onclick="_czc.push(['_trackEvent', '联盟点击', '店铺', '{$shop.name}',(new Date().getHours())]);">{$shop.name}</a><span class="click_in" style="margin-left: 50px;"><img src="__STATIC__/assets/pc/images/arrow_left.png" alt="">点击进入</span></div>
       <div class="group">
         <notempty name="shop.seo_desc">
           <div class="desc">
           <p>{$shop.seo_desc}</p>
           <div class="tac mt20">
-            <a data-type="1" biz-sellerid="{$shop['sellerId']}" isconvert=1 href="{$shop.url}" target="_blank" rel="nofollow"><img src="http://img03.taobaocdn.com/imgextra/i3/648011753/TB2uqV3cpXXXXasXpXXXXXXXXXX-648011753.png" alt=""></a>
+            <a data-type="1" biz-sellerid="{$shop['sellerId']}" isconvert=1 href="{$shop.url}" target="_blank" rel="nofollow" onclick="_czc.push(['_trackEvent', '联盟点击', '店铺', '{$shop.name}',(new Date().getHours())]);"><img src="http://img03.taobaocdn.com/imgextra/i3/648011753/TB2uqV3cpXXXXasXpXXXXXXXXXX-648011753.png" alt=""></a>
           </div>
         </div>
         </notempty>
         <div class="pic" <empty name="shop.seo_desc">style="float:none;margin-right:0;"</empty>>
-          <a data-type="1" biz-sellerid="{$shop['sellerId']}" isconvert=1 href="{$shop.url}" target="_blank" rel="nofollow"><img src="{:attach($shop['img'],"images")}" alt=""></a>
+          <a data-type="1" biz-sellerid="{$shop['sellerId']}" isconvert=1 href="{$shop.url}" target="_blank" rel="nofollow" onclick="_czc.push(['_trackEvent', '联盟点击', '店铺', '{$shop.name}',(new Date().getHours())]);"><img src="{:attach($shop['img'],"images")}" alt=""></a>
         </div>
       </div>
     </div>
@@ -49,17 +49,17 @@ __STATIC__/assets/pc/css/shop.css
 <div class="global-design">
     <div class="container group"> 
     <div class="idea-get">
-    <a class="dianj" data-type="1" biz-sellerid="{$shop['sellerId']}" isconvert=1 href="{$shop.url}" target="_blank" rel="nofollow"><img src="http://img03.taobaocdn.com/imgextra/i3/648011753/TB2kRB5cpXXXXXXXpXXXXXXXXXX-648011753.png"></a>
+    <a class="dianj" data-type="1" biz-sellerid="{$shop['sellerId']}" isconvert=1 href="{$shop.url}" target="_blank" rel="nofollow" onclick="_czc.push(['_trackEvent', '联盟点击', '店铺', '{$shop.name}',(new Date().getHours())]);"><img src="http://img03.taobaocdn.com/imgextra/i3/648011753/TB2kRB5cpXXXXXXXpXXXXXXXXXX-648011753.png"></a>
       <h4>品质保障</h4> 
       <p>所有商品如实描述，全场无假货，如需要开具正规发票，品质护航，购物无忧！</p>    
   </div>
     <div class="idea-get">
-    <a class="dianj" data-type="1" biz-sellerid="{$shop['sellerId']}" isconvert=1 href="{$shop.url}" target="_blank" rel="nofollow"><img src="http://img01.taobaocdn.com/imgextra/i1/648011753/TB2nUN3cpXXXXcqXXXXXXXXXXXX-648011753.png"></a>
+    <a class="dianj" data-type="1" biz-sellerid="{$shop['sellerId']}" isconvert=1 href="{$shop.url}" target="_blank" rel="nofollow" onclick="_czc.push(['_trackEvent', '联盟点击', '店铺', '{$shop.name}',(new Date().getHours())]);"><img src="http://img01.taobaocdn.com/imgextra/i1/648011753/TB2nUN3cpXXXXcqXXXXXXXXXXXX-648011753.png"></a>
       <h4>七天无理由退换货</h4> 
       <p>签收商品后7天内，因主观原因不愿完成交易，可享受“7天无理由退换货”服务！</p>    
   </div>
     <div class="idea-get we-get-grid">
-    <a class="dianj" data-type="1" biz-sellerid="{$shop['sellerId']}" isconvert=1 href="{$shop.url}" target="_blank" rel="nofollow"><img src="http://img02.taobaocdn.com/imgextra/i2/648011753/TB2qfaXcpXXXXXaXXXXXXXXXXXX-648011753.png"></a>
+    <a class="dianj" data-type="1" biz-sellerid="{$shop['sellerId']}" isconvert=1 href="{$shop.url}" target="_blank" rel="nofollow" onclick="_czc.push(['_trackEvent', '联盟点击', '店铺', '{$shop.name}',(new Date().getHours())]);"><img src="http://img02.taobaocdn.com/imgextra/i2/648011753/TB2qfaXcpXXXXXaXXXXXXXXXXXX-648011753.png"></a>
       <h4>更多特色服务</h4> 
       <p>全程保障您的支付和商品安全，专属用户定制特色服务，严格执行售后及保修政策！</p>
   </div>

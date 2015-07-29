@@ -3,7 +3,6 @@
         <li <eq name="mod" value="4">class="mr0"</eq> >
           <div class="baokuan-item" id="nid_{$item.num_iid}">
             <div class="bk-pic">
-              <a biz-itemid="{$item['num_iid']}" rel="nofollow" isconvert=1 href="/jump/index/iid/{$item['num_iid']}" target="_blank">
                 <if condition="$item.pic_urls neq ''">
                 <img src='{:attach($item['pic_urls'],'item')}' alt="{$item.title}"  />
                 <else/>
@@ -11,7 +10,6 @@
                 </if>
               </a>
             </div>
-            <div class="bk-name"><a rel="nofollow" biz-itemid="{$item['num_iid']}" isconvert=1 href="/jump/index/iid/{$item['num_iid']}" target="_blank">{$item.title}</a></div>
             <div class="mt15">
               <!-- <s class="bk-price">¥{$item.price}</s> -->
               <span class="bk-coupon">¥{$item.coupon_price}</span>
@@ -23,7 +21,6 @@
             </div>
             <div class="bk-reason mt10">{$item.intro}</div> -->
             <div class="bk-mask">
-              <a rel="nofollow" href="/jump/index/iid/{$item['num_iid']}" biz-itemid="{$item['num_iid']}" isconvert=1 target="_blank" class="bk-link">
                 <div class="bk-maimaimai">立即购买</div>
               </a>
             </div>
